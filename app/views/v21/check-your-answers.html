@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layouts/main.html" %}
 
 {% block page_title %}
   GOV.UK prototype kit
@@ -23,7 +23,7 @@
 {% if data.vary=="yes" %}
   {% include "templates/banners/layout-name-vary.html" %}
   {% else %}
-    {% include "layout-name-sam.html" %}
+    {% include "layouts/layout-name-sam.html" %}
 {% endif %}
 
 
@@ -175,7 +175,7 @@ Who have you consulted with about this licence variation?
               Date
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ 14 | getDate }}
+              {{ 14 | govukDate }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="when-change">
