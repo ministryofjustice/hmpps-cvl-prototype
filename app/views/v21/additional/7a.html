@@ -1,0 +1,876 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+{% block beforeContent %}
+
+
+{% endblock %}
+
+{% block content %}
+<form action="/v21/conditions" method="post">
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+      Complete the licence condition</h1>
+      </legend><br>
+
+
+      <div class="govuk-form-group">
+
+<p>{%if data.shownumbers=="yes"%}7A. {%endif%}
+  Confine yourself to an address approved by your supervising officer between the hours of [TIME] and [TIME] daily unless otherwise authorised by your supervising officer. This condition will be reviewed by your supervising officer on a [WEEKLY / MONTHLY / ETC] basis and may be amended or removed if it is felt that the level of risk that you present has reduced appropriately.
+</p>
+
+<!--<div id="nationality-hint" class="govuk-hint">
+  You must have PPCS approval if the curfew time is longer than 12 hours
+</div>--><br>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-thirds">
+
+
+
+    <!--
+
+    <div class="govuk-form-group">
+    <div class="time-picker">
+    <label class="govuk-fieldset__legend--s" for="Time">
+     Enter the curfew start time
+    </label>
+    <div id="passport-issued-hint" class="govuk-hint">
+    For example, 9:30am or 2:55pm
+    </div>
+    <div class="govuk-date-input" id="passport-issued">
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+          Hour
+        </label>
+        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+    </div>
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+          Minute
+        </label>
+        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+    </div>
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+          am or pm
+        </label>
+        <select class="govuk-select" id="when-am" name="when-am">
+          <option value="am" selected>am</option>
+          <option value="pm">pm</option>
+
+        </select>
+      </div>
+    </div>
+    </div>
+<br /><br />
+
+    <div class="govuk-form-group">
+    <div class="time-picker">
+    <label class="govuk-fieldset__legend--s" for="Time">
+     Enter the curfew end time
+    </label>
+    <div id="passport-issued-hint" class="govuk-hint">
+    For example, 9:30am or 2:55pm
+    </div>
+    <div class="govuk-date-input" id="passport-issued">
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+          Hour
+        </label>
+        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+    </div>
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+          Minute
+        </label>
+        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+    </div>
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+          am or pm
+        </label>
+        <select class="govuk-select" id="when-am" name="when-am">
+          <option value="am" selected>am</option>
+          <option value="pm">pm</option>
+
+        </select>
+      </div>
+    </div>
+
+
+
+
+    </div>
+
+  -->
+
+  <div class="govuk-form-group" style="margin-left: 15px;">
+
+    <!--START set dynamic radio hide/show text-->
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+    {% from "govuk/components/input/macro.njk" import govukInput %}
+
+    {% set textHtmlOther %}
+    {{ govukInput({
+      id: "Enter the other period",
+      name: "Enter the other period",
+      type: "tel",
+      autocomplete: "tel",
+      classes: "govuk-fieldset__legend--s govuk-input govuk-input--width-30",
+      label: {
+        text: "Enter the other frequency"
+      }
+    }) }}
+    {% endset -%}
+
+    {% set textHtmlReview %}
+    {{ govukInput({
+      id: "Enter the review period",
+      name: "Enter the review period",
+      type: "tel",
+      autocomplete: "tel",
+      classes: "govuk-fieldset__legend--s govuk-input govuk-input--width-30",
+      label: {
+        text: "Enter the review period"
+      }
+    }) }}
+    {% endset -%}
+
+
+
+    {% set textHtmlTimesOne %}
+
+<!--one curfew a day-->
+    
+    <div class="govuk-form-group" style="margin-bottom: 5px;">
+      <div class="time-picker">
+      <label class="govuk-fieldset__legend--s" for="Time">
+       Enter the curfew start time
+      </label>
+      <div id="passport-issued-hint" class="govuk-hint">
+      For example, 9:30am or 2:55pm
+      </div>
+      <div class="govuk-date-input" id="passport-issued">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+            Hour
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="curfewone-start-hour" name="curfewone-start-hour" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+            Minute
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="curfewone-start-min" name="curfewone-start-min" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="curfewone-start-daytime">
+            am or pm
+          </label>
+          <select class="govuk-select" id="curfewone-start-daytime" name="curfewone-start-daytime">
+            <option value="am" selected>am</option>
+            <option value="pm">pm</option>
+          </select>
+        </div>
+      </div>
+      </div>
+      <br /><br />
+      </div>
+      </div>
+  
+  
+  
+      <div class="govuk-form-group">
+      <div class="time-picker">
+      <label class="govuk-fieldset__legend--s" for="Time">
+       Enter the curfew end time
+      </label>
+      <div id="passport-issued-hint" class="govuk-hint">
+      For example, 9:30am or 2:55pm
+      </div>
+      <div class="govuk-date-input" id="passport-issued">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="curfewone-end-hour">
+            Hour
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="curfewone-end-hour" name="curfewone-end-hour" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="curfewone-end-min">
+            Minute
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="curfewone-end-min" name="curfewone-end-min" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="curfewone-end-daytime">
+            am or pm
+          </label>
+          <select class="govuk-select" id="curfewone-end-daytime" name="curfewone-end-daytime">
+            <option value="am" selected>am</option>
+            <option value="pm">pm</option>
+          </select>
+        </div>
+      </div>
+      </div>
+      <br /><br />
+      </div>
+      </div>
+  
+
+
+
+    {% endset -%}
+
+    {% set textHtmlTimesTwo %}
+
+<!--two curfews a day-->
+
+    <!--First curfew-->
+
+    <h3 class="govuk-heading-m" style="margin-top: 20px;">First curfew<h2>
+
+    <div class="govuk-form-group">
+    <div class="time-picker">
+    <label class="govuk-fieldset__legend--s" for="Time">
+     Enter the curfew start time
+    </label>
+    <div id="passport-issued-hint" class="govuk-hint">
+    For example, 9:30am or 2:55pm
+    </div>
+    <div class="govuk-date-input" id="passport-issued">
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+          Hour
+        </label>
+        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+    </div>
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+          Minute
+        </label>
+        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+    </div>
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+          am or pm
+        </label>
+        <select class="govuk-select" id="when-am" name="when-am">
+          <option value="am" selected>am</option>
+          <option value="pm">pm</option>
+        </select>
+      </div>
+    </div>
+    </div>
+    <br /><br />
+    </div>
+    </div>
+
+
+
+    <div class="govuk-form-group" style="margin-top: -50px;">
+    <div class="time-picker">
+    <label class="govuk-fieldset__legend--s" for="Time">
+     Enter the curfew end time
+    </label>
+    <div id="passport-issued-hint" class="govuk-hint">
+    For example, 9:30am or 2:55pm
+    </div>
+    <div class="govuk-date-input" id="passport-issued">
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+          Hour
+        </label>
+        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+    </div>
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+          Minute
+        </label>
+        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+    </div>
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+          am or pm
+        </label>
+        <select class="govuk-select" id="when-am" name="when-am">
+          <option value="am" selected>am</option>
+          <option value="pm">pm</option>
+        </select>
+      </div>
+    </div>
+    </div>
+    <br /><br />
+    </div>
+    </div>
+
+
+<!--second curfew-->
+
+
+<h3 class="govuk-heading-m" style="margin-top: -10px;">Second curfew<h2>
+
+  <div class="govuk-form-group">
+  <div class="time-picker">
+  <label class="govuk-fieldset__legend--s" for="Time">
+   Enter the curfew start time
+  </label>
+  <div id="passport-issued-hint" class="govuk-hint">
+  For example, 9:30am or 2:55pm
+  </div>
+  <div class="govuk-date-input" id="passport-issued">
+  <div class="govuk-date-input__item">
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+        Hour
+      </label>
+      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+  </div>
+  <div class="govuk-date-input__item">
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+        Minute
+      </label>
+      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+  </div>
+  <div class="govuk-date-input__item">
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+        am or pm
+      </label>
+      <select class="govuk-select" id="when-am" name="when-am">
+        <option value="am" selected>am</option>
+        <option value="pm">pm</option>
+      </select>
+    </div>
+  </div>
+  </div>
+  <br /><br />
+  </div>
+  </div>
+
+
+
+  <div class="govuk-form-group" style="margin-top: -50px;">
+  <div class="time-picker">
+  <label class="govuk-fieldset__legend--s" for="Time">
+   Enter the curfew end time
+  </label>
+  <div id="passport-issued-hint" class="govuk-hint">
+  For example, 9:30am or 2:55pm
+  </div>
+  <div class="govuk-date-input" id="passport-issued">
+  <div class="govuk-date-input__item">
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+        Hour
+      </label>
+      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+  </div>
+  <div class="govuk-date-input__item">
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+        Minute
+      </label>
+      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+  </div>
+  <div class="govuk-date-input__item">
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+        am or pm
+      </label>
+      <select class="govuk-select" id="when-am" name="when-am">
+        <option value="am" selected>am</option>
+        <option value="pm">pm</option>
+      </select>
+    </div>
+  </div>
+  </div>
+  <br /><br />
+  </div>
+  </div>
+
+
+
+
+
+
+
+
+
+    {% endset -%}
+
+
+
+    {% set textHtmlTimesThree %}
+
+    <!--three curfews a day-->
+    
+        <!--First curfew-->
+    
+        <h3 class="govuk-heading-m" style="margin-top: 20px;">First curfew<h2>
+     
+    
+            <div class="govuk-form-group">
+            <div class="time-picker">
+            <label class="govuk-fieldset__legend--s" for="Time">
+             Enter the curfew start time
+            </label>
+            <div id="passport-issued-hint" class="govuk-hint">
+            For example, 9:30am or 2:55pm
+            </div>
+            <div class="govuk-date-input" id="passport-issued">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="curfewthree-start-hour-a">
+                  Hour
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="curfewthree-start-hour-a" name="curfewthree-start-hour-a" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="curfewthree-start-minute-a">
+                  Minute
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="curfewthree-start-minute-a" name="curfewthree-start-minute-a" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="curfewthree-start-daytime-a">
+                  am or pm
+                </label>
+                <select class="govuk-select" id="curfewthree-start-daytime-a" name="curfewthree-start-daytime-a">
+                  <option value="am" selected>am</option>
+                  <option value="pm">pm</option>
+                </select>
+              </div>
+            </div>
+            </div>
+            <br /><br />
+            </div>
+            </div>
+          
+          
+          
+            <div class="govuk-form-group" style="margin-top: -50px;">
+            <div class="time-picker">
+            <label class="govuk-fieldset__legend--s" for="Time">
+             Enter the curfew end time
+            </label>
+            <div id="passport-issued-hint" class="govuk-hint">
+            For example, 9:30am or 2:55pm
+            </div>
+            <div class="govuk-date-input" id="passport-issued">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="curfewthree-end-hour-a">
+                  Hour
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="curfewthree-end-hour-a" name="curfewthree-end-hour-a" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="curfewthree-end-minute-a">
+                  Minute
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="curfewthree-end-minute-a" name="curfewthree-end-minute-a" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="curfewthree-end-daytime-a">
+                  am or pm
+                </label>
+                <select class="govuk-select" id="curfewthree-end-daytime-a" name="curfewthree-end-daytime-a">
+                  <option value="am" selected>am</option>
+                  <option value="pm">pm</option>
+                </select>
+              </div>
+            </div>
+            </div>
+            <br /><br />
+            </div>
+            </div>
+          
+    
+    
+    <!--second curfew-->
+    
+    
+    <h3 class="govuk-heading-m" style="margin-top: -10px;">Second curfew<h2>
+    
+
+    
+        <div class="govuk-form-group">
+        <div class="time-picker">
+        <label class="govuk-fieldset__legend--s" for="Time">
+         Enter the curfew start time
+        </label>
+        <div id="passport-issued-hint" class="govuk-hint">
+        For example, 9:30am or 2:55pm
+        </div>
+        <div class="govuk-date-input" id="passport-issued">
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="curfewthree-start-hour-b">
+              Hour
+            </label>
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="curfewthree-start-hour-b" name="curfewthree-start-hour-b" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+        </div>
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="curfewthree-start-minute-b">
+              Minute
+            </label>
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="curfewthree-start-minute-b" name="curfewthree-start-minute-b" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+        </div>
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="curfewthree-start-daytime-b">
+              am or pm
+            </label>
+            <select class="govuk-select" id="curfewthree-start-daytime-b" name="curfewthree-start-daytime-b">
+              <option value="am" selected>am</option>
+              <option value="pm">pm</option>
+            </select>
+          </div>
+        </div>
+        </div>
+        <br /><br />
+        </div>
+        </div>
+      
+      
+      
+        <div class="govuk-form-group" style="margin-top: -50px;">
+        <div class="time-picker">
+        <label class="govuk-fieldset__legend--s" for="Time">
+         Enter the curfew end time
+        </label>
+        <div id="passport-issued-hint" class="govuk-hint">
+        For example, 9:30am or 2:55pm
+        </div>
+        <div class="govuk-date-input" id="passport-issued">
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="curfewthree-end-hour-b">
+              Hour
+            </label>
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="curfewthree-end-hour-b" name="curfewthree-end-hour-b" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+        </div>
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="curfewthree-end-minute-b">
+              Minute
+            </label>
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="curfewthree-end-minute-b" name="curfewthree-end-minute-b" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+        </div>
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="curfewthree-end-daytime-b">
+              am or pm
+            </label>
+            <select class="govuk-select" id="curfewthree-end-daytime-b" name="curfewthree-end-daytime-b">
+              <option value="am" selected>am</option>
+              <option value="pm">pm</option>
+            </select>
+          </div>
+        </div>
+        </div>
+        <br /><br />
+        </div>
+        </div>
+      
+    
+    
+    
+<!--Third curfew-->
+    
+    
+<h3 class="govuk-heading-m" style="margin-top: -10px;">Third curfew<h2>
+    
+  <div class="govuk-form-group">
+  <div class="time-picker">
+  <label class="govuk-fieldset__legend--s" for="Time">
+   Enter the curfew start time
+  </label>
+  <div id="passport-issued-hint" class="govuk-hint">
+  For example, 9:30am or 2:55pm
+  </div>
+  <div class="govuk-date-input" id="passport-issued">
+  <div class="govuk-date-input__item">
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-date-input__label" for="curfewthree-start-hour-c">
+        Hour
+      </label>
+      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="curfewthree-start-hour-c" name="curfewthree-start-hour-c" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+  </div>
+  <div class="govuk-date-input__item">
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-date-input__label" for="curfewthree-start-minute-c">
+        Minute
+      </label>
+      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="curfewthree-start-minute-c" name="curfewthree-start-minute-c" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+  </div>
+  <div class="govuk-date-input__item">
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-date-input__label" for="curfewthree-start-daytime-c">
+        am or pm
+      </label>
+      <select class="govuk-select" id="curfewthree-start-daytime-c" name="curfewthree-start-daytime-c">
+        <option value="am" selected>am</option>
+        <option value="pm">pm</option>
+      </select>
+    </div>
+  </div>
+  </div>
+  <br /><br />
+  </div>
+  </div>
+
+
+
+  <div class="govuk-form-group" style="margin-top: -50px;">
+  <div class="time-picker">
+  <label class="govuk-fieldset__legend--s" for="Time">
+   Enter the curfew end time
+  </label>
+  <div id="passport-issued-hint" class="govuk-hint">
+  For example, 9:30am or 2:55pm
+  </div>
+  <div class="govuk-date-input" id="passport-issued">
+  <div class="govuk-date-input__item">
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-date-input__label" for="curfewthree-end-hour-c">
+        Hour
+      </label>
+      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="curfewthree-end-hour-c" name="curfewthree-end-hour-c" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+  </div>
+  <div class="govuk-date-input__item">
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-date-input__label" for="curfewthree-end-minute-c">
+        Minute
+      </label>
+      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="curfewthree-end-minute-c" name="curfewthree-end-minute-c" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+  </div>
+  <div class="govuk-date-input__item">
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-date-input__label" for="curfewthree-end-daytime-c">
+        am or pm
+      </label>
+      <select class="govuk-select" id="curfewthree-end-daytime-c" name="curfewthree-end-daytime-c">
+        <option value="am" selected>am</option>
+        <option value="pm">pm</option>
+      </select>
+    </div>
+  </div>
+  </div>
+  <br /><br />
+  </div>
+  </div>
+
+  
+    
+    
+        {% endset -%}
+
+
+    <!--END set dynamic radio hide/show text-->
+
+  
+
+
+    {{ govukRadios({
+      idPrefix: "contact2",
+      name: "contact2",
+      fieldset: {
+        legend: {
+          text: "Select the number of curfews needed",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      hint: {
+        text: ""
+      },
+      items: [
+        {
+          value: "once",
+          text: "One curfew",
+          conditional: {
+            html: textHtmlTimesOne
+          }
+        },
+        {
+          value: "twice",
+          text: "Two curfews",
+          conditional: {
+            html: textHtmlTimesTwo
+          }
+        },
+        {
+          value: "three",
+          text: "Three curfews",
+          conditional: {
+            html: textHtmlTimesThree
+          }
+        }
+      ]
+    }) }}
+
+
+
+
+
+
+
+
+
+
+
+<div class="govuk-form-group">
+
+
+  {% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+
+
+
+
+{% set textHtml %}
+{{ govukInput({
+  id: "contact-by-text",
+  name: "contact-by-text",
+  type: "tel",
+  autocomplete: "tel",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Enter a review period"
+  }
+}) }}
+{% endset -%}
+
+{{ govukRadios({
+  idPrefix: "contact",
+  name: "contact",
+  fieldset: {
+    legend: {
+      text: "Select a review period",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: ""
+  },
+  items: [
+    {
+      value: "weekly",
+      text: "Weekly",
+      conditional: {
+        html: emailHtml
+      }
+    },
+    {
+      value: "monthly",
+      text: "Monthly",
+      conditional: {
+        html: phoneHtml
+      }
+    },
+    {
+      value: "other",
+      text: "Other",
+      conditional: {
+        html: textHtml
+      }
+    }
+  ]
+}) }}
+
+
+
+
+<br />
+  </div>
+
+
+
+
+<div style="margin-bottom: 20px;">
+  
+  <h2 class="govuk-heading-m" style="margin-top: 20px;">Help with this licence condition<h2>
+
+    <details class="govuk-details" data-module="govuk-details" style="margin-top: 20px;">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Restrictions that are longer than 12 hours in total
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        Restrictions can be for up to 12 hours without PPCS approval. This includes:
+
+        <ul class="govuk-list govuk-list--bullet" style="margin-top: 10px; margin-bottom: 20px;">
+          <li>the total length of up to 3 curfews</li>
+          <li>plus an hour for each time you ask them to report to a police station or approved premises in an additional licence condition</li>
+        </ul>
+        <p>If this total is more than 12 hours, or if you need more than 3 curfews, you must use a bespoke licence condition approved by PPCS.</br>
+          Note that standard curfews at approved premises do not count towards this total. 
+        </p>
+      </div>
+    </details>
+
+  </div>
+
+
+
+
+
+
+    <input type="hidden" name="7a" value="no">
+    <div class="govuk-button-group" style="padding-top: 20px;">
+    <button class="govuk-button" data-module="govuk-button" name="submit" value="continue">
+      Continue
+    </button>
+    {%if data.vary!=="yes"%}
+    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Delete this condition
+    </button>
+    {% endif %}
+    </div>
+</form>
+{% endblock %}
+

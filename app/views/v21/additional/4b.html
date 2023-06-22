@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+{% block beforeContent %}
+
+
+{% endblock %}
+
+{% block content %}
+<form action="/v21/conditions" method="post">
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+      Complete the licence conditions</h1>
+      </legend><br>
+
+
+      <div class="govuk-form-group">
+
+<p>{%if data.shownumbers=="yes"%}4B. {%endif%}Not to undertake work or other organised activity which will involve a person under the age of [INSERT AGE], either on a paid or unpaid basis without the prior approval of your supervising officer.</p>
+<label class="govuk-fieldset__legend--s" for="1a-answer">
+  Select the relevant age
+</label><br /><br />
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+        <div class="govuk-radios govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="4b-answer-age-16" name="4b-answer-age" type="radio" value="16">
+            <label class="govuk-label govuk-radios__label" for="4b-answer-age-16">
+              16 years
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="4b-answer-age-18" name="4b-answer-age" type="radio" value="18">
+            <label class="govuk-label govuk-radios__label" for="4b-answer-age-18">
+              18 years
+            </label>
+          </div>
+          <br />
+
+        </div>
+      </fieldset>
+    </div>
+                <input type="hidden" name="4b" value="no">
+          </div>
+      </div>
+      <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button" name="submit" value="continue">
+        Continue
+      </button>
+      {%if data.vary!=="yes"%}
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="submit" value="exit">
+        Save and exit
+      </button>
+      {% endif %}
+      </div>
+</form>
+{% endblock %}

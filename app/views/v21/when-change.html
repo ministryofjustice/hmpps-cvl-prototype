@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+{% block beforeContent %}
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-thirds">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                When does {% if data.edit=="yes" %}Edith Bradshaw{% else %}Adam Balasaravika{% endif %} need to go to their initial appointment?
+              </h1>
+            </legend><br>
+            <div id="passport-issued-hint" class="govuk-hint">
+              For example, 20 12 2021
+            </div>
+            <div class="govuk-date-input" id="passport-issued">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="when-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="when-day" name="when-day" value="31" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="when-month" value="12" name="when-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="when-year" name="when-year" value="2021" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+              </div>
+            </div><br><br>
+
+          </fieldset>
+        </div>
+        <div class="govuk-form-group">
+          <div class="time-picker">
+            <label class="govuk-label" for="Time">
+             Time
+            </label>
+
+
+          <div id="passport-issued-hint" class="govuk-hint">
+            For example, 9:30am or 2:55pm
+          </div>
+          <div class="govuk-date-input" id="passport-issued">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                  Hour
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="when-hour" name="when-hour" value="4" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="when-minute">
+                  Minute
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="when-minute" value="30" name="when-minute" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="when-am">
+                  am or pm
+                </label>
+                <select class="govuk-select" id="when-am" name="when-am">
+                  <option value="am">am</option>
+                  <option value="pm" selected>pm</option>
+
+                </select>
+              </div>
+          </div>
+        </div>
+        <br><br><br>
+
+          <a href="check-your-answers" class="govuk-button show-continue" style="display: inline;">
+      Continue
+    </a>
+  </fieldset>
+</div>
+
+ </div>
+</div>
+
+{% endblock %}

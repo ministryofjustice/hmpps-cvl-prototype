@@ -1,0 +1,125 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+{% block beforeContent %}
+  <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      prototype
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+
+        
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      
+    
+<span id="dob-hint" class="govuk-hint">
+  Application reference: 1234567
+</span>
+
+    </legend>
+
+  
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+      
+
+        <h1 class="govuk-heading-xl">Euston Place Dental Practice</h1>
+
+        <h2 class="govuk-heading-m"></h2>
+
+        
+
+        <nav class="app-sub-navigation" aria-label="Sub navigation">
+
+          <ul class="app-sub-navigation__list">
+        
+        
+              
+        
+                <li class="app-sub-navigation__item">
+                  <a class="app-sub-navigation__link"  href="answers">Application</a>
+                </li>
+              
+          
+              
+        
+                <li class="app-sub-navigation__item">
+                  <a class="app-sub-navigation__link" aria-current="page" href="notes">Notes</a>
+                </li>
+              
+              
+          
+        
+                <li class="app-sub-navigation__item">
+                  <a class="app-sub-navigation__link" href="timeline">Timeline</a>
+                </li>
+              
+            </ul>
+        
+        </nav>
+
+    
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="event-name">
+              Subject
+            </label>
+          </h1>
+          
+          <input class="govuk-input" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
+
+         <div id="event-name-hint" class="govuk-hint">
+           
+          </div>
+        <br><br>
+
+       
+          <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="more-detail">
+              Note
+            </label>
+          </h1>
+          
+          <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+          <div id="event-name-hint" class="govuk-hint">
+            You have 500 characters remaining
+          </div>
+        </div><br>
+
+
+        <form action="/form-handler" method="post" novalidate></form>
+
+          <input type="hidden" name="answers-checked" value="true">
+
+          <a href="notes" class="govuk-button show-continue">
+         Save note
+    </a>
+  
+
+        </form>
+            
+
+
+      
+    
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+  
+
+
+
+{% endblock %}

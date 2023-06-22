@@ -1,0 +1,187 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+{% block beforeContent %}
+  
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Prototype
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      
+  <h1 class="govuk-heading-m">Richard Curtis
+  <span class="govuk-caption-m">Prison number: A4145LG
+  </span></h1>
+        
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+               When do they need to report to the probation office?
+              </h1>
+            </legend><br>
+            <div id="passport-issued-hint" class="govuk-hint">
+              For example, 12 11 2007
+            </div>
+            <div class="govuk-date-input" id="passport-issued">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+              </div>
+            </div><br><br>
+        
+          </fieldset>
+        </div>
+        <div class="govuk-form-group">
+          <div class="time-picker">
+            <label class="govuk-label">Time</label>
+            <div class="time-picker-container">
+              <div class="govuk-form-group">
+                <select aria-label="Hours" class="govuk-select time-picker-hours" id="start-time-hours" name="startTimeHours">
+                  <option selected value="">
+                    --
+                  </option>
+                  <option value="00">
+                    00
+                  </option>
+                  <option value="01">
+                    01
+                  </option>
+                  <option value="02">
+                    02
+                  </option>
+                  <option value="03">
+                    03
+                  </option>
+                  <option value="04">
+                    04
+                  </option>
+                  <option value="05">
+                    05
+                  </option>
+                  <option value="06">
+                    06
+                  </option>
+                  <option value="07">
+                    07
+                  </option>
+                  <option value="08">
+                    08
+                  </option>
+                  <option value="09">
+                    09
+                  </option>
+                  <option value="10">
+                    10
+                  </option>
+                  <option value="11">
+                    11
+                  </option>
+                  <option value="12">
+                    12
+                  </option>
+                  <option value="13">
+                    13
+                  </option>
+                  <option value="14">
+                    14
+                  </option>
+                  <option value="15">
+                    15
+                  </option>
+                  <option value="16">
+                    16
+                  </option>
+                  <option value="17">
+                    17
+                  </option>
+                  <option value="18">
+                    18
+                  </option>
+                  <option value="19">
+                    19
+                  </option>
+                  <option value="20">
+                    20
+                  </option>
+                  <option value="21">
+                    21
+                  </option>
+                  <option value="22">
+                    22
+                  </option>
+                  <option value="23">
+                    23
+                  </option>
+                </select>
+              </div>
+              <div class="govuk-form-group">
+                <select aria-label="Minutes" class="govuk-select time-picker-minutes" id="start-time-minutes" name="startTimeMinutes">
+                  <option selected value="">
+                    --
+                  </option>
+                  <option value="00">
+                    00
+                  </option>
+                  <option value="15">
+                    15
+                  </option>
+                  <option value="30">
+                    30
+                  </option>
+                  <option value="45">
+                    45
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+
+        
+
+          <a href="answers-check" class="govuk-button show-continue" style="display: inline;">
+      Continue
+    </a>
+  </fieldset>
+</div>
+       
+ </div>
+</div>
+        
+
+
+
+{% endblock %}

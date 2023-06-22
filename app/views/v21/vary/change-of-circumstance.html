@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+{% block beforeContent %}
+<!--
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Prototype
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>-->
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-thirds"><br>
+    <span class="govuk-caption-m">CRN: A778288 | CRD: 15 May 2022 | Date of birth: 12 Mar 1975</span>
+    <h1 class="govuk-heading-m">Matt Tension</h1>
+  </div>
+</div>
+<hr class="gov-section-break gov-section-break-visible">
+
+<br />
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-thirds"><br>
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">Person released on an out of date licence</h1>
+  </div>
+</div>
+
+<form method="post" action="" >
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-third">
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        You need to check their licence is correct
+        </strong>
+      </div>
+      <p class="govuk-body">There was a late edit to this licence that the prison didn’t approve in time for the release. You must vary the licence and re-issue it if the licence the person has is wrong or remove the ‘Variation needed’ alert if it is correct</p>
+      </ul><br />
+
+      <!--<p class="govuk-body">The conditional release date is on a weekend or bank holiday.
+            Contact the prison OMU to get the release date in NOMIS updated.</p><br />-->
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Matt Tension
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            CRN
+          </dt>
+          <dd class="govuk-summary-list__value">
+            A778288
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Release date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            16 May 2022
+          </dd>
+        </div>
+      </dl>
+    </div><br />
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "View or vary licence",
+          name:"submit"
+
+        }) }}
+      </form>
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="submit" value="exit">
+          Remove alert
+          </button>
+          <span style="margin-left:580px;">
+            <a class="govuk-link"  href="discard-changes-confirm ">Leave alert and return to case list</a>
+          </span>
+        </div>
+   <!--end option 2 -->
+
+    </fieldset>
+  </div>
+</div>
+</form>
+
+
+{% endblock %}

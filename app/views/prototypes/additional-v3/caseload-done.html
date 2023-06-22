@@ -1,0 +1,273 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+{% block beforeContent %}
+  <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      prototype
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+  
+
+{% endblock %}
+
+{% block content %}
+
+
+
+        <h1 class="govuk-heading-xl">Your caseload</h1>
+
+  
+
+  
+        
+    
+    
+    
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-quarter">
+        <h2 class="govuk-heading-m">Filters</h2>
+    
+        <form action="/form-handler" method="post" novalidate>
+    
+          <input type="hidden" name="answers-checked" value="true">
+    
+          <a href="#" class="govuk-button show-continue">
+         Apply filters
+    </a>
+    
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="width-20">
+        Name or prison number
+      </label>
+      <input class="govuk-input govuk-input--width-20" id="width-20" name="width-20" type="text">
+    </div>
+    
+    
+    
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Status
+            </legend>
+            <div class="govuk-checkboxes govuk-checkboxes--small">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                 New
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                  Active
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="MOD">
+                <label class="govuk-label govuk-checkboxes__label" for="organisation-3">
+                  Pending
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+                <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+                 Received
+                </label>
+              </div>
+    
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+                <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+                 Sent
+                </label>
+              </div>
+    
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+                <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+                 Rejected
+                </label>
+              </div>
+    
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+                <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+                 Delayed
+                </label>
+              </div>
+    
+              
+            </div>
+          </fieldset>
+        </div>
+      </div>
+      <div class="govuk-grid-column-three-quarters">  
+      
+              <h2 class="govuk-heading-m"></h2>
+              
+      
+      
+              <table class="govuk-table">
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th class="govuk-table__header" scope="col"> </th>
+                    <th class="govuk-table__header" scope="col"> </th>
+                  </tr>
+                </thead>
+                
+                
+                
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                      
+                      <h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+                        <a href="profile2" class="govuk-link govuk-link--no-visited-state">
+                          Richard Curtis
+                        </a></h3>
+                        <p>Prison number: B4166LG<br>
+                          Date of birth: 2 May 1981<br>
+                          Responsible officer: Samual Toogood<br>
+                      </p>
+                    </td>
+                    <td class="govuk-summary-list__actions">
+                    
+                      <strong class="govuk-tag govuk-tag--green">
+                        Sent
+                      </strong>
+              
+                    </td>
+                  </tr>
+                  
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                      <h3 class="govuk-heading-m govuk-!-margin-bottom-2"> <a class=“govuk-link--no-visited-state” href=“”>
+                        Jonathan Briger</a></h3>
+                        <p>Prison number: A4145LG<br>
+                          Date of birth: 23 October 1986<br>
+                          Responsible officer: TBC<br>
+                      </p>
+                    </td>
+                    <td class="govuk-summary-list__actions">
+                      <strong class="govuk-tag govuk-tag--green">
+                Sent
+              </strong>
+              
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                      <h3 class="govuk-heading-m govuk-!-margin-bottom-2"> <a class=“govuk-link--no-visited-state” href=“”>
+                        Jeff Patton</a></h3>
+                        <p>Prison number: C4335LG<br>
+                          Date of birth: 13 September 1988<br>
+                          Probation officer: Louise Marshall<br>
+                      </p>
+                       
+                    </td>
+                    
+                    <td class="govuk-summary-list__actions">
+                      <strong class="govuk-tag govuk-tag--grey">
+                Delayed
+              </strong>
+              
+                    </td>
+    
+                  </td>
+                </tr>
+               
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                      <h3 class="govuk-heading-m govuk-!-margin-bottom-3"> <a class=“govuk-link--no-visited-state” href=“”>
+                        Teddy Davies</a></h3>
+                        <p>Prison number: W666LG<br>
+                          Date of birth: 20 Jauary 1999<br>
+                          Responsible officer: Samual Toogood<br>
+                      </p>
+                    </td>
+                    
+                    <td class="govuk-summary-list__actions">
+                      <strong class="govuk-tag govuk-tag--green">
+               Sent
+              </strong>
+              
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                      <h3 class="govuk-heading-m govuk-!-margin-bottom-2"> <a class=“govuk-link--no-visited-state” href=“”>
+                        Indra Sarkar</a></h3>
+                        <p>Prison number: B1245LG<br>
+                          Date of birth: 18 august 2000<br>
+                          Responsible officer: Samual Toogood<br>
+                      </p>
+                    </td>
+                    
+                    <td class="govuk-summary-list__actions">
+                      <strong class="govuk-tag govuk-tag--green">
+                        Sent
+              </strong>
+              
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                      <h3 class="govuk-heading-m govuk-!-margin-bottom-2"> <a class=“govuk-link--no-visited-state” href=“”>
+                        Andrew Garcia</a></h3>
+                        <p>Prison number: A1145LG<br>
+                          Date of birth: 12 February 2001<br>
+                          Responsible officer: Peter Langsdon<br>
+                      </p>
+                    </td>
+                    
+                    <td class="govuk-summary-list__actions">
+                      <strong class="govuk-tag govuk-tag--orange">
+                        Rejected
+              </strong>
+              
+                    </td>
+                  </tr>
+              
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                      <h3 class="govuk-heading-m govuk-!-margin-bottom-2"> <a class=“govuk-link--no-visited-state” href=“one”>
+                        Yo-yo Ma</a></h3>
+                        <p>Prison number: S5545LG<br>
+                          Date of birth: 16 May 2002<br>
+                          Responsible officer: Louise Marshall<br>
+                      </p>
+                    </td>
+                    <td class="govuk-summary-list__actions">
+                      <strong class="govuk-tag govuk-tag--yellow">
+                Delayed
+              </strong>
+              
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+      
+            
+              
+      
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+  
+
+         
+      
+
+
+{% endblock %}

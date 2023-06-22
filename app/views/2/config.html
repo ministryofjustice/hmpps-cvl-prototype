@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Manage apprentices
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    <h1 class="govuk-heading-xl">Create a licence prototype</h1>
+
+    <form method="post" action="details">
+      <div class="govuk-form-group govuk-!-margin-bottom-8">
+      <div class="govuk-radios">
+        <label class="govuk-label govuk-!-font-weight-bold" for="user">
+          Show the journey for
+        </label>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="user-employer" name="user" type="radio" value="probation" checked="checked">
+          <label class="govuk-label govuk-radios__label" for="user-employer">
+            Probation
+          </label>
+        </div>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="user-provider" name="user" type="radio" value="admin">
+          <label class="govuk-label govuk-radios__label" for="user-provider">
+            Prison Admin
+          </label>
+        </div>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="user-employer" name="user" type="radio" value="governor" checked="checked">
+          <label class="govuk-label govuk-radios__label" for="user-employer">
+            Prison Governor
+          </label>
+        </div>
+      </div>
+      </div>
+      <div class="govuk-form-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">Start</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}
+
+{% block pageScripts %}
+{{super()}}
+
+
+{% endblock %}

@@ -1,0 +1,200 @@
+
+      <!--block start-->
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9" style=" border:1px solid gray;">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" style="padding-left:5px; background-color:#ebecf0;">
+        Variation checklist
+        </dt>
+        <dd class="govuk-summary-list__value" style=" background-color:#ebecf0;">
+        <br>
+        </dd>
+        <dd class="govuk-summary-list__actions" style=" background-color:#ebecf0;">
+        <a class="govuk-link" href="question-change">
+        <span> </span>
+        </a>
+        </dd>
+        </div>
+        <div class="govuk-summary-list__row" style="background-color:#f5f5f5;">
+          <dt class="govuk-summary-list__key" style="padding-left:5px;">
+          Consultations<br />
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Who have you checked this variation request with?<br />
+          </dd>
+          <dd class="govuk-summary-list__actions" style="text-align:left;">
+         <!-- <span >Senior Probation officer
+          <br/>Police</span>-->
+
+
+          {%if (data.checkSPO=="true") %}
+  Senior probation officer (SPO)</br>
+{% endif %}
+{%if (data.checkVLO=="true") %}
+  Victim liaison officer (VLO)</br>
+{% endif %}
+{%if (data.checkPPCS=="true") %}
+  Public Protection Casework Section (PPCS)</br>
+  {% endif %}
+  {%if (data.checkAP=="true") %}
+    Approved premise (AP)</br>
+    {% endif %}
+    {%if (data.checkPOLICE=="true") %}
+      Police</br>
+    {% endif %}
+    {%if (data.checkEMS=="true") %}
+      Electronic monitoring service</br>
+    {% endif %}
+    {%if (data.otherAG) %}
+  {{data.otherAG}}</br>
+    {% endif %}
+
+
+
+          </dd>
+        </div>
+    </dl>
+
+      <!--block start-->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9" style=" border:1px solid gray;">
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" style="padding-left:5px; background-color:#ebecf0;">
+        Licence conditions added
+        </dt>
+        <dd class="govuk-summary-list__value" style=" background-color:#ebecf0;">
+        <br>
+        </dd>
+        <dd class="govuk-summary-list__actions" style=" background-color:#ebecf0;">
+        <a class="govuk-link" href="question-change">
+        <span> </span>
+        </a>
+        </dd>
+        </div>
+
+        <div class="govuk-summary-list__row"  style="background-color:#f5f5f5;">
+        <dt class="govuk-summary-list__key" style="padding-left:5px;">
+        Freedom of movement
+        </dt>
+        <dd class="govuk-summary-list__value">
+          To only attend places of worship which have been previously agreed with your supervising officer.<br>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="question-change">
+        <span>  </span>
+        </a>
+        </dd>
+        </div>
+
+      </dl><!--block end-->
+
+
+      <!--block start-->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9" style=" border:1px solid gray;">
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" style="padding-left:5px; background-color:#ebecf0;">
+        Licence conditions removed
+        </dt>
+        <dd class="govuk-summary-list__value" style=" background-color:#ebecf0;">
+        <br>
+        </dd>
+        <dd class="govuk-summary-list__actions" style=" background-color:#ebecf0;">
+        <a class="govuk-link" href="question-change">
+        <span> </span>
+        </a>
+        </dd>
+        </div>
+
+        <div class="govuk-summary-list__row"  style="background-color:#f5f5f5;">
+        <dt class="govuk-summary-list__key" style="padding-left:5px;">
+          Contact with a person
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Attend Substance Misuse Service, 123 Main Street, B9 0GZ on August 31 2022 at 12:00 pm, as directed,
+          to address your dependency on, or propensity to misuse, a controlled drug.
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="question-change">
+        <span>  </span>
+        </a>
+        </dd>
+        </div>
+      </dl><!--block end-->
+
+          <!--block start-->
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9" style=" border:1px solid gray;">
+              <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key" style="padding-left:5px; background-color:#ebecf0;">
+              Licence conditions amended
+              </dt>
+              <dd class="govuk-summary-list__value" style=" background-color:#ebecf0;">
+              <br>
+              </dd>
+              <dd class="govuk-summary-list__actions" style=" background-color:#ebecf0;">
+              <a class="govuk-link" href="question-change">
+              <span> </span>
+              </a>
+              </dd>
+              </div>
+
+             <!--<div class="govuk-summary-list__row"  style="background-color:#f5f5f5;">
+              <dt class="govuk-summary-list__key" style="padding-left:5px;">
+                Programme or set of activitiesfjslkefdjk
+              </dt>
+              <dd class="govuk-summary-list__value">
+                To comply with any requirements specified by your supervising officer for the purpose of ensuring that you address
+                your alcohol and drug problems.
+              </dd>
+              <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="question-change">
+              <span>  </span>
+              </a>
+              </dd>
+              </div>--> 
+
+              <div class="govuk-summary-list__row"  style="background-color:#f5f5f5;">
+                <dt class="govuk-summary-list__key" style="padding-left:5px;">
+                  Supervision in the community
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Report to staff at Southwell House at 09:45 am, unless otherwise authorised by your supervising officer. This condition will be reviewed by your supervising officer on a bi-weekly basis and may be amended or removed if it is felt that the level of risk you present has reduced appropriately.
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="question-change">
+                <span>  </span>
+                </a>
+                </dd>
+                </div>
+
+               <!-- <div class="govuk-summary-list__row"  style="background-color:#f5f5f5;">
+                  <dt class="govuk-summary-list__key" style="padding-left:5px;">
+                    Electronic monitoring
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    You will need to wear an electronic tag all the time until Saturday 1st October 2022 so we can check how much alcohol you are drinking, and if you are drinking alcohol when you have been told you must not. To help you drink less alcohol you must take part in any activities, like treatment programmes, your probation officer asks you to.
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="question-change">
+                  <span>  </span>
+                  </a>
+                  </dd>
+                  </div>-->
+
+              <!--  <div class="govuk-summary-list__row"  style="background-color:#f5f5f5;">
+                  <dt class="govuk-summary-list__key" style="padding-left:5px;">
+                    Drug testing
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Attend a location, as required by your supervising officer, to give a sample of oral fluid / urine in order to test whether you have any specified Class A and specified Class B drugs in your body, for the purpose of ensuring that you are complying with the condition of your licence requiring you to be of good behaviour. Do not take any action that could hamper or frustrate the drug testing process.
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="question-change">
+                  <span>  </span>
+                  </a>
+                  </dd>
+                  </div>-->
+
+                
+
+            </dl>
+            
+            <!--block end-->

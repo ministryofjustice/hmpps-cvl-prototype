@@ -1,0 +1,181 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+{% block beforeContent %}
+
+
+{% endblock %}
+
+{% block content %}
+<form action="/v21/conditions" method="post">
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+        Complete the licence condition</h1>
+      </legend><br>
+
+
+
+      <div class="govuk-form-group">
+        <p>{%if data.shownumbers=="yes"%}1A. {%endif%}You must reside within [INSERT REGION] probation region while of no fixed abode, unless otherwise approved by your supervising officer. </p>
+            <div class="govuk-form-group">
+              <label class="govuk-fieldset__legend--s" for="1a-answer">
+              Select the probation region
+            </label><br /><br />
+
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="region-1" name="probationregion" type="radio" value="North East"
+                {% if data.probationregion=="North East" %} checked {% endif %}>
+                <label class="govuk-label govuk-radios__label" for="region-1">
+                  North East
+                </label>
+              </div>
+            </div><br />
+
+            <div class="govuk-radios govuk-radios--inline">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="region-2" name="probationregion" type="radio" value="North West"
+              {% if data.probationregion=="North West" %} checked {% endif %}>
+              <label class="govuk-label govuk-radios__label" for="region-2">
+                North West
+              </label>
+            </div>
+          </div><br />
+
+          <div class="govuk-radios govuk-radios--inline">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="region-3" name="probationregion" type="radio" value="Greater Manchester"
+              {% if data.probationregion=="Greater Manchester" %} checked {% endif %}>
+              <label class="govuk-label govuk-radios__label" for="region-3">
+                Greater Manchester
+              </label>
+            </div>
+          </div><br />
+
+        <div class="govuk-radios govuk-radios--inline">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="region-3a" name="probationregion" type="radio" value="Yorkshire and Humberside"
+          {% if data.probationregion=="Yorkshire and Humberside" %} checked {% endif %}>
+          <label class="govuk-label govuk-radios__label" for="region-3a">
+            Yorkshire and Humberside
+          </label>
+        </div>
+      </div><br />
+
+      <div class="govuk-radios govuk-radios--inline">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="region-4" name="probationregion" type="radio" value="East Midlands"
+        {% if data.probationregion=="East Midlands" %} checked {% endif %}>
+        <label class="govuk-label govuk-radios__label" for="region-4">
+          East Midlands
+        </label>
+      </div>
+    </div><br />
+
+    <div class="govuk-radios govuk-radios--inline">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="region-5" name="probationregion" type="radio" value="West Midlands"
+        {% if data.probationregion=="West Midlands" %} checked {% endif %}>
+        <label class="govuk-label govuk-radios__label" for="region-5">
+          West Midlands
+        </label>
+      </div>
+    </div><br />
+
+    <div class="govuk-radios govuk-radios--inline">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="region-6" name="probationregion" type="radio" value="East of England"
+        {% if data.probationregion=="East of England" %} checked {% endif %}>
+        <label class="govuk-label govuk-radios__label" for="region-6">
+          East of England
+        </label>
+      </div>
+    </div><br />
+
+    <div class="govuk-radios govuk-radios--inline">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="region-7" name="probationregion" type="radio" value="South West"
+        {% if data.probationregion=="South West" %} checked {% endif %}>
+        <label class="govuk-label govuk-radios__label" for="region-7">
+          South West
+        </label>
+      </div>
+    </div><br />
+
+    <div class="govuk-radios govuk-radios--inline">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="region-8" name="probationregion" type="radio" value="South Central"
+        {% if data.probationregion=="South Central" %} checked {% endif %}>
+        <label class="govuk-label govuk-radios__label" for="region-8">
+          South Central
+        </label>
+      </div>
+    </div><br />
+
+    <div class="govuk-radios govuk-radios--inline">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="region-9" name="probationregion" type="radio" value="London"
+        {% if data.probationregion=="London" %} checked {% endif %}>
+        <label class="govuk-label govuk-radios__label" for="region-9">
+          London
+        </label>
+      </div>
+    </div><br />
+
+    <div class="govuk-radios govuk-radios--inline">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="region-10" name="probationregion" type="radio" value="Kent, Surrey and Sussex"
+        {% if data.probationregion=="Kent, Surrey and Sussex" %} checked {% endif %}>
+        <label class="govuk-label govuk-radios__label" for="region-10">
+          Kent, Surrey and Sussex
+        </label>
+      </div>
+    </div><br />
+
+    <div class="govuk-radios govuk-radios--inline">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="region-11" name="probationregion" type="radio" value="Wales"
+        {% if data.probationregion=="Wales" %} checked {% endif %}>
+        <label class="govuk-label govuk-radios__label" for="region-11">
+          Wales
+        </label>
+      </div>
+    </div>
+
+
+            <!--
+              <input class="govuk-input govuk-input--width-10" id="1a-answer" name="1a-answer" type="text" autocomplete="postal-code"></div>
+            -->
+            <input type="hidden" name="1a" value="no">
+
+          </div>
+      </div>
+  </fieldset>
+  </div>
+  <div class="govuk-button-group">
+  <button class="govuk-button" data-module="govuk-button" name="submit" value="continue">
+    Continue
+  </button>
+  {%if data.vary!=="yes"%}
+  <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="submit" value="exit">
+    Save and exit
+  </button>
+  {% endif %}
+  </div>
+</form>
+{% endblock %}

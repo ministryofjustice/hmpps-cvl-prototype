@@ -1,0 +1,383 @@
+{% extends "layout.html" %}
+
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+{% endblock %}
+
+{% block content %}
+{% include "templates/banners/layout-name-vary-cody.html" %}<br />
+<h1 class="govuk-heading-xl">Current licence and licence history</h1>
+{% if data.journey=="varynonapproved"%}
+<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Important
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading" style="max-width:1100px;">
+      This licence variation needs attention due to feedback from the approver.
+
+    </p>
+  </div>
+</div>
+{% endif %}
+
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#past-day">
+        Current licence
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-week">
+         Previous licences and offences
+      </a>
+    </li>
+  </ul>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+    <h2 class="govuk-heading-l">Previous licences and offences</h2>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <div class="moj-timeline">
+            <div class="moj-timeline__item">
+              <div class="moj-timeline__header">
+                <h2 class="moj-timeline__title">Assault and battery</h2>
+                <p class="moj-timeline__byline">HDC licence</p>
+              </div>
+              <p class="moj-timeline__date">
+                <time datetime="2019-05-28T10:45:00.000Z">4 March 2020 - 4 September 2020</time>
+              </p>
+              <div class="moj-timeline__description">
+                <details class="govuk-details govuk-!-margin-bottom-0">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      View details
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+        <!--Here-->
+
+                    <div>
+                    <ol class="moj-task-list" >
+                    <li >
+                    <h2 class="moj-task-list__section" >
+                    <span class="moj-task-list__section-number"></span>Assault and battery</h2>
+                    <ul class="moj-task-list__items" >
+                    <li class="moj-task-list__item" >
+                    <span style="float:left; width:375px;"><strong>Licence start date</strong></span>
+                    <span style="float:left;">4 March 2020</span>
+                    </li>
+                    <li class="moj-task-list__item" >
+                    <span style="float:left; width:375px;"><strong>Licence end date</strong></span>
+                    <span style="float:left; ">4 September 2020</span>
+                    </li>
+                    <li class="moj-task-list__item" >
+                    <span style="float:left; width:375px;"><strong>Event index</strong></span>
+                    <span style="float:left; ">5</span>
+                    </li>
+                    <li class="moj-task-list__item" >
+                    <span style="float:left; width:375px;"><strong>Conviction date</strong></span>
+                    <span style="float:left;">4 September 2019</span>
+                    </li>
+
+                    <li class="moj-task-list__item" >
+                    <span style="float:left; width:375px;"><strong>Sentence</strong></span>
+                    <span style="float:left; ">12 Months</span>
+                    </li>
+
+                    <li class="moj-task-list__item" >
+                    <span style="float:left; width:375px;"><strong>Prison</strong></span>
+                     <span style="float:left;">HMP The Verne</span>
+                     </li>
+
+                     <li class="moj-task-list__item" >
+                     <span style="float:left; width:375px;"><strong>Probation contact</strong></span>
+                      <span style="float:left;">Joan Smith, Bournemouth</span>
+                      </li>
+                      <li class="moj-task-list__item" >
+                      <span style="float:left; width:375px;"><strong>Probation number</strong></span>
+                       <span style="float:left;">01202 200200</span>
+                       </li>
+                       <li >
+                         <br />
+                       <span style="float:left;"><strong><a href="#">View the full licence and history</a></strong></span>
+                        </li>
+                    </ul>
+                    </ol>
+                    </div>
+                    </div>
+                </details>
+              </div>
+            </div>
+            <div class="moj-timeline__item">
+              <div class="moj-timeline__header">
+                <h2 class="moj-timeline__title">Driving whilst disqualified</h2>
+                <p class="moj-timeline__byline">Standard determinate licence</p>
+              </div>
+              <p class="moj-timeline__date">
+                <time datetime="2019-05-21T13:15:00.000Z">12 May 2018 - 12 November 2018</time>
+              </p>
+              <div class="moj-timeline__description">
+                <details class="govuk-details govuk-!-margin-bottom-0">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      View details
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+        <!--Here-->
+
+                    <div>
+                    <ol class="moj-task-list" >
+                    <li >
+                    <h2 class="moj-task-list__section" >
+                    <span class="moj-task-list__section-number"></span>Assault and battery</h2>
+                    <ul class="moj-task-list__items" >
+                    <li class="moj-task-list__item" >
+                    <span style="float:left; width:375px;"><strong>Licence start date</strong></span>
+                    <span style="float:left;">12 May 2018</span>
+                    </li>
+                    <li class="moj-task-list__item" >
+                    <span style="float:left; width:375px;"><strong>Licence end date</strong></span>
+                    <span style="float:left;">12 November 2018</span>
+                    </li>
+                    <li class="moj-task-list__item" >
+                    <span style="float:left; width:375px;"><strong>Event index</strong></span>
+                    <span style="float:left;">4</span>
+                    </li>
+                    <li class="moj-task-list__item" >
+                    <span style="float:left; width:375px;"><strong>Conviction date</strong></span>
+                    <span style="float:left;">12 November 2017</span>
+                    </li>
+                    <li class="moj-task-list__item" >
+                    <span style="float:left; width:375px;"><strong>Sentence</strong></span>
+                    <span style="float:left;">12 Months</span>
+                    </li>
+
+                    <li class="moj-task-list__item" >
+                    <span style="float:left; width:375px;"><strong>Prison</strong></span>
+                     <span style="float:left;">HMP Pentonville</span>
+                     </li>
+                     <li class="moj-task-list__item" >
+                     <span style="float:left; width:375px;"><strong>Probation contact</strong></span>
+                      <span style="float:left;">Lenil Oficijik, London</span>
+                      </li>
+                      <li class="moj-task-list__item" >
+                      <span style="float:left; width:375px;"><strong>Probation number</strong></span>
+                       <span style="float:left;">0207 109 2922</span>
+                       </li>
+                       <li >
+                         <br />
+                       <span style="float:left;"><strong><a href="#">View the full licence and history</a></strong></span>
+                        </li>
+                    </ul>
+                    </ol>
+                    </div>
+                    </div>
+                </details>
+              </div>
+            </div>
+        </tr>
+      </thead>
+    </table>
+  </div>
+
+
+  <div class="govuk-tabs__panel" id="past-day">
+    <h2 class="govuk-heading-l">Current licence</h2>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th style="width:30%;"></th>
+          <th></th>
+
+          <!-- if vary unapproved journey-->
+          {% if data.journey=="varynonapproved"%}
+          <form method="" action="PDF">
+            <input type="hidden" name="needadditional" value="yes">
+            <input type="hidden" name="needbespoke" value="yes">
+            <input type="hidden" name="needpss" value="yes">
+          <div class="govuk-button-group">
+          <!--  {{ govukButton({
+              text: "View or print current licence PDF"
+            }) }}
+
+            <a href="discard-vary-confirm" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" type="submit">Discard variation request</a>
+-->
+            <form method="" action="question">
+              <input type="hidden" name="needadditional" value="yes">
+              <input type="hidden" name="needbespoke" value="yes">
+              <input type="hidden" name="needpss" value="yes">
+            <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Edit variation"
+            }) }}
+
+            <a href="discard-vary-confirm" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" type="submit">Discard variation</a>
+          </div>
+        </form>
+                {% elseif (data.varycomplete=="yes") or (data.vary=="yes") %}
+                <form method="" action="question">
+                  <input type="hidden" name="needadditional" value="yes">
+                  <input type="hidden" name="needbespoke" value="yes">
+                  <input type="hidden" name="needpss" value="yes">
+                <div class="govuk-button-group">
+                {{ govukButton({
+                  text: "Edit variation"
+                }) }}
+
+                <a href="discard-vary-confirm" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" type="submit">Discard variation</a>
+              </div>
+            </form>
+          {% else %}
+          <form method="" action="/check-your-answers-cody">
+            <input type="hidden" name="needadditional" value="yes">
+            <input type="hidden" name="needbespoke" value="yes">
+            <input type="hidden" name="needpss" value="yes">
+          <div class="govuk-button-group">
+            <a href="check-your-answers-cody.html" class="govuk-button" style="text-decoration: none;">View or vary licence</a>
+          {% endif %}
+        </div>
+      </form>
+
+
+
+  <div class="moj-timeline">
+    {% if data.journey=="varynonapproved"%}
+    <div class="moj-timeline__item">
+      <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">Variation in progress</h2>
+        <p class="moj-timeline__byline">by Paul Farmer</p>
+      </div>
+      <p class="moj-timeline__date">
+        <time datetime="2019-05-28T10:45:00.000Z">last update:
+          {% if data.varynonapprovedcomplete=="yes"%}16
+            {% elseif data.journey=="varynonapproved" %}14
+            {% else %}12
+          {% endif %}
+
+          March 2022 at 10:45am</time>
+      </p>
+      <div class="moj-timeline__description">
+        <ul class="moj-timeline__documents" style="font-size:.85em;">
+        <!--  {% if data.journey=="varynonapproved"%}
+              <span style="color:red; font-weight:bold; font-size:1.1em;">!</span> This licence variation <strong>needs attention</strong> due to feedback from the approver.
+
+          {% endif %}
+        <br /><br />-->
+            <li class="moj-timeline__document-item" style="margin-left:23px;">
+              <a href="vary-request-status">
+                <!--<img src="https://hmcts-design-system.herokuapp.com/hmcts-assets/images/icon-document.svg"/> -->
+                Attention needed: view variation details</a>
+              </a>
+            </li>
+          </ul>
+        </div>
+    </div>
+
+    {% endif %}
+
+
+    {%if (data.varycomplete=="yes") or  (data.vary=="yes") %}
+    <div class="moj-timeline__item">
+      <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">Variation in progress</h2>
+        <p class="moj-timeline__byline">by Paul Farmer</p>
+      </div>
+      <p class="moj-timeline__date">
+        <time datetime="2019-05-28T10:45:00.000Z">last update:
+          {% if data.varynonapprovedcomplete=="yes"%}16
+            {% elseif data.journey=="varynonapproved"%}14
+            {% else %}12
+          {% endif %}
+
+          March 2022 at 10:45am</time>
+      </p>
+      <div class="moj-timeline__description">
+        <ul class="moj-timeline__documents" style="font-size:.85em;"><!--This variation is awaiting approval and is not yet active on this licence.<br /><br />-->
+            <li class="moj-timeline__document-item" style="margin-left:23px;">
+              <a href="vary-request-status">
+              <!--  <img src="https://hmcts-design-system.herokuapp.com/hmcts-assets/images/icon-document.svg"/>-->
+               View variation details</a>
+              </a>
+            </li>
+          </ul>
+        </div>
+    </div>
+
+    {% endif %}
+
+
+
+
+    <div class="moj-timeline__item">
+      <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">Licence varied </h2>
+        <p class="moj-timeline__byline">by Paul Farmer</p>
+      </div>
+      <p class="moj-timeline__date">
+        <time datetime="2019-05-28T10:45:00.000Z">3 December 2021</time>
+      </p>
+      <div class="moj-timeline__description">
+          <ul class="moj-timeline__documents" style="font-size:.85em;"><!--This variation has been approved and is active on version 2 of this licence.<br /><br />-->
+            <li class="moj-timeline__document-item" style="margin-left:23px;">
+              <a href="vary-request-status-complete">
+              <!--  <img src="https://hmcts-design-system.herokuapp.com/hmcts-assets/images/icon-document.svg"/> -->
+              View variation details</a>
+            </li>
+            <li class="moj-timeline__document-item">
+              <a href="PDF">
+                <img src="https://hmcts-design-system.herokuapp.com/hmcts-assets/images/icon-document.svg"/>
+                View or print version 2 of this licence PDF</a>
+            </li>
+          </ul>
+        </div>
+    </div>
+    <div class="moj-timeline__item">
+      <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">Licence created </h2>
+        <p class="moj-timeline__byline">by Paul Farmer</p>
+      </div>
+      <p class="moj-timeline__date">
+        <time datetime="2019-05-21T13:15:00.000Z">12 November 2021</time>
+      <br />
+    </p>
+    <div class="moj-timeline__description">
+      <ul class="moj-timeline__documents" style="font-size:.85em;"><!--Version 1 of this licence has been created.<br /><br />-->
+        <li class="moj-timeline__document-item">
+          <a href="PDF">
+            <img src="https://hmcts-design-system.herokuapp.com/hmcts-assets/images/icon-document.svg"/>
+            View or print version 1 of this licence PDF</a>
+          </li>
+      </ul>
+    </div>
+</div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month">
+    <h2 class="govuk-heading-l">Version 2</h2>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th style="width:30%;"></th>
+          <th></th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+{% endblock %}

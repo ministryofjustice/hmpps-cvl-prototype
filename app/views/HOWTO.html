@@ -1,0 +1,57 @@
+<h1>Create a new proto version</h1>
+
+<p>We will use v18 as the last version and we are creating v19 as an example.<br />
+In protos:</p>
+
+<ol>
+<li> app > routes > v18.js
+  <ul>
+<li>Duplicate latest version (for example v18)</li>
+<li>Rename to next version (example v19)</li>
+<li>Open v19.js</li>
+<li>On line 3: var version = '/v18'; change to var version = '/v19';</li>
+  </ul>
+</li>
+<br />
+
+
+
+
+<li>app > routes.js
+  <ul>
+<li>Copy and paste whole line require('./routes/v18.js')(router);</li>
+<li>Change to new version require('./routes/v19.js')(router);</li>
+  </ul>
+</li>
+<br />
+
+
+<li>app > views
+  <ul>
+<li>Duplicate latest version (v18) folder</li>
+<li>Rename v19</li>
+<li>Open v19</li>
+<li>Select folder</li>
+<li>Search 'in folder' for v18 and replace with v19</li>
+  </ul>
+</li>
+<br />
+
+<li>app > views > v19 > additional
+  <ul>
+<li>Select folder</li>
+<li>Search 'in folder' for v18 and replace with v19</li>
+  </ul>
+</li>
+<br />
+
+<li>app > views > index
+  <ul>
+<li>Copy the last version text:</li>
+<li>Change</li>
+<a href="/v18/config" to <a href="/v19/config"
+>v18</a>to >v19</a></li>
+<li>On old v18 version change In Design to ready for UR (can use the html form <tr> block from v17)</li>
+  </ul>
+</li>
+</ol>

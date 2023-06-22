@@ -1,0 +1,370 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+
+{% include "layout-name.html" %}
+
+{% endblock %}
+
+{% block content %}
+<form action="/v21/conditions" method="post">
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+      Complete the licence condition</h1>
+      </legend><br>
+      <div class="govuk-form-group">
+<p>{%if data.shownumbers=="yes"%}9B. {%endif%}Report to staff at [NAME OF POLICE STATION] at [TIME / DAILY], unless otherwise authorised by your supervising officer. This condition will be reviewed by your supervising officer on a [WEEKLY / MONTHLY / ETC] basis and may be amended or removed if it is felt that the level of risk you present has reduced appropriately.
+</p>
+
+
+
+<!--<p><span class="govuk-hint">
+If you want to add more than two reporting times per day this must be a bespoke condition approved by PPCS
+Enter name of approved premises.</span>
+</p>-->
+
+  <div class="govuk-form-group" style="padding-top: 10px;">
+    <label class="govuk-fieldset__legend--s" for="3c-address-town">
+      Enter name of police station
+    </label><br /><br />
+    <input class="govuk-input govuk-input--width-30" id="3c-address-town" name="3c-address-town" type="text" autocomplete="3c-address-level2"></div>
+    <br />
+
+    <!--START set dynamic radio hide/show text-->
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+    {% from "govuk/components/input/macro.njk" import govukInput %}
+
+    {% set textHtmlOther %}
+    {{ govukInput({
+      id: "Enter the other period",
+      name: "Enter the other period",
+      type: "tel",
+      autocomplete: "tel",
+      classes: "govuk-fieldset__legend--s govuk-input govuk-input--width-30",
+      label: {
+        text: "Enter the other period"
+      }
+    }) }}
+    {% endset -%}
+
+    {% set textHtmlReview %}
+    {{ govukInput({
+      id: "Enter the review period",
+      name: "Enter the review period",
+      type: "tel",
+      autocomplete: "tel",
+      classes: "govuk-fieldset__legend--s govuk-input govuk-input--width-30",
+      label: {
+        text: "Enter the review period"
+      }
+    }) }}
+    {% endset -%}
+
+    {% set textHtmlTimesOne %}
+    <div class="govuk-form-group">
+    <div class="time-picker">
+    <label class="govuk-fieldset__legend--s" for="Time">
+     Enter the reporting time
+    </label>
+    <div id="passport-issued-hint" class="govuk-hint">
+    For example, 9:30am or 2:55pm
+    </div>
+    <div class="govuk-date-input" id="passport-issued">
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+          Hour
+        </label>
+        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+    </div>
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+          Minute
+        </label>
+        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+    </div>
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+          am or pm
+        </label>
+        <select class="govuk-select" id="when-am" name="when-am">
+          <option value="am" selected>am</option>
+          <option value="pm">pm</option>
+
+        </select>
+      </div>
+    </div>
+    </div>
+    <br /><br />
+    </div>
+    </div>
+    {% endset -%}
+
+    {% set textHtmlTimesTwo %}
+    <div class="govuk-form-group">
+    <div class="time-picker">
+    <label class="govuk-fieldset__legend--s" for="Time">
+     Enter the first reporting time
+    </label>
+    <div id="passport-issued-hint" class="govuk-hint">
+    For example, 9:30am or 2:55pm
+    </div>
+    <div class="govuk-date-input" id="passport-issued">
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+          Hour
+        </label>
+        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+    </div>
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+          Minute
+        </label>
+        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+    </div>
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+          am or pm
+        </label>
+        <select class="govuk-select" id="when-am" name="when-am">
+          <option value="am" selected>am</option>
+          <option value="pm">pm</option>
+        </select>
+      </div>
+    </div>
+    </div>
+    <br /><br />
+    </div>
+    </div>
+    <div class="govuk-form-group">
+    <div class="time-picker">
+    <label class="govuk-fieldset__legend--s" for="Time">
+     Enter the second reporting time
+    </label>
+    <div id="passport-issued-hint" class="govuk-hint">
+    For example, 9:30am or 2:55pm
+    </div>
+    <div class="govuk-date-input" id="passport-issued">
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+          Hour
+        </label>
+        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+    </div>
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+          Minute
+        </label>
+        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+    </div>
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+          am or pm
+        </label>
+        <select class="govuk-select" id="when-am" name="when-am">
+          <option value="am" selected>am</option>
+          <option value="pm">pm</option>
+        </select>
+      </div>
+    </div>
+    </div>
+    <br /><br />
+    </div>
+    </div>
+    {% endset -%}
+    <!--END set dynamic radio hide/show text-->
+
+    {{ govukRadios({
+      idPrefix: "contact",
+      name: "contact",
+      fieldset: {
+        legend: {
+          text: "Select when the person needs to report",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+
+      items: [
+      {
+        value: "dailyeveryday",
+        text: "Daily",
+        conditional: {
+          html: emailHtml
+        }
+      },
+      {
+        value: "dailyeveryday",
+        text: "Monday to Friday",
+        conditional: {
+          html: emailHtml
+        }
+      },
+      {
+        value: "other",
+        text: "Other",
+        conditional: {
+          html: textHtmlOther
+        }
+      }
+      ]
+    }) }}
+    <br />
+
+    {{ govukRadios({
+      idPrefix: "contact2",
+      name: "contact2",
+      fieldset: {
+        legend: {
+          text: "Select how many times each day they need to report",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      hint: {
+        text: ""
+      },
+      items: [
+        {
+          value: "once",
+          text: "Once a day",
+          conditional: {
+            html: textHtmlTimesOne
+          }
+        },
+        {
+          value: "twice",
+          text: "Twice a day",
+          conditional: {
+            html: textHtmlTimesTwo
+          }
+        }
+      ]
+    }) }}
+
+
+
+<div class="govuk-form-group">
+
+  {% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{{ govukRadios({
+  idPrefix: "contact",
+  name: "contact",
+  fieldset: {
+    legend: {
+      text: "Enter review period",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: ""
+  },
+  items: [
+    {
+      value: "weekly",
+      text: "Weekly",
+      conditional: {
+        html: emailHtml
+      }
+    },
+    {
+      value: "monthly",
+      text: "Monthly",
+      conditional: {
+        html: phoneHtml
+      }
+    },
+    {
+      value: "review",
+      text: "Other",
+      conditional: {
+        html: phoneHtml
+      }
+    }
+  ]
+}) }}
+
+<div style="margin-bottom: -30px; padding-top: 15px;">
+  
+  <h2 class="govuk-heading-m" style="margin-top: 20px;">Help with this licence condition<h2>
+
+    <details class="govuk-details" data-module="govuk-details" style="margin-top: 20px;">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          If you are also adding a curfew to this licence
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+      <p>Restrictions can be for up to 12 hours without PPCS approval. This includes:</p>
+        <ul class="govuk-list govuk-list--bullet" style="margin-top: -10px; margin-bottom: 20px;">
+          <li>the total length of up to 3 curfews</li>
+          <li>plus an hour for each time you ask them to report to a police station or approved premises</li>
+        </ul>
+      
+      <p>If this total is more than 12 hours, you must use a bespoke licence condition approved by PPCS.</p>
+      </div>
+    </details>
+
+    <details class="govuk-details" data-module="govuk-details" style="margin-top: -20px;">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          If this person needs to report more than twice a day
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        
+        <p>You must add this as a bespoke licence condition approved by PPCS.</p>
+
+      </div>
+    </details>
+
+  </div>
+
+
+<br />
+  </div>
+    <input type="hidden" name="9b" value="no">
+    <div class="govuk-button-group">
+    <button class="govuk-button" data-module="govuk-button" name="submit" value="continue">
+      Continue
+    </button>
+    {%if data.vary!=="yes"%}
+    <!--<button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="submit" value="exit">
+      Save and exit
+    </button>-->
+    <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="" value="">
+      Delete this condition
+     </button>
+    {% endif %}
+    </div>
+</form>
+{% endblock %}

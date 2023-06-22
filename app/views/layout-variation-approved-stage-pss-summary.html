@@ -1,0 +1,185 @@
+
+      <!--block start-->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9" style=" border:1px solid gray; background-color:#f5f5f5;">
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" style="padding-left:5px; background-color:#ebecf0;">
+        Status and probation practitioner's reason for the variation
+        <dd class="govuk-summary-list__value" style=" background-color:#ebecf0;">
+        <br>
+        </dd>
+        <dd class="govuk-summary-list__actions" style=" background-color:#ebecf0;">
+        <a class="govuk-link" href="question-change">
+        <span> </span>
+        </a>
+        </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" style="padding-left:5px;">
+        Status
+        <br />
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <strong>Submitted for approval</strong><br />
+        </dd>
+        <dd class="govuk-summary-list__actions" style="padding-right:10px;">
+
+        </dd>
+        </div>
+
+      <div class="govuk-summary-list__row" style="background-color:#f5f5f5;">
+      <dt class="govuk-summary-list__key" style="padding-left:5px;">
+       Variation reason<br/><br />
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['reason-textbox']}}</dd>
+      <dd class="govuk-summary-list__actions" style="text-align:left;">
+
+      <span> By Paul Farmer<br />
+        Probation practitioner<br />
+      12 March 2022 </span>
+      </dd>
+      </div>
+    </dl><!--block end-->
+
+   <dl class="govuk-summary-list govuk-!-margin-bottom-9" style=" border:1px solid gray;">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" style="padding-left:5px; background-color:#ebecf0;">
+        Variation checklist
+        </dt>
+        <dd class="govuk-summary-list__value" style=" background-color:#ebecf0;">
+        <br>
+        </dd>
+        <dd class="govuk-summary-list__actions" style=" background-color:#ebecf0;">
+        <a class="govuk-link" href="question-change">
+        <span> </span>
+        </a>
+        </dd>
+        </div>
+        <div class="govuk-summary-list__row" style="background-color:#f5f5f5;">
+          <dt class="govuk-summary-list__key" style="padding-left:5px;">
+          Consultations<br />
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Who have you checked this variation request with?<br />
+          </dd>
+          <dd class="govuk-summary-list__actions" style="text-align:left;">
+          
+
+            {%if (data.checkSPO=="true") %}
+            Senior probation officer (SPO)</br>
+            {% endif %}
+            {%if (data.checkVLO=="true") %}
+              Victim liaison officer (VLO)</br>
+            {% endif %}
+            {%if (data.checkPPCS=="true") %}
+                Public Protection Casework Section (PPCS)</br>
+              {% endif %}
+              {%if (data.checkAP=="true") %}
+                  Approved premise (AP)</br>
+                {% endif %}
+                {%if (data.checkPOLICE=="true") %}
+                  Police</br>
+                {% endif %}
+                {%if (data.checkEMS=="true") %}
+                  Electronic monitoring service</br>
+                {% endif %}
+                {%if (data.otherAG) %}
+              {{data.otherAG}}
+                {% endif %}
+            
+
+          </dd>
+        </div>
+    </dl>
+      <!--block start-->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9" style=" border:1px solid gray;">
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" style="padding-left:5px; background-color:#ebecf0;">
+        Licence conditions added
+        </dt>
+        <dd class="govuk-summary-list__value" style=" background-color:#ebecf0;">
+        <br>
+        </dd>
+        <dd class="govuk-summary-list__actions" style=" background-color:#ebecf0;">
+        <a class="govuk-link" href="question-change">
+        <span> </span>
+        </a>
+        </dd>
+        </div>
+
+        <div class="govuk-summary-list__row"  style="background-color:#f5f5f5;">
+        <dt class="govuk-summary-list__key" style="padding-left:5px;">
+        None
+        </dt>
+        <dd class="govuk-summary-list__value">
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="question-change">
+        <span>  </span>
+        </a>
+        </dd>
+        </div>
+      </dl><!--block end-->
+
+
+      <!--block start-->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9" style=" border:1px solid gray;">
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" style="padding-left:5px; background-color:#ebecf0;">
+        Licence conditions removed
+        </dt>
+        <dd class="govuk-summary-list__value" style=" background-color:#ebecf0;">
+        <br>
+        </dd>
+        <dd class="govuk-summary-list__actions" style=" background-color:#ebecf0;">
+        <a class="govuk-link" href="question-change">
+        <span> </span>
+        </a>
+        </dd>
+        </div>
+
+        <div class="govuk-summary-list__row"  style="background-color:#f5f5f5;">
+        <dt class="govuk-summary-list__key" style="padding-left:5px;">
+        None
+        </dt>
+        <dd class="govuk-summary-list__value">
+        
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="question-change">
+        <span>  </span>
+        </a>
+        </dd>
+        </div>
+      </dl><!--block end-->
+
+          <!--block start-->
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9" style=" border:1px solid gray;">
+              <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key" style="padding-left:5px; background-color:#ebecf0;">
+              Licence conditions amended
+              </dt>
+              <dd class="govuk-summary-list__value" style=" background-color:#ebecf0;">
+              <br>
+              </dd>
+              <dd class="govuk-summary-list__actions" style=" background-color:#ebecf0;">
+              <a class="govuk-link" href="question-change">
+              <span> </span>
+              </a>
+              </dd>
+              </div>
+              <div class="govuk-summary-list__row"  style="background-color:#f5f5f5;">
+              <dt class="govuk-summary-list__key" style="padding-left:5px;">
+                Drug appointments
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Attend Fake Addiction Centre, Fake Town, Dorset, BH13 7HH as directed, to address your dependency on, or propensity to misuse, a controlled drug.
+              </dd>
+              <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="question-change">
+              <span>  </span>
+              </a>
+              </dd>
+              </div>
+            </dl><!--block end-->

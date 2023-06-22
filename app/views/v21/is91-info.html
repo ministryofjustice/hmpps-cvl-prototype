@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+{% endblock %}
+
+{% block content %}
+{% include "layout-name.html" %}<br />
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+    
+    <h1 class="govuk-heading-l">Licences for people on IS91 immigration detention</h1>
+    
+    <p>You must create a licence for this person in time for their CRD, even though they will be held beyond this date on IS91 immigration detention.</p>
+    <p>As soon as their CRD passes, their licence will become active and you will be responsible for managing the case. You will need to vary their licence if you need to update it.</p>
+    
+    
+    <button class="govuk-button" data-module="govuk-button" style="margin-top: 10px;">
+      Continue
+    </button>
+
+
+  </div> 
+</div>
+
+
+
+
+{% endblock %}

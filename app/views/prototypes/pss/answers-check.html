@@ -1,0 +1,130 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+{% block beforeContent %}
+  <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Prototype
+    </strong>
+    
+  </p>
+</div>
+
+{% endblock %}
+
+{% block content %}
+<h1 class="govuk-heading-m">
+  <span class="govuk-caption-m">Adam Balasaravika
+  </span></h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+        <h1 class="govuk-heading-l">Check your answers</h1><br>
+
+
+        <h2 class="govuk-heading-m"> Additional licence condition details
+        </h2>
+
+        
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Additional conditions
+            </dt>
+            <dd class="govuk-summary-list__value">
+              No
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"></span>
+              </a>
+            </dd>
+          </div>
+          
+        </dl><br><br>
+
+        <h2 class="govuk-heading-m"> Bespoke licence condition details
+        </h2>
+
+        
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Bespoke condition
+            </dt>
+            <dd class="govuk-summary-list__value">
+              No
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"></span>
+              </a>
+            </dd>
+          </div>
+          
+        </dl><br><br>
+
+        <h2 class="govuk-heading-m">Post sentence supervision additional condition details</h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Drug appointment
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Attend [INSERT APPOINTMENT TIME DATE AND ADDRESS], as directed, to address your dependency on, or propensity to misuse, a controlled drug.<br>
+              <strong>
+                {{ data['1-full-name'] }}<br>
+                {{ data['1-building'] }}, 
+                {{ data['1-street'] }}, 
+                {{ data['1-address-town'] }}, 
+                {{ data['1-address-county'] }},
+                {{ data['1-address-postcode'] }}</strong>
+            
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="conditions-pss">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Drug testing
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Attend [INSERT NAME AND ADDRESS], as reasonably required by your supervisor, to give a sample of oral fluid / urine in order to test whether you have any specified Class A or specified Class B drugs in your body, for the purpose of ensuring that you are complying with the requirement of your supervision period requiring you to be of good behaviour.<br> <br>
+              <strong>
+                {{ data['full-name'] }}<br>
+                {{ data['building'] }}, 
+                {{ data['street'] }}, 
+                {{ data['address-town'] }}, 
+                {{ data['address-county'] }},
+                {{ data['address-postcode'] }}</strong>
+              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="conditions-pss.html">
+               Change <span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+
+        <a href="confirmation" class="govuk-button" type="submit">Send licence to prison</a>
+      </div>
+    </div>
+  
+
+
+{% endblock %}

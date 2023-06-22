@@ -1,0 +1,423 @@
+{% extends "layout.html" %}
+
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+{% endblock %}
+
+{% block content %}
+{% include "templates/banners/layout-name-vary.html" %}<br />
+<h1 class="govuk-heading-xl">Current licence and licence history</h1>
+{% if data.journey=="varynonapproved"%}
+<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Important
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading" style="max-width:1100px;">
+      This licence variation request needs attention due to feedback from the approver.
+
+    </p>
+  </div>
+</div>
+{% endif %}
+
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#past-day">
+        Current licence
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-week">
+         Previous licences and offences
+      </a>
+    </li>
+
+  </ul>
+
+
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+    <h2 class="govuk-heading-l">Previous licences and offences</h2>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+
+
+          <div class="moj-timeline">
+
+
+
+            <div class="moj-timeline__item">
+              <div class="moj-timeline__header">
+                <h2 class="moj-timeline__title">Assault and battery</h2>
+
+                <p class="moj-timeline__byline">HDC licence</p>
+
+              </div>
+
+              <p class="moj-timeline__date">
+                <time datetime="2019-05-28T10:45:00.000Z">4 March 2020 - 4 September 2020</time>
+              </p>
+
+              <div class="moj-timeline__description">
+                <details class="govuk-details govuk-!-margin-bottom-0">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      View details
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+        <!--Here-->
+
+                    <div>
+                    <ol class="moj-task-list" >
+                    <li >
+                    <h2 class="moj-task-list__section" >
+                    <span class="moj-task-list__section-number"></span>Assault and battery</h2>
+                    <ul class="moj-task-list__items" >
+                    <li class="moj-task-list__item" >
+                    <span style="float:left;"><strong>Conviction date:</strong></span>
+                    <span style="float:left; margin-left:247px;">4 September 2019</span>
+                    </li>
+                    <li class="moj-task-list__item" >
+                    <span style="float:left;"><strong>Sentence:</strong></span>
+                    <span style="float:left; margin-left:300px;">12 Months</span>
+                    </li>
+                    <li class="moj-task-list__item" >
+                    <span style="float:left;"><strong>Prison:</strong></span>
+                     <span style="float:left; margin-left:328px;">HMP The Verne</span>
+                     </li>
+                    <li class="moj-task-list__item" >
+                    <span style="float:left;"><strong>Court:</strong></span>
+                     <span style="float:left; margin-left:330px;">Bournemouth Crown</span>
+                     </li>
+                     <li class="moj-task-list__item" >
+                     <span style="float:left;"><strong>Probation contact:</strong></span>
+                      <span style="float:left; margin-left:225px;">Joan Smith, Bournemouth</span>
+                      </li>
+                      <li class="moj-task-list__item" >
+                      <span style="float:left;"><strong>Probation number:</strong></span>
+                       <span style="float:left; margin-left:225px;">01202 200200</span>
+                       </li>
+                       <li >
+                         <br />
+                       <span style="float:left;"><strong><a href="#">View the full licence and history</a></strong></span>
+
+                        </li>
+                    </ul>
+                    </ol>
+                    </div>
+
+                    </div>
+                </details>
+              </div>
+
+            </div>
+            <div class="moj-timeline__item">
+              <div class="moj-timeline__header">
+                <h2 class="moj-timeline__title">Driving whilst disqualified</h2>
+
+                <p class="moj-timeline__byline">Standard determinate licence</p>
+
+              </div>
+
+              <p class="moj-timeline__date">
+                <time datetime="2019-05-21T13:15:00.000Z">12 May 2018 - 12 November 2018</time>
+              </p>
+
+              <div class="moj-timeline__description">
+                <details class="govuk-details govuk-!-margin-bottom-0">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      View details
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+        <!--Here-->
+
+                    <div>
+                    <ol class="moj-task-list" >
+                    <li >
+                    <h2 class="moj-task-list__section" >
+                    <span class="moj-task-list__section-number"></span>Assault and battery</h2>
+                    <ul class="moj-task-list__items" >
+                    <li class="moj-task-list__item" >
+                    <span style="float:left;"><strong>Conviction date:</strong></span>
+                    <span style="float:left; margin-left:247px;">12 November 2017</span>
+                    </li>
+                    <li class="moj-task-list__item" >
+                    <span style="float:left;"><strong>Sentence:</strong></span>
+                    <span style="float:left; margin-left:300px;">12 Months</span>
+                    </li>
+                    <li class="moj-task-list__item" >
+                    <span style="float:left;"><strong>Prison:</strong></span>
+                     <span style="float:left; margin-left:328px;">HMP Pentonville</span>
+                     </li>
+                    <li class="moj-task-list__item" >
+                    <span style="float:left;"><strong>Court:</strong></span>
+                     <span style="float:left; margin-left:330px;">Southwark Crown</span>
+                     </li>
+                     <li class="moj-task-list__item" >
+                     <span style="float:left;"><strong>Probation contact:</strong></span>
+                      <span style="float:left; margin-left:225px;">Lenil Oficijik, London</span>
+                      </li>
+                      <li class="moj-task-list__item" >
+                      <span style="float:left;"><strong>Probation number:</strong></span>
+                       <span style="float:left; margin-left:225px;">0207 109 2922</span>
+                       </li>
+                       <li >
+                         <br />
+                       <span style="float:left;"><strong><a href="#">View the full licence and history</a></strong></span>
+
+                        </li>
+                    </ul>
+                    </ol>
+                    </div>
+
+                    </div>
+                </details>
+              </div>
+            </div>
+        </tr>
+      </thead>
+    </table>
+  </div>
+
+
+
+
+
+
+
+
+  <div class="govuk-tabs__panel" id="past-day">
+    <h2 class="govuk-heading-l">Current licence</h2>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th style="width:30%;"></th>
+          <th></th>
+    <!--      <form action="" method="post">
+            <input type="hidden" name="needadditional" value="yes">
+            <input type="hidden" name="needbespoke" value="yes">
+            <input type="hidden" name="needpss" value="yes">
+
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "View or vary licence"
+            }) }}
+          </form>
+        </div>-->
+        <form method="" action="question">
+          <input type="hidden" name="needadditional" value="yes">
+          <input type="hidden" name="needbespoke" value="yes">
+          <input type="hidden" name="needpss" value="yes">
+        <div class="govuk-button-group">
+          <!-- if vary unapproved journey-->
+          {% if data.journey=="varynonapproved"%}
+            {{ govukButton({
+              text: "Amend variation request"
+            }) }}
+            <a href="discard-vary-confirm" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" type="submit">Discard variation request</a>
+
+          {% else %}
+            {{ govukButton({
+              text: "View or vary licence"
+            }) }}
+          {% endif %}
+          </div>
+        </form>
+          <div class="moj-timeline">
+
+
+            <div class="moj-timeline__item">
+              <div class="moj-timeline__header">
+                <h2 class="moj-timeline__title">
+                    <!-- if vary unapproved journey-->
+                    {% if data.journey=="varynonapproved"%}
+                      This licence variation request needs attention due to feedback from the approver
+                    {% else %}
+                      Licence variation approved
+                    {% endif %}
+                   </h2>
+                <p class="moj-timeline__byline">John Smith</p>
+              </div>
+              <p class="moj-timeline__date">
+                <time datetime="2019-06-07T12:32:00.000Z">4 Janauary 2022 at 12:32pm</time>
+              </p>
+              <div class="moj-timeline__description">
+                <details class="govuk-details govuk-!-margin-bottom-0">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                        <!-- if vary unapproved journey-->
+                    {% if data.journey=="varynonapproved"%}
+                      View variation request and approver feedback
+
+                    {% else %}
+                      View variation details
+                    {% endif %}
+
+
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+<!--Here-->
+
+              <div>
+               <ol class="moj-task-list" >
+              <li >
+               <h2 class="moj-task-list__section" >
+                 <span class="moj-task-list__section-number"></span>Details</h2>
+               <ul class="moj-task-list__items" >
+                 <li class="moj-task-list__item" >
+                  <span style="float:left;"><strong>Date:</strong></span>
+                   <span style="float:left; margin-left:350px;">3 March 2022</span>
+                   </li>
+                   <li class="moj-task-list__item" >
+                    <span style="float:left;"><strong>1 additional condition added:</strong></span>
+                     <span style="float:left; margin-left:153px;"><strong>Freedom of movement</strong></span>
+                    <span style="float:left; margin-left:398px;">Not to enter the area of Sainsburys, Main street as defined by the attached map without the prior approval of your supervising officer.</span>
+                     </li>
+                     <li class="moj-task-list__item" >
+                      <span style="float:left;"><strong>Notes:</strong></span>
+                       <span style="float:left; margin-left:340px;">Freedom of movement added following risk assessment</span>
+                       </li>
+
+                 {% if data.journey=="varynonapproved"%}
+                 <li class="moj-task-list__item" >
+                  <span style="float:left;"><strong>Notes from approver:</strong></span>
+                   <span style="float:left; margin-left:212px;">Regarding the Freedom of movement condition.</span>
+                  <span style="float:left; margin-left:398px;">Please add further information to illustrate the risk and why this condition is appropriate to add at this time.</span>
+                   </li>
+                 {% endif %}
+                  </ul>
+               </ol>
+               <form method="" action="check-your-answers">
+                 <input type="hidden" name="needadditional" value="yes">
+                 <input type="hidden" name="needbespoke" value="yes">
+                 <input type="hidden" name="needpss" value="yes">
+               <div class="govuk-button-group" style="margin:-30px 0 0 30px;">
+                 <!-- if vary unapproved journey-->
+                 {% if data.journey=="varynonapproved"%}
+                   {{ govukButton({
+                     text: "View approver request"
+                   }) }}
+                   <a href="discard-vary-confirm" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" type="submit">Discard the variation</a>
+
+
+
+                 {% endif %}
+                 </div>
+               </form>
+              </div>
+              </div>
+            </details>
+              </div>
+            </div>
+
+
+            <div class="moj-timeline__item">
+              <div class="moj-timeline__header">
+                <h2 class="moj-timeline__title">Licence variation requested and submitted to ACO for approval</h2>
+
+                <p class="moj-timeline__byline">by Paul Farmer</p>
+
+              </div>
+
+              <p class="moj-timeline__date">
+                <time datetime="2019-05-28T10:45:00.000Z">3 March 2022 at 10:45am</time>
+              </p>
+              <div class="moj-timeline__description">
+                <details class="govuk-details govuk-!-margin-bottom-0">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      View  variation request
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+        <!--Here-->
+
+              <div>
+               <ol class="moj-task-list" >
+              <li >
+               <h2 class="moj-task-list__section" >
+                 <span class="moj-task-list__section-number"></span>Details</h2>
+               <ul class="moj-task-list__items" >
+                 <li class="moj-task-list__item" >
+                  <span style="float:left;"><strong>Date:</strong></span>
+                   <span style="float:left; margin-left:350px;">3 March 2022</span>
+                   </li>
+                   <li class="moj-task-list__item" >
+                    <span style="float:left;"><strong>1 additional condition removed:</strong></span>
+                     <span style="float:left; margin-left:130px;"><strong>Freedom of movement</strong></span>
+                    <span style="float:left; margin-left:398px;">Not to enter the area of Sainsburys, Main street as defined by the attached map without the prior approval of your supervising officer.</span>
+                     </li>
+                     <li class="moj-task-list__item" >
+                      <span style="float:left;"><strong>Notes:</strong></span>
+                       <span style="float:left; margin-left:340px;">Freedom of movement added following risk assessment</span>
+                       </li>
+                 </ul>
+               </ol>
+              </div>
+              </div>
+            </details>
+              </div>
+            </div>
+            <div class="moj-timeline__item">
+              <div class="moj-timeline__header">
+                <h2 class="moj-timeline__title">Licence  approved</h2>
+                <p class="moj-timeline__byline">by Aprison Governor</p>
+              </div>
+              <p class="moj-timeline__date">
+                <time datetime="2019-05-28T10:15:00.000Z">14 November 2021 at 10:15am</time>
+              </p>
+              <div class="moj-timeline__description">
+                <ul class="moj-timeline__documents">
+                  <li class="moj-timeline__document-item">
+                    <a class="moj-timeline__document-link" target="_blank" href="/assets/docs/Licence.pdf">View this licence version </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="moj-timeline__item">
+              <div class="moj-timeline__header">
+                <h2 class="moj-timeline__title">Licence  created and submitted to prison for approval</h2>
+
+                <p class="moj-timeline__byline">by Paul Farmer</p>
+
+              </div>
+
+              <p class="moj-timeline__date">
+                <time datetime="2019-05-21T13:15:00.000Z">12 November 2021 at 1:15pm</time>
+              </p><br /><br />
+
+</div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month">
+    <h2 class="govuk-heading-l">Version 2</h2>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th style="width:30%;"></th>
+          <th></th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+{% endblock %}
