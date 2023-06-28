@@ -1,0 +1,141 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+{% block beforeContent %}
+
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+{% endblock %}
+
+{% block content %}
+{% if data.vary=="yes" %}
+{% include "templates/banners/layout-name-vary.html" %}
+{% else%}
+{% include "layout-name.html" %}
+{% endif %}
+<br />
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-thirds">
+  <!--  <form action="" method="post">-->
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">
+            Select additional conditions
+          </h1>
+        </legend>
+
+
+        <div id="nationality-hint" class="govuk-hint">
+          Select all relevant conditions.
+        </div><br>
+        <nav class="moj-sub-navigation" aria-label="Sub navigation">
+         <ul class="moj-sub-navigation__list">
+           <li class="moj-sub-navigation__item" style=" float:left; ">
+             <input class="govuk-input moj-search__input;" style="font-size:.8em;" size="82" id="search" name="search" type="search" aria-describedby="search-hint" placeholder="You can search for any word or phrase on this page" value="Drug">
+          </li>
+          <li class="moj-sub-navigation__item" style="float:left;">
+              <form action="conditions" method="">
+              <button class="govuk-button moj-search__button " data-module="govuk-button" >
+                Search
+              </button>
+
+          </li>
+         </ul>
+       </nav>
+
+
+    <!--   <h1 class="govuk-heading-l govuk-!-padding-top-7" id=""> {%if data.shownumbers=="yes"%}3. {%endif%}Making or maintaining contact with a person
+    </h1>-->
+    <h2 class="govuk-heading-m govuk-!-padding-top-7" >Showing search results for 'Drug'</h2>
+       <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+         <div class="govuk-checkboxes__item">
+           <input class="govuk-checkboxes__input" id="appointment" name="3c" type="checkbox" value="yes" data-aria-controls="appointment-conditional">
+           <label class="govuk-label govuk-checkboxes__label" for="appointment">
+             {%if data.shownumbers=="yes"%}3C. {%endif%}Attend [INSERT APPOINTMENT TIME DATE AND ADDRESS], as directed, to address your dependency on, or propensity to misuse, a controlled drug.
+           </label>
+         </div>
+
+       <br>
+
+       </div>
+
+
+      <!--  <h1 class="govuk-heading-l govuk-!-padding-top-7" id="">{%if data.shownumbers=="yes"%}4. {%endif%}Participation in, or co-operation with, a programme or set of activities
+
+      </h1>-->
+
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="comply" name="4a" type="checkbox" value="yes" data-aria-controls="comply-conditional">
+                <label class="govuk-label govuk-checkboxes__label" for="comply">
+                  {%if data.shownumbers=="yes"%}4A. {%endif%}To comply with any requirements specified by your supervising officer for the purpose of ensuring that you address your alcohol / drug / sexual / violent / gambling / solvent abuse / anger / debt / prolific offending / offending behaviour/ problems.
+
+              </label>
+            </div>
+            <br>
+            </div>
+        <br>
+
+      <!--  <h1 class="govuk-heading-l govuk-!-padding-top-7" id="">{%if data.shownumbers=="yes"%}13. {%endif%}Drug testing
+      </h1>-->
+
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="citizenship-conditional" name="citizen" type="checkbox" value="email" aria-controls="conditional-citizenship-conditional" aria-expanded="true">
+              <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional">
+                {%if data.shownumbers=="yes"%}13A. {%endif%}Attend [INSERT NAME AND ADDRESS], as reasonably required by your supervising officer, to give a sample of oral fluid / urine in order to test whether you have any specified Class A and specified Class B drugs in your body, for the purpose of ensuring that you are complying with the condition of your licence requiring you to be of good behaviour.
+              </label>
+            </div>
+
+          </div><br>
+
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="nationality" name="nationality" type="checkbox" value="british" aria-describedby="nationality-item-hint">
+              <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                {%if data.shownumbers=="yes"%}13B. {%endif%}Not to take any action that could hamper or frustrate the drug testing process.
+
+            </div>
+          </div><br><br>
+      </fieldset>
+    </div>
+    <div class="govuk-button-group">
+    <button class="govuk-button" data-module="govuk-button" name="submit" value="continue">
+      Continue
+    </button>
+    {% if data.vary=="yes" %}
+    {% else %}
+    <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="submit" value="exit">
+      Save and exit
+    </button>
+    {% endif %}
+    </div>
+      </form>
+  <!--<a href="bespoke" class="govuk-button show-continue" style="display: inline;">-->
+ </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,158 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+{% block beforeContent %}
+<!--
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Prototype
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>-->
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-thirds"><br>
+    <span class="govuk-caption-m">CRN: A778288 | CRD: 15 May 2022 | Date of birth: 12 Mar 1975</span>
+    <h1 class="govuk-heading-m">Matt Tension</h1>
+  </div>
+</div>
+<hr class="gov-section-break gov-section-break-visible">
+
+<br />
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-thirds"><br>
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">The release date has changed</h1>
+  </div>
+</div>
+
+<form method="post" action="" >
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-third">
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        You need to check any licence details entered are correct
+        </strong>
+      </div>
+
+
+      <!--<p class="govuk-body">The conditional release date is on a weekend or bank holiday.
+            Contact the prison OMU to get the release date in NOMIS updated.</p><br />-->
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Matt Tension
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            CRN
+          </dt>
+          <dd class="govuk-summary-list__value">
+            A778288
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Original release date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            16 May 2022
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            New release date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            15 May 2022
+          </dd>
+        </div>
+      </dl>
+    </div><br />
+<!--
+          <h1 class="govuk-heading-m">Do you need to view or edit the licence details?</h1>
+      <div class="govuk-radios govuk-radios--inline">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="region-1" name="probationregion" type="radio" value="North East"
+          {% if data.probationregion=="North East" %} checked {% endif %}>
+          <label class="govuk-label govuk-radios__label" for="region-1">
+            Yes, view or edit the licence
+          </label>
+        </div>
+
+      </div><br />
+
+      <div class="govuk-radios govuk-radios--inline">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="region-2" name="probationregion" type="radio" value="North West"
+        {% if data.probationregion=="North West" %} checked {% endif %}>
+        <label class="govuk-label govuk-radios__label" for="region-2">
+          No, I do not need to view or edit the licence, remove the alerts
+        </label>
+      </div>
+    </div><br /><br /><br />
+
+    <!--  <input name="releaseDateChanged" value="yes" type="hidden" />-->
+    <!--option 1
+      <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button" name="submit" value="return">
+      Confirm
+        </button>
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="submit" value="continue">
+          Return to case list
+        </button>
+      </div>
+      end option 1-->
+      <!-- option 2-->
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "View or edit licence",
+          name:"submit"
+
+        }) }}
+      </form>
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="submit" value="exit">
+          Remove alert
+          </button>
+          <span style="margin-left:580px;">
+            <a class="govuk-link"  href="discard-changes-confirm ">Leave alert and return to case list</a>
+          </span>
+        </div>
+   <!--end option 2 -->
+
+    </fieldset>
+  </div>
+</div>
+</form>
+
+
+{% endblock %}

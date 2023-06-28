@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Prototype
+    </strong>
+  </p>
+</div>
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-thirds">
+
+        <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            Licence rejected for<br>{% if data.edit=="yes" %}
+              Edith Bradshaw
+            {% elseif data.releaseDateChanged=="yes" %}
+            Honor Weekend
+            {% else %}
+              Adam Balasaravika
+            {% endif %}<br>
+          </h1>
+        </div>
+        <h2 class="govuk-heading-m">What happens next</h2>
+          <p class="govuk-body">{% if data.user=="governor"%}
+          We have sent a notification to probation that the licence has been rejected.
+          {%elseif data.user=="admin"%}
+        We have sent email notification to Probation that the licence has been rejected.</p>
+        {%endif%}
+        <br>
+        <form action="../list" method="post">
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Approve another licence",
+            name: "approveanotherlicence",
+            value: "yes",
+            type: "submit"
+          }) }}
+          <input type="hidden" value="governor" name="user" >
+          </form>
+        </div>
+
+        <p class="govuk-body">
+          <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+        </p>
+      </div>
+    </div>
+  </main>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Create and vary a licence - Create a licence - Licences for people approaching immigration detention
+{% endblock %}
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+{% endblock %}
+
+{% block content %}
+<span class="govuk-caption-m">CRN: A761536 | CRD: 16 Nov 2022 | Date of birth: 12 Mar 1975</span>
+<h1 class="govuk-heading-m">Cody Jones</h1>
+<hr class="gov-section-break gov-section-break-visible">
+<br />
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form method="post" action="" >
+            <h1 class="govuk-heading-l">
+              Licences for people in <br>immigration detention</h1>
+
+      <p class="govuk-body">This person is being held after their CRD on immigration detention,<br>either in prison or an immigration removal centre.</p>
+      <p class="govuk-body" style="margin-bottom:30px ;">Their licence is now active and you are responsible for managing their case.<br>Licence variations must be approved by your PDU head.</p>
+
+
+      <input name="is91vary" value="yes" type="hidden" />
+      <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button" name="submit-is91-vary" value="continue">
+        Continue
+        </button>
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="submit-is91-vary" value="cancel">
+          Cancel
+        </button>
+      </div>
+    </form>
+</div>
+ </div>
+</div>
+
+
+
+
+{% endblock %}
