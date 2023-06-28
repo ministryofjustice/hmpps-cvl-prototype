@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Create and vary a licence - Vary a licence - Why are no consultations needed?
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+   
+<form action="" method="post">
+
+
+  <div class="govuk-form-group">
+    <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="event-name">
+      Why are no consultations needed for this licence variation?
+      </label>
+    </h1>
+    <div id="contact-hint" class="govuk-hint">
+      Select one option.
+    </div>
+
+
+
+    <div class="govuk-radios" data-module="govuk-radios">
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="appointmentDetails" name="appointmentDetails" type="radio">
+
+
+        <label class="govuk-label govuk-radios__label" for="appointment-details">
+          Changing appointment details such as date or location
+        </label>
+
+
+      </div>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="no-consultation-other-reason" name="no-consultation-other-reason" type="radio" value="email" data-aria-controls="conditional-reason">
+          <label class="govuk-label govuk-radios__label" for="no-consultation-other-reason">
+            Other
+          </label>
+        </div>
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-reason">
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="no-consultation-other-reason">
+              Enter the reason
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="otherNoConsultationReason" name="otherNoConsultationReason" spellcheck="false">
+
+          </div>
+        </div>
+        
+</div>
+</div>
+
+  <div style="margin-top: 20px;" class="govuk-button-group">
+    <button class="govuk-button" data-module="govuk-button">
+      Continue
+    </button>
+
+  </div>
+    
+</form>
+
+</div>
+</div>
+{% endblock %}

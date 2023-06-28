@@ -1,0 +1,169 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+{% block beforeContent %}
+
+
+
+{% endblock %}
+
+{% block content %}
+<!--<form action="/v18/conditions" method="post">
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          Complete the licence condition</h1>
+      </legend><br>
+
+
+      <div class="govuk-form-group">
+
+<p>Not to enter the area of [CLEARLY SPECIFIED AREA], as defined by the attached map without the prior approval of your supervising officer.</p>
+
+<div data-module="moj-add-another">
+    <fieldset class="govuk-fieldset moj-add-another__item">
+      <div class="govuk-form-group">
+
+          <label class="govuk-fieldset__legend--s" for="1a-answer">
+            Enter the name of the area shown on the map
+          </label>
+      
+          
+          <br />
+
+          <input class="govuk-input govuk-input--width-30" id="3f-answer-department" name="3g-answer-department" type="text" autocomplete="3g-answer-individual">
+          
+          <br />
+
+
+         <div class="govuk-form-group" style="margin-top: 30px;">
+          <label class="govuk-label" for="file-upload-1">
+           <strong>Find and select the <a class="govuk-link govuk-link--no-visited-state" href="">Mapmaker PDF map</a> to include on the licence</strong>
+          </label>
+            <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+        </div>
+
+
+   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"></hr>
+
+         
+    </fieldset>
+    <div class="moj-button-action">
+      <br />
+      <button class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button">
+        Add another map
+      </button><br>
+      </div>
+    </div>
+    <div class="govuk-button-group">
+    <button class="govuk-button" data-module="govuk-button" name="submit" value="continue">
+      Continue
+    </button>
+    <input type="hidden" value="no" name="8a">
+    {%if data.vary!=="yes"%}
+    <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="submit" value="exit">
+      Delete this condition
+    </button>
+    {% endif %}
+    </div>
+</form>-->
+
+
+<h1 class="govuk-heading-l">You have added one map</h1>
+<div class="govuk-form-group">
+
+  <dl class="govuk-summary-list hmrc-list-with-actions hmrc-list-with-actions--short">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+       Name of area: <strong>Brighton</strong></br>File name:<strong> Exclusion-zone-for-Stephen-McVeigh-2022-07-08_121348.pdf</strong></span>
+      </dt>
+      <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+        <ul class="govuk-summary-list__actions-list">
+          <li class="govuk-summary-list__actions-list-item">
+            <a class="govuk-link" href="#"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">Change Sydney Russell</span></a>
+          </li>
+          <li class="govuk-summary-list__actions-list-item">
+            <a class="govuk-link" href="#"><span aria-hidden="true">Delete</span><span class="govuk-visually-hidden">Remove Sydney Russell from the list</span></a>
+          </li>
+        </ul>
+      </dd>
+    </div>
+   <!-- <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+        Michael Cain
+      </dt>
+      <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+        <ul class="govuk-summary-list__actions-list">
+          <li class="govuk-summary-list__actions-list-item">
+            <a class="govuk-link" href="#"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">Change Michael Cain</span></a>
+          </li>
+          <li class="govuk-summary-list__actions-list-item">
+            <a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">Remove Michael Cain from the list</span></a>
+          </li>
+        </ul>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+        Jeremy Winter
+      </dt>
+      <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+        <ul class="govuk-summary-list__actions-list">
+          <li class="govuk-summary-list__actions-list-item">
+            <a class="govuk-link" href="#"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">Change Jeremy Winter</span></a>
+          </li>
+          <li class="govuk-summary-list__actions-list-item">
+            <a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">Remove Jeremy Winter from the list</span></a>
+          </li>
+        </ul>
+      </dd>
+    </div>-->
+  </dl>
+
+</div>
+<form method="post" novalidate action="">
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="add-another-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend govuk-fieldset__legend--m">
+        Do you need to add another map?
+      </legend>
+      <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="add-another" name="add-another" type="radio" value="Yes">
+          <label class="govuk-label govuk-radios__label" for="add-another">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="add-another-2" name="add-another" type="radio" value="No">
+          <label class="govuk-label govuk-radios__label" for="add-another-2">
+            No
+          </label>
+        </div>
+      </div>
+
+    </fieldset>
+  </div>
+
+  <button class="govuk-button" data-module="govuk-button">
+    Continue
+  </button>
+</form>
+
+
+
+{% endblock %}

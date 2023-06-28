@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+{% endblock %}
+
+{% block content %}
+{% include "layout-name.html" %} <br />
+<h1 class="govuk-heading-m">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+  <h1 class="govuk-heading-l">Probation practitioner details</h1>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:300px;">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {%if (data.inductionname) %}
+                {{data.inductionname}}
+
+              {% else %}
+                John Farrell
+              {% endif %}
+            </dd>
+
+
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Office telephone number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {%if (data.telephonenumber) %}{{data.telephonenumber}}
+              {% else %}0208 123 4567
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="phone-number-change">
+                <span class="govuk-visually-hidden"> </span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Email
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <a href="mailto:john.farrell@probation-office.gov.uk">john.farrell@probation-office.gov.uk</a>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="phone-number-change">
+                <span class="govuk-visually-hidden"> </span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+        <form action="list">
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Return to case list"
+          }) }}
+        </div>
+      </div>
+    </div>
+{% endblock %}

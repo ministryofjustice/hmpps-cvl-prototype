@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+{% block beforeContent %}
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-thirds">
+
+        <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            {% if data.needpss=="yes" %}
+              Licence and post sentence supervison order
+
+              for<br>
+              {% if data.edit=="yes" %}
+                Edith Bradshaw
+                {% elseif data.releaseDateChanged=="yes" %}
+                Honor Weekend
+              {% else %}
+                Adam Balasaravika
+              {% endif %}
+              sent
+
+
+                {% elseif data.licencetypechoose=="pssonly"%}
+                  Post sentence <br />supervison  order for<br />
+                  {% if data.edit=="yes" %}
+                    Edith Bradshaw
+                    {% elseif data.releaseDateChanged=="yes" %}
+                    Honor Weekend
+                  {% else %}
+                    Adam Balasaravika
+                  {% endif %}
+
+
+                  {% else %}
+                    Licence conditions for<br>{% if data.edit=="yes" %}
+                      Edith Bradshaw
+                      {% elseif data.releaseDateChanged=="yes" %}
+                      Honor Weekend
+                    {% else %}
+                      Adam Balasaravika
+                    {% endif %}
+
+
+            {%endif%}
+
+          </h1>
+        </div>
+        <h2 class="govuk-heading-m">What happens next</h2>
+          <p class="govuk-body">We have sent the
+
+        {% if data.needpss=="yes" %}
+            licence and post sentence supervison order
+
+
+          {% elseif data.licencetypechoose=="pssonly"%}
+            post sentence supervison order
+
+
+          {% else %}
+            licence conditions
+          {%endif%}
+
+
+
+          to Brixton prison for approval.</p>
+          <p class="govuk-body">They will contact you if there is a problem.</p>
+          <p class="govuk-body">Please note the generated licence does not get uploaded to any other system or service. If you require the licence to be available anywhere else, you will need to do this manually.</p>
+          <form action="list" method="post">
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Return to case list",
+              name: "approveanotherlicence",
+              value: "yes",
+              type: "submit"
+            }) }}
+
+            </form>
+          </div>
+        <br>
+
+        <p class="govuk-body">
+          <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+        </p>
+      </div>
+    </div>
+  </main>
+</div>
+
+
+{% endblock %}

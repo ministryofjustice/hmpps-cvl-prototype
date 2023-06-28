@@ -1,0 +1,128 @@
+{% extends "layout.html" %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-thirds">
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    <h1 class="govuk-heading-xl">Create or vary a licence prototype</h1>
+    <form method="post" action="">
+      <div class="govuk-form-group govuk-!-margin-bottom-8">
+      <div class="govuk-radios">
+        <label class="govuk-label govuk-!-font-weight-bold" for="user">
+          Show the journey for
+        </label>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="user-probation" name="user" type="radio" value="probation" checked="checked">
+          <label class="govuk-label govuk-radios__label" for="user-probation" >
+            Probation Practitioner
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="user-employer" name="user" type="radio" value="governor" >
+          <label class="govuk-label govuk-radios__label" for="user-employer">
+            Prison Approver
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="user-admin" name="user" type="radio" value="admin">
+          <label class="govuk-label govuk-radios__label" for="user-admin">
+            Prison Admin
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="user-aco" name="user" type="radio" value="aco">
+          <label class="govuk-label govuk-radios__label" for="user-aco" >
+            PDU Head
+          </label>
+        </div>
+      </div>
+      </div>
+
+      <div class="govuk-radios">
+        <label class="govuk-label govuk-!-font-weight-bold" for="licence">
+          Select the journey
+        </label>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="def" name="journey" type="radio" value="" checked="checked">
+          <label class="govuk-label govuk-radios__label" for="def">
+            Default for user selected
+          </label>
+        </div>
+        <div class="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="journeyvar" name="journey" type="radio" value="varynonapproved">
+            <label class="govuk-label govuk-radios__label" for="journeyvar">
+              Vary journey with a variation already requested and non-approval feedback given by PDU Head
+            </label>
+          </div>
+        </div>
+      </div>
+          <br /><br />
+
+
+
+    <div class="govuk-radios">
+      <label class="govuk-label govuk-!-font-weight-bold" for="licence">
+        Probation user only - Select the licence and order type
+      </label>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="ap" name="licencetypechoose" type="radio" value="ap"  checked="checked">
+        <label class="govuk-label govuk-radios__label" for="ap">
+          Standard determinate Licence only
+        </label>
+      </div>
+      <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="pss" name="licencetypechoose" type="radio" value="pss">
+          <label class="govuk-label govuk-radios__label" for="pss">
+            Standard determinate Licence + PSS
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="pssonly" name="licencetypechoose" type="radio" value="pssonly">
+          <label class="govuk-label govuk-radios__label" for="pssonly">
+            PSS only
+          </label>
+        </div>
+        <br /><br />
+
+
+        <label class="govuk-label govuk-!-font-weight-bold" for="user">
+          Probation user only - Show numbers list for additional conditions
+        </label>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="yes-numbers" name="shownumbers" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="yes-numbers">
+          Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="no-numbers" name="shownumbers" type="radio" value="no" checked="checked">
+          <label class="govuk-label govuk-radios__label" for="no-numbers">
+            No
+          </label>
+        </div>
+      </div>
+      </div>
+      <br /><br /><br />
+
+<input class="govuk-radios__input" id="configversion" name="configversion" type="hidden" value="5">
+      <div class="govuk-form-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">Start</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}
+
+{% block pageScripts %}
+{{super()}}
+
+
+{% endblock %}

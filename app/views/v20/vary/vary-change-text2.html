@@ -1,0 +1,177 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+{% block beforeContent %}
+
+
+<link href="https://design-patterns.service.justice.gov.uk/assets/stylesheets/application.css" rel="stylesheet">
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+{% endblock %}
+
+{% block content %}
+{% include "templates/banners/layout-name-vary.html" %}
+<br />
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <h1 class="govuk-heading-l">
+    Add notes for the licence variation
+    </h1>
+    <h2 class="govuk-heading-m">Amended licence conditions detail</h2>
+  </div>
+</div>
+<dl class="govuk-summary-list" style="border-bottom:0;">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key" style="width:50%;" style="border-bottom:none;">
+      Amended condition
+    </dt>
+    <dd class="govuk-summary-list__value">
+      1 amended condition<br>
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="conditions">
+      </a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key" style="border-bottom:none;">
+      Drug testing
+    </dt>
+    <dd class="govuk-summary-list__value" style="border-bottom:none;">
+      Attend Fake Police Station, Fake Town, as reasonably required by your supervisor, to give a sample of oral fluid / urine in order to test whether you have any specified Class A or specified Class B drugs in your body, for the purpose of ensuring that you are complying with the requirement of your supervision period requiring you to be of good behaviour.
+      <br><br> <strong> Fake Police Station, Fake Town </strong>
+    </dd>
+    <dd class="govuk-summary-list__actions" style="border-bottom:none;">
+        <a class="govuk-link" href="additional/2a-change">
+        </a>
+    </dd>
+  </div>
+</dl>
+<div class="govuk-form-group">
+    <h2 class="govuk-heading-m">
+    Add notes for amended licence condition
+  </h2>
+
+  <textarea class="govuk-textarea" id="body" name="body" rows="5" data-module="moj-rich-text-editor" data-moj-rich-text-editor-toolbar="bold,italic,underline,bullets,numbers"></textarea>
+</div>
+
+<hr /><br />
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <h2 class="govuk-heading-m">Deleted licence conditions detail</h2>
+  </div>
+</div>
+<dl class="govuk-summary-list" style="border-bottom:0;">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key" style="width:50%;">
+      Deleted condition
+    </dt>
+    <dd class="govuk-summary-list__value">
+      1 deleted condition<br>
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="conditions">
+      </a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key"  style="border-bottom:none;">
+      Drug testing
+    </dt>
+    <dd class="govuk-summary-list__value"  style="border-bottom:none;">
+      1Attend Fake Police Station, Fake Town, as reasonably required by your supervisor, to give a sample of oral fluid / urine in order to test whether you have any specified Class A or specified Class B drugs in your body, for the purpose of ensuring that you are complying with the requirement of your supervision period requiring you to be of good behaviour.
+      <br><br> <strong> Fake Police Station, Fake Town </strong>
+    </dd>
+    <dd class="govuk-summary-list__actions"  style="border-bottom:none;">
+        <a class="govuk-link" href="additional/2a-change">
+        </a>
+    </dd>
+  </div>
+</dl>
+<div class="govuk-form-group">
+    <h2 class="govuk-heading-m">
+    Add notes for deleted licence condition
+  </h2>
+
+  <textarea class="govuk-textarea" id="body" name="body" rows="5" data-module="moj-rich-text-editor" data-moj-rich-text-editor-toolbar="bold,italic,underline,bullets,numbers"></textarea>
+</div>
+
+<hr /><br />
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <h2 class="govuk-heading-m">Added licence condition detail</h2>
+  </div>
+</div>
+<dl class="govuk-summary-list" >
+  <div class="govuk-summary-list__row" >
+    <dt class="govuk-summary-list__key" style="width:50%;">
+      Added condition
+    </dt>
+    <dd class="govuk-summary-list__value">
+      1 added condition<br>
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="conditions">
+      </a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key" style="border-bottom:none;">
+      Drug testing
+    </dt>
+    <dd class="govuk-summary-list__value" style="border-bottom:none;">
+      Attend Fake Police Station, Fake Town, as reasonably required by your supervisor, to give a sample of oral fluid / urine in order to test whether you have any specified Class A or specified Class B drugs in your body, for the purpose of ensuring that you are complying with the requirement of your supervision period requiring you to be of good behaviour.
+      <br><br> <strong> Fake Police Station, Fake Town </strong>
+    </dd>
+    <dd class="govuk-summary-list__actions" style="border-bottom:none;">
+        <a class="govuk-link" href="additional/2a-change">
+        </a>
+    </dd>
+
+  </div>
+</dl>
+<div class="govuk-form-group">
+    <h2 class="govuk-heading-m">
+    Add notes for added licence condition
+  </h2>
+
+  <textarea class="govuk-textarea" id="body" name="body" rows="5" data-module="moj-rich-text-editor" data-moj-rich-text-editor-toolbar="bold,italic,underline,bullets,numbers"></textarea>
+</div>
+
+</fieldset>
+
+
+    <form action="vary/check-your-answers-to-notes" method="post">
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Send to assistant chief officer for approval"
+
+      }) }}
+    </form>
+      <div class="moj-button-action">
+          <a href="discard-changes-confirm2" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" type="submit">Discard changes</a>
+      </div>
+    </div>
+
+
+ </div>
+</div>
+
+
+{% endblock %}

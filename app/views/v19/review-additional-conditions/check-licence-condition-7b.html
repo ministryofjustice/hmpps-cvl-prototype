@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Create and vary a licence - Vary a licence - Check licence condition
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+
+{% endblock %}
+
+{% block content %}
+{% include "templates/banners/layout-name-vary.html" %}<br />
+
+<form action="/v19/check-your-answers" method="post">
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+       
+       
+        <span class="govuk-caption-l">Change 5 of 7</span>
+        <h1 class="govuk-fieldset__heading">
+          Review policy change</h1>
+      </legend><br>
+
+
+<div class="govuk-form-group">
+
+  <p>This licence condition has been removed from policy.</br>
+    
+  <p>Before you can continue varying this licence, you must review the condition that is no longer in use.</br>
+    It will then be removed from the licence automatically.
+  </p>
+
+
+
+<h2 class="govuk-heading-m govuk-!-margin-top-8">Licence condition being removed</h2>
+
+<p>
+  Confine yourself to remain at 123 Main Street initially from 9am until 11am each day,
+  and, thereafter, for such a period</br>
+  as may be reasonably notified to you by your supervising officer; and comply with such arrangements as may be reasonably</br>
+  put in place and notified to you by your supervising officer so as to allow for your whereabouts and your compliance</br>
+  with your curfew requirement be monitored (whether by electronic means involving your wearing an electronic tag or otherwise).
+</p>
+
+<h2 class="govuk-heading-m govuk-!-margin-top-6">Licence conditions to use instead</h2>
+
+<p>If you still need an electronically monitored curfew,
+  you can add the conditions below when you vary this licence.</p>
+
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>Confine yourself to an address approved by your supervising officer between the hours of [TIME] and [TIME] daily</br>
+    unless otherwise authorised by your supervising officer. This condition will be reviewed by your supervising officer on a</br>
+    [WEEKLY / MONTHLY / ETC] basis and may be amended or removed if it is felt that the level of risk that you present</br>
+    has reduced appropriately.
+    </li>
+  <li style="margin-top: 15px;">Allow person(s) as designated by your supervising officer to install an electronic monitoring tag on you and access</br>to install any
+    associated equipment in your property, and for the purpose of ensuring that equipment is functioning correctly.</br>
+    You must not damage or tamper with these devices and ensure that the tag is charged, and report to your supervising</br>
+    officer and the EM provider immediately if the tag or the associated equipment are not working correctly.</br>
+    This will be for the purpose of monitoring your [INSERT TYPES OF CONDITIONS TO BE ELECTRONICALLY MONITORED HERE]</br>
+    licence condition(s) unless otherwise authorised by your supervising officer.
+    </li>
+</ul>
+
+
+
+<!--<form action="/alcohol-electronic-tag-condition" method="post">-->
+
+<!--<button class="govuk-button" data-module="govuk-button" ">
+    Continue
+</button>
+
+</form>--> 
+
+<!--<button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>-->
+<br /><br />
+    <input type="hidden" name="9a" value="no">
+    <a href="./check-licence-condition-14d-14e.html" class="govuk-button show-continue" style="display: inline;">
+      Remove condition</a>
+    
+<!--<a href="#" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" style="display: inline; margin-left: 10px;">    Delete this condition
+  </button></a>-->
+
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Create and vary a licence - Vary a licence - Check licence condition
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+
+{% endblock %}
+
+{% block content %}
+{% include "templates/banners/layout-name-vary.html" %}<br />
+
+<form action="/v19/check-your-answers" method="post">
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+        <span class="govuk-caption-l">Change 7 of 7</span>
+        <h1 class="govuk-fieldset__heading">
+          Review policy change</h1>
+      </legend><br>
+
+      <p>This licence condition has been changed in policy.</br>
+       Before you can continue varying this licence, you must review this change and then accept or delete it.</p>
+     
+       <p>You need to add or check some information before we can update the licence.</p>
+
+
+<div class="govuk-form-group">
+
+
+<h2 class="govuk-heading-m govuk-!-margin-top-8">Licence condition being changed</h2>
+
+
+
+<p>
+  Report to staff at Southwell House at 09:45 am, unless otherwise authorised by your supervising officer. This condition will be reviewed by your supervising officer on a weekly basis and may be amended or removed if it is felt that the level of risk you present has reduced appropriately.
+</p>
+
+<h2 class="govuk-heading-m govuk-!-margin-top-6">New reporting options</h2>
+
+<p class="govuk-hint">The wording of this licence condition will stay the same.</br>
+  If you need to, you can now add more precise reporting times on the next page.</p>
+
+<!--<button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>-->
+<br /><br />
+    <input type="hidden" name="9a" value="no">
+    <a href="./complete-licence-condition-9a" class="govuk-button show-continue" style="display: inline;">
+      Continue</a>
+    
+<a href="#" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" style="display: inline; margin-left: 10px;">    Delete this condition
+  </button></a>
+</form>
+{% endblock %}

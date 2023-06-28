@@ -1,0 +1,200 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+   
+    
+
+    <!--START set dynamic checkboxes hide/show text-->
+    {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+    {% from "govuk/components/input/macro.njk" import govukInput %}
+
+  <!--set1-->
+
+    {% set teamABC %}
+
+    {{ govukCheckboxes({
+      
+      items: [
+        {
+          value: "teamA",
+          text: "Team A"
+        },
+        {
+          value: "teamB",
+          text: "Team B"
+        },
+        {
+          value: "teamC",
+          text: "Team C"
+        }
+      ]
+    }) }}
+
+    {% endset -%}
+
+    <!--set2-->
+
+    {% set teamDEF %}
+
+    {{ govukCheckboxes({
+      
+      items: [
+        {
+          value: "teamD",
+          text: "Team D"
+        },
+        {
+          value: "teamE",
+          text: "Team E"
+        },
+        {
+          value: "teamF",
+          text: "Team F"
+        }
+      ]
+    }) }}
+
+    {% endset -%}
+
+    <!--set3-->
+
+    {% set teamGHI %}
+
+    {{ govukCheckboxes({
+      
+      items: [
+        {
+          value: "teamG",
+          text: "Team G"
+        },
+        {
+          value: "teamH",
+          text: "Team H"
+        },
+        {
+          value: "teamI",
+          text: "Team I"
+        }
+      ]
+    }) }}
+
+    {% endset -%}
+
+    <!--END set dynamic checkboxes hide/show text-->
+
+
+    {{ govukCheckboxes({
+      idPrefix: "pdu",
+      name: "pdu",
+      fieldset: {
+        legend: {
+          text: "Select the teams you wish to view the licences for",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      hint: {
+        text: " Select one or multiple teams."
+      },
+      items: [
+        {
+          value: "derbyshire",
+          text: "Derbyshire (PDU)",
+          conditional: {
+            html: teamABC }
+        },
+        {
+          value: "leicester",
+          text: "Leicester, Leicestershire and Rutland (PDU)",
+          conditional: {
+            html: teamDEF }
+        },
+        {
+          value: "nottingham",
+          text: "Nottingham City (PDU)",
+          conditional: {
+            html: teamGHI }
+        }
+      ]
+    }) }}    
+
+
+
+
+<!--NEW-->
+
+
+
+
+
+
+
+
+
+    <!--<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="PDUA" name="PDUselectedA" type="checkbox" value="true"
+        {%if (data.PDUselectedA=="true") %}
+          checked="checked"
+        {% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="Cardiff">
+          PDU A
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="PDUB" name="PDUselectedB" type="checkbox" value="true"
+        {%if (data.PDUselectedB=="true") %}
+          checked="checked"
+        {% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="Berwyn">
+          PDU B
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="PDUC" name="PDUselectedC" type="checkbox" value="true"
+        {%if (data.PDUselectedC=="true") %}
+            checked="checked"
+          {% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="Husk">
+          PDU C
+        </label>
+      </div>
+      </div>
+    </div>-->
+
+
+
+
+    <br />
+  <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+</div>
+  </form>
+
+ </div>
+</div>
+
+
+
+
+{% endblock %}

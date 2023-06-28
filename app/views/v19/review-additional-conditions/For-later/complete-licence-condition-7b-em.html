@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+
+{% endblock %}
+
+{% block content %}
+{% include "templates/banners/layout-name-vary.html" %}<br />
+
+<form action="/v19/check-your-answers" method="post">
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+        <span class="govuk-caption-l">Change 5 of 7</span>
+        <h1 class="govuk-fieldset__heading">
+      Complete the licence condition</h1>
+      </legend><br>
+
+        <p>Allow person(s) as designated by your supervising officer to install an electronic monitoring tag on you and access</br>to install any
+          associated equipment in your property, and for the purpose of ensuring that equipment is functioning correctly.</br>
+          You must not damage or tamper with these devices and ensure that the tag is charged, and report to your supervising</br>
+          officer and the EM provider immediately if the tag or the associated equipment are not working correctly.</br>
+          This will be for the purpose of monitoring your [INSERT TYPES OF CONDITIONS TO BE ELECTRONICALLY MONITORED HERE]</br>
+          licence condition(s) unless otherwise authorised by your supervising officer.
+          </p>
+        
+      </br>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            <h1 class="govuk-fieldset__heading">
+              Select all that apply
+            </h1>
+          </legend>
+
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                exclusion zone
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                curfew
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                location monitoring
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                attendance at appointments
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                alcohol monitoring
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                alcohol abstinence
+              </label>
+            </div>
+          </div>
+
+
+        </fieldset>
+      </div>
+ 
+
+
+<!--<button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>-->
+<br /><br />
+    <input type="hidden" name="9a" value="no">
+    <a href="./check-licence-condition-14d-14e.html" class="govuk-button show-continue" style="display: inline;">
+      Continue</a>
+    
+<a href="#" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" style="display: inline; margin-left: 10px;">    Delete this condition
+  </button></a>
+</form>
+{% endblock %}

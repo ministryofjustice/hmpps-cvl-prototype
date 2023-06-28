@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Create and vary a licence - Vary a licence - Review additional licence conditions that have changed
+{% endblock %}
+
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+
+{% endblock %}
+
+{% block content %}
+{% include "templates/banners/layout-name-vary.html" %}<br />
+
+<form action="/v18/check-your-answers" method="post">
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          Review policy changes to additional licence conditions</h1>
+      </legend><br>
+
+
+<div class="govuk-form-group">
+
+<p>Seven of the additional conditions that were previously chosen for this licence have changed</br>
+  in the Licence Conditions Policy Framework to use new wording or have different options.
+</br> </p>
+
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+  <h2 class="govuk-fieldset__heading" style="margin-top: 10px;">
+    Before varying this licence</h2>
+</legend>
+
+<p>
+  You must review these changes on the next screens so the updated licence conditions can be used.</br>
+    
+    If necessary, you will also need to add some extra information to complete the licence condition.</p>
+  
+  <p>We only ask you to do this when varying a licence containing conditions that have changed.
+  </p>
+
+
+<!--<button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>-->
+<br />
+    <input type="hidden" name="9a" value="no">
+    <a href="./check-licence-condition-3c" class="govuk-button show-continue" style="display: inline;">
+      Continue</a>
+
+</form>
+{% endblock %}

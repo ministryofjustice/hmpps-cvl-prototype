@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+{% block beforeContent %}
+
+
+<link href="https://design-patterns.service.justice.gov.uk/assets/stylesheets/application.css" rel="stylesheet">
+
+  <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+{% endblock %}
+
+{% block content %}
+{% include "templates/banners/layout-name-vary.html" %}
+<br />
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <h1 class="govuk-heading-l">
+    Add reasons for the licence variation
+  </h1>
+  </div>
+</div><div id="passport-issued-hint" class="govuk-hint">
+  Add a short explanation for the 3 things you want to vary. For each one, you should include:
+  <ul class="govuk-list govuk-list--bullet govuk-hint">
+    <li>why the changes are being made now and why they are necessary to manage current risk</li>
+    <li>who you have consulted about the variations and if they support your decision</li>
+  </ul>
+  </div>
+
+
+<details class="govuk-details govuk-!-margin-bottom-0">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      View the licence variation details
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+
+  {% if data.journey=="varynonapproved"%}
+    {% include "layout-variation-approved-policy.html" %}
+  {% else %}
+        {% include "layout-variation-approved-policy.html" %}
+  {% endif %}
+</div>
+</details>
+
+
+
+<br />
+<div class="govuk-form-group">
+  <textarea class="govuk-textarea" id="body-reason-variation" name="body-reason-variation" rows="5" data-module="moj-rich-text-editor" data-moj-rich-text-editor-toolbar="bold,italic,underline,bullets,numbers"></textarea>
+</div>
+<hr /><br />
+    <form action="" method="post">
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Continue",
+        name:"submit"
+
+      }) }}
+    </form>
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="submit" value="exit">
+        Save and exit
+        </button>
+        <span style="margin-left:770px;">
+          <a class="govuk-link"  href="discard-changes-confirm ">Discard changes</a>
+        </span>
+      </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+{% block beforeContent %}
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-thirds">
+        <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            {% if data.personapprovedavary=="yes" %}
+              Licence variation for Avary Bradshaw has been approved.
+              {% elseif data.personapprovedharry=="yes" %}
+              Licence variation for Harry Jection has been approved.
+              {% endif %}
+          </h1>
+        </div>
+        <h2 class="govuk-heading-m">What happens next</h2>
+
+        {% if data.personapprovedavary=="yes" %}
+          <p class="govuk-body">The licence variation for Avary Bradshaw has been approved with your digital signature.
+          </p>
+
+          {% elseif data.personapprovedharry=="yes" %}
+          <p class="govuk-body">The licence variation for Harry Jection has been approved with your digital signature.
+          </p>
+      {% endif %}
+          <p>We have sent an email notification to the probation practitioner.</p>
+          <p>They will be able to print and issue the licence.</p>
+          <form action="list" method="post">
+          <div class="govuk-button-group">
+            {% if data.personapprovedavary=="yes" %}
+              <input name="personapprovedavarycomplete" type="hidden" value="yes" />
+              <input name="personapprovedavary" type="hidden" value="no" />
+            {% endif %}
+
+            {% if data.personapprovedharry=="yes" %}
+              <input name="personapprovedharrycomplete" type="hidden" value="yes" />
+              <input name="personapprovedharry" value="no" type="hidden" />
+            {% endif %}
+
+
+            {{ govukButton({
+              text: "Return to case list",
+              name: "approveanotherlicence",
+              value: "yes",
+              type: "submit"
+            }) }}
+            <!--Add if approved for Avary or Harry to decide who to show on approvals list-->
+          <!--  <input type="hidden" value="yes" name="varycompleteapprove"/>-->
+            </form>
+          </div>
+        <br />
+        <p class="govuk-body">
+          <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+        </p>
+      </div>
+    </div>
+  </main>
+</div>
+{% endblock %}

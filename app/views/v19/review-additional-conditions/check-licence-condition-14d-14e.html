@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Create and vary a licence - Vary a licence - Check licence condition
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+
+{% endblock %}
+
+{% block content %}
+{% include "templates/banners/layout-name-vary.html" %}<br />
+
+<form action="/v19/check-your-answers" method="post">
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+       
+       
+        <span class="govuk-caption-l">Change 6 of 7</span>
+        <h1 class="govuk-fieldset__heading">
+          Review policy change</h1>
+      </legend><br>
+
+
+<div class="govuk-form-group">
+
+  <p>This licence condition has been changed in policy.
+</br> Before you can continue varying this licence, you must review this change and then accept or delete it.</p>
+ 
+   <p>You need to add or check some information before we can update the licence.</p>
+
+
+<h2 class="govuk-heading-m govuk-!-margin-top-8">Licence condition being changed
+</h2>
+
+<p>
+  You are subject to alcohol monitoring. Your alcohol intake will be electronically monitored for a period of 6 months ending on Saturday 31st January 2023, and you may not consume units of alcohol, unless otherwise permitted by your supervising officer.
+</p>
+
+<h2 class="govuk-heading-m govuk-!-margin-top-6">Select new licence conditions to use</h2>
+
+<p class="govuk-hint">The previous condition has been split into 2:</p>
+
+<ul class="govuk-hint govuk-list govuk-list--bullet">
+  <li>Choose the first licence condition if this person must not drink any alcohol</li>
+  <li>Choose the second licence condition if this person must limit how much they drink</li>
+</ul>
+
+
+
+ <!--<form action="/alcohol-electronic-tag-condition" method="post">-->
+
+
+    <div class="govuk-inset-text">
+
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+   
+      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="alcohol-monitoring" name="alcohol-monitoring" type="checkbox" value="alcohol-monitoring">
+          <label class="govuk-label govuk-checkboxes__label" for="alcohol-monitoring" style="margin-top: -10px;">
+            You must not drink any alcohol until [END DATE] unless your probation officer says you can. You will need to wear an electronic tag all the time so we can check this.
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item govuk-!-margin-top-4">
+          <input class="govuk-checkboxes__input" id="electronic-monitoring" name="electronic-monitoring" type="checkbox" value="electronic-monitoring">
+          <label class="govuk-label govuk-checkboxes__label" for="electronic-monitoring" style="margin-top: -10px;">
+            You will need to wear an electronic tag all the time until [END DATE] so we can check how much  alcohol you are drinking, and if you are drinking alcohol when you have been told you must not. To help you drink less alcohol you must take part in any activities, like treatment programmes, your probation officer asks you to.
+          </label>
+        </div>
+      </div>
+  
+    </fieldset>
+  </div>
+
+</div>
+
+ <!--<button class="govuk-button" data-module="govuk-button" ">
+    Continue
+  </button>
+
+  </form>--> 
+
+
+
+
+
+<!--<button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>-->
+<br /><br />
+    <input type="hidden" name="9a" value="no">
+    <a href="./complete-licence-condition-14e.html" class="govuk-button show-continue" style="display: inline;">
+      Continue</a>
+    
+<a href="#" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" style="display: inline; margin-left: 10px;">    Delete this condition
+  </button></a>
+
+{% endblock %}

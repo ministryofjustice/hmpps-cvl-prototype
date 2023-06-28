@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+{% block beforeContent %}
+  <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      prototype
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-three-thirds">
+        <h1 class="govuk-heading-xl">Search for an offender to start creating their licence </h1>
+
+      </div>
+</div>
+
+<form class="horizontal-form" data-test="homepage-search-form">
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="width-20">
+      Name or prison number
+    </label>
+    <input class="govuk-input govuk-input--width-20" id="width-20" name="width-20" type="text">
+  </div>
+  <div class="govuk-form-group">
+    
+  </div><a href="search-results" class="govuk-button show-search">Search</button></a>
+</form>
+
+
+  
+        
+          
+  
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+  
+
+         
+      
+
+
+{% endblock %}

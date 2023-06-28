@@ -1,0 +1,397 @@
+{% extends "layout.html" %}
+<style type="text/css">
+.moj-primary-navigation {
+    background-color: #ffffff;
+}
+</style>
+{% block beforeContent %}
+
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-thirds">
+    <h1 class="govuk-heading-xl">Select a person to vary licences and supervision orders</h1>
+  </div>
+</div>
+{% if data.user=="probation"%}
+<div class="moj-primary-navigation">
+
+  <div class="moj-primary-navigation__container">
+
+    <div class="moj-primary-navigation__nav">
+
+      <nav class="moj-primary-navigation" aria-label="Primary navigation">
+
+        <ul class="moj-primary-navigation__list">
+          <li class="moj-primary-navigation__item">
+            <a class="moj-primary-navigation__link" aria-current="page" href="#1">Nav item 1</a>
+          </li>
+
+          <li class="moj-primary-navigation__item">
+            <a class="moj-primary-navigation__link" href="#2">Nav item 2</a>
+          </li>
+
+
+        </ul>
+
+      </nav>
+
+    </div>
+    <div class="moj-primary-navigation__search">
+      <div class="moj-search-toggle" data-module="moj-search-toggle" data-moj-search-toggle-text="Find case">
+        <div class="moj-search-toggle__toggle"></div>
+        <div class="moj-search-toggle__search">
+
+          <div class="moj-search moj-search--ondark moj-search--toggle moj-js-hidden">
+
+            <form action="" method="get">
+
+              <div class="govuk-form-group">
+                <label class="govuk-label moj-search__label govuk-visually-hidden" for="search2">
+                  Search
+                </label>
+
+                <div id="search2-hint" class="govuk-hint moj-search__hint ">
+                  Enter case number, for example 123456
+                </div>
+
+                <input class="govuk-input moj-search__input " id="search2" name="search2" type="search" aria-describedby="search2-hint">
+              </div>
+
+              <button class="govuk-button moj-search__button " data-module="govuk-button">
+                Search
+              </button>
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+       {% endif %}
+
+<table class="govuk-table" data-module="moj-sortable-table">
+
+  <!--<caption class="govuk-table__caption govuk-table__caption--m">Month you apply</caption>-->
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header" aria-sort="ascending">Name</th>
+
+      {% if data.user!=="probation"%}
+      <th scope="col" class="govuk-table__header govuk-table__cell"  aria-sort="none">Prison number</th>
+
+      <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">Probation practitioner</th>
+      {% endif %}
+      {% if data.user=="probation"%}
+      <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">CRN</th>
+      <th scope="col" class="govuk-table__header app-custom-class" >Licence type</th>
+      <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">Probation practitioner</th>
+      {% endif %}
+
+      <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="ascending">Release date</th>
+      {% if data.user!=="governor"%}
+      <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">Status</th>
+      {% endif %}
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+          <a href="licence-history" class="govuk-link govuk-link--no-visited-state">
+          Avary Bradshaw
+          </a>
+        </h3>
+      </th>
+      <td class="govuk-table__cell">A381306</td>
+      <td class="govuk-table__cell">Standard determinate <br />Post sentence supervision</td>
+      <td class="govuk-table__cell">
+        <a href="probation-details">John Farrell<a/>
+        </td>
+      <td class="govuk-table__cell">20 November 2021</td>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">A<span style="text-transform: lowercase;">ctive</span></strong></td>
+    </tr>
+
+
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+            <a href="#" class="govuk-link govuk-link--no-visited-state" data-sort-value="3">
+              Seamus Doherty
+            </a></h3></th>
+            <td class="govuk-table__cell">A314402</td>
+
+            {% if data.user=="probation"%}
+            <td class="govuk-table__cell">Standard determinate</td>
+            <td class="govuk-table__cell">
+              <a href="probation-details">John Farrell<a/>
+              </td>
+
+            {%else%}
+            <td class="govuk-table__cell"><a href="#">Abdul Tendulka</a></td>
+            {%endif%}
+
+            <td class="govuk-table__cell">19 12 2021</td>
+            <td class="govuk-table__cell">
+
+              {% if data.user=="governor"%}
+            </td>
+            {%else%}
+            <strong class="govuk-tag govuk-tag--green">A<span style="text-transform: lowercase;">ctive</span></strong></td>
+            {%endif%}
+
+          </tr>
+            {% if data.user!=="governor"%}
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header"><h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+              <a href="#" class="govuk-link govuk-link--no-visited-state">
+                Tyrone Shade</a></h3>
+              </th>
+              <td class="govuk-table__cell">A911444</td>
+
+              {% if data.user=="probation"%}
+              <td class="govuk-table__cell">Post sentence supervision</td>
+
+
+              <td class="govuk-table__cell">
+                <a href="probation-details">John Farrell<a/>
+                </td>
+
+              {%else%}
+              <td class="govuk-table__cell"><a href="#">Jamie Foxx</a></td>
+              {%endif%}
+
+              <td class="govuk-table__cell">20 12 2021</td>
+              <td class="govuk-table__cell"> {% if data.user=="governor"%}
+                </td>
+               {%else%}
+               <strong class="govuk-tag govuk-tag--green">A<span style="text-transform: lowercase;">ctive</span></strong></td>
+               {%endif%}
+            </tr>
+            {%endif%}
+
+            {% if data.user=="governor"%}
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header"><h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+                <a href="#" class="govuk-link govuk-link--no-visited-state" data-sort-value="1">
+                  {% if data.edit=="yes" %}Edith Bradshaw{% else %}Adam Balasaravika{% endif %}
+                </a>
+              </h3>
+            </th>
+            <td class="govuk-table__cell">A381307</td>
+            <td class="govuk-table__cell">
+              <a href="probation-details">John Farrell<a/>
+              </td>
+              <td class="govuk-table__cell">29 12 2021</td>
+              <td class="govuk-table__cell">
+
+                {% if data.user=="governor"%}
+              </td>
+              {%else%}
+              <strong class="govuk-tag govuk-tag--green">A<span style="text-transform: lowercase;">ctive</span></strong></td>
+              {%endif%}
+
+            </tr>
+            {%endif%}
+
+            {% if data.user!=="governor"%}
+            {% if data.licencetypechoose=="ap"%}
+
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header"><h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+
+{% if data.user=="admin"%}
+<a href="#" class="govuk-link govuk-link--no-visited-state">
+{%else%}
+<a href="#" class="govuk-link govuk-link--no-visited-state" data-sort-value="1">
+{%endif%}
+
+Adam Balasaravika</a></h3>
+</th>
+<td class="govuk-table__cell">A381306</td>
+
+{% if data.user=="probation"%}
+<td class="govuk-table__cell">Standard determinate</td>
+{%endif%}
+
+{% if data.user!=="governor"%}
+<td class="govuk-table__cell"><a href="probation-details">John Farrell<a/></td>
+{%endif%}
+
+<td class="govuk-table__cell">29 12 2021</td>
+<td class="govuk-table__cell">
+{% if data.user=="admin"%}
+<strong class="govuk-tag govuk-tag--green">A<span style="text-transform: lowercase;">ctive</span></strong></td>
+{%else%}
+<strong class="govuk-tag govuk-tag--green">A<span style="text-transform: lowercase;">ctive</span></strong></td>
+{%endif%}
+</td>
+{%endif%}
+</tr>
+
+{% if data.licencetypechoose=="pss"%}
+<tr class="govuk-table__row">
+<th scope="row" class="govuk-table__header"><h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+<a href="#" class="govuk-link govuk-link--no-visited-state">
+Adam Balasaravika</a></h3>
+</th>
+<td class="govuk-table__cell">A381306</td>
+
+{% if data.user=="probation"%}
+<td class="govuk-table__cell">Standard determinate <br />Post sentence supervision</td>
+{%endif%}
+
+
+<td class="govuk-table__cell"><a href="probation-details">John Farrell<a/></td>
+
+
+<td class="govuk-table__cell">29 12 2021</td>
+<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">A<span style="text-transform: lowercase;">ctive</span></strong></td>{%endif%}
+</tr>
+
+
+<!--Authorised state-->
+{% if data.user!=="admin"%}
+<tr class="govuk-table__row">
+  <th scope="row" class="govuk-table__header"><h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+
+    {% if data.user=="probation"%}
+      <a href="#" class="govuk-link govuk-link--no-visited-state">
+        {%else%}
+        <a href="#" class="govuk-link govuk-link--no-visited-state">
+    {%endif%}
+
+      Edith Bradshaw
+    </a></h3></th>
+  <td class="govuk-table__cell">A381306</td>
+  {% if data.user=="probation"%}
+    <td class="govuk-table__cell">Standard determinate <br />Post sentence supervision</td>
+  {%endif%}
+  {% if data.user=="probation"%}
+    <td class="govuk-table__cell"><a href="probation-details">John Farrell<a/></td>
+  {%endif%}
+  <td class="govuk-table__cell">30 12 2021</td>
+  <td class="govuk-table__cell">
+{% if (data.edit=="yes") or (data.user=="governor") %}
+  <strong class="govuk-tag govuk-tag--pink">S<span style="text-transform: lowercase;">ubmitted</span></strong></td>
+{%else%}
+<strong class="govuk-tag govuk-tag--green">A<span style="text-transform: lowercase;">ctive</span></strong></td>
+    </td>
+
+{%endif%}
+</tr>
+{%endif%}
+<!---->
+
+
+{% if data.licencetypechoose=="pssonly"%}
+<tr class="govuk-table__row">
+<th scope="row" class="govuk-table__header"><h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+<a href="#" class="govuk-link govuk-link--no-visited-state">
+Adam Balasaravika
+</a></h3></th>
+<td class="govuk-table__cell">A381306</td>
+
+{% if data.user=="probation"%}
+<td class="govuk-table__cell">Post sentence supervision</td>
+{%endif%}
+
+{% if data.user!=="probation"%}
+<td class="govuk-table__cell"><a href="probation-details">John Farrell<a/></td>
+{%endif%}
+
+<td class="govuk-table__cell">29 12 2021</td>
+<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">A<span style="text-transform: lowercase;">ctive</span></strong></td>
+
+</tr>
+{%endif%}
+
+<tr class="govuk-table__row">
+<th scope="row" class="govuk-table__header"><h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+  <a href="#" class="govuk-link govuk-link--no-visited-state">
+    Elliot Raishbrook
+  </a></h3></th>
+<td class="govuk-table__cell">A588111</td>
+
+{% if data.user=="probation"%}
+<td class="govuk-table__cell">Standard determinate <br />Post sentence supervision</td>
+<td class="govuk-table__cell">
+  <a href="probation-details">John Farrell<a/>
+  </td>
+
+{%else%}
+<td class="govuk-table__cell"><a href="#">Laura White</a></td>
+{%endif%}
+
+<td class="govuk-table__cell">21 1 2022</td>
+<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">A<span style="text-transform: lowercase;">ctive</span></strong></td>
+</tr>
+
+
+<tr class="govuk-table__row">
+<th scope="row" class="govuk-table__header"><h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+  <a href="#" class="govuk-link govuk-link--no-visited-state">
+    Rodrigo Matthewson
+  </a></h3></th>
+<td class="govuk-table__cell">A255661</td>
+
+{% if data.user=="probation"%}
+<td class="govuk-table__cell">Standard determinate <br />Post sentence supervision</td>
+<td class="govuk-table__cell">
+  <a href="probation-details">John Farrell<a/>
+  </td>
+
+{%else%}
+<td class="govuk-table__cell"><a href="#">Fay de Clerk</a></td>
+{%endif%}
+
+<td class="govuk-table__cell">31 5 2022</td>
+<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">A<span style="text-transform: lowercase;">ctive</span></strong></td>
+</tr>
+
+
+<tr class="govuk-table__row">
+<th scope="row" class="govuk-table__header"><h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+<a href="#" class="govuk-link govuk-link--no-visited-state">
+Tyson Pearson
+</a></h3></th>
+<td class="govuk-table__cell">A732689</td>
+
+{% if data.user=="probation"%}
+<td class="govuk-table__cell">Standard determinate</td>
+<td class="govuk-table__cell">
+  <a href="probation-details">John Farrell<a/>
+  </td>
+
+{%else%}
+<td class="govuk-table__cell"><a href="#">Michelle Hooper</a></td>
+{%endif%}
+
+<td class="govuk-table__cell">31 5 2022</td>
+<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">A<span style="text-transform: lowercase;">ctive</span></strong></td>
+</tr>
+{%endif%}
+
+</tbody>
+</table>
+
+
+{% endblock %}

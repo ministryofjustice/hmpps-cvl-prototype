@@ -1,0 +1,133 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+{% endblock %}
+
+{% block content %}
+{% include "templates/banners/layout-name-licence-expired-pss.html" %}<br />
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-thirds">
+    <form action="" method="post">
+
+
+
+
+
+
+<div class="govuk-form-group" style="margin-left: 15px;">
+  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Who have you consulted with about this variation?
+      </h1>
+    </legend>
+    <div id="waste-hint" class="govuk-hint">
+      Select all that apply.
+    </div>
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="spo" name="checkSPO" type="checkbox" value="true"
+        {%if (data.checkSPO=="true") %}
+          checked="checked"
+        {% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="spo">
+          Senior probation officer (SPO)
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="vlo" name="checkVLO" type="checkbox" value="true"
+        {%if (data.checkVLO=="true") %}
+          checked="checked"
+        {% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="vlo">
+          Victim liaison officer (VLO)
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="ppcs" name="checkPPCS" type="checkbox" value="true"
+        {%if (data.checkPPCS=="true") %}
+            checked="checked"
+          {% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="ppcs">
+          Public Protection Casework Section (PPCS)
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="ap" name="checkAP" type="checkbox" value="true"
+        {%if (data.checkAP=="true") %}
+            checked="checked"
+          {% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="ap">
+          Approved premises
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="police" name="checkPOLICE" type="checkbox" value="true"
+        {%if (data.checkPOLICE=="true") %}
+          checked="checked"
+        {% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="police">
+          Police
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="ems" name="checkEMS" type="checkbox" value="true"
+        {%if (data.checkEMS=="true") %}
+          checked="checked"
+        {% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="ems">
+          Electronic monitoring service
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="other" name="checkOTHER" type="checkbox" value="true"
+        {%if (data.checkOTHER=="true") %}
+          checked="checked"
+        {% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="other">
+          Other
+        </label>
+        <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+         </div>
+      </div>
+      <div class="govuk-checkboxes__divider">or</div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="checkNONE" name="checkNONE" type="checkbox" value="true"
+        {%if (data.checkNONE=="true") %}
+          checked="checked"
+        {% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="checkNONE">
+          I haven't consulted with anyone
+        </label>
+      </div>
+    </div>
+    </div>
+    <br />
+  <button type="submit" class="govuk-button" data-module="govuk-button" style="margin-left: 15px;">Continue</button>
+</div>
+  </form>
+
+ </div>
+</div>
+
+
+
+
+{% endblock %}

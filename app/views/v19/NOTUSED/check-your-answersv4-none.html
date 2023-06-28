@@ -1,0 +1,171 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+<p class="govuk-phase-banner__content">
+  <strong class="govuk-tag govuk-phase-banner__content__tag">
+    Prototype
+  </strong>
+This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+</p>
+</div>
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+{% endblock %}
+
+{% block content %}
+<h1 class="govuk-heading-m">
+  <span class="govuk-caption-m">{% if data.edit=="yes" %}Edith Bradshaw{% else %}Adam Balasaravika{% endif %}
+  </span></h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+        <h1 class="govuk-heading-l">Check your answers</h1><br>
+
+
+
+
+        <h2 class="govuk-heading-m"> Initial meeting details</h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Samual Toogood
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="meet-change">
+                Change<span class="govuk-visually-hidden"></span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Lewisham Probation Office, 20 Brockley Street, London, SE13 4HY
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="address-change">
+                Change<span class="govuk-visually-hidden"> licence type</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Contact phone number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              0798 443 0099
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="phone-number-change">
+                Change<span class="govuk-visually-hidden"> </span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              31 May 2023
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="when-change">
+                Change<span class="govuk-visually-hidden"> </span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Time
+            </dt>
+            <dd class="govuk-summary-list__value">
+              5:30pm
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="when-change">
+                Change<span class="govuk-visually-hidden"></span>
+              </a>
+            </dd>
+          </div>
+
+
+        </dl><br>
+
+
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-three-quarters">
+                  <h2 class="govuk-heading-m">Additional licence conditions details</h2>
+                </div>
+              </div>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:50%;">
+              Needs additional conditions?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <strong>No</strong><br>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="conditions-all">
+              <span> Change </span>
+              </a>
+            </dd>
+          </div>
+</dl><br>
+
+
+
+        <h2 class="govuk-heading-m"> Bespoke licence condition details
+        </h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"  style="width:50%;">
+              Needs bespoke conditions?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <strong>No</strong>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="bespoke2-change">
+                Change<span class="govuk-visually-hidden"></span>
+              </a>
+            </dd>
+          </div>
+
+        </dl>
+
+
+
+
+        <a href="confirmation" class="govuk-button" type="submit">Send to prison for approval</a>
+      </div>
+    </div>
+
+
+
+{% endblock %}

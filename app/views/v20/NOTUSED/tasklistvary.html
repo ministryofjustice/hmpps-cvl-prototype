@@ -1,0 +1,138 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Task list – Create and vary a licence – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-thirds">
+      <h1 class="govuk-heading-xl">
+        Create and vary a licence
+      </h1>
+
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Licence creation incomplete</h2>
+      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 2 of 4 sections.</p>
+
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> Variation details
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="eligibility-status">
+                  Have you have discussed this variation request with your SPO?
+                </a>
+              </span>
+              <span style="float:right;">
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+            </span>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="read-declaration-status">
+                  Have you consulted with the victim liaison officer (VLO) for this case?
+                </a>
+              </span>
+              <span style="float:right;">
+              <strong class="govuk-tag app-task-list__tag" id="read-declaration-status">Completed</strong>
+              </span>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span> Additional conditions
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="company-information-status">
+                  Restriction of residency
+                </a>
+              </span>
+              <span style="float:right;">
+              <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
+              </span>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="contact-details-status">
+                Contact with a person
+                </a>
+              </span>
+              <span style="float:right;">
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>
+              </span>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="list-convictions-status">
+                  Supervision in the community
+                </a>
+              </span>
+              <span style="float:right;">
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="list-convictions-status">In progress</strong>
+              </span>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a>
+                Supervision in the community
+              </a>
+              </span>
+              <span style="float:right;">
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a>
+                Give medical information
+                  </a>
+              </span>
+              <span style="float:right;">
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="medical-information-status">In progress</strong>
+              </span>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">3. </span> Bespoke conditions
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                Select bespoke condition requirements
+              </span>
+              <span style="float:right;">
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Not yet started</strong>
+              </span>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">4. </span> Additional post sentence requirements
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+              Select additional post sentence requirements
+              </span>
+              <span style="float:right;">
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Not yet started</strong>
+              </span>
+            </li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+{% endblock %}
