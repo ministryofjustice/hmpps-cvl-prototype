@@ -1,56 +1,68 @@
 module.exports = function (router) {
 
-var version = '/v22';
+var version = '/v21';
 
-//Inflight-policy changes (Review additional conditions pages)
-// Checkbox for condition 14d and 14e
-router.post('/alcohol-electronic-tag-condition', function (req, res) {
 
-  // Make a variable and give it the value from 'how-many-letters'
-  var alcoholMonitoringCheckbox = req.session.data['alcohol-monitoring']
+
+//Multiple premises - freedom of movement
+
+router.post('/add-location', function (req, res) {
+  var locationAddAnother = req.session.data['addanotherlocation']
 
   // Check whether the variable matches a condition
-  if (alcoholMonitoringCheckbox == "complete"){
-    // Send user to next page
-    res.redirect('v19/review-additional-conditions/complete-licence-condition-14d')
+  if (locationAddAnother == "yes"){
+   
+   // Send user to next page
+    res.redirect('v21/additional/8b-location2')
   } else {
     // Send user to ineligible page
-    res.redirect('v19/review-additional-conditions/complete-licence-condition-14e')
+    res.redirect('v21/check-your-answers')
   }
 
 })
 
 
 
-//Inflight-policy changes (Review additional conditions pages)
-//Delete this condition
-
-// Run this code when a form is submitted to 'parole-outcome-letter-answer'
-router.post('/policy-change-not-needed', function (req, res) {
-
-  // Make a variable and give it the value from 'how-many-letters'
-  var conditionNotNeeded = req.session.data['condition-not-needed']
-
-  // Check whether the variable matches a condition
-  if (conditionNotNeeded == "yes"){
-    // Send user to next page
-    res.redirect('v19/review-additional-conditions/check-licence-condition-4a')
-  } else {
-    // Send user to ineligible page
-    res.redirect('v19/review-additional-conditions/check-licence-condition-3c')
+//Approver view from approve licence page to approve and back to case list
+router.post(version + '/approvals/approve', function(req, res) {
+  var route = req.session.data['approve-a-licence'];
+  if (route == "approvenow"){
+    res.redirect(version + '/approvals/confirmation');
   }
+  else if (route == "returntocases"){
+    res.redirect(version + '/list');
+  }
+});
 
-})
+//Approver view from confirmation list to approve another licence
+router.post(version + '/approvals/confirmation', function(req, res) {
+  res.redirect(version + '/list');
+});
 
+//Create - From admin to search results page
+router.post(version + '/list-ca', function(req, res) {
+  res.redirect(version + '/list-search-results');
+});
 
+//Create - From approver cases list to search results page
+router.post(version + '/list-recently-approved', function(req, res) {
+  res.redirect(version + '/list-search-results');
+});
 
+//Create - From team cases list to search results page
+router.post(version + '/list-team-view', function(req, res) {
+  res.redirect(version + '/list-search-results');
+});
 
+//Vary - From my cases list to search results page
+router.post(version + '/vary/list', function(req, res) {
+  res.redirect(version + '/list-search-results');
+});
 
-
-
-
-
-
+//Create - From team cases list to search results page
+router.post(version + '/vary/list-team-view', function(req, res) {
+  res.redirect(version + '/list-search-results');
+});
 
 //Start of the journey right after the config page
 router.post(version + '/config', function(req, res) {
@@ -59,6 +71,28 @@ if (req.session.data['user'] =='admin'){
     }
     req.session.data['user']
     res.redirect(version + '/details');
+  });
+
+  //IS91 page routing for create journey
+router.post(version + '/create-immigration-detention-licence', function(req, res) {
+  var route = req.session.data['submit'];
+  if (route == "continue"){
+    res.redirect(version + '/question-activate');
+  }
+  else if (route == "cancel"){
+    res.redirect(version + '/list');
+  }
+});
+
+  //IS91 page routing for vary journey
+  router.post(version + '/vary/is91-vary/vary-immigration-detention-licence-cody', function(req, res) {
+    var route = req.session.data['submit-is91-vary'];
+    if (route == "continue"){
+      res.redirect(version + '/vary/question');
+    }
+    else if (route == "cancel"){
+      res.redirect(version + '/vary/is91-vary/check-your-answers-cody');
+    }
   });
 
 //Create journey for v10+ save & exit routing
@@ -199,7 +233,6 @@ router.post(version +'/conditions', function(req, res) {
    var b7 = req.session.data['7b'];
    var a8 = req.session.data['8a'];
    var b8 = req.session.data['8b'];
-   var c8 = req.session.data['8c'];
    var a9 = req.session.data['9a'];
    var b9 = req.session.data['9b'];
    var b9review = req.session.data['9breview'];
@@ -256,9 +289,6 @@ router.post(version +'/conditions', function(req, res) {
       }
       else if (b8 == "yes"){
         res.redirect(version + '/additional/8b');
-      }
-      else if (c8 == "yes"){
-        res.redirect(version + '/additional/8c');
       }
       else if (a9 == "yes"){
         res.redirect(version + '/additional/9a');
@@ -516,34 +546,17 @@ router.post(version + '/vary/question', function(req, res) {
 });
 
 router.post(version + '/vary/question-checklist', function(req, res) {
- //If user selects they haven't consulted with anyone, send them to a page that asks them to explain why not
   //If other is selected route to other page_title
   //otherwise continue to CYA
   var checkOTHER = req.session.data['checkOTHER'];
-  var checkNONE = req.session.data['checkNONE'];
 
   if (checkOTHER=="true"){
     res.redirect(version + '/vary/checklist-other');
   }
-
-  else if (checkNONE=="true") {
-    res.redirect(version + '/vary/reason-for-no-consultation');
-  }
-
   else{
-    res.redirect(version + '/review-additional-conditions/review-updated-additional-conditions');
+    res.redirect(version + '/check-your-answers');
   }
 });
-
-
-router.post(version + '/vary/reason-for-no-consultation', function(req, res) {
-  //Route to check your answers page from page asking user to say why they haven't consulated with anyone about the licence variation
-  res.redirect(version + '/review-additional-conditions/review-updated-additional-conditions');
-});
-
-
-
-//STEPH changed this '/check-your-answer
 
 router.post(version + '/vary/checklist-other', function(req, res) {
   var saveexit = req.session.data['submit'];
@@ -551,7 +564,7 @@ router.post(version + '/vary/checklist-other', function(req, res) {
       res.redirect(version + 'exit');
   }
   else{
-    res.redirect(version + '/review-additional-conditions/review-updated-additional-conditions');
+    res.redirect(version + '/check-your-answers');
   }
 });
 

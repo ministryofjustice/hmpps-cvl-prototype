@@ -18,12 +18,16 @@
 </div>
 <a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
 
+
+
 {% endblock %}
+
 
 {% block content %}
 
+{% include "layouts/layout-name.html" %}
 
-<h1 class="govuk-heading-l">You have added one location</h1>
+<h1 class="govuk-heading-l" style="margin-top: 40px;">You have added one location</h1>
 
 <!--
 {% if data['exclusionzone-name'] and (data.deleteexclusionzone=="yes") %} 

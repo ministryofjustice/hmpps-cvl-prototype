@@ -12,6 +12,10 @@
     <span class="govuk-caption-m">CRN: A761536 | CRD: 12 Dec 2022 | Date of birth: 12 Mar 1975</span>
     <h1 class="govuk-heading-m">Craig Jennings</h1>
 
+    {% elseif data.user=="probation" %}
+        <span class="govuk-caption-m">CRN: G547951 | CRD: {{ 14 | govukDate }} | Date of birth: 18 Mar 1965</span>
+          <h1 class="govuk-heading-m">Samuel Jennings</h1>
+        
     {% else %}
       <span class="govuk-caption-m">CRN: A381306 | CRD: 19 Sept 2022 | Date of birth: 12 Mar 1975</span>
       <h1 class="govuk-heading-m">Adam Balasaravika</h1>

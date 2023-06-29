@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layouts/main.html" %}
 
 {% block beforeContent %}
 
@@ -47,7 +47,7 @@
           </label>
     
           <div id="search-hint" class="govuk-hint moj-search__hint ">
-            <!--Enter a name or prison number-->
+            Add hint text
           </div>
     
           <input class="govuk-input moj-search__input " id="search" name="search" type="search" aria-describedby="search-hint">
@@ -182,8 +182,8 @@
 
     {% if data.user=="admin" %}<td class="govuk-table__cell">Swansea (HMP)</td>{% endif %}
 
-    {% if data.user=="probation" %}<td class="govuk-table__cell">{{ -50 | getDate }}</td>{% endif %}
-    {% if data.user=="admin" %}<td class="govuk-table__cell">Confirmed release date:</br>{{ -50 | getDate }}</td>{% endif %}
+    {% if data.user=="probation" %}<td class="govuk-table__cell">{{ -50 | govukDate }}</td>{% endif %}
+    {% if data.user=="admin" %}<td class="govuk-table__cell">Confirmed release date:</br>{{ -50 | govukDate }}</td>{% endif %}
   
     <td class="govuk-table__cell">
       <strong class="govuk-tag govuk-tag--grey">N<span style="text-transform: lowercase;">ot started</span></strong>
@@ -211,8 +211,8 @@
 
     {% if data.user=="admin" %}<td class="govuk-table__cell">Cardiff (HMP)</td>{% endif %}
 
-    {% if data.user=="probation" %}<td class="govuk-table__cell">{{ 5 | getDate }}</td>{% endif %}
-    {% if data.user=="admin" %}<td class="govuk-table__cell">Confirmed release date:</br>{{ 5 | getDate }}</td>{% endif %}
+    {% if data.user=="probation" %}<td class="govuk-table__cell">{{ 5 | govukDate }}</td>{% endif %}
+    {% if data.user=="admin" %}<td class="govuk-table__cell">Confirmed release date:</br>{{ 5 | govukDate }}</td>{% endif %}
   
     <td class="govuk-table__cell">
       <strong class="govuk-tag govuk-tag--green">A<span style="text-transform: lowercase;">pproved</span></strong>
@@ -241,8 +241,8 @@
 
     {% if data.user=="admin" %}<td class="govuk-table__cell">Swansea (HMP)</td>{% endif %}
 
-    {% if data.user=="probation" %}<td class="govuk-table__cell">{{ 14 | getDate }}</td>{% endif %}
-    {% if data.user=="admin" %}<td class="govuk-table__cell">Confirmed release date:</br>{{ 14 | getDate }}</td>{% endif %}
+    {% if data.user=="probation" %}<td class="govuk-table__cell">{{ 14 | govukDate }}</td>{% endif %}
+    {% if data.user=="admin" %}<td class="govuk-table__cell">Confirmed release date:</br>{{ 14 | govukDate }}</td>{% endif %}
   
     <td class="govuk-table__cell">
       <strong class="govuk-tag govuk-tag--blue">I<span style="text-transform: lowercase;">n progress</span></strong>
@@ -393,8 +393,8 @@
 
     {% if data.user=="admin" %}<td class="govuk-table__cell">Cardiff (HMP)</td>{% endif %}
 
-    {% if data.user=="probation" %}<td class="govuk-table__cell">{{ -50 | getDate }}</td>{% endif %}
-    {% if data.user=="admin" %}<td class="govuk-table__cell">Confirmed release date:</br>{{ -50 | getDate }}</td>{% endif %}
+    {% if data.user=="probation" %}<td class="govuk-table__cell">{{ -50 | govukDate }}</td>{% endif %}
+    {% if data.user=="admin" %}<td class="govuk-table__cell">Confirmed release date:</br>{{ -50 | govukDate }}</td>{% endif %}
   
     <td class="govuk-table__cell">
       <strong class="govuk-tag govuk-tag--turquoise">A<span style="text-transform: lowercase;">ctive</span></strong>
@@ -422,8 +422,8 @@
 
     {% if data.user=="admin" %}<td class="govuk-table__cell">Swansea (HMP)</td>{% endif %}
 
-    {% if data.user=="probation" %}<td class="govuk-table__cell">{{ -21 | getDate }}</td>{% endif %}
-    {% if data.user=="admin" %}<td class="govuk-table__cell">Confirmed release date:</br>{{ -21 | getDate }}</td>{% endif %}
+    {% if data.user=="probation" %}<td class="govuk-table__cell">{{ -21 | govukDate }}</td>{% endif %}
+    {% if data.user=="admin" %}<td class="govuk-table__cell">Confirmed release date:</br>{{ -21 | govukDate }}</td>{% endif %}
   
     <td class="govuk-table__cell">
       <strong class="govuk-tag govuk-tag--turquoise">A<span style="text-transform: lowercase;">ctive</span></strong>
@@ -452,8 +452,8 @@
 
     {% if data.user=="admin" %}<td class="govuk-table__cell">Swansea (HMP)</td>{% endif %}
 
-    {% if data.user=="probation" %}<td class="govuk-table__cell">{{ -130 | getDate }}</td>{% endif %}
-    {% if data.user=="admin" %}<td class="govuk-table__cell">Confirmed release date:</br>{{ -130 | getDate }}</td>{% endif %}
+    {% if data.user=="probation" %}<td class="govuk-table__cell">{{ -130 | govukDate }}</td>{% endif %}
+    {% if data.user=="admin" %}<td class="govuk-table__cell">Confirmed release date:</br>{{ -130 | govukDate }}</td>{% endif %}
   
     <td class="govuk-table__cell">
       <strong class="govuk-tag govuk-tag--yellow">V<span style="text-transform: lowercase;">ariation approved</span></strong>
@@ -480,8 +480,8 @@
 
     {% if data.user=="admin" %}<td class="govuk-table__cell">Cardiff (HMP)</td>{% endif %}
 
-    {% if data.user=="probation" %}<td class="govuk-table__cell">{{ -60 | getDate }}</td>{% endif %}
-    {% if data.user=="admin" %}<td class="govuk-table__cell">Confirmed release date:</br>{{ -60 | getDate }}</td>{% endif %}
+    {% if data.user=="probation" %}<td class="govuk-table__cell">{{ -60 | govukDate }}</td>{% endif %}
+    {% if data.user=="admin" %}<td class="govuk-table__cell">Confirmed release date:</br>{{ -60 | govukDate }}</td>{% endif %}
   
     <td class="govuk-table__cell">
       <strong class="govuk-tag govuk-tag--turquoise">A<span style="text-transform: lowercase;">ctive</span></strong>
@@ -509,8 +509,8 @@
 
     {% if data.user=="admin" %}<td class="govuk-table__cell">Cardiff (HMP)</td>{% endif %}
 
-    {% if data.user=="probation" %}<td class="govuk-table__cell">{{ -100 | getDate }}</td>{% endif %}
-    {% if data.user=="admin" %}<td class="govuk-table__cell">Confirmed release date:</br>{{ -100 | getDate }}</td>{% endif %}
+    {% if data.user=="probation" %}<td class="govuk-table__cell">{{ -100 | govukDate }}</td>{% endif %}
+    {% if data.user=="admin" %}<td class="govuk-table__cell">Confirmed release date:</br>{{ -100 | govukDate }}</td>{% endif %}
   
     <td class="govuk-table__cell">
       <strong class="govuk-tag govuk-tag--pink" style="width: 180px">V<span style="text-transform: lowercase;">ariation submitted</span></strong>
@@ -680,7 +680,7 @@
 
     <td class="govuk-table__cell">Cardiff (HMP)</a></td>
 
-    <td class="govuk-table__cell">{{ 90 | getDate }}</td>
+    <td class="govuk-table__cell">{{ 90 | govukDate }}</td>
   
   </tr>
  
@@ -817,11 +817,11 @@
   
     <td class="govuk-table__cell">Swansea (HMP)</td>
 
-    <td class="govuk-table__cell">{{ -5 | getDate }}</td>
+    <td class="govuk-table__cell">{{ -5 | govukDate }}</td>
 
     <td class="govuk-table__cell">Sarah Williams</td>
 
-    <td class="govuk-table__cell">{{ -7 | getDate }}</td>
+    <td class="govuk-table__cell">{{ -7 | govukDate }}</td>
 
   </tr>
  
@@ -839,11 +839,11 @@
   
     <td class="govuk-table__cell">Cardiff (HMP)</td>
 
-    <td class="govuk-table__cell">{{ -15 | getDate }}</td>
+    <td class="govuk-table__cell">{{ -15 | govukDate }}</td>
 
     <td class="govuk-table__cell">Steven Smith</td>
 
-    <td class="govuk-table__cell">{{ -20 | getDate }}</td>
+    <td class="govuk-table__cell">{{ -20 | govukDate }}</td>
 
 
   </tr>
@@ -863,11 +863,11 @@
   
     <td class="govuk-table__cell">Cardiff (HMP)</td>
 
-    <td class="govuk-table__cell">{{ -20 | getDate }}</td>
+    <td class="govuk-table__cell">{{ -20 | govukDate }}</td>
 
     <td class="govuk-table__cell">Sarah Williams</td>
 
-    <td class="govuk-table__cell">{{ -25 | getDate }}</td>
+    <td class="govuk-table__cell">{{ -25 | govukDate }}</td>
 
 
   </tr>
@@ -1029,9 +1029,9 @@
   
       <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">Afsana Khan</a></td>
   
-      <td class="govuk-table__cell">{{ 0 | getDate }}</td>
+      <td class="govuk-table__cell">{{ 0 | govukDate }}</td>
 
-      <td class="govuk-table__cell">{{ -100 | getDate }}</td>
+      <td class="govuk-table__cell">{{ -100 | govukDate }}</td>
     
     </tr>
    
@@ -1168,9 +1168,9 @@
     
       <td class="govuk-table__cell">Rachel Riley</td>
   
-      <td class="govuk-table__cell">{{ -2 | getDate }}</td>
+      <td class="govuk-table__cell">{{ -2 | govukDate }}</td>
 
-      <td class="govuk-table__cell">{{ -250 | getDate }}</td>
+      <td class="govuk-table__cell">{{ -250 | govukDate }}</td>
     
   
     </tr>
@@ -1190,9 +1190,9 @@
 
       <td class="govuk-table__cell">Rachel Riley</td>
   
-      <td class="govuk-table__cell">{{ 0 | getDate }}</td>
+      <td class="govuk-table__cell">{{ 0 | govukDate }}</td>
 
-      <td class="govuk-table__cell">{{ -45 | getDate }}</td>
+      <td class="govuk-table__cell">{{ -45 | govukDate }}</td>
     
     </tr>
    
@@ -1212,9 +1212,9 @@
 
       <td class="govuk-table__cell">Roman Abraham</td>
   
-      <td class="govuk-table__cell">{{ -1 | getDate }}</td>
+      <td class="govuk-table__cell">{{ -1 | govukDate }}</td>
 
-      <td class="govuk-table__cell">{{ -130 | getDate }}</td>
+      <td class="govuk-table__cell">{{ -130 | govukDate }}</td>
     
     </tr>
   
