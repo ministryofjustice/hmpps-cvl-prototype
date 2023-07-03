@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layouts/main.html" %}
 
 {% block beforeContent %}
 
@@ -136,10 +136,10 @@
       <th scope="col" class="govuk-table__header app-custom-class" >Licence type</th>
       <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">Probation practitioner</th>
       {% endif %}
-
+      <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">Release information</th>
       <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="ascending">Release date</th>
       {% if data.user!=="governor"%}
-      <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">Status</th>
+      <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none" width="130px">Status</th>
       {% endif %}
     </tr>
   </thead>
@@ -155,6 +155,7 @@
           <span class="govuk-hint" style="font-size:.85em; margin-top:-10px;">CRN: A629381</span>
       </th>
         <td class="govuk-table__cell"><a href="#">Abdul Tendulka</a></td>
+        <td class="govuk-table__cell"></td>
         <td class="govuk-table__cell">22 March 2022</td>
         <td class="govuk-table__cell">
         <strong class="govuk-tag govuk-tag--turquoise">A<span style="text-transform: lowercase;">ctive</span></strong>
@@ -178,17 +179,19 @@
             {%else%}
             <td class="govuk-table__cell"><a href="#">Abdul Tendulka</a></td>
             {%endif%}
-
-            <td class="govuk-table__cell">15 May 2022</td>
+            <td class="govuk-table__cell">Immigration detention (IS91)</td>
+            <td class="govuk-table__cell">15 Nov 2022</td>
             <td class="govuk-table__cell">
 
             {% if data.user=="governor"%}
             </td>
             {% elseif data.user=="admin"%}
+             
             <strong class="govuk-tag govuk-tag--red">A<span style="text-transform: lowercase;">ttention Needed</span></strong>
 
             {%else%}
-            <strong class="govuk-tag govuk-tag--red">A<span style="text-transform: lowercase;">ttention Needed</span></strong>
+            <strong class="govuk-tag govuk-tag--yellow">N<span style="text-transform: lowercase;">ot started</span></strong>
+            <!--<strong class="govuk-tag govuk-tag--red">A<span style="text-transform: lowercase;">ttention Needed</span></strong>-->
             {%endif%}
             <!--End of ATTENTION NEEDED CASE-->
 
@@ -226,8 +229,8 @@
             {%else%}
             <td class="govuk-table__cell"><a href="#">Abdul Tendulka</a></td>
             {%endif%}
-
-            <td class="govuk-table__cell">15 May 2022</td>
+            <td class="govuk-table__cell">Release after recall</td>
+            <td class="govuk-table__cell">15 Nov 2022</td>
             <td class="govuk-table__cell">
 
             {% if data.user=="governor"%}
@@ -260,8 +263,8 @@
               {%else%}
               <td class="govuk-table__cell"><a href="#">Jamie Foxx</a></td>
               {%endif%}
-
-              <td class="govuk-table__cell">20 May 202</td>
+              <td class="govuk-table__cell">On the day release</td>
+              <td class="govuk-table__cell">20 Nov 202</td>
               <td class="govuk-table__cell"> {% if data.user=="governor"%}
                 </td>
                {%else%}
@@ -284,7 +287,7 @@
               <a href="probation-details">John Farrell<a/>
               </td>
               <td class="govuk-table__cell">
-                {% if data.edit=="yes" %}28{% else %}26{% endif %} May 2022
+                {% if data.edit=="yes" %}28{% else %}26{% endif %} Nov 2022
               </td>
               <td class="govuk-table__cell">
                 {% if data.user=="governor"%}
@@ -318,8 +321,8 @@ Adam Balasaravika</a></h3>
 {% if data.user!=="governor"%}
 <td class="govuk-table__cell"><a href="probation-details">John Farrell<a/></td>
 {%endif%}
-
-<td class="govuk-table__cell">26 May 2022</td>
+<td class="govuk-table__cell">Release information</td>
+<td class="govuk-table__cell">26 Nov 2022</td>
 <td class="govuk-table__cell">
 {% if data.user=="admin"%}
 <strong class="govuk-tag govuk-tag--green">A<span style="text-transform: lowercase;">pproved</span></strong>
@@ -349,8 +352,8 @@ Adam Balasaravika</a></h3>
 {% if data.user=="probation"%}
 <td class="govuk-table__cell"><a href="probation-details">John Farrell<a/></td>
 {%endif%}
-
-<td class="govuk-table__cell">27 May 2022</td>
+<td class="govuk-table__cell"></td>
+<td class="govuk-table__cell">27 Nov 2022</td>
 <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">N<span style="text-transform: lowercase;">ot started</span></strong></td>{%endif%}
 </tr>
 
@@ -375,7 +378,8 @@ Adam Balasaravika</a></h3>
   {% if data.user=="probation"%}
     <td class="govuk-table__cell"><a href="probation-details">John Farrell<a/></td>
   {%endif%}
-  <td class="govuk-table__cell">28 May 2022</td>
+  <td class="govuk-table__cell"></td>
+  <td class="govuk-table__cell">28 Nov 2022</td>
   <td class="govuk-table__cell">
 {% if (data.edit=="yes") or (data.user=="governor") %}
   <strong class="govuk-tag govuk-tag--blue">S<span style="text-transform: lowercase;">ubmitted</span></strong></td>
@@ -405,8 +409,8 @@ Adam Balasaravika
 {% if data.user!=="probation"%}
 <td class="govuk-table__cell"><a href="probation-details">John Farrell<a/></td>
 {%endif%}
-
-<td class="govuk-table__cell">28 May 2022</td>
+<td class="govuk-table__cell"></td>
+<td class="govuk-table__cell">28 Nov 2022</td>
 <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">N<span style="text-transform: lowercase;">ot started</span></strong></td>
 
 </tr>
@@ -430,8 +434,8 @@ Adam Balasaravika
 {%else%}
 <td class="govuk-table__cell"><a href="#">Laura White</a></td>
 {%endif%}
-
-<td class="govuk-table__cell">1 June2022</td>
+<td class="govuk-table__cell"></td>
+<td class="govuk-table__cell">01 Dec 2022</td>
 <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">N<span style="text-transform: lowercase;">ot started</span></strong></td>
 </tr>
 
@@ -453,8 +457,8 @@ Adam Balasaravika
 {%else%}
 <td class="govuk-table__cell"><a href="#">Fay de Clerk</a></td>
 {%endif%}
-
-<td class="govuk-table__cell">2 June2022</td>
+<td class="govuk-table__cell"></td>
+<td class="govuk-table__cell">02 Dec 2022</td>
 <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">N<span style="text-transform: lowercase;">ot started</span></strong></td>
 </tr>
 
@@ -476,8 +480,8 @@ Tyson Pearson
 {%else%}
 <td class="govuk-table__cell"><a href="#">Michelle Hooper</a></td>
 {%endif%}
-
-<td class="govuk-table__cell">4 June2022</td>
+<td class="govuk-table__cell"></td>
+<td class="govuk-table__cell">04 Dec 2022</td>
 <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">N<span style="text-transform: lowercase;">ot started</span></strong></td>
 </tr>
 {%endif%}
