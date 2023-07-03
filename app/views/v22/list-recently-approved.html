@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layouts/main.html" %}
 
 {% block beforeContent %}
 
@@ -209,9 +209,9 @@
 
             <td class="govuk-table__cell">G5662GI</td>
             <td class="govuk-table__cell"><a href="#">Simon Bentley</a></td>
-            <td class="govuk-table__cell">{{ -4 | getDate }}</td>
+            <td class="govuk-table__cell">{{ -4 | govukDate }}</td>
             <td class="govuk-table__cell">Steven Smith</td>
-            <td class="govuk-table__cell">{{ -8 | getDate }}</td>
+            <td class="govuk-table__cell">{{ -8 | govukDate }}</td>
       
             </tr>
 
@@ -223,9 +223,9 @@
 
             <td class="govuk-table__cell">G3447UA</td>
             <td class="govuk-table__cell"><a href="#">Lindsay Duncan</a></td>
-            <td class="govuk-table__cell">{{ -20 | getDate }}</td>
+            <td class="govuk-table__cell">{{ -20 | govukDate }}</td>
             <td class="govuk-table__cell">Sarah Williams</td>
-            <td class="govuk-table__cell">{{ -22 | getDate }}</td>
+            <td class="govuk-table__cell">{{ -22 | govukDate }}</td>
             
           </tr>
 
