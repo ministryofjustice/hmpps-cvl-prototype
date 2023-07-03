@@ -69,17 +69,17 @@
 
 
   
-<h2 class="govuk-heading-l" style="padding-top: 30px;">Review details to approve</h2>
+<h2 class="govuk-heading-l" style="padding-top: 30px;"> Review details</h2>
 
 
 
-  <div class="govuk-warning-text">
+  <!-- <div class="govuk-warning-text">
     <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
     <strong class="govuk-warning-text__text">
       <span class="govuk-warning-text__assistive">Warning</span>
       Terry is not due for release until {{ 90 | govukDate }}.</br>You may want to approve this licence later.
     </strong>
-  </div>
+  </div> -->
 
 
 
@@ -100,7 +100,19 @@
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
-
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Release date
+           </dt>
+          <dd class="govuk-summary-list__value">
+            <!--23 June 2023-->{{ 90 | govukDate }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+             </span>
+            </a>
+          </dd>
+        </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Licence start date
@@ -131,7 +143,7 @@
       
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Top up supervision start date
+            Post sentence supervision order start date
           </dt>
           <dd class="govuk-summary-list__value">
             <!--23 June-->{{ 822 | govukDate }}
@@ -145,7 +157,7 @@
       
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Top up supervision end date
+            Post sentence supervision order end date
           </dt>
           <dd class="govuk-summary-list__value">
             <!--23 June 2027--> {{ 1187 | govukDate }}
