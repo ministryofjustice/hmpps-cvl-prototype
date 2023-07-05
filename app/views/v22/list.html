@@ -307,7 +307,7 @@
 
             {%endif%}
 
-            <td class="govuk-table__cell">{{ 3 | govukDate }}</td>
+            <td class="govuk-table__cell">{{ "today" | duration(3) | govukDate("truncate") }}</td>
             <td class="govuk-table__cell">
 
             {% if data.user=="governor"%}
@@ -341,7 +341,7 @@
       {%endif%}
 
       <td class="govuk-table__cell"><a href="#">Abdul Tendulka</a></td>
-        <td class="govuk-table__cell">Conditional release date:</br>{{ 3 | govukDate }}</td>
+        <td class="govuk-table__cell">Conditional release date:</br>{{ "today" | duration(3) | govukDate("truncate") }}</td>
         <td class="govuk-table__cell">
           <strong class="govuk-tag govuk-tag--yellow">N<span style="text-transform: lowercase;">ot started</span></strong>
       </tr>
@@ -369,7 +369,7 @@
             <td class="govuk-table__cell"><a href="#">Abdul Tendulka</a></td>
             {%endif%}
 
-            <td class="govuk-table__cell">{{ 6 | govukDate }}</td>
+            <td class="govuk-table__cell">{{ "today" | duration(6) | govukDate("truncate") }}</td>
             <td class="govuk-table__cell">
 
             {% if data.user=="governor"%}
@@ -412,7 +412,7 @@
               <td class="govuk-table__cell"><a href="#">Jamie Foxx</a></td>
               {%endif%}
 
-              <td class="govuk-table__cell">{{ 9 | govukDate }}</td>
+              <td class="govuk-table__cell">{{ "today" | duration(9) | govukDate("truncate") }}</td>
               <td class="govuk-table__cell"> {% if data.user=="governor"%}
                 </td>
                {%else%}
@@ -467,7 +467,7 @@
               <a href="probation-details" class="govuk-link govuk-link--no-visited-state">Simon Bentley</a>
               </td>
               <td class="govuk-table__cell due-date">
-                <span class="date overdue"><!--31 January 2023-->{{ 2 | govukDate }}</span>
+                <span class="date overdue">{{ "today" | duration(2) | govukDate("truncate") }}</span>
                 <span class="secondary overdue">Urgent approval required for upcoming release</span>
               </td>
               <td class="govuk-table__cell">
@@ -500,7 +500,7 @@
               <a href="probation-details" class="govuk-link govuk-link--no-visited-state">Lindsay Duncan</a>
               </td>
               <td class="govuk-table__cell">
-                {{ 17 | govukDate }}
+                {{ "today" | duration(17) | govukDate("truncate") }}
               </td>
               <td class="govuk-table__cell">
                 {% if data.user=="governor"%}
@@ -528,7 +528,7 @@
               <a href="probation-details" class="govuk-link govuk-link--no-visited-state">Lindsay Duncan</a>
               </td>
               <td class="govuk-table__cell">
-                {{ 90 | govukDate }}
+                {{ "today" | duration(90) | govukDate("truncate") }}
               </td>
               <td class="govuk-table__cell">
                 {% if data.user=="governor"%}
@@ -572,7 +572,7 @@ Adam Balasaravika</a></h3>
 <td class="govuk-table__cell"><a href="probation-details">John Farrell</a></td>
 {%endif%}
 
-<td class="govuk-table__cell">{{ 9 | govukDate }}</td>
+<td class="govuk-table__cell">{{ "today" | duration(9) | govukDate("truncate") }}</td>
 <td class="govuk-table__cell">
 {% if data.user=="admin"%}
 <strong class="govuk-tag govuk-tag--green">A<span style="text-transform: lowercase;">pproved</span></strong>
@@ -692,7 +692,7 @@ Adam Balasaravika
 <td class="govuk-table__cell"><a href="#">Laura White</a></td>
 {%endif%}
 
-<td class="govuk-table__cell">{{ 11 | govukDate }}</td>
+<td class="govuk-table__cell">{{ "today" | duration(11) | govukDate("truncate") }}</td>
 <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">N<span style="text-transform: lowercase;">ot started</span></strong></td>
 </tr>
 
@@ -721,7 +721,7 @@ Adam Balasaravika
 <td class="govuk-table__cell"><a href="#">Fay de Clerk</a></td>
 {%endif%}
 
-<td class="govuk-table__cell">{{ 12 | govukDate }}</td>
+<td class="govuk-table__cell">{{ "today" | duration(12) | govukDate("truncate") }}</td>
 <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">N<span style="text-transform: lowercase;">ot started</span></strong></td>
 </tr>
 
@@ -750,7 +750,7 @@ Tyson Pearson
 <td class="govuk-table__cell"><a href="#">Michelle Hooper</a></td>
 {%endif%}
 
-<td class="govuk-table__cell">{{ 13 | govukDate }}</td>
+<td class="govuk-table__cell">{{ "today" | duration(13) | govukDate("truncate") }}</td>
 <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">N<span style="text-transform: lowercase;">ot started</span></strong></td>
 </tr>
 {%endif%}
