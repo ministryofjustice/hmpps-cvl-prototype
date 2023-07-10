@@ -44,7 +44,7 @@
           </label>
     
           <div id="search-hint" class="govuk-hint moj-search__hint ">
-            <!--Enter a name or prison number-->
+            Search by name, prison number or probation practitioner
           </div>
     
           <input class="govuk-input moj-search__input " id="search" name="search" type="search" aria-describedby="search-hint">
@@ -202,30 +202,30 @@
   <tbody class="govuk-table__body">
 
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><h3 class="govuk-heading-m govuk-!-margin-bottom-3" data-sort-value="3"><a href="#">Marc Callaghan</a></h3>
+          <th scope="row" class="govuk-table__header"><h3 class="govuk-heading-m govuk-!-margin-bottom-3" data-sort-value="3"><a href="/public/docs/Licence.pdf" target="_blank">Marc Callaghan</a></h3>
               <!--<span class="govuk-hint" style="font-size:.85em; margin-top:-10px;">CRN: A778288</span>-->
           </th>
 
 
             <td class="govuk-table__cell">G5662GI</td>
             <td class="govuk-table__cell"><a href="#">Simon Bentley</a></td>
-            <td class="govuk-table__cell">{{ -4 | govukDate }}</td>
+            <td class="govuk-table__cell">{{ "today" |  duration(-4) | govukDate("truncate") }}</td>
             <td class="govuk-table__cell">Steven Smith</td>
-            <td class="govuk-table__cell">{{ -8 | govukDate }}</td>
+            <td class="govuk-table__cell">{{ "today" |  duration(-6) | govukDate("truncate") }}</td>
       
             </tr>
 
     
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><h3 class="govuk-heading-m govuk-!-margin-bottom-3" data-sort-value="3"><a href="#">Sam Coles</a> </h3>
+          <th scope="row" class="govuk-table__header"><h3 class="govuk-heading-m govuk-!-margin-bottom-3" data-sort-value="3"><a href="/public/docs/Licence.pdf" target="_blank">Sam Coles</a> </h3>
               <!--<span class="govuk-hint" style="font-size:.85em; margin-top:-10px;">CRN: A314402</span>-->
           </th>
 
             <td class="govuk-table__cell">G3447UA</td>
             <td class="govuk-table__cell"><a href="#">Lindsay Duncan</a></td>
-            <td class="govuk-table__cell">{{ -20 | govukDate }}</td>
+            <td class="govuk-table__cell">{{ "today" |  duration(-20) | govukDate("truncate") }}</td>
             <td class="govuk-table__cell">Sarah Williams</td>
-            <td class="govuk-table__cell">{{ -22 | govukDate }}</td>
+            <td class="govuk-table__cell">{{ "today" |  duration(-22) | govukDate("truncate") }}</td>
             
           </tr>
 
