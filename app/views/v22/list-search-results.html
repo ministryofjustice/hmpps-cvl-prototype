@@ -46,9 +46,17 @@
             Find a case
           </label>
     
+          {% if (data.user=="probation") or (data.user=="aco") %}
           <div id="search-hint" class="govuk-hint moj-search__hint" style="width: 400px;">
             Search by name, CRN or probation practitioner
           </div>
+          {% endif %}
+
+          {% if (data.user=="governor") or (data.user=="admin") %}
+          <div id="search-hint" class="govuk-hint moj-search__hint" style="width: 470px;">
+            Search by name, prison number or probation practitioner
+          </div>
+          {% endif %}
     
           <input class="govuk-input moj-search__input " id="search" name="search" type="search" aria-describedby="search-hint">
         </div>
@@ -95,61 +103,23 @@
     <h2 class="govuk-heading-l">People in prison (3 results)</h2>
 
 
-
-<!--
-
-<nav class="govuk-pagination" role="navigation" aria-label="results">
-  <div class="govuk-pagination__prev">
-    <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" rel="prev">
-      <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-        <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
-      </svg>
-      <span class="govuk-pagination__link-title">Previous</span></a>
-  </div>
-  <ul class="govuk-pagination__list">
-    <li class="govuk-pagination__item">
-      <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" aria-label="Page 1">
-        1
-      </a>
-    </li>
-    <li class="govuk-pagination__item govuk-pagination__item--current">
-      <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" aria-label="Page 2" aria-current="page">
-        2
-      </a>
-    </li>
-    <li class="govuk-pagination__item">
-      <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" aria-label="Page 3">
-        3
-      </a>
-    </li>
-  </ul>
-  <div class="govuk-pagination__next">
-    <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-        <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
-      </svg></a>
-  </div>
-</nav>
-
--->
-
-
 <table class="govuk-table govuk-!-margin-top-6">
 <thead class="govuk-table__head">
   
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
       
-      <th scope="col" class="govuk-table__header" aria-sort="none">Name</th>
+      <th scope="col" class="govuk-table__header" aria-sort="none" style="width: 200px;">Name</th>
       
-      {% if data.user=="probation" %}<th scope="col" class="govuk-table__header app-custom-class" >Licence type</th>{% endif %}
+      {% if data.user=="probation" %}<th scope="col" class="govuk-table__header app-custom-class" style="width:150px">Licence type</th>{% endif %}
 
       {% if data.user=="admin" %}<th scope="col" class="govuk-table__header app-custom-class" >Prison number</th>{% endif %}
      
-      <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">Probation practitioner</th>
+      <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none" style="width: 150px;">Probation practitioner</th>
 
-      {% if data.user=="probation" %}<th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">Team name</th>{% endif %}
+      {% if data.user=="probation" %}<th scope="col" class="govuk-table__header app-custom-class" aria-sort="none">Team name</th>{% endif %}
 
-      {% if data.user=="admin" %}<th scope="col" class="govuk-table__header app-custom-class" >Location</th>{% endif %}
+      {% if data.user=="admin" %}<th scope="col" class="govuk-table__header app-custom-class" style="width: 160px;">Location</th>{% endif %}
  
       <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="ascending" style="width: 230px;">Release date</th>
 
@@ -167,7 +137,7 @@
   
   <tr class="govuk-table__row">
 
-    <td class="govuk-table__cell"><!--<a href="#" class="govuk-link govuk-link--no-visited-state">-->Benjamin Jennings<!--</a>--></br>
+    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Benjamin Jennings</a></br>
       {% if data.user=="probation" %}<span class="govuk-hint" style="font-size:.85em; margin-top:-10px;">CRN: G2407U2</span>{% endif %}
     </td>
 
@@ -175,15 +145,14 @@
 
     {% if data.user=="admin" %}<td class="govuk-table__cell">G2407U2</td>{% endif %}
 
-    <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">Afsana Khan</a></td>
+    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Afsana Khan</a></td>
 
   
     {% if data.user=="probation" %}<td class="govuk-table__cell">Sentence Management Team C</td>{% endif %}
 
     {% if data.user=="admin" %}<td class="govuk-table__cell">Swansea (HMP)</td>{% endif %}
 
-    {% if data.user=="probation" %}<td class="govuk-table__cell">{{ -50 | govukDate }}</td>{% endif %}
-    {% if data.user=="admin" %}<td class="govuk-table__cell">Confirmed release date:</br>{{ -50 | govukDate }}</td>{% endif %}
+    {% if (data.user=="probation") or (data.user=="admin") %}<td class="govuk-table__cell">{{ "today" | duration(-50) | govukDate("truncate") }}</td>{% endif %}
   
     <td class="govuk-table__cell">
       <strong class="govuk-tag govuk-tag--grey">N<span style="text-transform: lowercase;">ot started</span></strong>
@@ -204,15 +173,14 @@
 
     {% if data.user=="admin" %}<td class="govuk-table__cell">G2407U2</td>{% endif %}
 
-    <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">Gemma Smith</a></td>
+    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Gemma Smith</a></td>
 
   
     {% if data.user=="probation" %}<td class="govuk-table__cell" style="width: 250px;">Sentence Management Team B</td>{% endif %}
 
     {% if data.user=="admin" %}<td class="govuk-table__cell">Cardiff (HMP)</td>{% endif %}
 
-    {% if data.user=="probation" %}<td class="govuk-table__cell">{{ 5 | govukDate }}</td>{% endif %}
-    {% if data.user=="admin" %}<td class="govuk-table__cell">Confirmed release date:</br>{{ 5 | govukDate }}</td>{% endif %}
+    {% if (data.user=="probation") or (data.user=="admin") %}<td class="govuk-table__cell">{{ "today" | duration(5) | govukDate("truncate") }}</td>{% endif %}
   
     <td class="govuk-table__cell">
       <strong class="govuk-tag govuk-tag--green">A<span style="text-transform: lowercase;">pproved</span></strong>
@@ -226,7 +194,7 @@
 
   <tr class="govuk-table__row">
 
-    <td class="govuk-table__cell"><a href="check-your-answers" class="govuk-link govuk-link--no-visited-state">Samuel Jennings</a></br>
+    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Samuel Jennings</a></br>
       {% if data.user=="probation" %}<span class="govuk-hint" style="font-size:.85em; margin-top:-10px;">CRN: G547951</span>{% endif %}
     </td>
 
@@ -234,15 +202,14 @@
 
     {% if data.user=="admin" %}<td class="govuk-table__cell">G2407U2</td>{% endif %}
 
-    <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">Ahmed Jorgyon</a></td>
+    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Ahmed Jorgyon</a></td>
 
   
     {% if data.user=="probation" %}<td class="govuk-table__cell" style="width: 250px;">Sentence Management Team A</td>{% endif %}
 
     {% if data.user=="admin" %}<td class="govuk-table__cell">Swansea (HMP)</td>{% endif %}
 
-    {% if data.user=="probation" %}<td class="govuk-table__cell">{{ 14 | govukDate }}</td>{% endif %}
-    {% if data.user=="admin" %}<td class="govuk-table__cell">Confirmed release date:</br>{{ 14 | govukDate }}</td>{% endif %}
+    {% if (data.user=="probation") or (data.user=="admin") %}<td class="govuk-table__cell">{{ "today" | duration(14) | govukDate("truncate") }}</td>{% endif %}
   
     <td class="govuk-table__cell">
       <strong class="govuk-tag govuk-tag--blue">I<span style="text-transform: lowercase;">n progress</span></strong>
@@ -258,45 +225,6 @@
 </table>
 
 
-
-<!--
-
-<nav class="govuk-pagination" role="navigation" aria-label="results">
-  <div class="govuk-pagination__prev">
-    <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" rel="prev">
-      <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-        <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
-      </svg>
-      <span class="govuk-pagination__link-title">Previous</span></a>
-  </div>
-  <ul class="govuk-pagination__list">
-    <li class="govuk-pagination__item">
-      <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" aria-label="Page 1">
-        1
-      </a>
-    </li>
-    <li class="govuk-pagination__item govuk-pagination__item--current">
-      <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" aria-label="Page 2" aria-current="page">
-        2
-      </a>
-    </li>
-    <li class="govuk-pagination__item">
-      <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" aria-label="Page 3">
-        3
-      </a>
-    </li>
-  </ul>
-  <div class="govuk-pagination__next">
-    <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-        <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
-      </svg></a>
-  </div>
-</nav>
-
--->
-
-
-
   </div>
 
 
@@ -307,60 +235,23 @@
     <h2 class="govuk-heading-l">People on probation (5 results)</h2>
    
    
-<!--
-
-<nav class="govuk-pagination" role="navigation" aria-label="results">
-  <div class="govuk-pagination__prev">
-    <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" rel="prev">
-      <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-        <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
-      </svg>
-      <span class="govuk-pagination__link-title">Previous</span></a>
-  </div>
-  <ul class="govuk-pagination__list">
-    <li class="govuk-pagination__item">
-      <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" aria-label="Page 1">
-        1
-      </a>
-    </li>
-    <li class="govuk-pagination__item govuk-pagination__item--current">
-      <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" aria-label="Page 2" aria-current="page">
-        2
-      </a>
-    </li>
-    <li class="govuk-pagination__item">
-      <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" aria-label="Page 3">
-        3
-      </a>
-    </li>
-  </ul>
-  <div class="govuk-pagination__next">
-    <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-        <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
-      </svg></a>
-  </div>
-</nav>
-
--->
-
-
 <table class="govuk-table govuk-!-margin-top-6">
 <thead class="govuk-table__head">
   
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
       
-      <th scope="col" class="govuk-table__header" aria-sort="none">Name</th>
+      <th scope="col" class="govuk-table__header" aria-sort="none" style="width: 210px;">Name</th>
       
-      {% if data.user=="probation" %}<th scope="col" class="govuk-table__header app-custom-class" >Licence type</th>{% endif %}
+      {% if data.user=="probation" %}<th scope="col" class="govuk-table__header app-custom-class" style="width: 200px;">Licence type</th>{% endif %}
 
       {% if data.user=="admin" %}<th scope="col" class="govuk-table__header app-custom-class" >Prison number</th>{% endif %}
      
       <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">Probation practitioner</th>
 
-      {% if data.user=="probation" %}<th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">Team name</th>{% endif %}
+      {% if data.user=="probation" %}<th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none" style="width: 350px;">Team name</th>{% endif %}
 
-      {% if data.user=="admin" %}<th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">Location</th>{% endif %}
+      {% if data.user=="admin" %}<th scope="col" class="govuk-table__header app-custom-class" aria-sort="none" style="width: 180px;">Location</th>{% endif %}
  
       <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="ascending" style="width: 230px;">Release date</th>
 
@@ -386,15 +277,14 @@
 
     {% if data.user=="admin" %}<td class="govuk-table__cell">G2407U2</td>{% endif %}
 
-    <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">Afsana Khan</a></td>
+    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Afsana Khan</a></td>
 
   
     {% if data.user=="probation" %}<td class="govuk-table__cell">Sentence Management Team C</td>{% endif %}
 
     {% if data.user=="admin" %}<td class="govuk-table__cell">Cardiff (HMP)</td>{% endif %}
 
-    {% if data.user=="probation" %}<td class="govuk-table__cell">{{ -50 | govukDate }}</td>{% endif %}
-    {% if data.user=="admin" %}<td class="govuk-table__cell">Confirmed release date:</br>{{ -50 | govukDate }}</td>{% endif %}
+    {% if (data.user=="probation") or (data.user=="admin") %}<td class="govuk-table__cell">{{ "today" | duration(-50) | govukDate("truncate") }}</td>{% endif %}
   
     <td class="govuk-table__cell">
       <strong class="govuk-tag govuk-tag--turquoise">A<span style="text-transform: lowercase;">ctive</span></strong>
@@ -415,15 +305,14 @@
 
     {% if data.user=="admin" %}<td class="govuk-table__cell">G2407U2</td>{% endif %}
 
-    <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">Gemma Smith</a></td>
+    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Gemma Smith</a></td>
 
   
     {% if data.user=="probation" %}<td class="govuk-table__cell" style="width: 250px;">Sentence Management Team B</td>{% endif %}
 
     {% if data.user=="admin" %}<td class="govuk-table__cell">Swansea (HMP)</td>{% endif %}
 
-    {% if data.user=="probation" %}<td class="govuk-table__cell">{{ -21 | govukDate }}</td>{% endif %}
-    {% if data.user=="admin" %}<td class="govuk-table__cell">Confirmed release date:</br>{{ -21 | govukDate }}</td>{% endif %}
+    {% if (data.user=="probation") or (data.user=="admin") %}<td class="govuk-table__cell">{{ "today" | duration(-21) | govukDate("truncate") }}</td>{% endif %}
   
     <td class="govuk-table__cell">
       <strong class="govuk-tag govuk-tag--turquoise">A<span style="text-transform: lowercase;">ctive</span></strong>
@@ -445,15 +334,14 @@
 
     {% if data.user=="admin" %}<td class="govuk-table__cell">G2407U2</td>{% endif %}
 
-    <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">Sophie Hill</a></td>
+    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Sophie Hill</a></td>
 
   
     {% if data.user=="probation" %}<td class="govuk-table__cell" style="width: 250px;">Sentence Management Team A</td>{% endif %}
 
     {% if data.user=="admin" %}<td class="govuk-table__cell">Swansea (HMP)</td>{% endif %}
 
-    {% if data.user=="probation" %}<td class="govuk-table__cell">{{ -130 | govukDate }}</td>{% endif %}
-    {% if data.user=="admin" %}<td class="govuk-table__cell">Confirmed release date:</br>{{ -130 | govukDate }}</td>{% endif %}
+    {% if (data.user=="probation") or (data.user=="admin") %}<td class="govuk-table__cell">{{ "today" | duration(-130) | govukDate("truncate") }}</td>{% endif %}
   
     <td class="govuk-table__cell">
       <strong class="govuk-tag govuk-tag--yellow">V<span style="text-transform: lowercase;">ariation approved</span></strong>
@@ -473,15 +361,14 @@
 
     {% if data.user=="admin" %}<td class="govuk-table__cell">G2407U2</td>{% endif %}
 
-    <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">Ahmed Jorgyon</a></td>
+    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Ahmed Jorgyon</a></td>
 
   
     {% if data.user=="probation" %}<td class="govuk-table__cell" style="width: 250px;">Sentence Management Team A</td>{% endif %}
 
     {% if data.user=="admin" %}<td class="govuk-table__cell">Cardiff (HMP)</td>{% endif %}
 
-    {% if data.user=="probation" %}<td class="govuk-table__cell">{{ -60 | govukDate }}</td>{% endif %}
-    {% if data.user=="admin" %}<td class="govuk-table__cell">Confirmed release date:</br>{{ -60 | govukDate }}</td>{% endif %}
+    {% if (data.user=="probation") or (data.user=="admin") %}<td class="govuk-table__cell">{{ "today" | duration(-60) | govukDate("truncate") }}</td>{% endif %}
   
     <td class="govuk-table__cell">
       <strong class="govuk-tag govuk-tag--turquoise">A<span style="text-transform: lowercase;">ctive</span></strong>
@@ -502,15 +389,14 @@
 
     {% if data.user=="admin" %}<td class="govuk-table__cell">G2407U2</td>{% endif %}
 
-    <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">Jessica King</a></td>
+    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Jessica King</a></td>
 
   
     {% if data.user=="probation" %}<td class="govuk-table__cell" style="width: 250px;">Sentence Management Team A</td>{% endif %}
 
     {% if data.user=="admin" %}<td class="govuk-table__cell">Cardiff (HMP)</td>{% endif %}
 
-    {% if data.user=="probation" %}<td class="govuk-table__cell">{{ -100 | govukDate }}</td>{% endif %}
-    {% if data.user=="admin" %}<td class="govuk-table__cell">Confirmed release date:</br>{{ -100 | govukDate }}</td>{% endif %}
+    {% if (data.user=="probation") or (data.user=="admin") %}<td class="govuk-table__cell">{{ "today" | duration(-100) | govukDate("truncate") }}</td>{% endif %}
   
     <td class="govuk-table__cell">
       <strong class="govuk-tag govuk-tag--pink" style="width: 180px">V<span style="text-transform: lowercase;">ariation submitted</span></strong>
@@ -525,45 +411,6 @@
   
 </tbody>
 </table>
-
-
-
-<!--
-
-<nav class="govuk-pagination" role="navigation" aria-label="results">
-  <div class="govuk-pagination__prev">
-    <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" rel="prev">
-      <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-        <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
-      </svg>
-      <span class="govuk-pagination__link-title">Previous</span></a>
-  </div>
-  <ul class="govuk-pagination__list">
-    <li class="govuk-pagination__item">
-      <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" aria-label="Page 1">
-        1
-      </a>
-    </li>
-    <li class="govuk-pagination__item govuk-pagination__item--current">
-      <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" aria-label="Page 2" aria-current="page">
-        2
-      </a>
-    </li>
-    <li class="govuk-pagination__item">
-      <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" aria-label="Page 3">
-        3
-      </a>
-    </li>
-  </ul>
-  <div class="govuk-pagination__next">
-    <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-        <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
-      </svg></a>
-  </div>
-</nav>
-
--->
-
 
 
 
@@ -607,41 +454,6 @@
 
 
 
-<!--
-
-<nav class="govuk-pagination" role="navigation" aria-label="results">
-  <div class="govuk-pagination__prev">
-    <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" rel="prev">
-      <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-        <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
-      </svg>
-      <span class="govuk-pagination__link-title">Previous</span></a>
-  </div>
-  <ul class="govuk-pagination__list">
-    <li class="govuk-pagination__item">
-      <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" aria-label="Page 1">
-        1
-      </a>
-    </li>
-    <li class="govuk-pagination__item govuk-pagination__item--current">
-      <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" aria-label="Page 2" aria-current="page">
-        2
-      </a>
-    </li>
-    <li class="govuk-pagination__item">
-      <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" aria-label="Page 3">
-        3
-      </a>
-    </li>
-  </ul>
-  <div class="govuk-pagination__next">
-    <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-        <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
-      </svg></a>
-  </div>
-</nav>
-
--->
 
 
 <table class="govuk-table govuk-!-margin-top-6">
@@ -676,11 +488,11 @@
 
     <td class="govuk-table__cell">G9033MS</td>
 
-    <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">  Lindsay Duncan</a></td>
+    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">  Lindsay Duncan</a></td>
 
     <td class="govuk-table__cell">Cardiff (HMP)</a></td>
 
-    <td class="govuk-table__cell">{{ 90 | govukDate }}</td>
+    <td class="govuk-table__cell">{{ "today" | duration(90) | govukDate("truncate") }}</td>
   
   </tr>
  
@@ -691,41 +503,7 @@
 
 
 
-<!--
 
-<nav class="govuk-pagination" role="navigation" aria-label="results">
-  <div class="govuk-pagination__prev">
-    <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" rel="prev">
-      <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-        <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
-      </svg>
-      <span class="govuk-pagination__link-title">Previous</span></a>
-  </div>
-  <ul class="govuk-pagination__list">
-    <li class="govuk-pagination__item">
-      <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" aria-label="Page 1">
-        1
-      </a>
-    </li>
-    <li class="govuk-pagination__item govuk-pagination__item--current">
-      <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" aria-label="Page 2" aria-current="page">
-        2
-      </a>
-    </li>
-    <li class="govuk-pagination__item">
-      <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" aria-label="Page 3">
-        3
-      </a>
-    </li>
-  </ul>
-  <div class="govuk-pagination__next">
-    <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-        <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
-      </svg></a>
-  </div>
-</nav>
-
--->
 
 
 
@@ -739,42 +517,6 @@
     <h2 class="govuk-heading-l">Recently approved (3 results)</h2>
    
    
-<!--
-
-<nav class="govuk-pagination" role="navigation" aria-label="results">
-  <div class="govuk-pagination__prev">
-    <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" rel="prev">
-      <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-        <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
-      </svg>
-      <span class="govuk-pagination__link-title">Previous</span></a>
-  </div>
-  <ul class="govuk-pagination__list">
-    <li class="govuk-pagination__item">
-      <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" aria-label="Page 1">
-        1
-      </a>
-    </li>
-    <li class="govuk-pagination__item govuk-pagination__item--current">
-      <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" aria-label="Page 2" aria-current="page">
-        2
-      </a>
-    </li>
-    <li class="govuk-pagination__item">
-      <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" aria-label="Page 3">
-        3
-      </a>
-    </li>
-  </ul>
-  <div class="govuk-pagination__next">
-    <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-        <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
-      </svg></a>
-  </div>
-</nav>
-
--->
-
 
 <table class="govuk-table govuk-!-margin-top-6">
 <thead class="govuk-table__head">
@@ -782,19 +524,19 @@
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
       
-      <th scope="col" class="govuk-table__header" aria-sort="none">Name</th>
+      <th scope="col" class="govuk-table__header" aria-sort="none" style="width: 110px;">Name</th>
       
-      <th scope="col" class="govuk-table__header app-custom-class" >Prison number</th>
+      <th scope="col" class="govuk-table__header app-custom-class" style="width: 80px;">Prison number</th>
      
-      <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">Probation practitioner</th>
+      <th scope="col" class="govuk-table__header app-custom-class" aria-sort="none">Probation practitioner</th>
 
-      <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">Location</th>
+      <th scope="col" class="govuk-table__header app-custom-class" aria-sort="none" style="width: 140px;">Location</th>
  
-      <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="ascending">Release date</th>
+      <th scope="col" class="govuk-table__header app-custom-class" aria-sort="ascending" style="width: 110px;">Release date</th>
 
-      <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="ascending">Approved by</th>
+      <th scope="col" class="govuk-table__header app-custom-class" aria-sort="ascending">Approved by</th>
 
-      <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="ascending">Approved on</th>
+      <th scope="col" class="govuk-table__header app-custom-class" aria-sort="ascending" style="width: 110px;">Approved on</th>
 
     </tr>
   </thead>
@@ -812,16 +554,16 @@
 
     <td class="govuk-table__cell">G7409XZ</td>
 
-    <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">Gemma Smith</a></td>
+    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Gemma Smith</a></td>
 
   
     <td class="govuk-table__cell">Swansea (HMP)</td>
 
-    <td class="govuk-table__cell">{{ -5 | govukDate }}</td>
+    <td class="govuk-table__cell">{{ "today" | duration(-5) | govukDate("truncate") }}</td>
 
     <td class="govuk-table__cell">Sarah Williams</td>
 
-    <td class="govuk-table__cell">{{ -7 | govukDate }}</td>
+    <td class="govuk-table__cell">{{ "today" | duration(-7) | govukDate("truncate") }}</td>
 
   </tr>
  
@@ -834,16 +576,16 @@
 
     <td class="govuk-table__cell">G7409XZ</td>
 
-    <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">Ahmed Jorgyon</a></td>
+    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Ahmed Jorgyon</a></td>
 
   
     <td class="govuk-table__cell">Cardiff (HMP)</td>
 
-    <td class="govuk-table__cell">{{ -15 | govukDate }}</td>
+    <td class="govuk-table__cell">{{ "today" | duration(-15) | govukDate("truncate") }}</td>
 
     <td class="govuk-table__cell">Steven Smith</td>
 
-    <td class="govuk-table__cell">{{ -20 | govukDate }}</td>
+    <td class="govuk-table__cell">{{ "today" | duration(-20) | govukDate("truncate") }}</td>
 
 
   </tr>
@@ -858,16 +600,16 @@
 
     <td class="govuk-table__cell">G7409XZ</td>
 
-    <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">Ahmed Jorgyon</a></td>
+    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Ahmed Jorgyon</a></td>
 
   
     <td class="govuk-table__cell">Cardiff (HMP)</td>
 
-    <td class="govuk-table__cell">{{ -20 | govukDate }}</td>
+    <td class="govuk-table__cell">{{ "today" | duration(-20) | govukDate("truncate") }}</td>
 
     <td class="govuk-table__cell">Sarah Williams</td>
 
-    <td class="govuk-table__cell">{{ -25 | govukDate }}</td>
+    <td class="govuk-table__cell">{{ "today" | duration(-25) | govukDate("truncate") }}</td>
 
 
   </tr>
@@ -1007,7 +749,7 @@
 
         <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">Variation request date</th>
    
-        <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="ascending">Release date</th>
+        <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="ascending" style="width: 150px;">Release date</th>
   
       </tr>
     </thead>
@@ -1029,9 +771,9 @@
   
       <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">Afsana Khan</a></td>
   
-      <td class="govuk-table__cell">{{ 0 | govukDate }}</td>
+      <td class="govuk-table__cell">{{ "today" |  duration(0) | govukDate("truncate") }}</td>
 
-      <td class="govuk-table__cell">{{ -100 | govukDate }}</td>
+      <td class="govuk-table__cell">{{ "today" |  duration(-100) | govukDate("truncate") }}</td>
     
     </tr>
    
@@ -1133,17 +875,17 @@
     <thead class="govuk-table__head">
       <tr class="govuk-table__row">
         
-        <th scope="col" class="govuk-table__header" aria-sort="none">Name</th>
+        <th scope="col" class="govuk-table__header" aria-sort="none" style="width: 180px;">Name</th>
         
-        <th scope="col" class="govuk-table__header app-custom-class" >Licence type</th>
+        <th scope="col" class="govuk-table__header app-custom-class" style="width: 180px;">Licence type</th>
        
-        <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none" style="width: 220px;">Probation practitioner</th>
+        <th scope="col" class="govuk-table__header app-custom-class" aria-sort="none" style="width: 250px;">Probation practitioner</th>
 
-        <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">PDU head</th>
+        <th scope="col" class="govuk-table__header app-custom-class" aria-sort="none" style="width: 150px;">PDU head</th>
 
-        <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">Variation request date</th>
+        <th scope="col" class="govuk-table__header app-custom-class" aria-sort="none" style="width: 150px;">Variation request date</th>
    
-        <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="ascending" style="width: 180px;">Release date</th>
+        <th scope="col" class="govuk-table__header app-custom-class" aria-sort="ascending" style="width: 150px;">Release date</th>
   
   
       </tr>
@@ -1168,9 +910,9 @@
     
       <td class="govuk-table__cell">Rachel Riley</td>
   
-      <td class="govuk-table__cell">{{ -2 | govukDate }}</td>
+      <td class="govuk-table__cell">{{ "today" | duration(-2) | govukDate("truncate") }}</td>
 
-      <td class="govuk-table__cell">{{ -250 | govukDate }}</td>
+      <td class="govuk-table__cell">{{ "today" | duration(-250) | govukDate("truncate") }}</td>
     
   
     </tr>
@@ -1190,9 +932,9 @@
 
       <td class="govuk-table__cell">Rachel Riley</td>
   
-      <td class="govuk-table__cell">{{ 0 | govukDate }}</td>
+      <td class="govuk-table__cell">{{ "today" | duration(0) | govukDate("truncate") }}</td>
 
-      <td class="govuk-table__cell">{{ -45 | govukDate }}</td>
+      <td class="govuk-table__cell">{{ "today" | duration(-45) | govukDate("truncate") }}</td>
     
     </tr>
    
@@ -1212,9 +954,9 @@
 
       <td class="govuk-table__cell">Roman Abraham</td>
   
-      <td class="govuk-table__cell">{{ -1 | govukDate }}</td>
+      <td class="govuk-table__cell">{{ "today" | duration(-1) | govukDate("truncate") }}</td>
 
-      <td class="govuk-table__cell">{{ -130 | govukDate }}</td>
+      <td class="govuk-table__cell">{{ "today" | duration(-130) | govukDate("truncate") }}</td>
     
     </tr>
   

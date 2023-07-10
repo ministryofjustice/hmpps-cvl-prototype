@@ -52,12 +52,22 @@
             Find a case
           </label>
     
+          {% if (data.user=="governor") or (data.user=="admin") %}
           <div id="search-hint" class="govuk-hint moj-search__hint" style="width: 470px;">
-            {% if (data.user=="governor") or (data.user=="admin") %}Search by name, prison number or probation practitioner{% endif %}
-            {% if (data.user=="probation") %}Search by name, CRN or probation practitioner{% endif %}
+            Search by name, prison number or probation practitioner
           </div>
+          {% endif %}
+
+          {% if (data.user=="probation") or (data.user=="") %}
+          <div id="search-hint" class="govuk-hint moj-search__hint" style="width: 400px;">
+            Search by name, CRN or probation practitioner
+          </div>
+          {% endif %}
+
+
     
-          <input class="govuk-input moj-search__input" id="search-keyword-one" name="search-keyword-one" type="search-keyword-one" aria-describedby="search-hint" style="width: 470px;">
+          {% if (data.user=="governor") or (data.user=="admin") %}<input class="govuk-input moj-search__input" id="search-keyword-one" name="search-keyword-one" type="search-keyword-one" aria-describedby="search-hint" style="width: 470px;">{% endif %}
+          {% if (data.user=="probation") %}<input class="govuk-input moj-search__input" id="search-keyword-one" name="search-keyword-one" type="search-keyword-one" aria-describedby="search-hint" style="width: 400px;">{% endif %}
         </div>
     
         <button class="govuk-button moj-search__button " data-module="govuk-button">

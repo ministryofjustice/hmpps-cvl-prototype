@@ -44,9 +44,17 @@
             Find a case
           </label>
     
+          {% if (data.user=="probation") or (data.user=="aco") %}
           <div id="search-hint" class="govuk-hint moj-search__hint" style="width: 400px;">
             Search by name, CRN or probation practitioner
           </div>
+          {% endif %}
+
+          {% if (data.user=="governor") or (data.user=="admin") %}
+          <div id="search-hint" class="govuk-hint moj-search__hint" style="width: 470px;">
+            Search by name, prison number or probation practitioner
+          </div>
+          {% endif %}
     
           <input class="govuk-input moj-search__input " id="search-keyword-two" name="search-keyword-two" type="search-keyword-two" aria-describedby="search-hint">
         </div>
