@@ -52,11 +52,12 @@
             Find a case
           </label>
     
-          <div id="search-hint" class="govuk-hint moj-search__hint" style="width: 400px;">
-            Search by name, prison number or probation practitioner
+          <div id="search-hint" class="govuk-hint moj-search__hint" style="width: 470px;">
+            {% if (data.user=="governor") or (data.user=="admin") %}Search by name, prison number or probation practitioner{% endif %}
+            {% if (data.user=="probation") %}Search by name, CRN or probation practitioner{% endif %}
           </div>
     
-          <input class="govuk-input moj-search__input" id="search-keyword-one" name="search-keyword-one" type="search-keyword-one" aria-describedby="search-hint">
+          <input class="govuk-input moj-search__input" id="search-keyword-one" name="search-keyword-one" type="search-keyword-one" aria-describedby="search-hint" style="width: 470px;">
         </div>
     
         <button class="govuk-button moj-search__button " data-module="govuk-button">
@@ -173,63 +174,17 @@
 {% endif %}
 
 
-
-
-
-<!--pagination-->
-
-<!--
-<nav class="govuk-pagination" role="navigation" aria-label="results">
-  <div class="govuk-pagination__prev">
-    <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" rel="prev">
-      <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-        <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
-      </svg>
-      <span class="govuk-pagination__link-title">Previous</span></a>
-  </div>
-  <ul class="govuk-pagination__list">
-    <li class="govuk-pagination__item">
-      <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" aria-label="Page 1">
-        1
-      </a>
-    </li>
-    <li class="govuk-pagination__item govuk-pagination__item--current">
-      <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" aria-label="Page 2" aria-current="page">
-        2
-      </a>
-    </li>
-    <li class="govuk-pagination__item">
-      <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" aria-label="Page 3">
-        3
-      </a>
-    </li>
-  </ul>
-  <div class="govuk-pagination__next">
-    <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-        <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
-      </svg></a>
-  </div>
-</nav>
--->
-
-<!--pagination-->
-
-
-
-
 <table class="govuk-table" data-module="moj-sortable-table">
-  <!--<caption class="govuk-table__caption govuk-table__caption--m">Month you apply</caption>-->
-
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header" aria-sort="none">Name</th>
+      <th scope="col" class="govuk-table__header" aria-sort="none" style="width: 180px;">Name</th>
 
       {% if (data.user=="admin") or (data.user=="governor") %}
-      <th scope="col" class="govuk-table__header" aria-sort="none">Prison number</th>
+      <th scope="col" class="govuk-table__header" aria-sort="none" style="width: 180px;">Prison number</th>
       {% endif %}
 
       {% if data.user!=="probation"%}
-      <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">Probation practitioner</th>
+      <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none" style="width: 250px;">Probation practitioner</th>
       {% endif %}
       {% if data.user=="probation"%}
       <!--<th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">CRN</th>-->
@@ -421,32 +376,7 @@
             </tr>
             {%endif%}
 
-            {% if data.user!=="governor"%}<!--Hiding this case for the governor view for now-->
            
-           <!-- <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header"><h3 class="govuk-heading-m govuk-!-margin-bottom-3">
-                <a href="approvals/approve" class="govuk-link govuk-link--no-visited-state" data-sort-value="1">
-                  {% if data.edit=="yes" %}Edith Bradshaw{% else %}Adam Balasaravika{% endif %}
-                </a>
-              </h3>-->
-                <!--<span class="govuk-hint" style="font-size:.85em; margin-top:-10px;">CRN: A381307</span>-->
-           <!--</th>
-            <td class="govuk-table__cell">G3447UA</td>
-            <td class="govuk-table__cell">
-              <a href="probation-details">John Farrell</a>
-              </td>
-              <td class="govuk-table__cell">
-                {% if data.edit=="yes" %}28{% else %}26{% endif %} Jan 2023
-              </td>
-              <td class="govuk-table__cell">
-                {% if data.user=="governor"%}
-              </td>
-              {%else%}
-              <strong class="govuk-tag govuk-tag--blue">Pending approval</strong></td>
-              {%endif%}
-            </tr>
-            {%endif%}--> 
-
 
 <!--new column start-->
 
@@ -454,21 +384,18 @@
 {% if data.user=="governor"%}
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header"><h3 class="govuk-heading-m govuk-!-margin-bottom-3">
-                <a href="#" class="govuk-link govuk-link--no-visited-state" data-sort-value="1">
+                <a href="#" class="govuk-link govuk-link--no-visited-state">
                   John Smith
                 </a>
               </h3>
-              <!--<span class="moj-badge moj-badge--red" style="margin-bottom: 20px;">Urgent approval</br>required for upcoming release
-              </span>-->
-              <!--<span class="govuk-hint" style="font-size:.85em; margin-top:-10px;">CRN: A314402</span>-->
             </th>
             <td class="govuk-table__cell">G8433AB</td>
             <td class="govuk-table__cell">
               <a href="probation-details" class="govuk-link govuk-link--no-visited-state">Simon Bentley</a>
               </td>
-              <td class="govuk-table__cell due-date">
+              <td class="govuk-table__cell due-date" data-sort-value="1">
                 <span class="date overdue">{{ "today" | duration(2) | govukDate("truncate") }}</span>
-                <span class="secondary overdue">Urgent approval required for upcoming release</span>
+                <span class="secondary overdue">Urgent approval required for </br>upcoming release</span>
               </td>
               <td class="govuk-table__cell">
                 {% if data.user=="governor"%}
@@ -489,7 +416,7 @@
             {% if data.user=="governor"%}
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header"><h3 class="govuk-heading-m govuk-!-margin-bottom-3">
-                <a href="#" class="govuk-link govuk-link--no-visited-state" data-sort-value="1">
+                <a href="#" class="govuk-link govuk-link--no-visited-state">
                   Jack Graham
                 </a>
               </h3>
@@ -499,7 +426,7 @@
             <td class="govuk-table__cell">
               <a href="probation-details" class="govuk-link govuk-link--no-visited-state">Lindsay Duncan</a>
               </td>
-              <td class="govuk-table__cell">
+              <td class="govuk-table__cell" data-sort-value="2">
                 {{ "today" | duration(17) | govukDate("truncate") }}
               </td>
               <td class="govuk-table__cell">
@@ -515,7 +442,7 @@
             {% if data.user=="governor"%}
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header"><h3 class="govuk-heading-m govuk-!-margin-bottom-3">
-                <a href="approvals/approve" class="govuk-link govuk-link--no-visited-state" data-sort-value="1">
+                <a href="approvals/approve" class="govuk-link govuk-link--no-visited-state">
                   Terry Jones
                 </a>
               </h3>
@@ -527,7 +454,7 @@
             <td class="govuk-table__cell">
               <a href="probation-details" class="govuk-link govuk-link--no-visited-state">Lindsay Duncan</a>
               </td>
-              <td class="govuk-table__cell">
+              <td class="govuk-table__cell" data-sort-value="3">
                 {{ "today" | duration(90) | govukDate("truncate") }}
               </td>
               <td class="govuk-table__cell">
