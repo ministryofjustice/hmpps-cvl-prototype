@@ -197,7 +197,6 @@
       <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none" style="width: 250px;">Probation practitioner</th>
       {% endif %}
       {% if data.user=="probation"%}
-      <!--<th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">CRN</th>-->
       <th scope="col" class="govuk-table__header app-custom-class" >Licence type</th>
       <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">Probation practitioner</th>
       {% endif %}
@@ -226,6 +225,27 @@
         <strong class="govuk-tag govuk-tag--turquoise">A<span style="text-transform: lowercase;">ctive</span></strong>
       </tr>-->
       {% endif %}
+
+      {% if data.user=="probation"%}
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"><h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+          <a href="hdc-not-started" class="govuk-link govuk-link--no-visited-state" data-sort-value="1" name="mark-bowen" id="mark-bowen" value="yes">
+            Mark Bowen
+          </a></h3>
+            <span class="govuk-hint" style="font-size:.85em; margin-top:-10px;">CRN: A761536</span>
+        </th>
+
+          <td class="govuk-table__cell">Standard determinate</td>
+          <td class="govuk-table__cell">
+            <a href="probation-details">Jeremy Keane</td>
+            </td>
+
+          <td class="govuk-table__cell">{{ "today" | duration(36) | govukDate("truncate") }}</td>
+          <td class="govuk-table__cell" style="width: 200px;">
+
+          <strong class="govuk-tag govuk-tag--grey">P<span style="text-transform: lowercase;">ending</span> HDC <span style="text-transform: lowercase;">checks</span></strong>
+          </tr>
+          {% endif %}
 
       {% if data.user=="probation"%}
       <tr class="govuk-table__row">
