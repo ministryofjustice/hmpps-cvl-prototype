@@ -21,7 +21,7 @@
     <div class="govuk-grid-column-three-thirds">
 
         {% if data.user=="probation"%}
-        <h1 class="govuk-heading-xl" style="margin-left: 15px;">Select a person to create licences and supervision orders</h1>
+        <h1 class="govuk-heading-xl" style="margin-left: 15px;">Select someone to create licences and supervision orders</h1>
         {% endif %}
 
         {% if data.user=="governor"%}
@@ -29,7 +29,7 @@
         {% endif %}
 
         {% if data.user=="admin"%}
-        <h1 class="govuk-heading-xl" style="margin-left: 15px;">Select a person to view or print licences and supervision orders</h1>
+        <h1 class="govuk-heading-xl" style="margin-left: 15px;">Select someone to view or print licences and supervision orders</h1>
         {% endif %}
     </div>
 </div>
@@ -201,7 +201,7 @@
       <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">Probation practitioner</th>
       {% endif %}
 
-      <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="ascending">Release date</th>
+      <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="ascending" style="width: 110px;">Release date</th>
       {% if data.user!=="governor"%}
       <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">Status</th>
       {% endif %}
@@ -226,16 +226,18 @@
       </tr>-->
       {% endif %}
 
-      {% if data.user=="probation"%}
+      {% if (data.user=="probation") or (data.user=="admin") %}
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header"><h3 class="govuk-heading-m govuk-!-margin-bottom-3">
           <a href="hdc-not-started" class="govuk-link govuk-link--no-visited-state" data-sort-value="1" name="mark-bowen" id="mark-bowen" value="yes">
             Mark Bowen
           </a></h3>
-            <span class="govuk-hint" style="font-size:.85em; margin-top:-10px;">CRN: A761536</span>
+          {% if data.user=="probation"%}<span class="govuk-hint" style="font-size:.85em; margin-top:-10px;">CRN: A761536</span>{% endif %}
         </th>
 
-          <td class="govuk-table__cell">Standard determinate</td>
+        {% if data.user=="probation"%}<td class="govuk-table__cell">Standard determinate</td>
+        {% elseif data.user=="admin"%}<td class="govuk-table__cell">G5613GT</td>
+        {% endif %}
           <td class="govuk-table__cell">
             <a href="probation-details">Jeremy Keane</td>
             </td>
@@ -326,7 +328,7 @@
       {%endif%}
 
       <td class="govuk-table__cell"><a href="#">Abdul Tendulka</a></td>
-        <td class="govuk-table__cell">Conditional release date:</br>{{ "today" | duration(3) | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">{{ "today" | duration(3) | govukDate("truncate") }}</td>
         <td class="govuk-table__cell">
           <strong class="govuk-tag govuk-tag--yellow">N<span style="text-transform: lowercase;">ot started</span></strong>
       </tr>
