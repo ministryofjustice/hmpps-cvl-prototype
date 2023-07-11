@@ -31,7 +31,7 @@ Create and vary a licence - Create a licence - Licences for people approaching i
 
       <ul class="govuk-list govuk-list--bullet" style="margin-top: 10px;">
         <li>they have been found ineligible for home detention curfew (HDC)</li>
-        <li>their HDC eligibility date has passed</li>
+        <li>their HDC eligibility date of {{ "today" | duration(3) | govukDate("truncate") }} has passed</li>
       </ul>
       
       <p class="govuk-body">If they are approved for HDC, you must use the <a class="govuk-link govuk-link--no-visited-state" href="#">HDC service</a> to work on their licence. This is separate to Create and vary a licence.</p>
