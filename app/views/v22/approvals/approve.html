@@ -497,7 +497,7 @@
             Date
           </dt>
           <dd class="govuk-summary-list__value">
-            <!--25 June 2023-->{{ 90 | govukDate }}
+            {{ "today" |  duration(90) | govukDate("truncate") }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="when-change">

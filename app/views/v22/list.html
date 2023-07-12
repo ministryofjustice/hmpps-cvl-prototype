@@ -201,7 +201,14 @@
       <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">Probation practitioner</th>
       {% endif %}
 
+      {% if data.user=="governor"%}
+      <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="ascending">Release date</th>
+      {% endif %}
+
+      {% if (data.user=="probation") or (data.user=="admin") or (data.user=="aco") %}
       <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="ascending" style="width: 110px;">Release date</th>
+      {% endif %}
+
       {% if data.user!=="governor"%}
       <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">Status</th>
       {% endif %}
