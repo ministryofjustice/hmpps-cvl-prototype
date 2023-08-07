@@ -1,6 +1,6 @@
 module.exports = function (router) {
 
-var version = '/v23;
+var version = '/v23;'
 
 
 
