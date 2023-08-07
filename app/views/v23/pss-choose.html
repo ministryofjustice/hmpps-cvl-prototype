@@ -1,0 +1,72 @@
+{% extends "layouts/main.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+{% block beforeContent %}
+
+
+{% endblock %}
+
+{% block content %}
+{% if data.vary=="yes" %}
+{% include "templates/banners/layout-name-vary.html" %}
+{% else %}
+{% include "layouts/layout-name.html" %}
+{% endif %}
+<br />
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-thirds">
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            Select additional post sentence supervision requirements
+          </h1>
+        </legend>
+        <div id="nationality-hint" class="govuk-hint">
+          Select all relevant post sentence supervision requirements.
+        </div><br>
+        <form action="" method="post">
+        <h1 class="govuk-heading-l govuk-!-padding-top-7" id=""> Drug appointment</h1>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="1p" name="1p" type="checkbox" value="yes">
+              <label class="govuk-label govuk-checkboxes__label" for="1p">
+                Attend [INSERT APPOINTMENT TIME DATE AND ADDRESS], as directed, to address your dependency on, or propensity to misuse, a controlled drug.
+              </label>
+            </div>
+
+          <br>
+
+
+        <h1 class="govuk-heading-l govuk-!-padding-top-7" id="">Drug testing
+        </h1>
+
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="2p" name="2p" type="checkbox" value="yes" d>
+              <label class="govuk-label govuk-checkboxes__label" for="2p">
+                Attend [INSERT NAME AND ADDRESS], as reasonably required by your supervisor, to give a sample of oral fluid / urine in order to test whether you have any specified Class A or specified Class B drugs in your body, for the purpose of ensuring that you are complying with the requirement of your supervision period requiring you to be of good behaviour.
+              </label>
+            </div>
+            <br /><br />
+            <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button" name="submit" value="continue">
+              Continue
+            </button>
+            {% if data.vary=="yes" %}
+            {% else %}
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="submit" value="exit">
+              Save and exit
+            </button>
+            {% endif %}
+            </div>
+          </form>
+        </div>
+
+
+{% endblock %}

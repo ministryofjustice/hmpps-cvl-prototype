@@ -14,6 +14,7 @@ require('./routes/v19.js')(router);
 require('./routes/v20.js')(router);
 require('./routes/v21.js')(router);
 require('./routes/v22.js')(router);
+require('./routes/v23.js')(router);
 
 //require('./views/'+version+'/routes/mainrouter.js')(router);
 module.exports = router;

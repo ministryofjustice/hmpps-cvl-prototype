@@ -1,0 +1,630 @@
+{% extends "layouts/main.html" %}
+
+{% block beforeContent %}
+
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+{% endblock %}
+
+{% block content %}
+<!--if ACO / Auth-->
+{% if data.user=="aco" %}
+    {% if (data.varycompleteapprove=="yes") or (data.varycompletedreject=="yes") %}
+
+          <h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+            There are currently no variation requests in your list to approve
+            <br />
+          </h3>
+
+              {% else %}
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-three-thirds">
+              <h1 class="govuk-heading-xl" style="margin-left: 15px;">Select a person to approve their licence variation</h1>
+            </div>
+          </div>
+
+    {% if (data.personapprovedharrycomplete=="yes") and (data.personapprovedavarycomplete=="yes") %}
+
+                <h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+                  There are currently no variation requests in your list to approve
+                  <br />
+                </h3>
+
+            {% else %}
+
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+            
+            
+                <div class="moj-search govuk-!-margin-bottom-8">
+            
+                  <form action="#" method="post">
+                
+                    <div class="govuk-form-group">
+                      <label class="govuk-label moj-search__label govuk-!-font-weight-bold" for="search">
+                        Find a case
+                      </label>
+                
+                      <div id="search-hint" class="govuk-hint moj-search__hint" style="width: 400px;">
+                        Search by name, CRN or probation practitioner
+                      </div>
+                
+                      <input class="govuk-input moj-search__input " id="search" name="search" type="search" aria-describedby="search-hint">
+                    </div>
+                
+                    <button class="govuk-button moj-search__button " data-module="govuk-button">
+                      Search
+                    </button>
+                
+                  </form>
+                </div>
+            
+            
+            </div>
+            </div>
+        
+
+            <nav class="moj-sub-navigation" aria-label="Sub navigation">
+             <ul class="moj-sub-navigation__list" style="margin-bottom:0px;">
+               <li class="moj-sub-navigation__item">
+                 <a class="moj-sub-navigation__link" href="list">Cases in this PDU</a>
+               </li>
+
+               <li class="moj-sub-navigation__item">
+                 <a class="moj-sub-navigation__link" href="#1" aria-current="page" >Cases in this region</a>
+               </li>
+
+               
+                <!--<li class="moj-sub-navigation__item" style=" float:right;">
+                  <a href="list-search">
+               <button class="govuk-button moj-search__button " data-module="govuk-button" >
+                 Search
+               </button>
+             </a>
+               </li>
+               <li class="moj-sub-navigation__item" style=" float:right; ">
+                 <input class="govuk-input moj-search__input;" style="font-size:.8em;" size="51" id="search" name="search" type="search" aria-describedby="search-hint" placeholder="You can search by name, CRN or probation practitioner">
+              </li>
+              <li class="moj-sub-navigation__item" style="float:right; margin-top:10px;"><strong>Find a person</strong></li>
+             </ul>-->
+
+           </nav>
+
+
+           {% if data.user=="aco"%}
+           <h2 class="govuk-heading-l">Cases in this region</h2>
+           {% endif %}
+
+
+
+
+          <table class="govuk-table" data-module="moj-sortable-table">
+            <!--<caption class="govuk-table__caption govuk-table__caption--m">Month you apply</caption>-->
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header" aria-sort="ascending">Name</th>
+                <th scope="col" class="govuk-table__header app-custom-class" >Licence type</th>
+                <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">Probation practitioner</th>
+                <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">PDU head</th>
+                <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="ascending">Variation request date</th>
+                <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">Release date</th>
+                <!--<th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">Status</th>-->
+
+              </tr>
+            </thead>
+    {% endif %}
+            <tbody class="govuk-table__body">
+    {% if data.personapprovedavarycomplete=="yes" %}
+    {% else %}
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
+                  <h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+                    <a href="vary-approve" class="govuk-link govuk-link--no-visited-state">
+                    Avary Bradshaw</a>
+                    <br />
+                      <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 122345</span>
+                  </h3>
+                </th>
+                <td class="govuk-table__cell">Standard determinate</td>
+
+                  <td class="govuk-table__cell">
+                    <a href="probation-details">Obi Twokan</a>
+                  </td>
+                  <td class="govuk-table__cell">Laurn Smith</td>
+                  <td class="govuk-table__cell">12 March 2022</td>
+                  <td class="govuk-table__cell">12 March 2022</td>
+                  <!--<td class="govuk-table__cell">
+                    <strong class="govuk-tag govuk-tag--blue">V<span style="text-transform: lowercase;">ariation requested</span></strong>
+                  </td>-->
+              </tr>
+
+              {% if data.personapprovedharrycomplete=="yes" %}
+              {% else %}
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">
+                            <h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+                              <a href="vary-approve-harry" class="govuk-link govuk-link--no-visited-state">
+                              Harry Jection</a>
+                              <br />
+                                <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 376533</span>
+                            </h3>
+                          </th>
+                          <td class="govuk-table__cell">Standard determinate</td>
+                          <td class="govuk-table__cell">
+                            <a href="probation-details">John Farrell</a>
+                            </td>
+                            <td class="govuk-table__cell">Laurn Smith</td>
+                            </td>
+                          <td class="govuk-table__cell">12 March 2022</td>
+                          <td class="govuk-table__cell">12 March 2022</td>
+                             <!--<td class="govuk-table__cell">
+                                <strong class="govuk-tag govuk-tag--blue">V<span style="text-transform: lowercase;">ariation requested</span></strong>
+                              </td>-->
+                        </tr>
+              {% endif %}
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
+                  <h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+                    <a href="vary-discarded" class="govuk-link govuk-link--no-visited-state">
+                    Jodie Scard</a>
+                    <br />
+                      <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 565662</span>
+                  </h3>
+                </th>
+                <td class="govuk-table__cell">Standard determinate</td>
+
+                  <td class="govuk-table__cell">
+                    <a href="probation-details">Obi Twokan</a>
+                  </td>
+                  <td class="govuk-table__cell">Laurn Smith</td>
+                  <td class="govuk-table__cell">13 March 2022</td>
+                  <td class="govuk-table__cell">13 March 2022</td>
+                  <!--<td class="govuk-table__cell">
+                    <strong class="govuk-tag govuk-tag--grey">V<span style="text-transform: lowercase;">ariation discarded</span></strong>
+                  </td>-->
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
+                  <h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+                    <a href="vary-deferred" class="govuk-link govuk-link--no-visited-state">
+                    Andi Ferd</a>
+                    <br />
+                      <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 877262</span>
+                  </h3>
+                </th>
+                <td class="govuk-table__cell">Standard determinate</td>
+
+                  <td class="govuk-table__cell">
+                    <a href="probation-details">Obi Twokan</a>
+                  </td>
+                  <td class="govuk-table__cell">Laurn Smith</td>
+                  <td class="govuk-table__cell">14 March 2022</td>
+                  <td class="govuk-table__cell">14 March 2022</td>
+                  <!--<td class="govuk-table__cell">
+                    <strong class="govuk-tag govuk-tag--red">V<span style="text-transform: lowercase;">ariation deferred</span></strong>
+                  </td>-->
+              </tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              <h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+                <a href="#" class="govuk-link govuk-link--no-visited-state">
+                Mark Wright-Smith</a>
+                <br />
+                  <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 877262</span>
+              </h3>
+            </th>
+            <td class="govuk-table__cell">Standard determinate</td>
+              <td class="govuk-table__cell">
+                <a href="probation-details">Obi Twokan</a>
+              </td>
+              <td class="govuk-table__cell">Peter Amstel</td>
+              <td class="govuk-table__cell">16 March 2022</td>
+              <td class="govuk-table__cell">16 March 2022</td>
+              <!--<td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--blue">V<span style="text-transform: lowercase;">ariation requested</span></strong>
+              </td>-->
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              <h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+                <a href="#" class="govuk-link govuk-link--no-visited-state">
+                Adbul Ramajan</a>
+                <br />
+                  <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 310973</span>
+              </h3>
+            </th>
+            <td class="govuk-table__cell">Standard determinate</td>
+            <td class="govuk-table__cell">
+              <a href="probation-details">Obi Twokan</a>
+            </td>
+            <td class="govuk-table__cell">Michael Stone</td>
+            <td class="govuk-table__cell">17 March 2022</td>
+            <td class="govuk-table__cell">17 March 2022</td>
+            <!--<td class="govuk-table__cell">
+              <strong class="govuk-tag govuk-tag--grey">V<span style="text-transform: lowercase;">ariation discarded</span></strong>
+            </td>-->
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+              <a href="#" class="govuk-link govuk-link--no-visited-state">
+              Banko Jot</a>
+              <br />
+                <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 443344</span>
+            </h3>
+          </th>
+          <td class="govuk-table__cell">Standard determinate</td>
+          <td class="govuk-table__cell">
+            <a href="probation-details">Obi Twokan</a>
+          </td>
+          <td class="govuk-table__cell">Rachel Riley</td>
+          <td class="govuk-table__cell">18 March 2022</td>
+          <td class="govuk-table__cell">18 March 2022</td>
+          <!--<td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--red">V<span style="text-transform: lowercase;">ariation deferred</span></strong>
+          </td>-->
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">
+          <h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+            <a href="#" class="govuk-link govuk-link--no-visited-state">
+            Tim Lycett</a><br />
+              <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 1299333</span>
+          </h3>
+        </th>
+        <td class="govuk-table__cell">Standard determinate</td>
+        <td class="govuk-table__cell">
+          <a href="probation-details">Terry O' Grady</a>
+        </td>
+        <td class="govuk-table__cell">Roman Abraham</td>
+        <td class="govuk-table__cell">20 March 2022</td>
+        <td class="govuk-table__cell">20 March 2022</td>
+        <!--<td class="govuk-table__cell">
+          <strong class="govuk-tag govuk-tag--blue">V<span style="text-transform: lowercase;">ariation requested</span></strong>
+        </td>-->
+    </tr>
+
+      {% endif %}
+
+
+            </tbody>
+            </table>
+      {% endif %}<!--endif if approved by ACO-->
+
+      {% else %}<!--if not ACO-->
+  <!--End ACO / Auth -->
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-thirds">
+    <h1 class="govuk-heading-xl">Select a person to vary licences and supervision orders</h1>
+  </div>
+</div>
+{% if data.journey=="varynonapproved"%}
+<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Important
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading" style="max-width:1100px;">
+      There are current licence variation requests that need attention.
+      <!--The approver has requested further information or amendments.-->
+      <a class="govuk-notification-banner__link" href="list-filtered-referred"> Show these requests </a>.
+    </p>
+  </div>
+</div>
+{% endif%}
+
+
+{% if data.user=="probation"%}
+        <nav class="moj-sub-navigation" aria-label="Sub navigation">
+         <ul class="moj-sub-navigation__list" style="margin-bottom:0px;">
+           <li class="moj-sub-navigation__item">
+             <a class="moj-sub-navigation__link" aria-current="page" href="#1">My cases</a>
+           </li>
+
+           <li class="moj-sub-navigation__item">
+             <a class="moj-sub-navigation__link" href="list-team-view">Team cases</a>
+           </li>
+
+           <li class="moj-sub-navigation__item">
+             <!--<a class="moj-sub-navigation__link" href="list-region-view">Region cases</a>-->
+           </li>
+
+            <li class="moj-sub-navigation__item" style=" float:right;">
+              <a href="list-search">
+           <button class="govuk-button moj-search__button " data-module="govuk-button" >
+             Search
+           </button>
+         </a>
+           </li>
+           <li class="moj-sub-navigation__item" style=" float:right; ">
+             <input class="govuk-input moj-search__input;" style="font-size:.8em;" size="51" id="search" name="search" type="search" aria-describedby="search-hint" placeholder="You can search by name, CRN or probation practitioner">
+          </li>
+          <li class="moj-sub-navigation__item" style="float:right; margin-top:10px;"><!--<strong>Find a person</strong>--></li>
+         </ul>
+
+
+       </nav>
+       {% endif %}
+
+<table class="govuk-table" data-module="moj-sortable-table">
+
+  <!--<caption class="govuk-table__caption govuk-table__caption--m">Month you apply</caption>-->
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header" aria-sort="ascending">Name</th>
+
+      {% if data.user!=="probation"%}
+      <th scope="col" class="govuk-table__header govuk-table__cell"  aria-sort="none">Prison number</th>
+
+      <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">Probation practitioner</th>
+      {% endif %}
+      {% if data.user=="probation"%}
+      <!--<th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">CRN</th>-->
+      <!--<th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">CRN</th>-->
+      <th scope="col" class="govuk-table__header app-custom-class" >Licence type</th>
+      <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">Probation practitioner</th>
+      {% endif %}
+
+      <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="ascending">Release date</th>
+      {% if data.user!=="governor"%}
+
+      <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">Variation status</th>
+      {% endif %}
+
+
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+          {% if data.journey=="varynonapproved" %}
+            <a href="#" class="govuk-link govuk-link--no-visited-state">
+          {% else %}
+            <a href="licence-history" class="govuk-link govuk-link--no-visited-state">
+          {% endif %}
+          Avary Bradshaw</a>
+          <br />
+            <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 122345</span>
+
+        </h3>
+      </th>
+      <!--<td class="govuk-table__cell">A381306</td>-->
+      <td class="govuk-table__cell">Standard determinate</td>
+      <td class="govuk-table__cell">
+        <a href="probation-details">John Farrell<a/>
+        </td>
+      <td class="govuk-table__cell">20 Dec 2021</td>
+          <td class="govuk-table__cell">
+            {% if data.vary=="yes"%}
+
+            <strong class="govuk-tag govuk-tag--blue"> V<span style="text-transform: lowercase;">ariation submitted</span>
+            </strong><br />
+          <!--  <span class="moj-badge moj-badge--red">! F<span style="text-transform: lowercase;">urther action needed</span></span>-->
+
+
+            {%else%}
+            <br />
+            {%endif%}
+          </td>
+
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+              <a href="#" class="govuk-link govuk-link--no-visited-state">
+              Marus Henshaw</a>
+              <br />
+                <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 853273</span>
+            </h3>
+          </th>
+
+            <td class="govuk-table__cell">Standard determinate<br />Post sentence supervision</td>
+            <td class="govuk-table__cell">
+              <a href="probation-details">Steve Twokan<a/>
+            </td>
+            <td class="govuk-table__cell">19 Dec 2021</td>
+            <td class="govuk-table__cell">
+
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+              <a href="#" class="govuk-link govuk-link--no-visited-state">
+              Lee Evans</a>
+              <br />
+                <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 221223</span>
+            </h3>
+          </th>
+
+            <td class="govuk-table__cell">Standard determinate</td>
+            <td class="govuk-table__cell">
+              <a href="probation-details">Steve Twokan<a/>
+            </td>
+            <td class="govuk-table__cell">18 Dec 2021</td>
+            <td class="govuk-table__cell">
+
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+              <a href="licence-history-helena-proved" class="govuk-link govuk-link--no-visited-state">
+              Helena Proved</a>
+              <br />
+                <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 6302933</span>
+            </h3>
+          </th>
+
+            <td class="govuk-table__cell">Standard determinate</td>
+            <td class="govuk-table__cell">
+              <a href="probation-details">Steve Twokan<a/>
+            </td>
+            <td class="govuk-table__cell">18 Dec 2021</td>
+            <td class="govuk-table__cell">
+
+              {% if data.activateHelena=="yes"%}
+
+              {% else %}
+                <strong class="govuk-tag govuk-tag--blue">V<span style="text-transform: lowercase;">ariation approved</span></strong>
+              {% endif %}
+
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+              <a href="#" class="govuk-link govuk-link--no-visited-state">
+              Lewis Capstone</a>
+              <br />
+                <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 1124334</span>
+            </h3>
+          </th>
+
+            <td class="govuk-table__cell">Standard determinate</td>
+            <td class="govuk-table__cell">
+              <a href="probation-details">Steve Twokan<a/>
+            </td>
+            <td class="govuk-table__cell">17 Dec 2021</td>
+            <td class="govuk-table__cell">
+
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+              <a href="#" class="govuk-link govuk-link--no-visited-state">
+              Stephano Giovani</a>
+              <br />
+                <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 773732</span>
+            </h3>
+          </th>
+          <td class="govuk-table__cell">Standard determinate</td>
+            <td class="govuk-table__cell">
+              <a href="probation-details">Obi Twokan<a/>
+            </td>
+
+            <td class="govuk-table__cell">17 Dec 2021</td>
+            <td class="govuk-table__cell">
+
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+              <a href="#" class="govuk-link govuk-link--no-visited-state">
+              Rajesh Damodaran</a>
+              <br />
+                <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 547363</span>
+
+            </h3>
+          </th>
+          <!--<td class="govuk-table__cell">A381306</td>-->
+          <td class="govuk-table__cell">Standard determinate <br />Post sentence supervision</td>
+          <td class="govuk-table__cell">
+            <a href="probation-details">John Farrel<a/>
+            </td>
+          <td class="govuk-table__cell">16 Dec 2021</td>
+              <td class="govuk-table__cell">
+
+              </td>
+            </tr>
+
+
+
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                <h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+                  <a href="#" class="govuk-link govuk-link--no-visited-state">
+                  Marco Pierre</a>
+                  <br />
+                    <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 776622</span>
+
+                </h3>
+              </th>
+              <!--<td class="govuk-table__cell">A381306</td>-->
+              <td class="govuk-table__cell">Standard determinate </td>
+              <td class="govuk-table__cell">
+                <a href="probation-details">John Farrell<a/>
+                </td>
+              <td class="govuk-table__cell">15 Dec 2021</td>
+                  <td class="govuk-table__cell">
+                    <strong class="govuk-tag govuk-tag--blue">V<span style="text-transform: lowercase;">ariation approved</span></strong>
+                  </td>
+                </tr>
+
+                <!-- start of Harry jection if non approved vary -->
+
+                {% if data.journey=="varynonapproved" %}
+
+
+                    <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__header">
+                        <h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+                          <a href="licence-history" class="govuk-link govuk-link--no-visited-state">
+                          Harry Jection</a>
+                          <br />
+                            <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 376533</span>
+                        </h3>
+                      </th>
+                      <td class="govuk-table__cell">Standard determinate</td>
+                      <td class="govuk-table__cell">
+                        <a href="probation-details">John Farrell<a/>
+                        </td>
+                      <td class="govuk-table__cell">12 Dec 2021</td>
+                          <td class="govuk-table__cell">
+                            <strong class="govuk-tag govuk-tag--red">A<span style="text-transform: lowercase;">ttention needed</span></strong>
+                              <span class="govuk-hint" style="font-size:0.8em; margin:5px 0 0 5px;">
+                              </span>
+                          </td>
+                        </tr>
+
+
+                    <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__header">
+                        <h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">
+                          Junior Stanislav</a>
+                          <br />
+                            <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 7736631</span>
+                        </h3>
+                      </th>
+
+                        <td class="govuk-table__cell">Standard determinate<br />Post sentence supervision</td>
+                        <td class="govuk-table__cell">
+                          <a href="probation-details">Steve Twokan<a/>
+                        </td>
+                        <td class="govuk-table__cell">11 Dec 2021</td>
+                        <td class="govuk-table__cell">
+
+                        </td>
+                    </tr>
+                    {% endif %}
+                    <!-- end of Harry jection if non approved vary -->
+
+
+                </tbody>
+                </table>
+
+{%endif%}
+{% endblock %}

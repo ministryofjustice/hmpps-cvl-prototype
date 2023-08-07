@@ -1,0 +1,373 @@
+{% extends "layouts/main.html" %}
+
+{% block beforeContent %}
+
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+                
+                <h1 class="govuk-heading-xl">Search results for {{ data['search-keyword-one']}}</h1>
+                
+
+      </div>
+</div>
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+
+
+    <div class="moj-search govuk-!-margin-bottom-8">
+
+      <form action="list-search-results" method="post">
+    
+        <div class="govuk-form-group">
+          <label class="govuk-label moj-search__label govuk-!-font-weight-bold" for="search">
+            Find a case
+          </label>
+    
+          {% if (data.user=="probation") or (data.user=="aco") %}
+          <div id="search-hint" class="govuk-hint moj-search__hint" style="width: 400px;">
+            Search by name, CRN or probation practitioner
+          </div>
+          {% endif %}
+
+          {% if (data.user=="governor") or (data.user=="admin") %}
+          <div id="search-hint" class="govuk-hint moj-search__hint" style="width: 470px;">
+            Search by name, prison number or probation practitioner
+          </div>
+          {% endif %}
+    
+          <input class="govuk-input moj-search__input " id="search-keyword-two" name="search-keyword-two" type="search-keyword-two" aria-describedby="search-hint">
+        </div>
+    
+        <button class="govuk-button moj-search__button " data-module="govuk-button">
+          Search
+        </button>
+    
+      </form>
+    </div>
+
+
+</div>
+</div>
+
+
+<!--tab 1 - Probation Practitioner -->
+
+{% if (data.user=="probation") %}
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#past-day">
+         People in prison (0 results)
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-week">
+        People on probation (0 results)
+      </a>
+    </li>
+  </ul>
+
+
+  <div class="govuk-tabs__panel" id="past-day">
+    <h2 class="govuk-heading-l">People in prison (0 results)</h2>
+
+<p>
+
+  Someone’s licence will only appear on this service if they:
+
+  <ul class="govuk-list govuk-list--bullet">
+    <li>are assigned to you or one of your teams on NDelius</li>
+    <li>are serving a determinate sentence</li>
+    <li>have a release date</li>
+    <li>have not been approved for Home Detention Curfew</li>
+    <li>have not been recalled or breached a post sentence supervision order</li>
+  </ul>
+
+</p>
+
+<p>If you think someone’s licence is missing, contact the helpdesk by calling 0800 917 5148, or #6598 from inside a prison.</p>
+
+
+<button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Return to case list
+</button>
+
+
+  </div>
+  {% endif %}
+
+
+
+
+
+  <!--tab 2 - Probation Practitioner -->
+
+{% if (data.user=="probation") %}
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+    <h2 class="govuk-heading-l">People on probation (0 results)</h2>
+   
+<p>
+
+  Someone’s licence will only appear on this service if they:
+
+  <ul class="govuk-list govuk-list--bullet">
+    <li>are assigned to you or one of your teams on NDelius</li>
+    <li>are serving a determinate sentence or a post sentence supervision order</li>
+    <li>were not released on Home Detention Curfew</li>
+    <li>have not been recalled or breached a post sentence supervision order</li>
+    <li>were not released from prison with a licence created using a PD1 form</li>
+  </ul>
+
+</p>
+
+<p>If you think someone’s licence is missing, contact the helpdesk by calling 0800 917 5148, or #6598 from inside a prison.</p>
+
+<button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Return to case list
+</button>
+
+  </div>
+  {% endif %}
+
+
+
+
+<!--tab 1 - Prison admin -->
+
+{% if (data.user=="admin") %}
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#past-day">
+         People in prison (0 results)
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-week">
+        People on probation (0 results)
+      </a>
+    </li>
+  </ul>
+
+
+  <div class="govuk-tabs__panel" id="past-day">
+    <h2 class="govuk-heading-l">People in prison (0 results)</h2>
+
+<p>
+
+  You can see licences for people in prison in this service if they:
+
+  <ul class="govuk-list govuk-list--bullet">
+    <li>are within 4 weeks of release or if a probation practitioner has started work on their licence before then</li>
+    <li>are serving a determinate sentence in a prison you work in</li>
+    <li>have a release date</li>
+    <li>have not been approved for Home Detention Curfew</li>
+    <li>have not been recalled or breached a top up supervision order</li>
+    
+  </ul>
+
+</p>
+
+<p>If you think someone’s licence is missing, contact the helpdesk by calling 0800 917 5148, or #6598 from inside a prison.</p>
+
+
+<button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Return to case list
+</button>
+
+
+  </div>
+  {% endif %}
+
+
+
+
+
+  <!--tab 2 - Prison admin -->
+
+{% if (data.user=="admin") %}
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+    <h2 class="govuk-heading-l">People on probation (0 results)</h2>
+   
+<p>You can see licences for people in prison in this service if they:
+
+  <ul class="govuk-list govuk-list--bullet">
+    <li>served a determinate sentence in a prison you work in</li>
+    <li>were not released on Home Detention Curfew</li>
+    <li>have not been recalled a breached a top up supervision order</li>
+    <li>were not released from prison with a licence created using NOMIS</li>
+  </ul>
+
+</p>
+
+<p>If you think someone’s licence is missing, contact the helpdesk by calling 0800 917 5148, or #6598 from inside a prison.</p>
+
+<button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Return to case list
+</button>
+
+  </div>
+  {% endif %}
+
+
+
+  
+
+<!--tab 1 - Prison Approver -->
+
+{% if (data.user=="governor") %}
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#approval-needed">
+        Approval needed (0 results)
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#recently-approved">
+        Recently approved (0 results)
+      </a>
+    </li>
+  </ul>
+
+
+  <div class="govuk-tabs__panel" id="approval-needed">
+    <h2 class="govuk-heading-l">Approval needed (0 results)</h2>
+
+<p>No licence approval requests that match “{{ data['search-keyword-one']}}”. Try searching again.</p>
+
+<button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Return to case list
+</button>
+
+
+  </div>
+  {% endif %}
+
+
+
+
+
+  <!--tab 2 - Prison Approver -->
+
+{% if (data.user=="governor") %}
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="recently-approved">
+    <h2 class="govuk-heading-l">Recently approved (0 results)</h2>
+   
+<p>No licence approval requests that match “{{ data['search-keyword-one']}}”. Try searching again.</p>
+
+<p>If someone's release date was more than 14 days ago, you will no longer be able to see their licence in this service.</p>
+
+<button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Return to case list
+</button>
+
+  </div>
+  {% endif %}
+
+
+
+  
+<!--tab 1 - Head of PDU -->
+
+{% if (data.user=="aco") %}
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#approval-needed">
+        Cases in this PDU (0 results)
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#recently-approved">
+        All cases in this region (0 results)
+      </a>
+    </li>
+  </ul>
+
+
+  <div class="govuk-tabs__panel" id="approval-needed">
+    <h2 class="govuk-heading-l">Cases in this PDU (0 results)</h2>
+
+<p>No licence variation requests that match “{{ data['search-keyword-one']}}”. Try searching again.</p>
+
+<h3 class="govuk-heading-s">If you still cannot find a variation request</h3>
+
+<p>Check if it was approved by another PDU head in this region.</p>
+
+<p>Contact helpdesk by calling 0800 917 5148, or #6598 from inside a prison, if you think a variation request is missing.</p>
+
+<button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Return to case list
+</button>
+
+
+  </div>
+  {% endif %}
+
+
+
+
+
+  <!--tab 2 - Head of PDU -->
+
+{% if (data.user=="aco") %}
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="recently-approved">
+    <h2 class="govuk-heading-l">All cases in this region (0 results)</h2>
+   
+<p>No licence variation requests that match “{{ data['search-keyword-one']}}”. Try searching again.</p>
+
+<h3 class="govuk-heading-s">If you still cannot find a variation request</h3>
+
+<p>Check if it was approved by another PDU head in this region.</p>
+
+<p>Contact helpdesk by calling 0800 917 5148, or #6598 from inside a prison, if you think a variation request is missing.</p>
+
+<button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Return to case list
+</button>
+
+  </div>
+  {% endif %}
+
+
+
+
+
+
+
+{% endblock %}
+

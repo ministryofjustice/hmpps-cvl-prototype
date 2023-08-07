@@ -1,0 +1,72 @@
+{% extends "layouts/main.html" %}
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+{% endblock %}
+
+{% block content %}
+        <h1 class="govuk-heading-l">Select service </h1>
+
+<div class="homepage-content">
+    <div class="govuk-width-container">
+        <ul class="govuk-grid-row card-group">
+            <li class="govuk-grid-column-one-third card-group__item">
+                <div class="card card--clickable" data-test="establishment-roll">
+                    <h2 class="govuk-heading-m card__heading">
+                        <a class="govuk-link card__link govuk-link--no-visited-state" href="#" >Home Detention Curfew</a>
+                    </h2>
+                    <p class="govuk-body card__description">Service for HDC Licences Creation and Approval.</p>
+                </div>
+            </li>
+            <li class="govuk-grid-column-one-third card-group__item">
+                <div class="card card--clickable" data-test="secure-move">
+                    <h2 class="govuk-heading-m card__heading">
+                        <a class="govuk-link card__link govuk-link--no-visited-state" >
+
+                          {% if data.user== "admin" %}
+                          <a class="govuk-link card__link govuk-link--no-visited-state" href="list">Print a licence</a></h2>
+                            <p class="govuk-body card__description"> Print standard determinate licences and post sentence supervision orders created by community probation practitioners.</p>
+                          {%endif%}
+
+                          {% if data.user=="aco"%}<a class="govuk-link card__link govuk-link--no-visited-state" href="vary/list">Approve a licence variation</a></h2>
+                            <p class="govuk-body card__description"> Approve variations for standard determinate licences and post sentence supervision orders created by community probation practitioners.</p>
+                            {%endif%}
+
+                          {% if data.user=="governor"%}<a class="govuk-link card__link govuk-link--no-visited-state" href="list">Approve a licence</a></h2>
+                            <p class="govuk-body card__description"> Approve standard determinate licences and post sentence supervision orders created by community probation practitioners.</p>
+                            {%endif%}
+
+                          {% if data.user=="probation"%}<a class="govuk-link card__link govuk-link--no-visited-state" href="type">Create and vary a licence </a></h2>
+                            <p class="govuk-body card__description"> Create, edit and vary standard determinate licences and post sentence supervision orders.</p>
+                          {%endif%}
+                </div>
+            </li>
+            <li class="govuk-grid-column-one-third card-group__item">
+                <div class="card card--clickable" data-test="secure-move">
+                    <h2 class="govuk-heading-m card__heading">
+                        <a class="govuk-link card__link govuk-link--no-visited-state" href="#" >Refer and monitor an intervention
+                        </a>
+                    </h2>
+                    <p class="govuk-body card__description">Find and choose rehabilitation programs for people under supervision.
+                    </p>
+                </div>
+            </li>
+            <li class="govuk-grid-column-one-third card-group__item">
+            </li>
+            <li class="govuk-grid-column-one-third card-group__item">
+            </li>
+
+        </ul>
+    </div>
+</div>
+{% endblock %}

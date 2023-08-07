@@ -1,0 +1,57 @@
+{% extends "layouts/main.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+{% block beforeContent %}
+
+
+<link href="https://design-patterns.service.justice.gov.uk/assets/stylesheets/application.css" rel="stylesheet">
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+{% endblock %}
+
+{% block content %}
+{% include "layout-name-vary-harry.html" %}
+<br />
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <h1 class="govuk-heading-l">
+  Summary for rejecting or requesting amendments to the licence variation
+  </h1>
+  </div>
+</div>
+
+    {% include "layout-variation-approved-stage4-not-accordian.html" %}
+
+  <!--  <form action="reject-confirmation" method="post">-->
+  <form action="reject-confirmation" method="post">
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Submit and request amendments"
+
+      }) }}
+      <input type="hidden" name="personapprovedharry" value="yes" />
+    </form><!--
+      <div class="moj-button-action">
+          <a href="discard-changes-confirm2" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" type="submit">Discard changes</a>
+      </div>-->
+    </div>
+
+
+ </div>
+</div>
+
+
+{% endblock %}

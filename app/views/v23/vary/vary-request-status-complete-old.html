@@ -1,0 +1,218 @@
+{% extends "layouts/main.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+{% block beforeContent %}
+
+<!--
+<link href="https://design-patterns.service.justice.gov.uk/assets/stylesheets/application.css" rel="stylesheet">
+--><div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+{% endblock %}
+
+{% block content %}
+{% include "templates/banners/layout-name-vary.html" %}
+<h1 class="govuk-heading-l">
+Licence variation request
+</h1>
+
+
+<!--block start-->
+<dl class="govuk-summary-list govuk-!-margin-bottom-9" style=" border:1px solid gray;">
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key" style="padding-left:5px; background-color:#ebecf0;">
+Variation details
+</dt>
+<dd class="govuk-summary-list__value" style=" background-color:#ebecf0;">
+<br>
+</dd>
+<dd class="govuk-summary-list__actions" style=" background-color:#ebecf0;">
+<a class="govuk-link" href="question-change">
+<span> </span>
+</a>
+</dd>
+</div>
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key" style="padding-left:5px;">
+  Status
+</dt>
+    <dd class="govuk-summary-list__value">Active</dd>
+
+<dd class="govuk-summary-list__actions">
+<a class="govuk-link" href="question-change">
+<span>  </span>
+</a>
+</dd>
+</div>
+
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key" style="padding-left:5px;">
+    Feedback from approver
+    <br />
+    </dt>
+    <dd class="govuk-summary-list__value">
+Variation approved    <br />
+    </dd>
+    <dd class="govuk-summary-list__actions" style="padding-right:10px;">
+    <span> By Alan Approver<br />
+    3 December 2021 </span>
+    </dd>
+    </div>
+
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key" style="padding-left:5px;">
+Reasons for the variation<br/><br />
+</dt>
+<dd class="govuk-summary-list__value">
+Mr Bradshaw has recently moved areas and now we need to add a cerfew for his new address due to the imposing risk at night time hours.</dd>
+<dd class="govuk-summary-list__actions" style="padding-right:10px;">
+
+<span> By Paul Farmer<br />
+1 December 2021 </span>
+</dd>
+</div>
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key" style="padding-left:5px;">
+SPO Communications<br />
+</dt>
+<dd class="govuk-summary-list__value">
+  Have you communicated and agreed this change with your SPO?<br />
+</dd>
+<dd class="govuk-summary-list__actions">
+<span style="padding-right:25px;">  Yes</span>
+</dd>
+</div>
+
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key" style="padding-left:5px;">
+  VLO Communications
+</dt>
+<dd class="govuk-summary-list__value">
+  Have you consulted with the victim liaison officer (VLO) for this case?
+</dd>
+<dd class="govuk-summary-list__actions">
+<span style="padding-right:25px;"> Yes</span>
+</dd>
+</div>
+</dl><!--block end-->
+
+<!--block start-->
+<dl class="govuk-summary-list govuk-!-margin-bottom-9" style=" border:1px solid gray;">
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key" style="padding-left:5px; background-color:#ebecf0;">
+Licence conditions added
+</dt>
+<dd class="govuk-summary-list__value" style=" background-color:#ebecf0;">
+<br>
+</dd>
+<dd class="govuk-summary-list__actions" style=" background-color:#ebecf0;">
+<a class="govuk-link" href="question-change">
+<span> </span>
+</a>
+</dd>
+</div>
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key" style="padding-left:5px;">
+Curfew arrangement
+</dt>
+<dd class="govuk-summary-list__value">
+Confine yourself to remain at 929 Stanley Avenue, Milton Keynes, MK1 2JD initially from 9pm until 9am each day, and, thereafter, for such a period as may be reasonably notified to you by your supervising officer; and comply with such arrangements as may be reasonably put in place and notified to you by your supervising officer so as to allow for your whereabouts and your compliance with your curfew requirement be monitored (whether by electronic means involving your wearing an electronic tag or otherwise)<br>
+</dd>
+<dd class="govuk-summary-list__actions">
+<a class="govuk-link" href="question-change">
+<span>  </span>
+</a>
+</dd>
+</div>
+</dl><!--block end-->
+
+<!--block start-->
+<dl class="govuk-summary-list govuk-!-margin-bottom-9" style=" border:1px solid gray;">
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key" style="padding-left:5px; background-color:#ebecf0;">
+Licence conditions removed
+</dt>
+<dd class="govuk-summary-list__value" style=" background-color:#ebecf0;">
+<br>
+</dd>
+<dd class="govuk-summary-list__actions" style=" background-color:#ebecf0;">
+<a class="govuk-link" href="question-change">
+<span> </span>
+</a>
+</dd>
+</div>
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key" style="padding-left:5px;">
+  None
+</dt>
+<dd class="govuk-summary-list__value">
+</dd>
+<dd class="govuk-summary-list__actions">
+<a class="govuk-link" href="question-change">
+<span>  </span>
+</a>
+</dd>
+</div>
+
+</dl><!--block end-->
+
+
+<!--block start-->
+<dl class="govuk-summary-list govuk-!-margin-bottom-9" style=" border:1px solid gray;">
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key" style="padding-left:5px; background-color:#ebecf0;">
+Licence conditions amended
+</dt>
+<dd class="govuk-summary-list__value" style=" background-color:#ebecf0;">
+<br>
+</dd>
+<dd class="govuk-summary-list__actions" style=" background-color:#ebecf0;">
+<a class="govuk-link" href="question-change">
+<span> </span>
+</a>
+</dd>
+</div>
+<div class="govuk-summary-list__row">
+<dt class="govuk-summary-list__key" style="padding-left:5px;">
+  None
+</dt>
+
+<dd class="govuk-summary-list__actions">
+<a class="govuk-link" href="question-change">
+<span>  </span>
+</a>
+</dd>
+</div>
+</dl><!--block end-->
+
+
+
+
+    <form action="question" method="post">
+    <div class="govuk-button-group">
+
+    </form>
+
+
+          <a href="licence-history" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4"  type="submit">Back</a>
+
+    </div>
+
+
+ </div>
+</div>
+</div>
+</div>
+
+
+{% endblock %}
