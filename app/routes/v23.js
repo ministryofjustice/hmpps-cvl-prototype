@@ -1,6 +1,6 @@
 module.exports = function (router) {
 
-var version = '/v23;'
+var version = '/v23';
 
 
 
@@ -13,10 +13,10 @@ router.post('/add-location', function (req, res) {
   if (locationAddAnother == "yes"){
    
    // Send user to next page
-    res.redirect('v23/additional/8b-location2')
+    res.redirect('/additional/8b-location2')
   } else {
     // Send user to ineligible page
-    res.redirect('v23/check-your-answers')
+    res.redirect('/check-your-answers')
   }
 
 })

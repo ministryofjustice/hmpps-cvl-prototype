@@ -216,6 +216,10 @@
   </thead>
   <tbody class="govuk-table__body">
 
+
+
+
+
     <!--Start of ATTENTION NEEDED CASE-->
     {% if data.user=="admin"%}
     <!--<tr class="govuk-table__row">
@@ -233,12 +237,67 @@
       </tr>-->
       {% endif %}
 
+
+
+
+      
+
+
+
+
+      {% if data.user!=="governor"%}
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">
+          <a href="licence-timed-out" class="govuk-link govuk-link--no-visited-state" data-sort-value="2">
+            Jeremy Keane</a></br>
+            {% if data.user=="probation"%}
+            <span class="govuk-hint" style="font-size:.85em; margin-top:-10px;">CRN: G989427</span>
+            {%endif%}
+          </th>
+      
+          {% if data.user=="admin"%}
+          <td class="govuk-table__cell">G5613GT</td>
+          {%endif%}
+      
+          {% if data.user=="probation"%}
+          <td class="govuk-table__cell">Post sentence supervision</td>
+      
+      
+          <td class="govuk-table__cell">
+            <a href="probation-details">John Farrell</a>
+            </td>
+      
+          {%else%}
+          <td class="govuk-table__cell"><a href="#">Jamie Foxx</a></td>
+          {%endif%}
+      
+         
+          <td class="govuk-table__cell due-date" style="width: 220px;">
+            <span class="date overdue">{{ "today" | duration(3) | govukDate("truncate") }}</span>
+            <span class="secondary overdue">Urgent HARD STOP APPROACHING MESSAGE</span>
+          </td>
+      
+          <td class="govuk-table__cell"> {% if data.user=="governor"%}
+            </td>
+           {%else%}
+           <strong class="govuk-tag govuk-tag--blue">I<span style="text-transform: lowercase;">n progress</span></strong></td>
+           {%endif%}
+        </tr>
+        {%endif%}
+      
+
+
+
+
+
+
+
       {% if (data.user=="probation") or (data.user=="admin") %}
       <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header"><h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+        <th scope="row" class="govuk-table__header">
           <a href="hdc-not-started" class="govuk-link govuk-link--no-visited-state" data-sort-value="1" name="mark-bowen" id="mark-bowen" value="yes">
             Mark Bowen
-          </a></h3>
+          </a></br>
           {% if data.user=="probation"%}<span class="govuk-hint" style="font-size:.85em; margin-top:-10px;">CRN: A761536</span>{% endif %}
         </th>
 
@@ -246,7 +305,7 @@
         {% elseif data.user=="admin"%}<td class="govuk-table__cell">G5613GT</td>
         {% endif %}
           <td class="govuk-table__cell">
-            <a href="probation-details">Jeremy Keane</td>
+            <a href="probation-details">John Farrell</td>
             </td>
 
           <td class="govuk-table__cell">{{ "today" | duration(36) | govukDate("truncate") }}</td>
@@ -256,12 +315,55 @@
           </tr>
           {% endif %}
 
-      {% if data.user=="probation"%}
+      
+      
+      
+      
+
+          {% if data.user!=="governor"%}
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              <a href="licence-timed-out" class="govuk-link govuk-link--no-visited-state">
+                Giovanni Nicholson</a></br>
+                {% if data.user=="probation"%}
+                <span class="govuk-hint" style="font-size:.85em; margin-top:-10px;">CRN: G579362</span>
+                {%endif%}
+              </th>
+
+              {% if data.user=="admin"%}
+              <td class="govuk-table__cell">G5613GT</td>
+              {%endif%}
+
+              {% if data.user=="probation"%}
+              <td class="govuk-table__cell">Post sentence supervision</td>
+
+
+              <td class="govuk-table__cell">
+                <a href="probation-details">John Farrell</a>
+                </td>
+
+              {%else%}
+              <td class="govuk-table__cell"><a href="#">Jamie Foxx</a></td>
+              {%endif%}
+
+              <td class="govuk-table__cell">{{ "today" | duration(9) | govukDate("truncate") }}</td>
+              <td class="govuk-table__cell"> {% if data.user=="governor"%}
+                </td>
+               {%else%}
+               <strong class="govuk-tag govuk-tag--grey">T<span style="text-transform: lowercase;">imed out</span></strong></td>
+               {%endif%}
+            </tr>
+            {%endif%}
+
+      
+      
+      
+          {% if data.user=="probation"%}
       <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header"><h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+        <th scope="row" class="govuk-table__header">
           <a href="create-immigration-detention-licence.html" class="govuk-link govuk-link--no-visited-state" data-sort-value="3">
             Craig Jennings
-          </a></h3>
+          </a></br>
             <span class="govuk-hint" style="font-size:.85em; margin-top:-10px;">CRN: A761536</span>
         </th>
 
@@ -280,10 +382,9 @@
           {% if data.user!=="governor"%}
           <!--Hiding this from the governor view for now-->
        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><h3 class="govuk-heading-m govuk-!-margin-bottom-3">
-            <a href="#" class="govuk-link govuk-link--no-visited-state" data-sort-value="3">
-              Matt Tension
-            </a></h3>
+          <th scope="row" class="govuk-table__header">
+            <a href="#" class="govuk-link govuk-link--no-visited-state" data-sort-value="1">
+              Matt Tension</a></br>
             {% if data.user=="probation"%}
             <span class="govuk-hint" style="font-size:.85em; margin-top:-10px;">CRN: A761536</span>
             {%endif%}
@@ -316,6 +417,11 @@
             </tr>
             {%endif%}
 
+
+
+  
+
+
 <!--End of ATTENTION NEEDED CASE-->
 
 
@@ -343,10 +449,10 @@
 
       {% if data.user!=="governor"%}<!--Hiding this case for the governor view for now-->
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+          <th scope="row" class="govuk-table__header">
             <a href="#" class="govuk-link govuk-link--no-visited-state" data-sort-value="3">
               Honor Weekend
-            </a></h3>
+            </a></br>
             {% if data.user=="probation"%}
             <span class="govuk-hint" style="font-size:.85em; margin-top:-10px;">CRN: A314402</span>
             {%endif%}
@@ -380,11 +486,13 @@
           {%endif%}
 
 
+
+
             {% if data.user!=="governor"%}
           <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header"><h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+            <th scope="row" class="govuk-table__header">
               <a href="#" class="govuk-link govuk-link--no-visited-state">
-                Tyrone Shade</a></h3>
+                Tyrone Shade</a></br>
                 {% if data.user=="probation"%}
                 <span class="govuk-hint" style="font-size:.85em; margin-top:-10px;">CRN: A911444</span>
                 {%endif%}
@@ -508,11 +616,14 @@
 
 <!--new column end-->
 
+
+
+
             {% if data.user!=="governor"%}
             {% if data.licencetypechoose=="ap"%}
 
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header"><h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+              <th scope="row" class="govuk-table__header">
 
 {% if data.user=="admin"%}
 <a href="approvals/approve" class="govuk-link govuk-link--no-visited-state">
@@ -520,7 +631,7 @@
 <a href="question-activate" class="govuk-link govuk-link--no-visited-state" data-sort-value="1">
 {%endif%}
 
-Adam Balasaravika</a></h3>
+Adam Balasaravika</a></br>
 {% if data.user=="probation"%}
 <span class="govuk-hint" style="font-size:.85em; margin-top:-10px;">CRN: A381306</span>
 {%endif%}
@@ -578,7 +689,7 @@ Adam Balasaravika</a></h3>
 <!--Authorised state-->
 {% if data.user!=="admin"%}
 <tr class="govuk-table__row">
-  <th scope="row" class="govuk-table__header"><h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+  <th scope="row" class="govuk-table__header">
 
     {% if data.user=="probation"%}
       <a href="edit/check-your-answers" class="govuk-link govuk-link--no-visited-state">
@@ -587,7 +698,7 @@ Adam Balasaravika</a></h3>
     {%endif%}
 
       Edith Bradshaw
-    </a></h3>
+    </a></br>
       <span class="govuk-hint" style="font-size:.85em; margin-top:-10px;">CRN: A381306</span>
   </th>
   {% if data.user=="probation"%}
@@ -634,11 +745,11 @@ Adam Balasaravika
 {%endif%}
 
 <tr class="govuk-table__row">
-<th scope="row" class="govuk-table__header"><h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+<th scope="row" class="govuk-table__header">
   {% if data.user=="probation"%}<a href="#" class="govuk-link govuk-link--no-visited-state">{%endif%}
     Elliot Raishbrook
     {% if data.user=="probation"%}</a>{%endif%}
-</h3>
+  </br>
 {% if data.user=="probation"%}  
 <span class="govuk-hint" style="font-size:.85em; margin-top:-10px;">CRN: A588111</span>
 {%endif%}
@@ -663,11 +774,11 @@ Adam Balasaravika
 </tr>
 
 <tr class="govuk-table__row">
-<th scope="row" class="govuk-table__header"><h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+<th scope="row" class="govuk-table__header">
   {% if data.user=="probation"%}<a href="#" class="govuk-link govuk-link--no-visited-state">{%endif%}
     Rodrigo Matthewson
     {% if data.user=="probation"%}</a>{%endif%}
-</h3>
+  </br>
 {% if data.user=="probation"%}  
 <span class="govuk-hint" style="font-size:.85em; margin-top:-10px;">CRN: A255661</span>
 {%endif%}
@@ -692,11 +803,11 @@ Adam Balasaravika
 </tr>
 
 <tr class="govuk-table__row">
-<th scope="row" class="govuk-table__header"><h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+<th scope="row" class="govuk-table__header">
   {% if data.user=="probation"%}<a href="#" class="govuk-link govuk-link--no-visited-state">{%endif%}
 Tyson Pearson
 {% if data.user=="probation"%}</a>{%endif%}
-</h3>
+  </br>
 {% if data.user=="probation"%}  
 <span class="govuk-hint" style="font-size:.85em; margin-top:-10px;">CRN: A732689</span>
 {%endif%}
