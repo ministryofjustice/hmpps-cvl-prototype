@@ -276,7 +276,40 @@
         
 
 
-        {% if (data.user=="admin") or (data.user=="governor") %}
+        {% if (data.user=="admin") or (data.user=="probation") %}
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            {% if data.user=="probation"%}<a href="licence-timed-out" class="govuk-link govuk-link--no-visited-state">{%endif%}
+            {% if data.user=="admin"%}<a href="#" class="govuk-link govuk-link--no-visited-state">{%endif%}<!--Dee: Fill in the link where you want the CA journey to start-->  
+              Carl Barnes</a></br>
+              {% if data.user=="probation"%}
+              <span class="govuk-hint" style="font-size:.85em; margin-top:-10px;">CRN: G579362</span>
+              {%else%}
+            </th>
+
+            <td class="govuk-table__cell">G5613GT</td>
+            {%endif%}
+
+            {% if data.user=="probation"%}
+            <td class="govuk-table__cell">Post sentence supervision</td>
+            {%endif%}
+
+            <td class="govuk-table__cell">
+              <a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a>
+              </td>
+
+            <td class="govuk-table__cell" data-sort-value="2">{{ "today" | duration(2) | govukDate("truncate") }}</td>
+            
+            <td class="govuk-table__cell">
+            {% if data.user=="probation"%}<strong class="govuk-tag govuk-tag--blue">I<span style="text-transform: lowercase;">n progress</span></strong></td>{%endif%}
+            {% if data.user=="admin"%}<strong class="govuk-tag govuk-tag--grey">T<span style="text-transform: lowercase;">imed out</span></strong></td>{%endif%}<!--Dee: Adjust status-->
+            </td>
+
+          </tr>
+          {%endif%}
+
+
+          {% if (data.user=="admin") or (data.user=="probation") %}
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">
             {% if data.user=="probation"%}<a href="licence-timed-out" class="govuk-link govuk-link--no-visited-state">{%endif%}
@@ -298,7 +331,7 @@
               <a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a>
               </td>
 
-            <td class="govuk-table__cell" data-sort-value="2">{{ "today" | duration(2) | govukDate("truncate") }}</td>
+            <td class="govuk-table__cell" data-sort-value="3">{{ "today" | duration(2) | govukDate("truncate") }}</td>
             
             <td class="govuk-table__cell">
             {% if data.user=="probation"%}<strong class="govuk-tag govuk-tag--grey">T<span style="text-transform: lowercase;">imed out</span></strong></td>{%endif%}
@@ -336,7 +369,7 @@
           <td class="govuk-table__cell"><a href="#">Fay de Clerk</a></td>
           {%endif%}
           
-          <td class="govuk-table__cell" data-sort-value="3">{{ "today" | duration(2) | govukDate("truncate") }}</td>
+          <td class="govuk-table__cell" data-sort-value="4">{{ "today" | duration(2) | govukDate("truncate") }}</td>
           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">A<span style="text-transform: lowercase;">pproved</span></strong></td>
           </tr>
 
@@ -370,7 +403,7 @@
           {%endif%}
       
          
-          <td class="govuk-table__cell due-date" style="width: 230px;" data-sort-value="4">
+          <td class="govuk-table__cell due-date" style="width: 230px;" data-sort-value="5">
             <span class="date overdue">{{ "today" | duration(3) | govukDate("truncate") }}</span>
             <span class="secondary overdue">Submit licence by {{ "today" | duration(1) | govukDate("truncate") }}</span>
           </td>
@@ -411,7 +444,7 @@
           <td class="govuk-table__cell"><a href="#">Laura White</a></td>
           {%endif%}
           
-          <td class="govuk-table__cell" data-sort-value="5">{{ "today" | duration(3) | govukDate("truncate") }}</td>
+          <td class="govuk-table__cell" data-sort-value="6">{{ "today" | duration(3) | govukDate("truncate") }}</td>
           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--pink">S<span style="text-transform: lowercase;">ubmitted</span></strong></td>
           </tr>
           
@@ -701,7 +734,7 @@ Adam Balasaravika</a></br>
 <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
 {%endif%}
 
-<td class="govuk-table__cell" data-sort-value="6">{{ "today" | duration(20) | govukDate("truncate") }}</td>
+<td class="govuk-table__cell" data-sort-value="7">{{ "today" | duration(20) | govukDate("truncate") }}</td>
 <td class="govuk-table__cell">
 {% if data.user=="admin"%}
 <strong class="govuk-tag govuk-tag--green">A<span style="text-transform: lowercase;">pproved</span></strong>
@@ -826,7 +859,7 @@ Tyson Pearson
 <td class="govuk-table__cell"><a href="#">Michelle Hooper</a></td>
 {%endif%}
 
-<td class="govuk-table__cell" data-sort-value="6">{{ "today" | duration(23) | govukDate("truncate") }}</td>
+<td class="govuk-table__cell" data-sort-value="8">{{ "today" | duration(23) | govukDate("truncate") }}</td>
 <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">N<span style="text-transform: lowercase;">ot started</span></strong></td>
 </tr>
 {%endif%}
