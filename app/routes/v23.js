@@ -13,10 +13,10 @@ router.post('/add-location', function (req, res) {
   if (locationAddAnother == "yes"){
    
    // Send user to next page
-    res.redirect('/additional/8b-location2')
+    res.redirect(version + '/additional/8b-location2')
   } else {
     // Send user to ineligible page
-    res.redirect('/check-your-answers')
+    res.redirect(version + '/check-your-answers')
   }
 
 })
