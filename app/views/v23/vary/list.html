@@ -291,10 +291,9 @@
         <span class="govuk-warning-text__assistive">Warning</span>
         You must review licences created by the prison for these people within 5 days of their release date:</br>
       
-        <a href="licence-history-review.html" class="govuk-link govuk-link--no-visited-state">Giovanni Nicholson</a> – released on {{ "today" | duration(2) | govukDate("truncate") }}</br>
+        <a href="licence-history-review.html" class="govuk-link govuk-link--no-visited-state" name="licencereview" id="licencereview" value="yes">Giovanni Nicholson</a> – released on {{ "today" | duration(2) | govukDate("truncate") }}</br>
         <a href="#" class="govuk-link govuk-link--no-visited-state">Robert Little</a> – released on {{ "today" | duration(2) | govukDate("truncate") }}</br>
-        <a href="#" class="govuk-link govuk-link--no-visited-state">Robert Little</a> – released on {{ "today" | duration(2) | govukDate("truncate") }}
-
+        
       </strong>
    
     </div>
@@ -413,7 +412,13 @@
                   <td class="govuk-table__cell">Standard determinate </td>
                   <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
                   <td class="govuk-table__cell" data-sort-value="3">{{ "today" | duration(2) | govukDate("truncate") }}</td>
-                  <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">V<span style="text-transform: lowercase;">ariation approved</span></strong></td>
+
+                  {% if data.hardstop-no-variation=="yes"%}
+                  <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--turquoise">A<span style="text-transform: lowercase;">ctive</span></strong></td>
+                  {% else %}
+                  <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">R<span style="text-transform: lowercase;">eview needed</span></strong></td>
+                  {% endif %}
+
                     </tr>
         
 
