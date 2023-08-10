@@ -4,19 +4,40 @@ var version = '/v22';
 
 
 
-//Multiple premises - freedom of movement
+//Freedom of movement - multiple addresses
+//Add another address
 
-router.post('/add-location', function (req, res) {
-  var locationAddAnother = req.session.data['addanotherlocation']
+router.post('/new-addresslocation', function (req, res) {
+  var addresslocationAddAnother = req.session.data['addanotheraddresslocation']
 
   // Check whether the variable matches a condition
-  if (locationAddAnother == "yes"){
+  if (addresslocationAddAnother == "yes"){
    
    // Send user to next page
     res.redirect('v22/additional/8b-location2')
   } else {
     // Send user to ineligible page
     res.redirect('v22/check-your-answers')
+  }
+
+})
+
+//Freedom of movement - multiple addresses
+//Delete this condition
+
+// Run this code when a form is submitted to 'parole-outcome-letter-answer'
+router.post('/delete-location', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-letters'
+  var locationNotNeeded = req.session.data['location-not-needed']
+
+  // Check whether the variable matches a condition
+  if (locationNotNeeded == "yes"){
+    // Send user to next page
+    res.redirect(version + '/additional/8b-overview')
+  } else {
+    // Send user to ineligible page
+    res.redirect(version + '/additional/8b-overview')
   }
 
 })
