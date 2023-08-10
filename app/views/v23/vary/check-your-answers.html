@@ -19,33 +19,72 @@
 
 {% block content %}
 
-{% include "layouts/layout-name-vary.html" %}
+{% include "layouts/layout-name-vary.html" %}<br />
+
+<!--Need to add answers to questions-->
+<br />
+<h1 class="govuk-heading-m">
+<!--  <span class="govuk-caption-m">{% if data.edit=="yes" %}Edith Bradshaw{% else %}Adam Balasaravika{% endif %}
+</span></h1>-->
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
 
 
+  <h1 class="govuk-heading-l">View licence and post sentence supervision order</h1>
+
+  <div>
+
+    <form action="" method="post">
+    <div class="govuk-button-group">
 
 
-<h1 class="govuk-heading-l" style="margin-top: 30px;">Review licence and post sentence supervision order</h1>
+          {% if data.varycomplete=="yes"%}
+          <div class="moj-button-action">
+              <a href="#" class="govuk-button govuk-button" type="submit">View and print licence PDF</a>
+          </div>
+        </div>
+        {% else %}
+        {{ govukButton({
+          text: "Vary licence"
+        }) }}
+      {% endif %}
 
+    </form><!--
 
-<p style="margin-bottom: 50px;">
-  Copy Tom: Licence must be reviewed within 5 days of their release as it was created by the prison.</br>
-  Decide to vary or not bla bla
-</p>
-
+      <div class="moj-button-action">
+          <a href="#" class="govuk-button govuk-button" type="submit">Print licence PDF</a>
+      </div>-->
+    </div>
 
 
 
               <div class="govuk-grid-row">
-                <div class="govuk-grid-column-full">
-                  <h2 class="govuk-heading-m">Standard licence conditions</h2>
+                <div class="govuk-grid-column-three-quarters">
+                  <h2 class="govuk-heading-m">Additional licence conditions</h2>
                 </div>
               </div>
-        
-        
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
 
-          
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:50%;">
+              Select additional conditions
+            </dt>
+            <dd class="govuk-summary-list__value">
+                {% if data.varyaddedcondition=="yes" %}5
+                {% endif %}
+                {% if data.varyaddedcondition!=="yes" %}4
+                {% endif %}
+                additional conditions selected<br>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="conditions">
+
+              </a>
+            </dd>
+          </div>
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -79,7 +118,24 @@
             </dd>
           </div>
 
-      
+      <!--    <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Contact with a person
+
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Not to contact or associate with John Smith without the prior approval of your supervising officer. <br><br><strong>John Smith</strong>
+
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="additional/3f-change">
+              </a>
+            </dd>
+          </div>
+-->
+
+
 
           {% if data.varyaddedcondition=="yes" %}
             <div class="govuk-summary-list__row">
@@ -99,7 +155,19 @@
             </div>
           {% endif %}
 
-    
+      <!---    <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Programme and activities
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Not to undertake work or other organised activity which will involve a person under the age of 18, either on a paid or unpaid basis without the prior approval of your supervising officer <br><br><strong> Under the age of 18 </strong>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="additional/4a-change">
+
+              </a>
+            </dd>
+          </div>-->
 
 
           <div class="govuk-summary-list__row">
@@ -133,19 +201,123 @@
 
 
 
-        </dl>
 
+        </dl><br /><br />
 
-        <div class="govuk-button-group">
-          <button class="govuk-button" data-module="govuk-button">
-            Vary licence
-          </button>
-
-          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-            NO
-          </button>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-three-quarters">
+            <h2 class="govuk-heading-m">Bespoke licence conditions</h2>
+          </div>
         </div>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
+      <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key" style="width:50%;">
+        Select bespoke conditions
+      </dt>
+      <dd class="govuk-summary-list__value">
+        1 condition selected<br>
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="bespoke">
+
+        </a>
+      </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key" style="width:50%;">
+        Bespoke condition
+      </dt>
+      <dd class="govuk-summary-list__value">
+        You must not enter Tesco supermarket <br>290, 290A Lewisham Road <br>London, SE13 7PA<br>
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="conditions">
+
+        </a>
+      </dd>
+      </div>
+      </dl>
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-three-quarters">
+            <h2 class="govuk-heading-m">Additional post sentence requirements</h2>
+          </div>
+        </div>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+      <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key" style="width:50%;">
+        Select additional requirements
+      </dt>
+      <dd class="govuk-summary-list__value">
+          2 additional requirement selected
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="pss">
+
+        </a>
+      </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key" style="width:50%;">
+        Drug appointments
+      </dt>
+      <dd class="govuk-summary-list__value">Attend Fake Addiction Centre, Fake Town, as directed, to address your dependency on, or propensity to misuse, a controlled drug.<br><br> <strong>  Fake Addiction Centre, Fake Town </strong>
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="conditions">
+
+        </a>
+      </dd>
+      </div>
+
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="width:50%;">
+            Drug testing
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Attend Fake Police Station, Fake Town, as reasonably required by your supervisor, to give a sample of oral fluid / urine in order to test whether you have any specified Class A or specified Class B drugs in your body, for the purpose of ensuring that you are complying with the requirement of your supervision period requiring you to be of good behaviour.
+            <br><br> <strong> Fake Police Station, Fake Town </strong>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="conditions">
+
+            </a>
+          </dd>
+          </div>
+
+
+      </dl>
+
+
+
+      <form action="" method="post">
+      <div class="govuk-button-group">
+        {% if data.varycomplete=="yes"%}
+        <div class="moj-button-action">
+            <a href="#" class="govuk-button govuk-button" type="submit">View and print licence PDF</a>
+        </div>
+      </div>
+      {% else %}
+      {{ govukButton({
+        text: "Vary licence"
+      }) }}
+    {% endif %}
+      </form>
+<!--
+        <div class="moj-button-action">
+            <a href="#" class="govuk-button govuk-button" type="submit">Print licence PDF</a>-->
+        </div>
+      </div>
+      </div>
+
+      </div>
+    </div>
 
 
 
