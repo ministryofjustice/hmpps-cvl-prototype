@@ -279,7 +279,7 @@
         {% if (data.user=="admin") or (data.user=="probation") %}
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">
-            {% if data.user=="probation"%}<a href="licence-timed-out" class="govuk-link govuk-link--no-visited-state">{%endif%}
+            {% if data.user=="probation"%}<a href="licence-timed-out-appointment" class="govuk-link govuk-link--no-visited-state">{%endif%}
             {% if data.user=="admin"%}<a href="#" class="govuk-link govuk-link--no-visited-state">{%endif%}<!--Dee: Fill in the link where you want the CA journey to start-->  
               Carl Barnes</a></br>
               {% if data.user=="probation"%}
@@ -301,7 +301,7 @@
             <td class="govuk-table__cell" data-sort-value="2">{{ "today" | duration(2) | govukDate("truncate") }}</td>
             
             <td class="govuk-table__cell">
-            {% if data.user=="probation"%}<strong class="govuk-tag govuk-tag--blue">I<span style="text-transform: lowercase;">n progress</span></strong></td>{%endif%}
+            {% if data.user=="probation"%}<strong class="govuk-tag govuk-tag--grey">T<span style="text-transform: lowercase;">imed out</span></strong></td>{%endif%}
             {% if data.user=="admin"%}<strong class="govuk-tag govuk-tag--grey">T<span style="text-transform: lowercase;">imed out</span></strong></td>{%endif%}<!--Dee: Adjust status-->
             </td>
 

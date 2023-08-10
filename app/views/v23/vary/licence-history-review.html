@@ -217,6 +217,23 @@
           <th style="width:30%;"></th>
           <th></th>
 
+
+
+          <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-warning-text__assistive">Warning</span>
+              
+             
+             Licence must be reviewed within 5 days of their release as it was created by the prison.
+
+            </strong>
+         
+          </div>
+
+
+
+
           <!-- if vary unapproved journey-->
           {% if data.journey=="varynonapproved"%}
           <form method="" action="PDF">
@@ -369,10 +386,10 @@
     <div class="moj-timeline__item">
       <div class="moj-timeline__header">
         <h2 class="moj-timeline__title">Licence created </h2>
-        <p class="moj-timeline__byline">by Paul Farmer, HMP xxx</p>
+        <p class="moj-timeline__byline">by Paul Farmer, Channings Wood (HMP)</p>
       </div>
       <p class="moj-timeline__date">
-        <time datetime="2019-05-21T13:15:00.000Z">12 November 2021</time>
+        <time datetime="2019-05-21T13:15:00.000Z">{{ "today" | duration(-1) | govukDate("truncate") }}</time>
       <br />
     </p>
     <div class="moj-timeline__description">
@@ -380,7 +397,7 @@
         <li class="moj-timeline__document-item">
           <a href="PDF">
             <img src="https://hmcts-design-system.herokuapp.com/hmcts-assets/images/icon-document.svg"/>
-            View or print version 1 of this licence PDF</a>
+            View or print this version of the licence PDF</a>
           </li>
       </ul>
     </div>
