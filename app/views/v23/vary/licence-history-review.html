@@ -38,18 +38,26 @@
   <h2 class="govuk-tabs__title">
     Contents
   </h2>
+
   <ul class="govuk-tabs__list">
     <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
       <a class="govuk-tabs__tab" href="#past-day">
         Current licence
       </a>
     </li>
+
+<!--
     <li class="govuk-tabs__list-item">
       <a class="govuk-tabs__tab" href="#past-week">
          Previous licences and offences
       </a>
     </li>
+-->
+
   </ul>
+
+
+  <!--
   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
     <h2 class="govuk-heading-l">Previous licences and offences</h2>
     <table class="govuk-table">
@@ -72,7 +80,7 @@
                     </span>
                   </summary>
                   <div class="govuk-details__text">
-        <!--Here-->
+        
 
                     <div>
                     <ol class="moj-task-list" >
@@ -142,7 +150,7 @@
                     </span>
                   </summary>
                   <div class="govuk-details__text">
-        <!--Here-->
+       
 
                     <div>
                     <ol class="moj-task-list" >
@@ -199,6 +207,7 @@
     </table>
   </div>
 
+-->
 
   <div class="govuk-tabs__panel" id="past-day">
     <h2 class="govuk-heading-l">Current licence</h2>
@@ -248,12 +257,13 @@
             </form>
           {% else %}
           <form method="" action="check-your-answers">
-            <input type="hidden" name="needadditional" value="yes">
+            <!--<input type="hidden" name="needadditional" value="yes">
             <input type="hidden" name="needbespoke" value="yes">
-            <input type="hidden" name="needpss" value="yes">
+            <input type="hidden" name="needpss" value="yes">-->
+            <input type="hidden" name="hardstop" value="yes">
           <div class="govuk-button-group">
             {{ govukButton({
-              text: "View or vary licence"
+              text: "Review licence"
             }) }}
           {% endif %}
         </div>
@@ -328,7 +338,7 @@
 
 
 
-
+<!--
     <div class="moj-timeline__item">
       <div class="moj-timeline__header">
         <h2 class="moj-timeline__title">Licence varied </h2>
@@ -338,10 +348,10 @@
         <time datetime="2019-05-28T10:45:00.000Z">3 December 2021</time>
       </p>
       <div class="moj-timeline__description">
-          <ul class="moj-timeline__documents" style="font-size:.85em;"><!--This variation has been approved and is active on version 2 of this licence.<br /><br />-->
+          <ul class="moj-timeline__documents" style="font-size:.85em;">This variation has been approved and is active on version 2 of this licence.<br /><br />
             <li class="moj-timeline__document-item" style="margin-left:23px;">
               <a href="vary-request-status-complete">
-              <!--  <img src="https://hmcts-design-system.herokuapp.com/hmcts-assets/images/icon-document.svg"/> -->
+              <img src="https://hmcts-design-system.herokuapp.com/hmcts-assets/images/icon-document.svg"/>
               View variation details</a>
             </li>
             <li class="moj-timeline__document-item">
@@ -352,10 +362,14 @@
           </ul>
         </div>
     </div>
+  -->
+
+
+
     <div class="moj-timeline__item">
       <div class="moj-timeline__header">
         <h2 class="moj-timeline__title">Licence created </h2>
-        <p class="moj-timeline__byline">by Paul Farmer</p>
+        <p class="moj-timeline__byline">by Paul Farmer, HMP xxx</p>
       </div>
       <p class="moj-timeline__date">
         <time datetime="2019-05-21T13:15:00.000Z">12 November 2021</time>
