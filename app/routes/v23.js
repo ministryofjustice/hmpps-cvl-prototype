@@ -3,6 +3,26 @@ module.exports = function (router) {
 var version = '/v23';
 
 
+//Vary journey
+//Review licence
+
+router.post('/review-licence', function (req, res) {
+  var licenceReviewed = req.session.data['licence-review-variation']
+
+  // Check whether the variable matches a condition
+  if (licenceReviewed == "yes"){
+   
+   // Send user to next page
+    res.redirect(version + '/vary/question')
+  } else {
+    // Send user to ineligible page
+    res.redirect(version + '/vary/licence-history-review')
+  }
+
+})
+
+
+
 
 //Multiple premises - freedom of movement
 
