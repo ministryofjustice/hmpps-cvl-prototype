@@ -17,7 +17,7 @@
 
 {% block content %}
 
-{% include "layouts/layout-name-vary.html" %}<br />
+{% include "layouts/layout-name-tim.html" %}<br />
 
 <h1 class="govuk-heading-xl">Current licence and licence history</h1>
 
@@ -196,9 +196,24 @@
           <th></th>
 
           
-          {% if data.licenceReviewed=="no"%}
-          no variation
-          {% endif %}
+          
+
+          {% if data.hardstopreviewed=="yes"%}
+          
+          
+          <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button">
+              Vary licence
+            </button>
+            <a href="list" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              Return to case list
+            </a>
+          </div>
+
+   
+
+
+          {% else %}
 
           <div class="govuk-warning-text">
             <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
@@ -222,13 +237,13 @@
           </form>
             
           
+          {% endif %}
 
 
 
-
-  <div class="moj-timeline">
+  <div class="moj-timeline" style="margin-top: 30px;">
     
-    {% if data.licence-review-variation=="no"%}
+    {% if data.hardstopreviewed=="yes"%}
 
     <div class="moj-timeline__item">
       <div class="moj-timeline__header">

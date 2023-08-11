@@ -22,16 +22,17 @@
 {% block content %}
 
 
-{% include "layouts/layout-name-vary.html" %}
+{% include "layouts/layout-name-carl.html" %}
   
 
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      <h1 class="govuk-heading-l" style="margin-top: 40px;">Check post sentence supervision order details</h1>
+      <h1 class="govuk-heading-l" style="margin-top: 40px;">Check licence details</h1>
 
-      <p>Some kind of copy saying that prison has created this licence and that they need to contact them if they want to change it.</p>
+      <p>A licence containing standard conditions and a requirement not to contact any victims has been created by the prison with the following initial appointment details.</p>
+      <p>Contact HMP Wandsworth at omu.wandsworth@justice.gov.uk if this appointment needs to be changed.</p>
     
 
         <h2 class="govuk-heading-m" style="padding-top: 20px;"> Initial meeting details</h2>
@@ -42,8 +43,8 @@
               Name
             </dt>
             <dd class="govuk-summary-list__value">
-              
-                Lara Toogood
+            
+              John Farrell
              
             </dd>
             <dd class="govuk-summary-list__actions">
@@ -59,18 +60,8 @@
             </dt>
             <dd class="govuk-summary-list__value">
 
+                Probation Office, 79 East Hill, London SW18 2QE
               
-                Lewisham Probation Office,
-
-              
-                20 Brockley Street,
-
-              
-                London
-                SE13 4HY
-              
-
-
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="address-change">
@@ -84,10 +75,7 @@
               Contact phone number
             </dt>
             <dd class="govuk-summary-list__value">
-              0798 443 0099
-              
-
-
+              020 8704 0200
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="phone-number-change">
@@ -101,7 +89,7 @@
               Date
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ 14 | govukDate }}
+              {{ "today" | duration(2) | govukDate("truncate") }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="when-change">
@@ -123,17 +111,13 @@
               </a>
             </dd>
           </div>
-        </dl><br><br>
+        </dl>
 
-    
-
-
-        
-
+  
 
         <form action="list" method="post">
 
-          <button class="govuk-button" data-module="govuk-button">
+          <button class="govuk-button" data-module="govuk-button" style="margin-top: -10px;">
             Return to case list
           </button>
           

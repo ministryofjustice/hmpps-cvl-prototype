@@ -280,8 +280,11 @@
         You must review licences created by the prison for these people within 5 days of their release date:</br>
       
         <a href="#" class="govuk-link govuk-link--no-visited-state">Robert Little</a> – released on {{ "today" | duration(-2) | govukDate("truncate") }}</br>
+        {% if data.hardstopreviewed=="yes"%}
+        </br>
+        {% else %}
         <a href="licence-history-review.html" class="govuk-link govuk-link--no-visited-state" name="licencereview" id="licencereview" value="yes">Tim Lycett</a> – released on {{ "today" | duration(-4) | govukDate("truncate") }}
-        
+        {% endif %}
         
       </strong>
    
@@ -319,7 +322,7 @@
                       <span class="govuk-hint">CRN: 221223</span>
                   </th>
     
-                  <td class="govuk-table__cell">Standard determinate</td>
+                  <td class="govuk-table__cell">Standard determinate</br>Post sentence supervision</td>
                   <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
                   <td class="govuk-table__cell" data-sort-value="2">{{ "today" | duration(-2) | govukDate("truncate") }}</td>
                   <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--turquoise">A<span style="text-transform: lowercase;">ctive</span></strong></td>
@@ -329,14 +332,14 @@
         
                 <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">
-                      <a href="licence-history-review.html" class="govuk-link govuk-link--no-visited-state" name="tim-lycett" id="tim-lycett" value="yes">Tim Lycett</a></br>
+                      <a href="licence-history-review.html" class="govuk-link govuk-link--no-visited-state">Tim Lycett</a></br>
                         <span class="govuk-hint">CRN: G579362</span>
                   </th>
                   <td class="govuk-table__cell">Standard determinate </td>
                   <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
                   <td class="govuk-table__cell" data-sort-value="3">{{ "today" | duration(-4) | govukDate("truncate") }}</td>
 
-                  {% if data.hardstop-no-variation=="yes"%}
+                  {% if data.hardstopreviewed=="yes"%}
                   <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--turquoise">A<span style="text-transform: lowercase;">ctive</span></strong></td>
                   {% else %}
                   <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">R<span style="text-transform: lowercase;">eview needed</span></strong></td>
@@ -362,7 +365,7 @@
                       <th scope="row" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state">Rajesh Damodaran</a></br>
                           <span class="govuk-hint">CRN: 547363</span>
                       </th>
-                      <td class="govuk-table__cell">Standard determinate</td>
+                      <td class="govuk-table__cell">Standard determinate</br>Post sentence supervision</td>
                       <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
                       <td class="govuk-table__cell" data-sort-value="5">{{ "today" | duration(-75) | govukDate("truncate") }}</td>
                       <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--pink">V<span style="text-transform: lowercase;">ariation submitted</span></strong></td>
@@ -377,7 +380,7 @@
                       <th scope="row" class="govuk-table__header"><a href="is91-vary/licence-history-cody.html" class="govuk-link govuk-link--no-visited-state" data-sort-value="3">Cody Jones</a></br>
                           <span class="govuk-hint">CRN: A761536</span>
                       </th>
-                      <td class="govuk-table__cell">Standard determinate</td>
+                      <td class="govuk-table__cell">Standard determinate</br>Post sentence supervision</td>
                       <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
                       <td class="govuk-table__cell" data-sort-value="6">{{ "today" | duration(-300) | govukDate("truncate") }}</td>
                       <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--turquoise">A<span style="text-transform: lowercase;">ctive</span></strong></td>
