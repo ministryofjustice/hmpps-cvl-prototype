@@ -1,0 +1,135 @@
+{% extends "layouts/main.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+{% block beforeContent %}
+
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+{% include "layouts/layout-name-carl.html" %}
+  
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l" style="margin-top: 40px;">Check licence details</h1>
+
+      <p>A licence containing standard conditions and a requirement not to contact any victims has been created by the prison with the following initial appointment details.</p>
+      <p>Contact HMP Wandsworth at omu.wandsworth@justice.gov.uk if this appointment needs to be changed.</p>
+    
+
+        <h2 class="govuk-heading-m" style="padding-top: 20px;"> Initial meeting details</h2>
+        
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+            
+              John Farrell
+             
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="meet-change">
+                
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Address
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+                Probation Office, 79 East Hill, London SW18 2QE
+              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="address-change">
+                
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Contact phone number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              020 8704 0200
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="phone-number-change">
+                
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ "today" | duration(2) | govukDate("truncate") }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="when-change">
+                
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Time
+            </dt>
+            <dd class="govuk-summary-list__value">
+              4:30pm
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="when-change">
+                
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+  
+
+        <form action="list" method="post">
+
+          <button class="govuk-button" data-module="govuk-button" style="margin-top: -10px;">
+            Return to case list
+          </button>
+          
+        </form>
+
+
+    </div>
+  </div>
+
+
+
+
+
+
+{% endblock %}

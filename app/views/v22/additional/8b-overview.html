@@ -27,22 +27,21 @@
 
 {% include "layouts/layout-name.html" %}
 
+
+
+{% if data['8b-answer-premisesOne'] and (data.deletelocation=="yes") %} 
 <h1 class="govuk-heading-l" style="margin-top: 40px;">You have added one location</h1>
 
-<!--
-{% if data['exclusionzone-name'] and (data.deleteexclusionzone=="yes") %} 
-<h1 class="govuk-heading-l">You have added one map</h1>
+{% elseif data['8b-answer-premisesThree'] and (data.deleteexclusionzonemaptwo=="yes") %}
+<h1 class="govuk-heading-l" style="margin-top: 40px;">You have added one location</h1>
 
-{% elseif data['exclusionzone-name2'] and (data.deleteexclusionzonemaptwo=="yes") %}
-<h1 class="govuk-heading-l">You have added one map</h1>
-
-{% elseif data['exclusionzone-name'] and data['exclusionzone-name2'] %}
-<h1 class="govuk-heading-l">You have added two maps</h1>
+{% elseif data['8b-answer-premisesOne'] and data['8b-answer-premisesThree'] %}
+<h1 class="govuk-heading-l" style="margin-top: 40px;">You have added 2 locations</h1>
 
 {% else %}
-<h1 class="govuk-heading-l">You have added one map</h1>
+<h1 class="govuk-heading-l" style="margin-top: 40px;">You have added one location</h1>
 {% endif %}
--->
+
 
 
 <div class="govuk-form-group">
@@ -59,7 +58,7 @@
       <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
         <ul class="govuk-summary-list__actions-list">
           <li class="govuk-summary-list__actions-list-item">
-            <a class="govuk-link govuk-link--no-visited-state" href="8b"><span aria-hidden="true">Change details</span></a>
+            <a class="govuk-link govuk-link--no-visited-state" href="8b-change"><span aria-hidden="true">Change details</span></a>
           </li>
           <li class="govuk-summary-list__actions-list-item">
             <a class="govuk-link govuk-link--no-visited-state" name="location-delete" href="8b-delete"><span aria-hidden="true">Delete</span></a>
@@ -75,21 +74,21 @@
 
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
-      {% if data['8b-answer-premisesThree'] %}Name or type of premises: <strong>{{ data['8b-answer-premisesThree'] }}</strong></br>{% endif %}
-      {% if data['8b-answer-premisesThree-address-line-1'] %}Building and street: <strong>{{ data['8b-answer-premisesThree-address-line-1'] }}</strong></span>{% endif %}{% if data['8b-answer-premisesThree-address-line-2'] %}, <strong>{{ data['8b-answer-premisesThree-address-line-2'] }}</strong></br>{% endif %}
-      {% if data['8b-answer-premisesThree-town'] %}Town or city: <strong>{{ data['8b-answer-premisesThree-town'] }}</strong></br>{% endif %}
-      {% if data['8b-answer-premisesThree-county'] %}County: <strong>{{ data['8b-answer-premisesThree-county'] }}</strong></br>{% endif %}
-      {% if data['8b-answer-premisesThree-postcode'] %}Postcode: <strong>{{ data['8b-answer-premisesThree-postcode'] }}</strong>{% endif %}
+      {% if data['8b-answer-premisesThree'] %}Name or type of premises: <strong>{{ data['8b-answer-premisesThree'] }}</strong>{% endif %}
+      {% if data['8b-answer-premisesThree-address-line-1'] %}</br>Building and street: <strong>{{ data['8b-answer-premisesThree-address-line-1'] }}</strong></span>{% endif %}{% if data['8b-answer-premisesThree-address-line-2'] %}, <strong>{{ data['8b-answer-premisesThree-address-line-2'] }}</strong>{% endif %}
+      {% if data['8b-answer-premisesThree-town'] %}</br>Town or city: <strong>{{ data['8b-answer-premisesThree-town'] }}</strong>{% endif %}
+      {% if data['8b-answer-premisesThree-county'] %}</br>County: <strong>{{ data['8b-answer-premisesThree-county'] }}</strong>{% endif %}
+      {% if data['8b-answer-premisesThree-postcode'] %}</br>Postcode: <strong>{{ data['8b-answer-premisesThree-postcode'] }}</strong>{% endif %}
 
 
       </dt>
       <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
         <ul class="govuk-summary-list__actions-list">
           <li class="govuk-summary-list__actions-list-item">
-            <a class="govuk-link govuk-link--no-visited-state" href="8b-location2"><span aria-hidden="true">Change details</span></a>
+            <a class="govuk-link govuk-link--no-visited-state" href="#"><span aria-hidden="true">Change details</span></a>
           </li>
           <li class="govuk-summary-list__actions-list-item">
-            <a class="govuk-link govuk-link--no-visited-state" name="location-delete" href="8b-delete"><span aria-hidden="true">Delete</span></a>
+            <a class="govuk-link govuk-link--no-visited-state" name="location-delete" href="#"><span aria-hidden="true">Delete</span></a>
           </li>
         </ul>
       </dd>
@@ -112,7 +111,7 @@
 </div>
 
 
-  <form action="/add-location" method="post">
+  <form action="/new-addresslocation" method="post">
 
   <div class="govuk-form-group">
     <fieldset class="govuk-fieldset" aria-describedby="add-another-hint">
@@ -122,13 +121,13 @@
 
       <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="addanotherlocation" name="addanotherlocation" type="radio" value="yes">
+          <input class="govuk-radios__input" id="addanotheraddresslocation" name="addanotheraddresslocation" type="radio" value="yes">
           <label class="govuk-label govuk-radios__label" for="add-another">
             Yes
           </label>
         </div>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="addanotherlocation" name="addanotherlocation" type="radio" value="no">
+          <input class="govuk-radios__input" id="addanotheraddresslocation" name="addanotheraddresslocation" type="radio" value="no">
           <label class="govuk-label govuk-radios__label" for="add-another-2">
             No
           </label>
