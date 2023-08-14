@@ -21,6 +21,82 @@ router.post('/add-location', function (req, res) {
 
 })
 
+//Hardstop - checking new licence details
+router.post(version + '/hardstop/when', function(req, res) {
+  var saveexit = req.session.data['submit'];
+  if (saveexit == "exit"){
+    res.redirect(version + '/exit');
+  }
+  else if (saveexit == "continue"){
+    res.redirect(version + '/hardstop/check-your-answers');
+  }
+});
+
+//Hardstop - confirmation
+router.post(version + '/hardstop/check-your-answers', function(req, res) {
+  var saveexit = req.session.data['submit'];
+  if (saveexit == "exit"){
+    res.redirect(version + '/exit');
+  }
+  else if (saveexit == "continue"){
+    res.redirect(version + '/hardstop/confirmation');
+  }
+});
+
+
+//Hardstop - check licence details
+router.post(version + '/hardstop/when', function(req, res) {
+  var saveexit = req.session.data['submit'];
+  if (saveexit == "exit"){
+    res.redirect(version + '/exit');
+  }
+  else if (saveexit == "continue"){
+    res.redirect(version + '/hardstop/check-your-answers');
+  }
+});
+
+//Hardstop - when the initial appointment is
+router.post(version + '/hardstop/phone-number', function(req, res) {
+  var saveexit = req.session.data['submit'];
+  if (saveexit == "exit"){
+    res.redirect(version + '/exit');
+  }
+  else if (saveexit == "continue"){
+    res.redirect(version + '/hardstop/when');
+  }
+});
+
+//Hardstop - entering an address
+router.post(version + '/hardstop/address', function(req, res) {
+  var saveexit = req.session.data['submit'];
+  if (saveexit == "exit"){
+    res.redirect(version + '/exit');
+  }
+  else if (saveexit == "continue"){
+    res.redirect(version + '/hardstop/phone-number');
+  }
+});
+
+//Hardstop - initial appointment
+router.post(version + '/hardstop/meet', function(req, res) {
+  var saveexit = req.session.data['submit'];
+  if (saveexit == "exit"){
+    res.redirect(version + '/exit');
+  }
+  else if (saveexit == "continue"){
+    res.redirect(version + '/hardstop/address');
+  }
+});
+
+//Hardstop - Prison admin creating a new licence
+router.post(version + '/hardstop/question-activate', function(req, res) {
+  var saveexit = req.session.data['submit'];
+  if (saveexit == "continue"){
+    res.redirect(version + '/hardstop/meet');
+  }
+  
+
+
 
 
 //Approver view from approve licence page to approve and back to case list
@@ -622,4 +698,4 @@ router.post(version + '/vary/licence-history-helena-proved', function(req, res) 
     req.session.data['activateHelena'] = 'no';
   }
 });
-}
+})}
