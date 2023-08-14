@@ -1,0 +1,269 @@
+{% extends "layouts/main.html" %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+{% if data.user=="admin" %}
+
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#before-hardstop">
+        Cases before hard stop (Copy Tom)
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#releases-two-days">
+        Licences for release in next 2 days
+      </a>
+    </li>
+  </ul>
+
+  <div class="govuk-tabs__panel" id="before-hardstop">
+    <h2 class="govuk-heading-l">Cases before hard stop (Copy Tom)</h2>
+    <p class="govuk-body">@TOM Content goes here</p>
+    <table class="govuk-table" data-module="moj-sortable-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+
+          <th scope="col" class="govuk-table__header" aria-sort="none" style="width: 180px;">Name</th>
+    
+          <th scope="col" class="govuk-table__header" aria-sort="none" style="width: 180px;">Prison number</th>
+
+          <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none" style="width: 210px;">Probation practitioner</th>
+
+          <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="ascending">Release date</th>
+          
+          <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">Status</th>
+
+        </tr>
+      </thead>
+
+
+      <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state">Tyrone Shade</a></th>
+            <td class="govuk-table__cell">G5613GT</td>
+            <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
+            <td class="govuk-table__cell" data-sort-value="1">{{ "today" | duration(1) | govukDate("truncate") }}</td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">A<span style="text-transform: lowercase;">pproved</span></strong></td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state">Jimmy Bogart</a></th>
+            <td class="govuk-table__cell">G5613GT</td>
+            <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">Jamie Foxx</a></td>
+            <td class="govuk-table__cell" data-sort-value="1">{{ "today" | duration(1) | govukDate("truncate") }}</td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">A<span style="text-transform: lowercase;">pproved</span></strong></td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state">Michael Anderson</a></th>
+            <td class="govuk-table__cell">G5613GT</td>
+            <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">Jamie Foxx</a></td>
+            <td class="govuk-table__cell" data-sort-value="1">{{ "today" | duration(1) | govukDate("truncate") }}</td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">S<span style="text-transform: lowercase;">ubmitted</span></strong></td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Barak Tive</th>
+            <td class="govuk-table__cell">G5613GT</td>
+            <td class="govuk-table__cell"><a href="#">Abdul Tendulka</a></td>
+            <td class="govuk-table__cell">{{ "today" | duration(3) | govukDate("truncate") }}</td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">N<span style="text-transform: lowercase;">ot started</span></strong></td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Tyson Pearson</th>
+            <td class="govuk-table__cell">G5613GT</td>
+            <td class="govuk-table__cell"><a href="#">Michelle Hooper</a></td>
+            <td class="govuk-table__cell">{{ "today" | duration(4) | govukDate("truncate") }}</td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">N<span style="text-transform: lowercase;">ot started</span></strong></td>
+          </tr>
+
+      </tbody>
+    </table>
+
+
+<!--pagination-->
+
+<nav class="govuk-pagination" role="navigation" aria-label="results">
+  <div class="govuk-pagination__prev">
+    <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" rel="prev">
+      <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+        <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+      </svg>
+      <span class="govuk-pagination__link-title">Previous</span></a>
+  </div>
+  <ul class="govuk-pagination__list">
+    <li class="govuk-pagination__item">
+      <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" aria-label="Page 1">
+        1
+      </a>
+    </li>
+    <li class="govuk-pagination__item govuk-pagination__item--current">
+      <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" aria-label="Page 2" aria-current="page">
+        2
+      </a>
+    </li>
+    <li class="govuk-pagination__item">
+      <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" aria-label="Page 3">
+        3
+      </a>
+    </li>
+  </ul>
+  <div class="govuk-pagination__next">
+    <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+        <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+      </svg></a>
+  </div>
+</nav>
+
+<!--pagination-->
+
+  </div>
+
+
+
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="releases-two-days">
+    <h2 class="govuk-heading-l">Licences for release in the next 2 days</h2>
+    <p class="govuk-body">@TOM: CA can create licences</p>
+
+    <table class="govuk-table" data-module="moj-sortable-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header" aria-sort="none" style="width: 170px;">Name</th>
+          <th scope="col" class="govuk-table__header" aria-sort="none" style="width: 180px;">Prison number</th>
+          <th scope="col" class="govuk-table__header" aria-sort="none" style="width: 160px;">Probation practitioner</th>
+          <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="ascending" style="width: 180px;">Release date</th>
+          <th scope="col" class="govuk-table__header" aria-sort="none" style="width: 160px;">Created by</th>
+          <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none" style="width: 150px;">Status</th>
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state">Raul Gomez</a></th>
+            <td class="govuk-table__cell">G5613GT</td>
+            <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
+            <td class="govuk-table__cell" data-sort-value="1">{{ "today" | duration(1) | govukDate("truncate") }}</td>
+            <td class="govuk-table__cell">John Farrell</td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">I<span style="text-transform: lowercase;">n progress</span></strong></td>
+        </tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state">Tanmay Zhao</a></th>
+              <td class="govuk-table__cell">G5613GT</td>
+              <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">Jamie Foxx</a></td>
+              <td class="govuk-table__cell" data-sort-value="1">{{ "today" | duration(1) | govukDate("truncate") }}</td>
+              <td class="govuk-table__cell">John Farrell</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">I<span style="text-transform: lowercase;">n progress</span></strong></td>
+          </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state">Carl Barnes</a></br></th>
+          <td class="govuk-table__cell">G5613GT</td>
+          <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
+          <td class="govuk-table__cell" data-sort-value="1">{{ "today" | duration(2) | govukDate("truncate") }}</td>
+          <td class="govuk-table__cell">Empty state content</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">N<span style="text-transform: lowercase;">ot started</span></strong></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="'/hardstop/question-activate" class="govuk-link govuk-link--no-visited-state">Giovanni Nicholson</a></br></th>
+          <td class="govuk-table__cell">G5613GT</td>
+          <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">Simon Webster</a></td>
+          <td class="govuk-table__cell" data-sort-value="1">{{ "today" | duration(2) | govukDate("truncate") }}</td>
+          <td class="govuk-table__cell">Empty state content</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">N<span style="text-transform: lowercase;">ot started</span></strong></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state">Ryan Chalet</a></th>
+          <td class="govuk-table__cell">G5613GT</td>
+          <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">Michelle Hooper</a></td>
+          <td class="govuk-table__cell" data-sort-value="1">{{ "today" | duration(2) | govukDate("truncate") }}</td>
+          <td class="govuk-table__cell">Empty state content</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">N<span style="text-transform: lowercase;">ot started</span></strong></td>
+        </tr>
+        
+      </tbody>
+    </table>
+
+
+<!--pagination-->
+
+<nav class="govuk-pagination" role="navigation" aria-label="results">
+  <div class="govuk-pagination__prev">
+    <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" rel="prev">
+      <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+        <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+      </svg>
+      <span class="govuk-pagination__link-title">Previous</span></a>
+  </div>
+  <ul class="govuk-pagination__list">
+    <li class="govuk-pagination__item">
+      <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" aria-label="Page 1">
+        1
+      </a>
+    </li>
+    <li class="govuk-pagination__item govuk-pagination__item--current">
+      <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" aria-label="Page 2" aria-current="page">
+        2
+      </a>
+    </li>
+    <li class="govuk-pagination__item">
+      <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" aria-label="Page 3">
+        3
+      </a>
+    </li>
+  </ul>
+  <div class="govuk-pagination__next">
+    <a class="govuk-link govuk-pagination__link govuk-link--no-visited-state" href="#" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+        <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+      </svg></a>
+  </div>
+</nav>
+
+<!--pagination-->
+
+
+
+  </div>
+
+</div>
+
+{% endif %}
+  
+
+
+
+       
+
+
+
+
+
+{% endblock %}
+

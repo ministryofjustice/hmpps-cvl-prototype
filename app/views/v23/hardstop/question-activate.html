@@ -19,11 +19,12 @@
 {% endblock %}
 
 {% block content %}
-{% include "layouts/layout-name.html" %}<br />
+{% include "layouts/layout-name-giovanni.html" %}<br />
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="" method="post">
+
+    <form action="/ca-new-licence" method="post">
       <div class="govuk-form-group">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
@@ -52,9 +53,10 @@
               </div>
             </fieldset><br />
           </div>
-          <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+          <button class="govuk-button" data-module="govuk-button">Continue</button>
         </div>
       </form>
+
     </div>
 </div>
 

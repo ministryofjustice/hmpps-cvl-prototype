@@ -19,23 +19,44 @@ router.post('/review-licence', function (req, res) {
     res.redirect(version + '/vary/licence-history-review')
   }
 
-});
+})
 
 
-//Hardstop - from confirmation back to case list
-router.post(version + '/hardstop/confirmation', function(req, res) {
+
+
+//Multiple premises - freedom of movement
+
+router.post('/add-location', function (req, res) {
+  var locationAddAnother = req.session.data['addanotherlocation']
+
+  // Check whether the variable matches a condition
+  if (locationAddAnother == "yes"){
+   
+   // Send user to next page
+    res.redirect(version + '/additional/8b-location2')
+  } else {
+    // Send user to ineligible page
+    res.redirect(version + '/check-your-answers')
+  }
+
+})
+
+//Hardstop - checking new licence details
+router.post(version + '/hardstop/when', function(req, res) {
   var saveexit = req.session.data['submit'];
-  if (saveexit == "continue"){
-    res.redirect(version + '/list#releases-two-days');
+  if (saveexit == "exit"){
+    res.redirect(version + '/exit');
+  }
+  else if (saveexit == "continue"){
+    res.redirect(version + '/hardstop/check-your-answers');
   }
 });
-
 
 //Hardstop - confirmation
 router.post(version + '/hardstop/check-your-answers', function(req, res) {
   var saveexit = req.session.data['submit'];
   if (saveexit == "exit"){
-    res.redirect(version + '/list#releases-two-days');
+    res.redirect(version + '/exit');
   }
   else if (saveexit == "continue"){
     res.redirect(version + '/hardstop/confirmation');
@@ -88,61 +109,13 @@ router.post(version + '/hardstop/meet', function(req, res) {
 });
 
 //Hardstop - Prison admin creating a new licence
-router.post('/ca-new-licence', function (req, res) {
-  var CAnewlicence = req.session.data['activatecreate']
-
-  // Check whether the variable matches a condition
-  if (CAnewlicence == "yes"){
-   
-   // Send user to next page
-    res.redirect(version + '/meet')
-  } else {
-    // Send user to ineligible page
-    res.redirect(version + '/list')
+router.post(version + '/hardstop/question-activate', function(req, res) {
+  var saveexit = req.session.data['submit'];
+  if (saveexit == "continue"){
+    res.redirect(version + '/hardstop/meet');
   }
+  
 
-});
-
-
-
-
-//Freedom of movement - multiple addresses
-//Add another address
-
-router.post('/new-addresslocation', function (req, res) {
-  var addresslocationAddAnother = req.session.data['addanotheraddresslocation']
-
-  // Check whether the variable matches a condition
-  if (addresslocationAddAnother == "yes"){
-   
-   // Send user to next page
-    res.redirect('v22/additional/8b-location2')
-  } else {
-    // Send user to ineligible page
-    res.redirect('v22/check-your-answers')
-  }
-
-});
-
-//Freedom of movement - multiple addresses
-//Delete this condition
-
-// Run this code when a form is submitted to 'parole-outcome-letter-answer'
-router.post('/delete-location', function (req, res) {
-
-  // Make a variable and give it the value from 'how-many-letters'
-  var locationNotNeeded = req.session.data['location-not-needed']
-
-  // Check whether the variable matches a condition
-  if (locationNotNeeded == "yes"){
-    // Send user to next page
-    res.redirect(version + '/additional/8b-overview')
-  } else {
-    // Send user to ineligible page
-    res.redirect(version + '/additional/8b-overview')
-  }
-
-});
 
 
 
@@ -745,4 +718,4 @@ router.post(version + '/vary/licence-history-helena-proved', function(req, res) 
     req.session.data['activateHelena'] = 'no';
   }
 });
-}
+})}
