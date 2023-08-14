@@ -104,7 +104,7 @@ Who have you consulted with about this licence variation?
               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="meet-change">
+              <a class="govuk-link" href="/v23/hardstop/meet-change">
                 Change<span class="govuk-visually-hidden"></span>
               </a>
             </dd>
@@ -125,7 +125,7 @@ Who have you consulted with about this licence variation?
               {%if (data.address2) %}{{data.address2}}
 
               {% else %}
-                20 Brockley Street{% endif %},
+               {% endif %},
 
               {%if (data.addresstown) %}
                 {{data.addresstown}}
@@ -146,7 +146,7 @@ Who have you consulted with about this licence variation?
 
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="address-change">
+              <a class="govuk-link" href="/v23/hardstop/address-change">
                 Change<span class="govuk-visually-hidden"> licence type</span>
               </a>
             </dd>
@@ -164,7 +164,7 @@ Who have you consulted with about this licence variation?
 
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="phone-number-change">
+              <a class="govuk-link" href="/v23/hardstop/phone-number-change">
                 Change<span class="govuk-visually-hidden"> </span>
               </a>
             </dd>
@@ -175,10 +175,18 @@ Who have you consulted with about this licence variation?
               Date
             </dt>
             <dd class="govuk-summary-list__value">
+              {%if (data.passportissuedday) %}{{data.passportissuedday}}
+              {%endif%}
+              {%if (data.passportissuedmonth) %}{{data.passportissuedmonth}}
+              {%endif%}
+              {%if (data.passportissuedyear) %}{{data.passportissuedyear}}
+
+              {% else %}
               {{ 14 | govukDate }}
+              {%endif%}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="when-change">
+              <a class="govuk-link" href="/v23/hardstop/when-change">
                 Change<span class="govuk-visually-hidden"> </span>
               </a>
             </dd>
@@ -189,10 +197,17 @@ Who have you consulted with about this licence variation?
               Time
             </dt>
             <dd class="govuk-summary-list__value">
-              4:30pm
+              {%if (data.passportissuedday2) %}{{data.passportissuedday2}}
+              {%endif%}
+              {%if (data.passportissuedmonth2) %}{{data.passportissuedmonth2}}
+            
+      
+              {% else %}
+              4.30pm
+              {%endif%}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="when-change">
+              <a class="govuk-link" href="/v23/hardstop/when-change">
                 Change<span class="govuk-visually-hidden"></span>
               </a>
             </dd>

@@ -11,18 +11,17 @@
     {% elseif data.is91Create=="yes" %}
     <span class="govuk-caption-m">CRN: A761536 | CRD: 12 Dec 2022 | Date of birth: 12 Mar 1975</span>
     <h1 class="govuk-heading-m">Craig Jennings</h1>
-
-    {% elseif data.timlycett=="yes" %}
-      <span class="govuk-caption-m">CRN: G579362 | CRD: {{ "today" | duration(36) | govukDate("truncate") }} | Date of birth: 18 Mar 1965</span>
-        <h1 class="govuk-heading-m">Tim yes</h1>
+    {% elseif data.mark-bowen=="yes" %}
+    <span class="govuk-caption-m">CRN: G547951 | CRD: {{ "today" | duration(60) | govukDate("truncate") }} | Date of birth: 18 Mar 1965</span>
+      <h1 class="govuk-heading-m">Mark Bowen</h1>
 
     {% elseif data.user=="probation" %}
         <span class="govuk-caption-m">CRN: G547951 | CRD: {{ "today" | duration(36) | govukDate("truncate") }} | Date of birth: 18 Mar 1965</span>
           <h1 class="govuk-heading-m">Mark Bowen</h1>
 
     {% else %}
-      <span class="govuk-caption-m">CRN: A381306 | CRD: {{ "today" | duration(36) | govukDate("truncate") }}| Date of birth: 18 Mar 1965</span>
-      <h1 class="govuk-heading-m">Mark Bowen</h1>
+      <span class="govuk-caption-m">CRN: G579362 | CRD: {{ "today" | duration(36) | govukDate("truncate") }} | Date of birth: 18 Mar 1965</span>
+      <h1 class="govuk-heading-m">Giovanni Nicholson</h1>
     {% endif %}
   </div>
 </div>
