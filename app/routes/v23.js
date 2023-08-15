@@ -95,7 +95,7 @@ router.post('/ca-new-licence', function (req, res) {
   if (CAnewlicence == "yes"){
    
    // Send user to next page
-    res.redirect(version + '/meet')
+    res.redirect(version + '/hardstop/meet')
   } else {
     // Send user to ineligible page
     res.redirect(version + '/list')

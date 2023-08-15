@@ -199,19 +199,19 @@
   <ul class="govuk-tabs__list">
     <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
       <a class="govuk-tabs__tab" href="#before-hardstop">
-        Cases before hard stop (Copy Tom)
+        Furture releases
       </a>
     </li>
     <li class="govuk-tabs__list-item">
       <a class="govuk-tabs__tab" href="#releases-two-days">
-        Licences for release in next 2 days
+        Releases in next 2 days
       </a>
     </li>
   </ul>
 
   <div class="govuk-tabs__panel" id="before-hardstop">
-    <h2 class="govuk-heading-l">Cases before hard stop (Copy Tom)</h2>
-    <p class="govuk-body">@TOM Content goes here</p>
+    <h2 class="govuk-heading-l">Furture releases</h2>
+    <p class="govuk-body">Licences are shown here when someone’s release date is within 4 weeks or if their probation practitioner has started work on it before then.</p>
     <table class="govuk-table" data-module="moj-sortable-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
@@ -259,7 +259,7 @@
             <th scope="row" class="govuk-table__header">Barak Tive</th>
             <td class="govuk-table__cell">G5613GT</td>
             <td class="govuk-table__cell"><a href="#">Abdul Tendulka</a></td>
-            <td class="govuk-table__cell">{{ "today" | duration(3) | govukDate("truncate") }}</td>
+            <td class="govuk-table__cell">{{ "today" | duration(15) | govukDate("truncate") }}</td>
             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">N<span style="text-transform: lowercase;">ot started</span></strong></td>
           </tr>
 
@@ -267,7 +267,7 @@
             <th scope="row" class="govuk-table__header">Tyson Pearson</th>
             <td class="govuk-table__cell">G5613GT</td>
             <td class="govuk-table__cell"><a href="#">Michelle Hooper</a></td>
-            <td class="govuk-table__cell">{{ "today" | duration(4) | govukDate("truncate") }}</td>
+            <td class="govuk-table__cell">{{ "today" | duration(18) | govukDate("truncate") }}</td>
             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">N<span style="text-transform: lowercase;">ot started</span></strong></td>
           </tr>
 
@@ -316,8 +316,8 @@
 
 
   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="releases-two-days">
-    <h2 class="govuk-heading-l">Licences for release in the next 2 days</h2>
-    <p class="govuk-body">@TOM: CA can create licences</p>
+    <h2 class="govuk-heading-l">Releases in next 2 days</h2>
+    <p class="govuk-body">You can create and edit a licence for someone if their probation practitioner has not submitted one by 2 days before their release. </p>
 
     <table class="govuk-table" data-module="moj-sortable-table">
       <thead class="govuk-table__head">
@@ -337,8 +337,8 @@
             <td class="govuk-table__cell">G5613GT</td>
             <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
             <td class="govuk-table__cell" data-sort-value="1">{{ "today" | duration(1) | govukDate("truncate") }}</td>
-            <td class="govuk-table__cell">John Farrell</td>
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">I<span style="text-transform: lowercase;">n progress</span></strong></td>
+            <td class="govuk-table__cell">Probation practitioner</td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">A<span style="text-transform: lowercase;">pproved</span></strong></td>
         </tr>
 
           <tr class="govuk-table__row">
@@ -346,7 +346,15 @@
               <td class="govuk-table__cell">G5613GT</td>
               <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">Jamie Foxx</a></td>
               <td class="govuk-table__cell" data-sort-value="1">{{ "today" | duration(1) | govukDate("truncate") }}</td>
-              <td class="govuk-table__cell">John Farrell</td>
+              <td class="govuk-table__cell">Probation practitioner</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">I<span style="text-transform: lowercase;">n progress</span></strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state">Oliver Frances</a></th>
+              <td class="govuk-table__cell">G5613GT</td>
+              <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">Clara Loughman</a></td>
+              <td class="govuk-table__cell" data-sort-value="1">{{ "today" | duration(1) | govukDate("truncate") }}</td>
+              <td class="govuk-table__cell">OMU</td>
               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">I<span style="text-transform: lowercase;">n progress</span></strong></td>
           </tr>
 
@@ -355,7 +363,7 @@
           <td class="govuk-table__cell">G5613GT</td>
           <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
           <td class="govuk-table__cell" data-sort-value="1">{{ "today" | duration(2) | govukDate("truncate") }}</td>
-          <td class="govuk-table__cell">@TOM Empty state content</td>
+          <td class="govuk-table__cell"></td>
           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">N<span style="text-transform: lowercase;">ot started</span></strong></td>
         </tr>
 
@@ -364,7 +372,7 @@
           <td class="govuk-table__cell">G5613GT</td>
           <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">Simon Webster</a></td>
           <td class="govuk-table__cell" data-sort-value="1">{{ "today" | duration(2) | govukDate("truncate") }}</td>
-          <td class="govuk-table__cell">@TOM Empty state content</td>
+          <td class="govuk-table__cell"></td>
           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">N<span style="text-transform: lowercase;">ot started</span></strong></td>
         </tr>
 
@@ -373,7 +381,7 @@
           <td class="govuk-table__cell">G5613GT</td>
           <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">Michelle Hooper</a></td>
           <td class="govuk-table__cell" data-sort-value="1">{{ "today" | duration(2) | govukDate("truncate") }}</td>
-          <td class="govuk-table__cell">@TOM Empty state content</td>
+          <td class="govuk-table__cell"></td>
           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">N<span style="text-transform: lowercase;">ot started</span></strong></td>
         </tr>
         
