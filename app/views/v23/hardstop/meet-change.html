@@ -11,31 +11,41 @@
 
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-three-thirds"><br>
-
+  <div class="govuk-grid-column-two-thirds"><br>
     <fieldset class="govuk-fieldset">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
         <h1 class="govuk-fieldset__heading">
-        Who is the initial appointment with?</h1>
+      <!--    Who does {% if data.edit=="yes" %}Edith Bradshaw{% else %}Adam Balasaravika{% endif %} need to meet for their initial appointment?  </h1>-->
+
+      Who is the initial appointment with?</h1>
       </legend><br>
-        </div>
-    </div>
-
-
+  </div>
+</div>
+{% if data.releaseDateChanged=="yes" %}
+  <div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive">Warning</span>
+    The conditional release date is on a weekend or bank holiday. Check the release date with the prison OMU.
+  </strong>
+</div>
+{% endif %}
+<span class="govuk-hint">This could be John Farrell, this person's allocated probation practitioner, or someone else.</span>
+<br><br>
+<form method="post" action="" >
 <div class="govuk-grid-row">
-<div class="govuk-grid-column-one-third">
-
-  <div class="govuk-form-group">
-
-    <form method="" action="check-your-answers" >
-  <input class="govuk-input" id="full-name" name="inductionname" type="text" value="{%if (data.inductionname) %}
-    {{data.inductionname}}
-
-  {% else %}Samuel Toogood
-  {% endif %}"spellcheck="false" autocomplete="name"></div>
-<br>
-
-      <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+  <div class="govuk-grid-column-one-third">
+    <label class="govuk-label" for="name">
+      Name
+    </label>
+    <div class="govuk-form-group">
+      <input class="govuk-input" {%if (data.inductionname) %}
+        value="{{data.inductionname}}" {% endif %} id="inductionname" name="inductionname" type="text" spellcheck="false" autocomplete="inductionname">
+    </div>
+<br><br><br>
+<a href="check-your-answers" class="govuk-button show-continue" style="display: inline;">
+  Continue
+</a>
   </fieldset>
  </div>
 </div>
