@@ -372,12 +372,16 @@
           <td class="govuk-table__cell">G5613GT</td>
           <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">Simon Webster</a></td>
           <td class="govuk-table__cell" data-sort-value="1">{{ "today" | duration(2) | govukDate("truncate") }}</td>
-          <td class="govuk-table__cell"></td>
           {% if data.hardstopsubmitted=="yes"%}
-                  <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--pink">S<span style="text-transform: lowercase;">ubmitted</span></strong></td>
-                  {% else %}
-                  <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">N<span style="text-transform: lowercase;">ot started</span></strong></td>
-                  {% endif %}
+          <td class="govuk-table__cell">OMU</td>
+          {% else %}
+          <td class="govuk-table__cell"></td>
+          {% endif %}
+          {% if data.hardstopsubmitted=="yes"%}
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--pink">S<span style="text-transform: lowercase;">ubmitted</span></strong></td>
+          {% else %}
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">N<span style="text-transform: lowercase;">ot started</span></strong></td>
+          {% endif %}
         </tr>
 
         <tr class="govuk-table__row">
