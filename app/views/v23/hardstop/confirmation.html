@@ -89,17 +89,21 @@
           <h2 class="govuk-heading-m">If you need to make any changes</h2>
           <p class="govuk-body">You can return to the service to edit this licence after it has been sent or approved.</p>
           
+  
 
           <form action="" method="post">
-          <div class="govuk-button-group">
-            {{ govukButton({
-              text: "Return to caselist",
-              name: "approveanotherlicence",
-              value: "yes",
-              type: "submit"
-            }) }}
 
-            </form>
+            <input type="hidden" name="hardstopsubmitted" value="yes">
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Return to caselist",
+                name: "approveanotherlicence",
+                value: "yes",
+                type: "submit"
+              }) }}
+  
+              </form>
+            
           </div>
         <br>
 
