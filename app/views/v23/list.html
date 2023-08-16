@@ -317,7 +317,7 @@
 
   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="releases-two-days">
     <h2 class="govuk-heading-l">Releases in next 2 days</h2>
-    <p class="govuk-body">You can create and edit a licence for someone if their probation practitioner has not submitted one by 2 days before their release. </p>
+    <p class="govuk-body">If someone’s licence is not started or still in progress 2 days before their release, then you can create one.</p>
 
     <table class="govuk-table" data-module="moj-sortable-table">
       <thead class="govuk-table__head">
@@ -337,7 +337,7 @@
             <td class="govuk-table__cell">G5613GT</td>
             <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
             <td class="govuk-table__cell" data-sort-value="1">{{ "today" | duration(1) | govukDate("truncate") }}</td>
-            <td class="govuk-table__cell">Probation practitioner</td>
+            <td class="govuk-table__cell">Probation practitioner if probation has created</td>
             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">A<span style="text-transform: lowercase;">pproved</span></strong></td>
         </tr>
 
@@ -366,14 +366,18 @@
           <td class="govuk-table__cell"></td>
           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">N<span style="text-transform: lowercase;">ot started</span></strong></td>
         </tr>
-
+     
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="hardstop/question-activate" class="govuk-link govuk-link--no-visited-state">Giovanni Nicholson</a></br></th>
           <td class="govuk-table__cell">G5613GT</td>
           <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">Simon Webster</a></td>
           <td class="govuk-table__cell" data-sort-value="1">{{ "today" | duration(2) | govukDate("truncate") }}</td>
           <td class="govuk-table__cell"></td>
-          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">N<span style="text-transform: lowercase;">ot started</span></strong></td>
+          {% if data.hardstopsubmitted=="yes"%}
+                  <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--pink">S<span style="text-transform: lowercase;">ubmitted</span></strong></td>
+                  {% else %}
+                  <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">N<span style="text-transform: lowercase;">ot started</span></strong></td>
+                  {% endif %}
         </tr>
 
         <tr class="govuk-table__row">
