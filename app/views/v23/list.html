@@ -457,7 +457,7 @@
       {% endif %}
 
       {% if data.user=="governor" %}
-      <th scope="col" class="govuk-table__header" aria-sort="none" style="width: 180px;">Prison number</th>
+      <th scope="col" class="govuk-table__header" aria-sort="none" style="width: 140px;">Prison number</th>
       {% endif %}
 
       {% if (data.user=="governor") or (data.user=="aco") %}
@@ -466,6 +466,10 @@
       {% if data.user=="probation"%}
       <th scope="col" class="govuk-table__header app-custom-class" >Licence type</th>
       <th scope="col" class="govuk-table__header app-custom-class" aria-sort="none">Probation practitioner</th>
+      {% endif %}
+
+      {% if data.user=="governor"%}
+      <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none" style="width: 140px;">Submitted by</th>
       {% endif %}
 
       {% if data.user=="governor"%}
@@ -600,6 +604,38 @@
 
 <!--Prison Approver case list - START -->
 
+{% if data.user=="governor"%}
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header"><h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+                <a href="approvals/approve-hardstop.html" class="govuk-link govuk-link--no-visited-state">
+                  Rhys Dravael
+                </a>
+              </h3>
+            </th>
+            <td class="govuk-table__cell">G79007C</td>
+            <td class="govuk-table__cell">
+              <a href="probation-details" class="govuk-link govuk-link--no-visited-state">Simon Bentley</a>
+              </td>
+
+              {% if data.user=="governor"%}
+              <td class="govuk-table__cell">
+                Aliyah Allen
+                </td>
+              {%endif%}
+
+              <td class="govuk-table__cell due-date" data-sort-value="1">
+                <span class="date overdue">{{ "today" | duration(1) | govukDate("truncate") }}</span>
+                <span class="secondary overdue" style="width: 195px;">Urgent approval required for </br>upcoming release</span>
+              </td>
+              <td class="govuk-table__cell">
+                {% if data.user=="governor"%}
+              </td>
+              {%else%}
+              <strong class="govuk-tag govuk-tag--blue">Pending approval</strong></td>
+              {%endif%}
+            </tr>
+            {%endif%}
+
           {% if data.user=="governor"%}
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header"><h3 class="govuk-heading-m govuk-!-margin-bottom-3">
@@ -612,9 +648,16 @@
             <td class="govuk-table__cell">
               <a href="probation-details" class="govuk-link govuk-link--no-visited-state">Simon Bentley</a>
               </td>
-              <td class="govuk-table__cell due-date" data-sort-value="1">
-                <span class="date overdue">{{ "today" | duration(2) | govukDate("truncate") }}</span>
-                <span class="secondary overdue">Urgent approval required for </br>upcoming release</span>
+
+              {% if data.user=="governor"%}
+              <td class="govuk-table__cell">
+                Simon Bentley
+                </td>
+              {%endif%}
+
+              <td class="govuk-table__cell due-date" data-sort-value="2">
+                <span class="date overdue">{{ "today" | duration(3) | govukDate("truncate") }}</span>
+                <span class="secondary overdue" style="width: 195px;">Urgent approval required for </br>upcoming release</span>
               </td>
               <td class="govuk-table__cell">
                 {% if data.user=="governor"%}
@@ -639,7 +682,14 @@
             <td class="govuk-table__cell">
               <a href="probation-details" class="govuk-link govuk-link--no-visited-state">Lindsay Duncan</a>
               </td>
-              <td class="govuk-table__cell" data-sort-value="2">
+
+              {% if data.user=="governor"%}
+              <td class="govuk-table__cell">
+                Lindsay Duncan
+                </td>
+              {%endif%}
+
+              <td class="govuk-table__cell" data-sort-value="3">
                 {{ "today" | duration(17) | govukDate("truncate") }}
               </td>
               <td class="govuk-table__cell">
@@ -667,9 +717,16 @@
             <td class="govuk-table__cell">
               <a href="probation-details" class="govuk-link govuk-link--no-visited-state">Lindsay Duncan</a>
               </td>
-              <td class="govuk-table__cell" data-sort-value="3">
-                {{ "today" | duration(90) | govukDate("truncate") }}
-              </td>Barak Tive
+
+              {% if data.user=="governor"%}
+              <td class="govuk-table__cell">
+                Lindsay Duncan
+                </td>
+              {%endif%}
+
+              <td class="govuk-table__cell" data-sort-value="4">
+                {{ "today" | duration(25) | govukDate("truncate") }}
+              </td>
               <td class="govuk-table__cell">
                 {% if data.user=="governor"%}
               </td>
