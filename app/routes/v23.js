@@ -144,7 +144,16 @@ router.post('/delete-location', function (req, res) {
 
 });
 
-
+//Hardstop Approver view from approve licence page to approve and back to case list
+router.post(version + '/approvals/approve-hardstop', function(req, res) {
+  var route = req.session.data['approve-a-licence'];
+  if (route == "approvenow"){
+    res.redirect(version + '/approvals/confirmation');
+  }
+  else if (route == "returntocases"){
+    res.redirect(version + '/list');
+  }
+});
 
 //Approver view from approve licence page to approve and back to case list
 router.post(version + '/approvals/approve', function(req, res) {
