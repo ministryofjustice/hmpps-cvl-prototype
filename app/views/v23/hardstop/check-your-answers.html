@@ -33,7 +33,8 @@
 
 
 
-        <h2 class="govuk-heading-m"> Initial meeting details</h2>
+        <h2 class="govuk-heading-m">Initial meeting details</h2>
+
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -48,7 +49,7 @@
               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/v23/hardstop/meet-change">
+              <a class="govuk-link" href="#">
                 Change<span class="govuk-visually-hidden"></span>
               </a>
             </dd>
@@ -90,7 +91,7 @@
 
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/v23/hardstop/address-change">
+              <a class="govuk-link" href="#">
                 Change<span class="govuk-visually-hidden"> licence type</span>
               </a>
             </dd>
@@ -108,7 +109,7 @@
 
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/v23/hardstop/phone-number-change">
+              <a class="govuk-link" href="#">
                 Change<span class="govuk-visually-hidden"> </span>
               </a>
             </dd>
@@ -122,7 +123,7 @@
               {{data.passportissuedday}} {{data.passportissuedmonth | monthName }} {{data.passportissuedyear}}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/v23/hardstop/when-change">
+              <a class="govuk-link" href="#">
                 Change<span class="govuk-visually-hidden"> </span>
               </a>
             </dd>
@@ -137,19 +138,56 @@
              
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/v23/hardstop/when-change">
+              <a class="govuk-link" href="#">
                 Change<span class="govuk-visually-hidden"></span>
               </a>
             </dd>
           </div>
         </dl><br><br>
 
- 
+
+<h2 class="govuk-heading-m">Licence conditions</h2>
+
+
+  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Licence contains
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Standard conditions
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+          <span class="govuk-visually-hidden"></span>
+        </a>
+      </dd>
+    </div>
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Contact with a person
+      </dt>
+      <dd class="govuk-summary-list__value">
+        @Tom Not to seek bla bla bla, a requirement not to contact any victims of the index offence
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+          Change<span class="govuk-visually-hidden"></span>
+        </a>
+      </dd>
+    </div>
+
+    </dl>
+
+
+
 
 
 <form action="" method="post">
 
-    <div class="govuk-button-group" style="width:500px; margin-top: -50px;">
+    <div class="govuk-button-group" style="width:500px; margin-top: 50px;">
       
       <button class="govuk-button" data-module="govuk-button" name="submit" value="continue">
         Send for approval

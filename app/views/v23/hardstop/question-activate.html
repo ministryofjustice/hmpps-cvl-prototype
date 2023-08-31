@@ -27,12 +27,27 @@
     <form action="/ca-new-licence" method="post">
       <div class="govuk-form-group">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-fieldset__heading">
-                Are you sure you want to create this licence?
+            <h1 class="govuk-fieldset__heading" style="margin-bottom: 10px;">
+              Are you sure you want to create a standard licence for this person?
             </h1>
           </legend>
-          <span class="govuk-hint">The licence will contain standard conditions and a requirement not to contact any victims.</span>
-          <div class="govuk-form-group">
+
+        <span class="govuk-hint">
+
+         The licence will contain:
+
+          <ul class="govuk-list govuk-list--bullet govuk-hint" style="margin-top: 10px; margin-bottom: 10px;">
+            <li>standard conditions</li>
+            <li>a requirement not to contact any victims of the index offence</li>
+          </ul>
+          
+          You cannot add any other additional or bespoke licence conditions.
+          
+        </span>
+
+
+
+          <div class="govuk-form-group" style="margin-top: 15px;">
             <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               </legend>
