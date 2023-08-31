@@ -30,7 +30,7 @@
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading">
-        What is the contact phone number for the initial appointment?     </h1>
+        What is the contact phone number for the initial appointment?</h1>
     </legend>
 </fieldset>
 </div>
@@ -44,7 +44,76 @@ The conditional release date is on a weekend or bank holiday. Check the release 
 {% endif %}
 
 
-<div data-module="moj-add-another">
+<!--START set dynamic radio hide/show text-->
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% set textHtmlOther %}
+{{ govukInput({
+  id: "Enter phone number",
+  name: "Enter phone number",
+  type: "tel",
+  autocomplete: "tel",
+  classes: "govuk-fieldset__legend--s govuk-input govuk-input--width-30",
+  label: {
+    text: "Enter phone number"
+  }
+}) }}
+{% endset -%}
+
+
+{{ govukRadios({
+  idPrefix: "contact",
+  name: "contact",
+  fieldset: {
+    legend: {
+      text: "",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+
+  items: [
+  {
+    value: "probationpractitionernr",
+    text: "Simon Webster: 07771 900 900",
+    conditional: {
+      html: emailHtml
+    }
+  },
+  {
+    value: "probationofficenr",
+    text: "Probation office: 01273 800 900",
+    conditional: {
+      html: emailHtml
+    }
+  },
+  {
+    value: "other",
+    text: "A different phone number",
+    conditional: {
+      html: textHtmlOther
+    }
+  }
+  ]
+}) }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div data-module="moj-add-another">
     <fieldset class="govuk-fieldset moj-add-another__item">
       <div class="govuk-form-group">
         <label class="govuk-label" for="telephone-number">
@@ -60,7 +129,7 @@ The conditional release date is on a weekend or bank holiday. Check the release 
       </button><br>
     </div>
 
-</div>
+</div>-->
 
 <div class="govuk-button-group">
 <button class="govuk-button" data-module="govuk-button" name="submit" value="continue">
