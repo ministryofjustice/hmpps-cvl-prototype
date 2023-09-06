@@ -1,8 +1,8 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds"><br>
     {% if data.edit=="yes" %}
-      <span class="govuk-caption-m">CRN: A381306 | CRD: 28 May 2022 | Date of birth: 9 July 1965</span>
-      <h1 class="govuk-heading-m">Edith Bradshaw</h1>
+    <span class="govuk-caption-m">CRN: G579362 | CRD: {{ "today" | duration(2) | govukDate("truncate") }} | Date of birth: 3 Dec 1990</span>
+    <h1 class="govuk-heading-m">Eric Rogan</h1>
 
     {% elseif data.releaseDateChanged=="yes" %}
     <span class="govuk-caption-m">CRN: A314402 | CRD: 15 May 2022 | Date of birth: 12 Mar 1975</span>
@@ -11,6 +11,7 @@
     {% elseif data.is91Create=="yes" %}
     <span class="govuk-caption-m">CRN: A761536 | CRD: 12 Dec 2022 | Date of birth: 12 Mar 1975</span>
     <h1 class="govuk-heading-m">Craig Jennings</h1>
+    
     {% elseif data.mark-bowen=="yes" %}
     <span class="govuk-caption-m">CRN: G547951 | CRD: {{ "today" | duration(60) | govukDate("truncate") }} | Date of birth: 18 Mar 1965</span>
       <h1 class="govuk-heading-m">Mark Bowen</h1>
@@ -21,7 +22,7 @@
 
     {% else %}
       <span class="govuk-caption-m">CRN: G579362 | CRD: {{ "today" | duration(36) | govukDate("truncate") }} | Date of birth: 18 Mar 1965</span>
-      <h1 class="govuk-heading-m">Giovanni Nicholson</h1>
+      <h1 class="govuk-heading-m">Giovanni111 Nicholson</h1>
     {% endif %}
   </div>
 </div>

@@ -19,19 +19,17 @@
 {% endblock %}
 
 {% block content %}
-{% include "layout-name-edith.html" %}<br />
-<h1 class="govuk-heading-m">
-<!--  <span class="govuk-caption-m">{% if data.edit=="yes" %}Edith Bradshaw{% else %}Adam Balasaravika{% endif %}
-</span></h1>-->
+{% include "/layouts/layout-name.html" %}
+<br>
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds-from-desktop">
+    <div class="govuk-grid-column-full-from-desktop">
 
 {% if data.needpss=="yes" %}
     {% if data.licencetypechoose=="pssonly" %}
       <h1 class="govuk-heading-l">Check supervision order</h1><br>
     {% else %}
-      <h1 class="govuk-heading-l">Check licence and supervision order</h1><br>
+      <h1 class="govuk-heading-l">Check licence for Eric Rogan</h1><br>
     {% endif %}
 {% else%}
       <h1 class="govuk-heading-l">Check licence details</h1><br>
@@ -48,15 +46,14 @@
               Name
             </dt>
             <dd class="govuk-summary-list__value">
-              {%if (data.inductionname) %}
-                {{data.inductionname}}
-
-              {% else %}
-                Samuel Toogood
-              {% endif %}
+              {%if (data.contact3) %}
+              {{data.contact3}}
+             {% else %}
+              Samuel Toogood
+             {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="meet-change">
+              <a class="govuk-link" href="/v23/hardstop/meet-change">
                 Change<span class="govuk-visually-hidden"></span>
               </a>
             </dd>
@@ -103,7 +100,7 @@
 
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="address-change">
+              <a class="govuk-link" href="/v23/hardstop/address-change">
                 Change<span class="govuk-visually-hidden"> licence type</span>
               </a>
             </dd>
@@ -114,14 +111,14 @@
               Contact phone number
             </dt>
             <dd class="govuk-summary-list__value">
-              {%if (data.telephonenumber) %}{{data.telephonenumber}}
+              {%if (data.contactnumber1) %}{{data.contactnumber1}}
               {% else %}0798 443 0099
               {% endif %}
 
 
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="phone-number-change">
+              <a class="govuk-link" href="/v23/hardstop/phone-number-change">
                 Change<span class="govuk-visually-hidden"> </span>
               </a>
             </dd>
@@ -132,10 +129,10 @@
               Date
             </dt>
             <dd class="govuk-summary-list__value">
-              31 December 2021
+              {{data.passportissuedday}} {{data.passportissuedmonth | monthName }} {{data.passportissuedyear}}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="when-change">
+              <a class="govuk-link" href="/v23/hardstop/when-change">
                 Change<span class="govuk-visually-hidden"> </span>
               </a>
             </dd>
@@ -145,348 +142,42 @@
             <dt class="govuk-summary-list__key">
               Time
             </dt>
-            <dd class="govuk-summary-list__value">
-              4:30pm
-            </dd>
+            <dd class="govuk-summary-list__value" value="twice">
+              {%if (data.passportissuedday2) %}{{data.passportissuedday2}}.{{data.passportissuedmonth2}}{{data.whenam}}
+             {% else %}
+              As soon as possible by 2pm on the next working day after their release
+              {% endif %}
+             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="when-change">
+              <a class="govuk-link" href="/v23/hardstop/when-change">
                 Change<span class="govuk-visually-hidden"></span>
               </a>
             </dd>
           </div>
 
 
-        </dl><br><br>
+        </dl>
 
 
-  {% if data.needadditional=="yes" %}
+        <h2 class="govuk-heading-m">Licence conditions</h2>
+        <p>This licence contains:</p>
+        <ul class="govuk-list govuk-list--bullet" style="margin-top: 10px; margin-bottom: 10px;">
+          <li>standard conditions</li>
+          <li>a requirement not to contact any victims of the index offence</li>
+        </ul>
 
-              <div class="govuk-grid-row">
-                <div class="govuk-grid-column-three-quarters">
-                  <h2 class="govuk-heading-m">Additional licence conditions details</h2>
-                </div>
-              </div>
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <form action="" method="post">
 
+          <div class="govuk-button-group" style="width:500px; margin-top: 50px;">
+            
+            <button class="govuk-button govuk-button--secondary" name="submit" value="exit">
+            Return to caselist
+            </button>
+            </div>
+       
+            </form>
 
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="width:50%;">
-              Select additional conditions
-            </dt>
-            <dd class="govuk-summary-list__value">
-              6 additional conditions selected<br>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="conditions">
-              <span> Change </span>
-              </a>
-            </dd>
-          </div>
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Restriction of residency
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Not to reside (not even to stay for one night) in the same household as any child under the age of 18 without the prior approval of your supervising officer.<br><br> <strong>Any child under 18</strong><br>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="additional/2a-change">
-              <span>Change</span>
-              </a>
-            </dd>
-          </div>
-
-
-
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Contact with a person
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Not to have unsupervised contact with any children under the age of 18 without the prior approval of your supervising officer and / or Lewisham Social Services except where that contact is inadvertent and not reasonably avoidable in the course of lawful daily life.<br><br> <strong>Any children under 18</strong> <br> <strong>Lewisham Social Services</strong>
-
-
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="additional/3a-change">
-                  <span>Change</span>
-              </a>
-            </dd>
-          </div>
-
-
-
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Contact with a person
-
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Not to contact or associate with John Smith without the prior approval of your supervising officer. <br><br><strong>John Smith</strong>
-
-
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="additional/3f-change">
-                 <span>Change</span>
-              </a>
-            </dd>
-          </div>
-
-
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Programme and activities
-            </dt>
-
-            <dd class="govuk-summary-list__value">
-              To comply with any requirements specified by your supervising officer for the purpose of ensuring that you address your drug behaviour problems. <br><br><strong>Drug</strong>
-
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="additional/3j-change">
-                 <span>Change</span>
-              </a>
-            </dd>
-          </div>
-
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Programme and activities
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Not to undertake work or other organised activity which will involve a person under the age of 18, either on a paid or unpaid basis without the prior approval of your supervising officer <br><br><strong> Under the age of 18 </strong>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="additional/4a-change">
-                  <span>Change</span>
-              </a>
-            </dd>
-          </div>
-
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Items and documents
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Not to own or possess a smart phone  without the prior approval of your supervising officer. <br><br><strong> Smart phone </strong>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="additional/5h-change">
-              <span>Change</span>
-              </a>
-            </dd>
-          </div>
-
-
-        <!--  <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Drug testing
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Attend as reasonably required by your supervising officer, to give a sample of oral fluid / urine in order to test whether you have any specified Class A and specified Class B drugs in your body, for the purpose of ensuring that you are complying with the condition of your licence requiring you to be of good behaviour.<br><br> <strong>Drug Centre Buildings, 13 Palmerston Road, London, SE2 3ED </strong>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
-                 <span>Change</span>
-              </a>
-            </dd>
-          </div>-->
-        </dl><br><br>
-{% else %}
-
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-three-quarters">
-          <h2 class="govuk-heading-m">Additional licence conditions details</h2>
-        </div>
-      </div>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key" style="width:50%;">
-          Needs additional conditions?
-          </dt>
-          <dd class="govuk-summary-list__value">No<br>
-          </dd>
-          <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="question">
-                <span> Change </span>
-              </a>
-         </dd>
-      </div>
-    </dl>
-{% endif %}
-
-
-
-
-  {% if data.needbespoke=="yes"%}
-
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-three-quarters">
-            <h2 class="govuk-heading-m">Bespoke licence condition details</h2>
-          </div>
-        </div>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-
-      <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key" style="width:50%;">
-        Needs bespoke conditions?
-      </dt>
-      <dd class="govuk-summary-list__value">
-        Yes<br>
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="bespoke">
-        <span> Change </span>
-        </a>
-      </dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key" style="width:50%;">
-        Bespoke condition
-      </dt>
-      <dd class="govuk-summary-list__value">
-        You must not enter Tesco supermarket <br>290, 290A Lewisham Road <br>London, SE13 7PA<br>
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="conditions">
-        <span>Change</span>
-        </a>
-      </dd>
-      </div>
-      </dl>
-
-  {% else %}
-
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-three-quarters">
-      <h2 class="govuk-heading-m">Bespoke licence condition details</h2>
     </div>
-  </div>
-<dl class="govuk-summary-list govuk-!-margin-bottom-9">
-
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key" style="width:50%;">
-      Needs bespoke conditions?
-    </dt>
-    <dd class="govuk-summary-list__value">
-      No<br>
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="bespoke">
-      <span> Change </span>
-      </a>
-    </dd>
-  </div>
-</dl><br />
-
-  {% endif %}
-
-
-
-<!--Here-->
-  {% if data.needpss=="yes" %}
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-three-quarters">
-            <h2 class="govuk-heading-m">Additional post sentence requirements details</h2>
-          </div>
-        </div>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-
-      <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key" style="width:50%;">
-        Needs Additional requirements?
-      </dt>
-      <dd class="govuk-summary-list__value">
-        Yes<br>
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="pss">
-        <span> Change </span>
-        </a>
-      </dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key" style="width:50%;">
-        Select Additional requirements
-      </dt>
-      <dd class="govuk-summary-list__value">
-          2 additional requirement selected
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="pss">
-        <span> Change</span>
-        </a>
-      </dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key" style="width:50%;">
-        Drug appointments
-      </dt>
-      <dd class="govuk-summary-list__value">Attend Fake Addiction Centre, Fake Town, as directed, to address your dependency on, or propensity to misuse, a controlled drug.<br><br> <strong>  Fake Addiction Centre, Fake Town </strong>
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="conditions">
-        <span>Change</span>
-        </a>
-      </dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key" style="width:50%;">
-        Drug testing
-      </dt>
-      <dd class="govuk-summary-list__value">
-        Attend Fake Police Station, Fake Town, as reasonably required by your supervisor, to give a sample of oral fluid / urine in order to test whether you have any specified Class A or specified Class B drugs in your body, for the purpose of ensuring that you are complying with the requirement of your supervision period requiring you to be of good behaviour.
-        <br><br> <strong> Fake Police Station, Fake Town </strong>
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="conditions">
-        <span>Change</span>
-        </a>
-      </dd>
-      </div>
-      </dl>
-
-{% else %}
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-three-quarters">
-          <h2 class="govuk-heading-m">Additional post sentence requirements details</h2>
-        </div>
-      </div>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-
-      <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key" style="width:50%;">
-      Needs Additional requirements?
-      </dt>
-      <dd class="govuk-summary-list__value">
-      No<br>
-      </dd>
-      <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="pss">
-      <span> Change </span>
-      </a>
-      </dd>
-      </div><br />
-
-
-{% endif %}
-
-
-
-        <a href="confirmation" class="govuk-button" type="submit">Send to prison for approval</a>
-      </div>
     </div>
 
 

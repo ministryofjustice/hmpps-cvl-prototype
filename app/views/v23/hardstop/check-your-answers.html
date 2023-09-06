@@ -41,12 +41,11 @@
               Name
             </dt>
             <dd class="govuk-summary-list__value">
-              {%if (data.inductionname) %}
-                {{data.inductionname}}
-
-              {% else %}
-                Lara Toogood
-              {% endif %}
+              {%if (data.contact3) %}
+              {{data.contact3}}
+             {% else %}
+              Samuel Toogood
+             {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -102,10 +101,9 @@
               Contact phone number
             </dt>
             <dd class="govuk-summary-list__value">
-              {%if (data.telephonenumber) %}{{data.telephonenumber}}
+              {%if (data.contactnumber1) %}{{data.contactnumber1}}
               {% else %}0798 443 0099
               {% endif %}
-
 
             </dd>
             <dd class="govuk-summary-list__actions">
@@ -134,52 +132,27 @@
               Time
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data.passportissuedday2}}.{{data.passportissuedmonth2}}{{data.whenam}}
+              {%if (data.passportissuedday2) %}{{data.passportissuedday2}}.{{data.passportissuedmonth2}}{{data.whenam}}
              
-            </dd>
+              {% else %}
+              As soon as possible by 2pm on the next working day after their release
+              {% endif %}
+             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
                 Change<span class="govuk-visually-hidden"></span>
               </a>
             </dd>
           </div>
-        </dl><br><br>
+        </dl>
 
 
 <h2 class="govuk-heading-m">Licence conditions</h2>
-
-
-  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Licence contains
-      </dt>
-      <dd class="govuk-summary-list__value">
-        Standard conditions
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="#">
-          <span class="govuk-visually-hidden"></span>
-        </a>
-      </dd>
-    </div>
-
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Contact with a person
-      </dt>
-      <dd class="govuk-summary-list__value">
-        @Tom Not to seek bla bla bla, a requirement not to contact any victims of the index offence
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="#">
-          Change<span class="govuk-visually-hidden"></span>
-        </a>
-      </dd>
-    </div>
-
-    </dl>
+<p>This licence contains:</p>
+<ul class="govuk-list govuk-list--bullet" style="margin-top: 10px; margin-bottom: 10px;">
+  <li>standard conditions</li>
+  <li>a requirement not to contact any victims of the index offence</li>
+</ul>
 
 
 

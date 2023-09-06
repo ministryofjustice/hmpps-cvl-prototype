@@ -9,7 +9,7 @@
 
 {% block content %}
 
-
+<form method="" action="/v23/edit/check-your-answers-edit">
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds"><br>
     <fieldset class="govuk-fieldset">
@@ -21,34 +21,67 @@
       </legend><br>
   </div>
 </div>
-{% if data.releaseDateChanged=="yes" %}
-  <div class="govuk-warning-text">
-  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-  <strong class="govuk-warning-text__text">
-    <span class="govuk-warning-text__assistive">Warning</span>
-    The conditional release date is on a weekend or bank holiday. Check the release date with the prison OMU.
-  </strong>
-</div>
-{% endif %}
-<span class="govuk-hint">This could be Simon Webster, this person's allocated probation practitioner, or someone else.</span>
-<br><br>
-<form method="post" action="" >
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-one-third">
-    <label class="govuk-label" for="name">
-      Name
-    </label>
-    <div class="govuk-form-group">
-      <input class="govuk-input" {%if (data.inductionname) %}
-        value="{{data.inductionname}}" {% endif %} id="inductionname" name="inductionname" type="text" spellcheck="false" autocomplete="inductionname">
-    </div>
-<br><br><br>
-<a href="check-your-answers" class="govuk-button show-continue" style="display: inline;">
-  Continue
-</a>
-  </fieldset>
- </div>
-</div>
 
 
-{% endblock %}
+<!--START set dynamic radio hide/show text-->
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% set textHtmlOther %}
+{{ govukInput({
+  id: "Enter name",
+  name: "Enter name",
+  type: "tel",
+  autocomplete: "tel",
+  classes: "govuk-fieldset__legend--s govuk-input govuk-input--width-30",
+  label: {
+    text: "Enter name"
+  }
+}) }}
+{% endset -%}
+
+
+{{ govukRadios({
+  idPrefix: "contact3",
+  name: "contact3",
+  fieldset: {
+    legend: {
+      text: "",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+
+  items: [
+  {
+    value: "Simon Webster, this person’s probation officer",
+    text: "Simon Webster, this person’s probation officer",
+    conditional: {
+      html: emailHtml
+    }
+  },
+  {
+    value: "Duty officer",
+    text: "Duty officer",
+    conditional: {
+      html: emailHtml
+    }
+  },
+  {
+    value: "Someone else",
+    text: "Someone else",
+    conditional: {
+      html: textHtmlOther
+    }
+  }
+  ]
+}) }}
+
+<button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+
+</form>
+
+<div>
+</div>
+
+    {% endblock %}

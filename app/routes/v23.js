@@ -22,6 +22,34 @@ router.post('/review-licence', function (req, res) {
 });
 
 
+
+//Hardstop - edit confirmation
+router.post(version + '/edit/check-your-answers-edit', function(req, res) {
+  var saveexit = req.session.data['submit'];
+  if (saveexit == "exit"){
+    res.redirect(version + '/list#releases-two-days');
+  }
+  else if (saveexit == "continue"){
+    res.redirect(version + '/hardstop/confirmation');
+  }
+});
+
+//hardstop edit yes or no question
+router.post(version + '/edit/question', function(req, res) {
+  var edit = req.session.data['edit'];
+  if (edit == "yes"){
+    req.session.data['needadditional'] ='yes';
+    req.session.data['needbespoke']='yes';
+    req.session.data['needpss']='yes';
+    res.redirect(version + '/edit/check-your-answers-edit');
+  }
+  else if (edit == "no"){
+    res.redirect(version + '/edit/check-your-answers');
+  }
+});
+
+
+
 //Hardstop - from confirmation back to case list
 router.post(version + '/hardstop/confirmation', function(req, res) {
   var saveexit = req.session.data['submit'];
@@ -103,7 +131,16 @@ router.post('/ca-new-licence', function (req, res) {
 
 });
 
-
+//Hardstop - edit initial appointmemnt
+router.post(version + '/hardstop/meet-change', function(req, res) {
+  var saveexit = req.session.data['submit'];
+  if (saveexit == "exit"){
+    res.redirect(version + '/exit');
+  }
+  else if (saveexit == "continue"){
+    res.redirect(version + '/hardstop/check-your-answers');
+  }
+});
 
 
 //Freedom of movement - multiple addresses
