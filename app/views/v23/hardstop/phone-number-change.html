@@ -5,36 +5,96 @@
 {% endblock %}
 {% block beforeContent %}
 
-
 {% endblock %}
 
 {% block content %}
 
-
+<form method="" action="/v23/edit/check-your-answers-edit">
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-three-thirds">
-  <form method="" action="check-your-answers" >
+  <div class="govuk-grid-column-two-thirds">
+
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading">
-        What is the contact phone number for the initial appointment?     </h1>
-    </legend><br>
-
-    <div class="govuk-form-group">
-      <label class="govuk-label" for="telephone-number">
-        UK telephone number
-      </label>
-      <input class="govuk-input govuk-input--width-20" id="telephone-number" value="{%if (data.telephonenumber) %}{{data.telephonenumber}}
-      {% else %}0798 443 0099
-      {% endif %}" name="telephonenumber" type="tel"></div>
-
-
+        What is the contact phone number for the initial appointment?</h1>
+    </legend>
 </fieldset>
-</div><br>
+</div>
+{% if data.releaseDateChanged=="yes" %}
+  <div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive">Warning</span>
+The conditional release date is on a weekend or bank holiday. Check the release date with the prison OMU.  </strong>
+</div>
+{% endif %}
 
-        <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+
+
+<!--START set dynamic radio hide/show text-->
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% set textHtmlOther %}
+{{ govukInput({
+  id: "Enter phone number",
+  name: "Enter phone number",
+  type: "tel",
+  autocomplete: "tel",
+  classes: "govuk-fieldset__legend--s govuk-input govuk-input--width-30",
+  label: {
+    text: "Enter phone number"
+  }
+}) }}
+{% endset -%}
+
+
+{{ govukRadios({
+  idPrefix: "contactnumber1",
+  name: "contactnumber1",
+  fieldset: {
+    legend: {
+      text: "",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+
+  items: [
+  {
+    value: "Simon Webster: 07771 900 900",
+    text: "Simon Webster: 07771 900 900",
+    conditional: {
+      html: emailHtml
+    }
+  },
+  {
+    value: "Probation office: 01273 800 900",
+    text: "Probation office: 01273 800 900",
+    conditional: {
+      html: emailHtml
+    }
+  },
+  {
+    value: "A different phone number",
+    text: "A different phone number",
+    conditional: {
+      html: textHtmlOther
+    }
+  }
+  ]
+}) }}
+
+
+<button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+  
+
+
+
+
 </form>
+  
  </div>
 </div>
 

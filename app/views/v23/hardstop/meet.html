@@ -33,7 +33,7 @@
       </legend><br>
   </div>
 </div>
-
+<form method="" action="/v23/hardstop/address">
 <!--START set dynamic radio hide/show text-->
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -53,8 +53,8 @@
 
 
 {{ govukRadios({
-  idPrefix: "contact",
-  name: "contact",
+  idPrefix: "contact3",
+  name: "contact3",
   fieldset: {
     legend: {
       text: "",
@@ -65,14 +65,14 @@
 
   items: [
   {
-    value: "probationpractitioner",
+    value: "Simon Webster, this person’s probation officer",
     text: "Simon Webster, this person’s probation officer",
     conditional: {
       html: emailHtml
     }
   },
   {
-    value: "dutypractitioner",
+    value: "Duty officer",
     text: "Duty officer
     ",
     conditional: {
@@ -80,7 +80,7 @@
     }
   },
   {
-    value: "other",
+    value: "Someone else",
     text: "Someone else",
     conditional: {
       html: textHtmlOther
@@ -89,7 +89,10 @@
   ]
 }) }}
 
+<button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
 
+
+</form>
 
 <form method="post" action="">
 <!--<div class="govuk-grid-row">
@@ -103,14 +106,7 @@
     </div>
     <br>-->
 
-    <div class="govuk-button-group">
-    <button class="govuk-button" data-module="govuk-button" name="submit" value="continue">
-      Continue
-    </button>
-    <!--<button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="submit" value="exit">
-      Save and exit
-    </button>-->
-  </div>
+  
     </fieldset>
  </div>
 </div>

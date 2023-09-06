@@ -22,27 +22,27 @@
 {% block content %}
 {% include "layouts/layout-name-giovanni.html" %}
 <br />
-<form method="post" action="">
+<form method="" action="/v23/hardstop/when">
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-      <h1 class="govuk-fieldset__heading">
-        What is the contact phone number for the initial appointment?</h1>
-    </legend>
-</fieldset>
-</div>
-{% if data.releaseDateChanged=="yes" %}
-  <div class="govuk-warning-text">
-  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-  <strong class="govuk-warning-text__text">
-    <span class="govuk-warning-text__assistive">Warning</span>
-The conditional release date is on a weekend or bank holiday. Check the release date with the prison OMU.  </strong>
-</div>
-{% endif %}
-
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            What is the contact phone number for the initial appointment?</h1>
+        </legend>
+    </fieldset>
+    </div>
+    {% if data.releaseDateChanged=="yes" %}
+      <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+    The conditional release date is on a weekend or bank holiday. Check the release date with the prison OMU.  </strong>
+    </div>
+    {% endif %}
+    
 
 <!--START set dynamic radio hide/show text-->
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
@@ -63,8 +63,8 @@ The conditional release date is on a weekend or bank holiday. Check the release 
 
 
 {{ govukRadios({
-  idPrefix: "contact",
-  name: "contact",
+  idPrefix: "contactnumber1",
+  name: "contactnumber1",
   fieldset: {
     legend: {
       text: "",
@@ -75,21 +75,21 @@ The conditional release date is on a weekend or bank holiday. Check the release 
 
   items: [
   {
-    value: "probationpractitionernr",
+    value: "Simon Webster: 07771 900 900",
     text: "Simon Webster: 07771 900 900",
     conditional: {
       html: emailHtml
     }
   },
   {
-    value: "probationofficenr",
+    value: "Probation office: 01273 800 900",
     text: "Probation office: 01273 800 900",
     conditional: {
       html: emailHtml
     }
   },
   {
-    value: "other",
+    value: "A different phone number",
     text: "A different phone number",
     conditional: {
       html: textHtmlOther
@@ -131,14 +131,7 @@ The conditional release date is on a weekend or bank holiday. Check the release 
 
 </div>-->
 
-<div class="govuk-button-group">
-<button class="govuk-button" data-module="govuk-button" name="submit" value="continue">
-  Continue
-</button>
-<!--<button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="submit" value="exit">
-  Save and exit
-</button>-->
-</div>
+<button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
 
  </div>
 </div>
