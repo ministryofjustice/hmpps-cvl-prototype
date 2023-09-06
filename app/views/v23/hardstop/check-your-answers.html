@@ -115,32 +115,14 @@
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Date
+              Date/time
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data.passportissuedday}} {{data.passportissuedmonth | monthName }} {{data.passportissuedyear}}
+              Immediately after release
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
                 Change<span class="govuk-visually-hidden"> </span>
-              </a>
-            </dd>
-          </div>
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Time
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {%if (data.passportissuedday2) %}{{data.passportissuedday2}}.{{data.passportissuedmonth2}}{{data.whenam}}
-             
-              {% else %}
-              As soon as possible by 2pm on the next working day after their release
-              {% endif %}
-             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
-                Change<span class="govuk-visually-hidden"></span>
               </a>
             </dd>
           </div>
