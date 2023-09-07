@@ -126,7 +126,7 @@
               {% else %}
               {%if (data.contact2) %}{{data.contact2}}
               {% else %}
-              {{ "today" | govukDate("truncate") }}
+              {{ "today" | duration(1) | govukDate("truncate") }}
               {% endif %} {% endif %}
               
               
