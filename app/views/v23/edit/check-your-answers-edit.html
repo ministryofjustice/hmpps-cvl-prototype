@@ -119,11 +119,11 @@
               {%if (data.passportissuedday2) %}{{data.passportissuedday2}}.{{data.passportissuedmonth2}}{{data.whenam}}
               {% elseif data.contact2=="As soon as possible by 2pm on the next working day after release" %}
              
-              {{ "today" | govukDate("truncate") }}
+              {{ "today" | duration(1) | govukDate("truncate") }}
               {% else %}
               {%if (data.contact2) %}{{data.contact2}}
               {% else %}
-              {{ "today" | duration(1) | govukDate("truncate") }}
+              {{ "today" | govukDate("truncate") }}
               {% endif %} {% endif %}
               
               
