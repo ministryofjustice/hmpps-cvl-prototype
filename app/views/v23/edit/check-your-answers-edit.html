@@ -1,8 +1,5 @@
 {% extends "layouts/main.html" %}
 
-{% block page_title %}
-  GOV.UK prototype kit
-{% endblock %}
 {% block beforeContent %}
 
 <div class="govuk-phase-banner">
@@ -19,26 +16,14 @@
 {% endblock %}
 
 {% block content %}
-{% include "/layouts/layout-name.html" %}
-<br>
 
-  <div class="govuk-grid-row">
+{% include "/layouts/layout-name-eric.html" %}<br>
+ <div class="govuk-grid-row">
     <div class="govuk-grid-column-full-from-desktop">
 
-{% if data.needpss=="yes" %}
-    {% if data.licencetypechoose=="pssonly" %}
-      <h1 class="govuk-heading-l">Check supervision order</h1><br>
-    {% else %}
       <h1 class="govuk-heading-l">Check licence for Eric Rogan</h1><br>
-    {% endif %}
-{% else%}
-      <h1 class="govuk-heading-l">Check licence details</h1><br>
-{% endif %}
 
-
-
-
-        <h2 class="govuk-heading-m"> Initial appointment details</h2>
+ <h2 class="govuk-heading-m"> Initial appointment details</h2>
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
@@ -124,33 +109,26 @@
             </dd>
           </div>
 
+        
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Date
+              Date/time
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data.passportissuedday}} {{data.passportissuedmonth | monthName }} {{data.passportissuedyear}}
+              {{data.passportissuedday}} {{data.passportissuedmonth }} {{data.passportissuedyear}}
+              {%if (data.passportissuedday2) %}{{data.passportissuedday2}}.{{data.passportissuedmonth2}}{{data.whenam}}
+              {% elseif data.contact2=="As soon as possible by 2pm on the next working day after release" %}
+             
+              {{ "today" | govukDate("truncate") }}
+              {% else %}
+              {%if (data.contact2) %}{{data.contact2}}
+              {% endif %} {% endif %}
+              
+              
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/v23/hardstop/when-change">
                 Change<span class="govuk-visually-hidden"> </span>
-              </a>
-            </dd>
-          </div>
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Time
-            </dt>
-            <dd class="govuk-summary-list__value" value="twice">
-              {%if (data.passportissuedday2) %}{{data.passportissuedday2}}.{{data.passportissuedmonth2}}{{data.whenam}}
-             {% else %}
-              As soon as possible by 2pm on the next working day after their release
-              {% endif %}
-             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/v23/hardstop/when-change">
-                Change<span class="govuk-visually-hidden"></span>
               </a>
             </dd>
           </div>

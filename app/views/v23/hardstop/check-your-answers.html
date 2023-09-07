@@ -118,7 +118,16 @@
               Date/time
             </dt>
             <dd class="govuk-summary-list__value">
-              Immediately after release
+              {{data.passportissuedday}} {{data.passportissuedmonth | monthName }} {{data.passportissuedyear}}
+              {%if (data.passportissuedday2) %}{{data.passportissuedday2}}.{{data.passportissuedmonth2}}{{data.whenam}}
+              {% elseif data.contact2=="As soon as possible by 2pm on the next working day after release" %}
+             
+              {{ "today" | govukDate("truncate") }}
+              {% else %}
+              {%if (data.contact2) %}{{data.contact2}}
+              {% endif %} {% endif %}
+              
+              
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">

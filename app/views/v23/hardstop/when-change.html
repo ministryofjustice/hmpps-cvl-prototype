@@ -34,31 +34,7 @@ The conditional release date is on a weekend or bank holiday. Check the release 
     {% from "govuk/components/radios/macro.njk" import govukRadios %}
     {% from "govuk/components/input/macro.njk" import govukInput %}
 
-    {% set textHtmlOther %}
-    {{ govukInput({
-      id: "Enter the other period",
-      name: "Enter the other period",
-      type: "tel",
-      autocomplete: "tel",
-      classes: "govuk-fieldset__legend--s govuk-input govuk-input--width-30",
-      label: {
-        text: "Enter the other frequency"
-      }
-    }) }}
-    {% endset -%}
 
-    {% set textHtmlReview %}
-    {{ govukInput({
-      id: "Enter the review period",
-      name: "Enter the review period",
-      type: "tel",
-      autocomplete: "tel",
-      classes: "govuk-fieldset__legend--s govuk-input govuk-input--width-30",
-      label: {
-        text: "Enter the review period"
-      }
-    }) }}
-    {% endset -%}
 
     {% set textHtmlTimesOne %}
     <div class="govuk-form-group">
@@ -168,10 +144,17 @@ The conditional release date is on a weekend or bank holiday. Check the release 
           }
         },
         {
-          value: "twice",
+          value: "Immediately after release",
           text: "Immediately after release",
           conditional: {
             html: textHtmlTimesTwo
+          }
+        },
+        {
+          value: "As soon as possible by 2pm on the next working day after release",
+          text: "As soon as possible by 2pm on the next working day after release",
+          conditional: {
+            html: textHtmlTimesThree
           }
         }
       ]
