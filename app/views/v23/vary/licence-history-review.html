@@ -247,6 +247,14 @@
 
     <div class="moj-timeline__item">
       <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">Licence reviewed without being varied </h2>
+        <p class="moj-timeline__byline"> by James Smith</p>
+      </div>
+      <p class="moj-timeline__date">
+        <time datetime="2019-05-21T13:15:00.000Z">{{ "today" | duration(-1) | govukDate("truncate") }}</time></p>
+      <br />
+      <br />
+      <div class="moj-timeline__header">
         <h2 class="moj-timeline__title">Licence reviewed without being varied</h2>
         <p class="moj-timeline__byline">by John Farrell</p>
       </div>
@@ -280,21 +288,13 @@
     <div class="moj-timeline__description">
       <ul class="moj-timeline__documents" style="font-size:.85em;"><!--Version 1 of this licence has been created.<br /><br />-->
         <li class="moj-timeline__document-item">
-          <a href="PDF">
+          <a href="/public/docs/Licence.pdf" target="_blank">
             <img src="/public/images/icon-document.svg"/>
             View or print this version of the licence PDF</a>
           </li>
       </ul>
     </div>
-    <br />
-    <div class="moj-timeline__header">
-      <h2 class="moj-timeline__title">Licence reviewed without being varied </h2>
-      <p class="moj-timeline__byline"> by James Smith</p>
-    </div>
-    <p class="moj-timeline__date">
-      <time datetime="2019-05-21T13:15:00.000Z">{{ "today" | duration(-1) | govukDate("truncate") }}</time>
-    <br />
-  </p>
+
 </div>
   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month">
     <h2 class="govuk-heading-l">Version 2</h2>
