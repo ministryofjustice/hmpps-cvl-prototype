@@ -536,7 +536,8 @@
           <td class="govuk-table__cell">Standard determinate</td>
           <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
           <td class="govuk-table__cell" data-sort-value="2">{{ "today" | duration(2) | govukDate("truncate") }}</td>
-          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">T<span style="text-transform: lowercase;">imed out</span></strong></td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">T<span style="text-transform: lowercase;">imed out</span></strong>
+            <p class="moj-timeline__date">Prison licence created</p></td>
         </tr>
         {%endif%}
 
@@ -549,7 +550,9 @@
             <td class="govuk-table__cell">Standard determinate</td>
             <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
             <td class="govuk-table__cell" data-sort-value="3">{{ "today" | duration(2) | govukDate("truncate") }}</td>
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">T<span style="text-transform: lowercase;">imed out</span></strong></td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">T<span style="text-transform: lowercase;">imed out</span></strong>
+              <p class="moj-timeline__date">Prison licence pending</p></td>
+            </td>
         </tr>
           {%endif%}
 
