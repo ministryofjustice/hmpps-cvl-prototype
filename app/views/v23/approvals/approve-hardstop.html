@@ -201,13 +201,15 @@
     <div id="all-sections-open-content-2" class="govuk-accordion__section-content" aria-labelledby="all-sections-open-heading-2">
         
       
-      <p>This licence contains:</p>
+      <p>This licence contains the following information by default:</p>
 
-      <ul class="govuk-list govuk-list--bullet" style="margin-top: -10px; margin-bottom: 20px;">
+      <ul class="govuk-list govuk-list--bullet" style="margin-top: 10px; margin-bottom: 10px;">
         <li>standard conditions</li>
-        <li>an additional condition stopping this person contacting any victims of their main offences</li>
+        <li>the following additional condition:</li>
+        <p class="govuk-inset-text">Not to approach or communicate with any victims of your main offences without the prior approval of your supervising officer.</p>
       </ul>
 
+      <p>No other additional or bespoke licence conditions can be added.</p>
 
     </div>
   </div>
@@ -406,7 +408,7 @@
           <dt class="govuk-summary-list__key">
             Date/time
           </dt>
-          <dd class="govuk-summary-list__value">As soon as possible by 2pm</br>on {{ "today" |  duration(2) | govukDate("truncate") }}
+          <dd class="govuk-summary-list__value">By 2pm on {{ "today" |  duration(2) | govukDate("truncate") }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="when-change">
