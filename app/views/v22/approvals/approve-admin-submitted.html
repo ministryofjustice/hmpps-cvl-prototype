@@ -14,23 +14,32 @@
 {% endblock %}
 
 {% block content %}
-{% include "layouts/layout-name.html" %} <br />
+{% include "layouts/layout-name-thomas.html" %} <br />
 <h1 class="govuk-heading-m">
 <!--  <span class="govuk-caption-m">{% if data.edit=="yes" %}Edith Bradshaw{% else %}Adam Balasaravika{% endif %}
 </span></h1>-->
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-three-thirds-from-desktop">
+    <div class="govuk-grid-column-three-thirds-from-desktop" style="margin-left: 15px;">
 
 
   <h1 class="govuk-heading-l">
     {% if data.user=="admin" %}
-    Print licence and post sentence supervision details
-      {%else%}
-      Approve licence and post sentence supervision details
+    View licence for Thomas Flynn
     {%endif%}
 
   </h1>
+
+  {% if data.user=="admin"%}
+  <div class="govuk-warning-text">
+    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+    <strong class="govuk-warning-text__text">
+      <span class="govuk-warning-text__assistive">Warning</span>
+      You can print this licence as soon as it is approved or
+      <a class="govuk-link govuk-link--no-visited-state" href="#">view the last approved version</a>.
+    </strong>
+  </div>
+  {%endif%}
 
   <div style="float:right;">
     {% if data.user=="admin"%}
@@ -41,7 +50,7 @@
       }) }}
       {%endif%}
     </div>
-        <h2 class="govuk-heading-m"> Initial meeting details</h2>
+        <h2 class="govuk-heading-m" style="margin-top: 50px;"> Initial meeting details</h2>
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
