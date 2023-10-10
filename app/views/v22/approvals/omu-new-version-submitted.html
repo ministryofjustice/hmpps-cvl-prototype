@@ -14,7 +14,7 @@
 {% endblock %}
 
 {% block content %}
-{% include "layouts/layout-name-jorge.html" %} <br />
+{% include "layouts/layout-name-thomas.html" %} <br />
 <h1 class="govuk-heading-m">
 <!--  <span class="govuk-caption-m">{% if data.edit=="yes" %}Edith Bradshaw{% else %}Adam Balasaravika{% endif %}
 </span></h1>-->
@@ -23,35 +23,27 @@
     <div class="govuk-grid-column-three-thirds-from-desktop" style="margin-left: 15px;">
 
 
-  <h1 class="govuk-heading-l">
-    {% if data.user=="admin" %}
-    View licence for Jorge Winters
-    {%endif%}
+  <form action="/v22/list" method="post">
 
+  <h1 class="govuk-heading-l">
+    View licence for Thomas Flynn
   </h1>
 
-  {% if data.user=="admin"%}
-  <div class="govuk-warning-text">
-    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-    <strong class="govuk-warning-text__text">
-      <span class="govuk-warning-text__assistive">Warning</span>
-      This is the last approved version of this person's licence.</br>
-      An updated version was submitted on {{ "today" | duration(-2) | govukDate }}.</br>
-      You can print the latest version once it has been approved.
-    </strong>
-  </div>
-  {%endif%}
+  <p>
+      This is the most recent version of this licence that was submitted on {{ "today" | duration(-1) | govukDate }}.</br>
+      You can also <a href="omu-licence-pdf-print.html" class="govuk-link govuk-link--no-visited-state" target="_blank">view the last approved version of this licence.</a>
+ </p>
 
   <div style="float:right;">
     {% if data.user=="admin"%}
     <form action="#" method="post">
-    <div class="govuk-button-group">
+    <!--<div class="govuk-button-group">
       {{ govukButton({
         text: "View and print licence PDF"
-      }) }}
+      }) }}-->
       {%endif%}
     </div>
-        <h2 class="govuk-heading-m" style="margin-top: 50px;"> Initial meeting details</h2>
+        <h2 class="govuk-heading-m" style="margin-top: 40px;"> Initial meeting details</h2>
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
@@ -426,28 +418,13 @@
       </div>
       </dl>
 
-      {% if data.user=="admin"%}
-      <form action="#" method="post">
-      <div class="govuk-button-group">
-        {{ govukButton({
-          text: "View and print licence PDF"
-        }) }}
+      
+      <button class="govuk-button" data-module="govuk-button">
+        Return to case list
+      </button>
 
+      </form>
 
-      </div>
-      {%endif%}
-      {% if data.user=="governor"%}
-      <form action="confirmation">
-      <div class="govuk-button-group">
-        {{ govukButton({
-          text: "Approve licence"
-        }) }}
-
-        <a class="govuk-link" href="confirmation-rejected">Reject and send back to probation</a><br /><br />
-
-      </div>
-      {%endif%}
-        <!--<a href="confirmation" class="govuk-button" type="submit">Send to prison for approval</a>-->
       </div>
     </div>
 
