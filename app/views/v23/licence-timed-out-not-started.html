@@ -1,0 +1,70 @@
+{% extends "layouts/main.html" %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+
+{% endblock %}
+
+{% block content %}
+{% include "layouts/layout-name-alfredo.html" %}<br />
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-three-quarters">
+
+        <h1 class="govuk-heading-l" style="margin-top: -20px;">Prison will create this licence</h1>
+
+        <p class="govuk-body">You can no longer create a licence for this person as you did not get one approved in time for the prison's final release checks.</p>
+
+        <p class="govuk-body">The prison will now create a standard licence. You will need to review it once they are released.
+        </p>
+      
+
+        <h2 class="govuk-heading-m">Initial appointment</h2>
+
+        <ul class="govuk-body">
+          <li>The prison can tell this person to report immediately after release or by 2pm the next working day</li>
+          <li>Or you can ask HMP Wandsworth to set a specific date and time by contacting omu.wandsworth@justice.gov.uk</li>
+        </ul>
+
+        <h2 class="govuk-heading-m">Licence conditions</h2>
+        <p class="govuk-body">This licence will contain:</p>
+
+        <ul class="govuk-list govuk-list--bullet" style="margin-top: 10px; margin-bottom: 10px;">
+          <li>standard conditions</li>
+          <li>the following additional condition:</li>
+          <p class="govuk-inset-text">Not to approach or communicate with any victims of your main offences without the prior approval of your supervising officer.</p>
+        </ul>
+          
+        <p class="govuk-body">The prison cannot add any other additional or bespoke licence conditions.</p>
+
+        <form action="list" method="post">
+
+        <button class="govuk-button" data-module="govuk-button" style="margin-top: 20px;">
+          Return to case list
+        </button>
+
+        </form>
+
+
+      </div>
+    </div>
+
+  </main>
+</div>
+
+  
+{% endblock %}
