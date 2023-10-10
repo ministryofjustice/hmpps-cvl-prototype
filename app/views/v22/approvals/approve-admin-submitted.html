@@ -30,6 +30,13 @@
 
   </h1>
 
+  <h1 class="govuk-heading-m">
+    {% if data.user=="admin" %}
+    New licence version submitted
+    {%endif%}
+
+  </h1>
+
   {% if data.user=="admin"%}
   <div class="govuk-warning-text">
     <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
@@ -41,13 +48,15 @@
   </div>
   {%endif%}
 
+
+
   <div style="float:right;">
     {% if data.user=="admin"%}
     <form action="#" method="post">
-    <div class="govuk-button-group">
+    <!--<div class="govuk-button-group">
       {{ govukButton({
         text: "View and print licence PDF"
-      }) }}
+      }) }}-->
       {%endif%}
     </div>
         <h2 class="govuk-heading-m" style="margin-top: 50px;"> Initial meeting details</h2>
@@ -432,6 +441,10 @@
           text: "View and print licence PDF"
         }) }}
 
+        {{ govukButton({
+          text: "Return to case list",
+          classes: "govuk-button--secondary"
+        }) }}
 
       </div>
       {%endif%}
