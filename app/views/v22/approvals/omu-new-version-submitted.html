@@ -29,10 +29,22 @@
     View licence for Thomas Flynn
   </h1>
 
-  <p>
-      This is the most recent version of this licence that was submitted on {{ "today" | duration(-1) | govukDate }}.</br>
-      You can also <a href="omu-licence-pdf-print.html" class="govuk-link govuk-link--no-visited-state" target="_blank">view the last approved version of this licence.</a>
- </p>
+
+
+ {% if data.user=="admin"%}
+ <div class="govuk-warning-text">
+   <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+   <strong class="govuk-warning-text__text">
+     <span class="govuk-warning-text__assistive">Warning</span>
+     This is the most recent version of this licence that was submitted on {{ "today" | duration(-1) | govukDate }}.</br>
+    You can also <a href="omu-licence-pdf-print.html" class="govuk-link govuk-link--no-visited-state" target="_blank">view and print the last approved version of this licence.</a>
+   </strong>
+ </div>
+ {%endif%}
+
+
+
+
 
   <div style="float:right;">
     {% if data.user=="admin"%}
