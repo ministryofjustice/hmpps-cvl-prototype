@@ -34,14 +34,12 @@
               When do they need to go to their initial appointment?
               </h1>
             </legend><br>
-            {% if data.releaseDateChanged=="yes" %}
-              <div class="govuk-warning-text">
-              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-              <strong class="govuk-warning-text__text">
-                <span class="govuk-warning-text__assistive">Warning</span>
-The conditional release date is on a weekend or bank holiday. Check the release date with the prison OMU.              </strong>
+            
+
+            <div class="govuk-hint">
+              Only enter a specific date and time if you have confirmed one with this person’s probation practitioner.
             </div>
-          {% endif %}
+
             
            <!--START set dynamic radio hide/show text-->
     {% from "govuk/components/radios/macro.njk" import govukRadios %}
@@ -149,13 +147,7 @@ The conditional release date is on a weekend or bank holiday. Check the release 
         text: ""
       },
       items: [
-        {
-          value: "once",
-          text: "At a specific date and time",
-          conditional: {
-            html: textHtmlTimesOne
-          }
-        },
+
         {
           value: "Immediately after release",
           text: "Immediately after release",
@@ -163,11 +155,22 @@ The conditional release date is on a weekend or bank holiday. Check the release 
             html: textHtmlTimesTwo
           }
         },
+
+
         {
-          value: "As soon as possible by 2pm on the next working day after release",
-          text: "As soon as possible by 2pm on the next working day after release",
+          value: "By 2pm on the next working day after their release",
+          text: "By 2pm on the next working day after their release",
           conditional: {
             html: textHtmlTimesThree
+          }
+        },
+
+
+        {
+          value: "At a specific date and time",
+          text: "At a specific date and time",
+          conditional: {
+            html: textHtmlTimesOne
           }
         }
        
