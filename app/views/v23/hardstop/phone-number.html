@@ -34,16 +34,7 @@
         </legend>
     </fieldset>
     </div>
-    {% if data.releaseDateChanged=="yes" %}
-      <div class="govuk-warning-text">
-      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-      <strong class="govuk-warning-text__text">
-        <span class="govuk-warning-text__assistive">Warning</span>
-    The conditional release date is on a weekend or bank holiday. Check the release date with the prison OMU.  </strong>
-    </div>
-    {% endif %}
     
-
 <!--START set dynamic radio hide/show text-->
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -74,13 +65,8 @@
   },
 
   items: [
-  {
-    value: "Simon Webster: 07771 900 900",
-    text: "Simon Webster: 07771 900 900",
-    conditional: {
-      html: emailHtml
-    }
-  },
+
+
   {
     value: "Probation office: 01273 800 900",
     text: "Probation office: 01273 800 900",
@@ -88,13 +74,30 @@
       html: emailHtml
     }
   },
+
+
+  {
+    value: "Simon Webster: 07771 900 900",
+    text: "Simon Webster: 07771 900 900",
+    conditional: {
+      html: emailHtml
+    }
+  },
+
+
   {
     value: "A different phone number",
     text: "A different phone number",
+    hint: {
+      text: "For example, an approved premises or a different probation practitioner."
+    },
     conditional: {
       html: textHtmlOther
     }
   }
+
+
+
   ]
 }) }}
 

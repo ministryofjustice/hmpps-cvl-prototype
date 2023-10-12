@@ -25,15 +25,12 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds"><br>
     <fieldset class="govuk-fieldset">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-        <h1 class="govuk-fieldset__heading">
-      <!--    Who does {% if data.edit=="yes" %}Edith Bradshaw{% else %}Adam Balasaravika{% endif %} need to meet for their initial appointment?  </h1>-->
-
-      Who is the initial appointment with?</h1>
-      </legend><br>
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l" style="margin-bottom: 20px;">
+        <h1 class="govuk-fieldset__heading">Who is the initial appointment with?</h1>
+      </legend>
   </div>
 </div>
-<span class="govuk-hint">Choose duty officer if you have not spoken to this person's allocated probation practitioner.</span>
+<span class="govuk-hint">Choose duty officer if you have not spoken to this person’s allocated probation practitioner.</span>
 <br><br><br>
 <form method="" action="/v23/hardstop/address">
 <!--START set dynamic radio hide/show text-->
@@ -67,13 +64,6 @@
 
   items: [
   {
-    value: "Simon Webster, this person’s probation officer",
-    text: "Simon Webster, this person’s probation officer",
-    conditional: {
-      html: emailHtml
-    }
-  },
-  {
     value: "Duty officer",
     text: "Duty officer
     ",
@@ -81,13 +71,29 @@
       html: emailHtml
     }
   },
+
+
+  {
+    value: "Simon Webster, this person’s probation officer",
+    text: "Simon Webster, this person’s probation officer",
+    conditional: {
+      html: emailHtml
+    }
+  },
+
   {
     value: "Someone else",
     text: "Someone else",
+    hint: {
+      text: "For example, someone at an approved premises or a different probation practitioner."
+    },
     conditional: {
       html: textHtmlOther
     }
+
   }
+
+
   ]
 }) }}
 

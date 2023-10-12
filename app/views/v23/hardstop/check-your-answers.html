@@ -64,27 +64,26 @@
                 {{data.address1}}
 
               {% else %}
-                Lewisham Probation Office{% endif %},
+                Lewisham Probation Office{% endif %}
 
-              {%if (data.address2) %}{{data.address2}}
+              , {%if (data.address2) %}{{data.address2}}
 
               {% else %}
-               {% endif %},
+               {% endif %}
 
-              {%if (data.addresstown) %}
+              , {%if (data.addresstown) %}
                 {{data.addresstown}}
 
-              {% else %}
-                London{% endif %},
+              {% else %}, London{% endif %}
 
-              {%if (data.addresscounty) %}{{data.addresscounty}},
+              , {%if (data.addresscounty) %}{{data.addresscounty}}
                 {% endif %}
 
-              {%if (data.addresspostcode) %}
+              , {%if (data.addresspostcode) %}
                 {{data.addresspostcode}}
 
               {% else %}
-                SE13 4HY
+                , SE13 4HY
               {% endif %}
 
 
@@ -143,13 +142,15 @@
 
 
 <h2 class="govuk-heading-m">Licence conditions</h2>
-<p>This licence contains:</p>
-<ul class="govuk-list govuk-list--bullet" style="margin-top: 10px; margin-bottom: 10px;">
-  <li>standard conditions</li>
-  <li>a requirement not to contact any victims of their main offences</li>
-</ul>
 
-
+<p class="govuk-body">This licence contains:</p>
+  
+          <ul class="govuk-list govuk-list--bullet" style="margin-top: 10px; margin-bottom: 10px;">
+            <li>standard conditions</li>
+            <li>the following additional condition:</li>
+            <p class="govuk-inset-text">Not to approach or communicate with any victims of your main offences without the prior approval of your supervising officer.
+            </p>
+          </ul>
 
 
 
