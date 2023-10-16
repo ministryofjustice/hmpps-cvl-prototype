@@ -234,6 +234,16 @@
       </thead>
 
       <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state">Tanmay Zhao</a></th>
+            <td class="govuk-table__cell">G5613GT</td>
+            <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
+            <td class="govuk-table__cell" data-sort-value="1">{{ "today" | duration(1) | govukDate("truncate") }}</td>
+            <td class="govuk-table__cell">John Farrell</td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--pink">S<span style="text-transform: lowercase;">ubmitted</span></strong></td>
+        </tr>
+
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state">Raul Gomez</a></th>
             <td class="govuk-table__cell">G5613GT</td>
@@ -243,16 +253,16 @@
             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">A<span style="text-transform: lowercase;">pproved</span></strong></td>
         </tr>
 
-          <tr class="govuk-table__row">
+          <!--<tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state">Tanmay Zhao</a></th>
               <td class="govuk-table__cell">G5613GT</td>
               <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">Jamie Foxx</a></td>
               <td class="govuk-table__cell" data-sort-value="1">{{ "today" | duration(1) | govukDate("truncate") }}</td>
               <td class="govuk-table__cell">Aliyah Allen</td>
               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">I<span style="text-transform: lowercase;">n progress</span></strong></td>
-          </tr>
+          </tr>-->
           <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state">Oliver Frances</a></th>
+            <th scope="row" class="govuk-table__header"><a href="hardstop/check-your-answers-in-progress" class="govuk-link govuk-link--no-visited-state">Oliver Frances</a></th>
               <td class="govuk-table__cell">G5613GT</td>
               <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">Clara Loughman</a></td>
               <td class="govuk-table__cell" data-sort-value="1">{{ "today" | duration(1) | govukDate("truncate") }}</td>
@@ -261,12 +271,12 @@
           </tr>
 
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state">Carl Barnes</a></br></th>
+          <th scope="row" class="govuk-table__header"><a href="hardstop/check-your-answers-submitted" class="govuk-link govuk-link--no-visited-state">Carl Barnes</a></br></th>
           <td class="govuk-table__cell">G5613GT</td>
           <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
           <td class="govuk-table__cell" data-sort-value="1">{{ "today" | duration(2) | govukDate("truncate") }}</td>
-          <td class="govuk-table__cell"></td>
-          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">N<span style="text-transform: lowercase;">ot started</span></strong></td>
+          <td class="govuk-table__cell">Mustafa Harfouf</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--pink">S<span style="text-transform: lowercase;">ubmitted</span></strong></td>
         </tr>
      
         <tr class="govuk-table__row">
@@ -286,12 +296,12 @@
           {% endif %}
         </tr>
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><a href="/v23/edit/check-your-answers-edit" class="govuk-link govuk-link--no-visited-state">Eric Rogan</a></br></th>
+          <th scope="row" class="govuk-table__header"><a href="hardstop/check-your-answers-approved" class="govuk-link govuk-link--no-visited-state">Eric Rogan</a></br></th>
           <td class="govuk-table__cell">G5613GT</td>
           <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
           <td class="govuk-table__cell" data-sort-value="1">{{ "today" | duration(2) | govukDate("truncate") }}</td>
-          <td class="govuk-table__cell"></td>
-          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">S<span style="text-transform: lowercase;">ubmitted</span></strong></td>
+          <td class="govuk-table__cell">Mustafa Harfouf</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">A<span style="text-transform: lowercase;">pproved</span></strong></td>
         </tr>
 
         <tr class="govuk-table__row">
@@ -299,7 +309,7 @@
           <td class="govuk-table__cell">G5613GT</td>
           <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">Michelle Hooper</a></td>
           <td class="govuk-table__cell" data-sort-value="1">{{ "today" | duration(2) | govukDate("truncate") }}</td>
-          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">Aliyah Allen</td>
           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">N<span style="text-transform: lowercase;">ot started</span></strong></td>
         </tr>
         
@@ -570,8 +580,7 @@
           <td class="govuk-table__cell">Standard determinate</td>
           <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
           <td class="govuk-table__cell" data-sort-value="3">{{ "today" | duration(2) | govukDate("truncate") }}</td>
-          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--pink">S<span style="text-transform: lowercase;">ubmitted</span></strong>
-          </td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--pink">S<span style="text-transform: lowercase;">ubmitted</span></strong></td>
         </tr>
         {%endif%}
 

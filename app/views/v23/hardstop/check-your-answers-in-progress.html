@@ -1,6 +1,10 @@
 {% extends "layouts/main.html" %}
 
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
 {% block beforeContent %}
+
 
 <div class="govuk-phase-banner">
   <p class="govuk-phase-banner__content">
@@ -17,13 +21,19 @@
 
 {% block content %}
 
-{% include "/layouts/layout-name-eric.html" %}<br>
- <div class="govuk-grid-row">
+{% include "layouts/layout-name-giovanni.html" %}
+
+
+
+
+  <div class="govuk-grid-row">
     <div class="govuk-grid-column-full-from-desktop">
 
-      <h1 class="govuk-heading-l">Check licence for Eric Rogan</h1><br>
+      <h1 class="govuk-heading-l" style="margin-top: 40px;">Check licence details</h1><br>
 
- <h2 class="govuk-heading-m"> Initial appointment details</h2>
+
+
+        <h2 class="govuk-heading-m">Initial appointment details</h2>
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
@@ -38,7 +48,7 @@
              {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/v23/hardstop/meet-change">
+              <a class="govuk-link" href="#">
                 Change<span class="govuk-visually-hidden"></span>
               </a>
             </dd>
@@ -54,38 +64,32 @@
                 {{data.address1}}
 
               {% else %}
-                Lewisham Probation Office
-              {% endif %},
+                Lewisham Probation Office{% endif %}
 
-              {%if (data.address2) %}
-                {{data.address2}}
+              , {%if (data.address2) %}{{data.address2}}
 
               {% else %}
-                20 Brockley Street
-              {% endif %},
+               {% endif %}
 
-              {%if (data.addresstown) %}
+              , {%if (data.addresstown) %}
                 {{data.addresstown}}
 
-              {% else %}
-                London
-              {% endif %},
+              {% else %}, London{% endif %}
 
-              {%if (data.addresscounty) %}
-                {{data.addresscounty}},
+              , {%if (data.addresscounty) %}{{data.addresscounty}}
                 {% endif %}
 
-              {%if (data.addresspostcode) %}
+              , {%if (data.addresspostcode) %}
                 {{data.addresspostcode}}
 
               {% else %}
-                SE13 4HY
+                , SE13 4HY
               {% endif %}
 
 
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/v23/hardstop/address-change">
+              <a class="govuk-link" href="#">
                 Change<span class="govuk-visually-hidden"> licence type</span>
               </a>
             </dd>
@@ -100,16 +104,14 @@
               {% else %}0798 443 0099
               {% endif %}
 
-
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/v23/hardstop/phone-number-change">
+              <a class="govuk-link" href="#">
                 Change<span class="govuk-visually-hidden"> </span>
               </a>
             </dd>
           </div>
 
-        
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Date/time
@@ -127,38 +129,49 @@
               {% endif %} {% endif %}
               
               
+              
+              
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/v23/hardstop/when-change">
+              <a class="govuk-link" href="#">
                 Change<span class="govuk-visually-hidden"> </span>
               </a>
             </dd>
           </div>
-
-
         </dl>
 
 
-        <h2 class="govuk-heading-m">Licence conditions</h2>
-        <p>This licence contains:</p>
-        <ul class="govuk-list govuk-list--bullet" style="margin-top: 10px; margin-bottom: 10px;">
-          <li>standard conditions</li>
-          <li>a requirement not to contact any victims of the index offence</li>
-        </ul>
+<h2 class="govuk-heading-m">Licence conditions</h2>
 
-        <form action="" method="post">
+<p class="govuk-body">This licence contains:</p>
+  
+          <ul class="govuk-list govuk-list--bullet" style="margin-top: 10px; margin-bottom: 10px;">
+            <li>standard conditions</li>
+            <li>the following additional condition:</li>
+            <p class="govuk-inset-text">Not to approach or communicate with any victims of your main offences without the prior approval of your supervising officer.
+            </p>
+          </ul>
 
-          <div class="govuk-button-group" style="width:500px; margin-top: 50px;">
-            
-            <button class="govuk-button govuk-button--secondary" name="submit" value="exit">
-            Return to caselist
-            </button>
-            </div>
-       
-            </form>
 
+
+<form action="" method="post">
+
+    <div class="govuk-button-group" style="width:500px; margin-top: 50px;">
+      
+      <button class="govuk-button" data-module="govuk-button" name="submit" value="continue">
+        Send for approval
+      </button>
+      <button class="govuk-button govuk-button--secondary" name="submit" value="exit">
+      Return to caselist
+      </button>
+      </div>
+ 
+      </form>
     </div>
-    </div>
+  </div>
+
+
+
 
 
 
