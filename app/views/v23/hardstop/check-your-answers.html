@@ -27,7 +27,7 @@
 
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full-from-desktop">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
 
       <h1 class="govuk-heading-l" style="margin-top: 40px;">Check licence details</h1><br>
 
@@ -48,7 +48,7 @@
              {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link govuk-link--no-visited-state" href="#">
                 Change<span class="govuk-visually-hidden"></span>
               </a>
             </dd>
@@ -66,30 +66,29 @@
               {% else %}
                 Lewisham Probation Office{% endif %}
 
-              , {%if (data.address2) %}{{data.address2}}
+               {%if (data.address2) %}{{data.address2}}
 
               {% else %}
                {% endif %}
 
-              , {%if (data.addresstown) %}
+               {%if (data.addresstown) %}
                 {{data.addresstown}}
 
               {% else %}, London{% endif %}
 
-              , {%if (data.addresscounty) %}{{data.addresscounty}}
+             {%if (data.addresscounty) %}{{data.addresscounty}}
                 {% endif %}
 
-              , {%if (data.addresspostcode) %}
+               {%if (data.addresspostcode) %}
                 {{data.addresspostcode}}
 
-              {% else %}
-                , SE13 4HY
+              {% else %}SE13 4HY
               {% endif %}
 
 
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link govuk-link--no-visited-state" href="#">
                 Change<span class="govuk-visually-hidden"> licence type</span>
               </a>
             </dd>
@@ -106,7 +105,7 @@
 
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link govuk-link--no-visited-state" href="#">
                 Change<span class="govuk-visually-hidden"> </span>
               </a>
             </dd>
@@ -133,7 +132,7 @@
               
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link govuk-link--no-visited-state" href="#">
                 Change<span class="govuk-visually-hidden"> </span>
               </a>
             </dd>

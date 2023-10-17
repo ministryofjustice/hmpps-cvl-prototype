@@ -21,13 +21,13 @@
 
 {% block content %}
 
-{% include "layouts/layout-name-giovanni.html" %}
+{% include "layouts/layout-name-oliver.html" %}
 
 
 
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full-from-desktop">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
 
       <h1 class="govuk-heading-l" style="margin-top: 40px;">Check licence details</h1><br>
 
@@ -60,31 +60,8 @@
             </dt>
             <dd class="govuk-summary-list__value">
 
-              {%if (data.address1) %}
-                {{data.address1}}
+              Lewisham Probation Office, 20 Brockley Street, London, SE13 4HY
 
-              {% else %}
-                Lewisham Probation Office{% endif %}
-
-              , {%if (data.address2) %}{{data.address2}}
-
-              {% else %}
-               {% endif %}
-
-              , {%if (data.addresstown) %}
-                {{data.addresstown}}
-
-              {% else %}, London{% endif %}
-
-              , {%if (data.addresscounty) %}{{data.addresscounty}}
-                {% endif %}
-
-              , {%if (data.addresspostcode) %}
-                {{data.addresspostcode}}
-
-              {% else %}
-                , SE13 4HY
-              {% endif %}
 
 
             </dd>
@@ -153,20 +130,11 @@
           </ul>
 
 
+<a href="#" class="govuk-button">Send for approval</a>
 
-<form action="" method="post">
+<a href="/v23/list" class="govuk-button govuk-button--secondary">Return to case list</a>
 
-    <div class="govuk-button-group" style="width:500px; margin-top: 50px;">
-      
-      <button class="govuk-button" data-module="govuk-button" name="submit" value="continue">
-        Send for approval
-      </button>
-      <button class="govuk-button govuk-button--secondary" name="submit" value="exit">
-      Return to caselist
-      </button>
-      </div>
- 
-      </form>
+
     </div>
   </div>
 
