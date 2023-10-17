@@ -20,11 +20,8 @@
 {% endblock %}
 
 {% block content %}
-{% if data.vary=="yes" %}
-  {% include "templates/banners/layout-name-vary.html" %}
-  {% else %}
-    {% include "layouts/layout-name.html" %}
-{% endif %}
+{% include "layouts/layout-name-raul.html" %}
+
 
 
 <br />
@@ -35,73 +32,20 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-{% if data.needpss=="yes" %}
-    {% if data.licencetypechoose=="pssonly" %}
-      <h1 class="govuk-heading-l">{% if data.edit=="yes" %}Edit{% endif %}{% if data.vary=="yes" %}Vary{% else %}Check{% endif %} post sentence supervision order details </h1><br>
-    {% else %}
-      <h1 class="govuk-heading-l">{% if data.edit=="yes" %}Edit{% endif %}{% if data.vary=="yes" %}Vary{% else %}Check{% endif %} licence and post sentence supervision order details</h1><br>
-    {% endif %}
-{% else%}
-      <h1 class="govuk-heading-l">{% if data.edit=="yes" %}Edit{% endif %}{% if data.vary=="yes" %}Vary{% else %}Check{% endif %} licence details</h1><br>
-{% endif %}
 
-{% if data.vary=="yes" %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-three-quarters">
-    <h2 class="govuk-heading-m">Variation consultations</h2>
-  </div>
-</div>
-<dl class="govuk-summary-list govuk-!-margin-bottom-9">
-<div class="govuk-summary-list__row">
-<dt class="govuk-summary-list__key" style="width:50%;">
-Who have you consulted with about this licence variation?
-<dd class="govuk-summary-list__value">
-<ul>
-{%if (data.checkSPO=="true") %}
-  <li>Senior probation officer (SPO)</li>
-{% endif %}
-{%if (data.checkVLO=="true") %}
-  <li>Victim liaison officer (VLO)</li>
-{% endif %}
-{%if (data.checkPPCS=="true") %}
-    <li>Public Protection Casework Section (PPCS)</li>
-  {% endif %}
-  {%if (data.checkAP=="true") %}
-      <li>Approved premise (AP)</li>
-    {% endif %}
-    {%if (data.checkPOLICE=="true") %}
-      <li>Police</li>
-    {% endif %}
-    {%if (data.checkEMS=="true") %}
-      <li>Electronic monitoring service</li>
-    {% endif %}
-    {%if (data.otherAG) %}
-  <li>{{data.otherAG}}</li>
-    {% endif %}
-</ul>
-  </dd>
-  <dd class="govuk-summary-list__actions">
-    <a class="govuk-link" href="vary/question-checklist">
-      Change<span class="govuk-visually-hidden"></span>
-    </a>
-  </dd>
-</div>
-</dl>
+      <h1 class="govuk-heading-l">Print licence for Raul Gomez</h1><br>
 
-  {% else %}
+
         <h2 class="govuk-heading-m"> Initial meeting details</h2>
+
+      
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Name
             </dt>
             <dd class="govuk-summary-list__value">
-              {%if (data.inductionname) %}
-                {{data.inductionname}}
-
-              {% else %}
-                Lara Toogood
-              {% endif %}
+              John Farrell
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="meet-change">
@@ -145,6 +89,7 @@ Who have you consulted with about this licence variation?
 
 
             </dd>
+
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="address-change">
                 Change<span class="govuk-visually-hidden"> licence type</span>
@@ -163,6 +108,7 @@ Who have you consulted with about this licence variation?
 
 
             </dd>
+
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="phone-number-change">
                 Change<span class="govuk-visually-hidden"> </span>
@@ -199,44 +145,15 @@ Who have you consulted with about this licence variation?
           </div>
         </dl><br><br>
 
-    {% endif %}
-<!--end if not vary-->
+
 
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-    <h2 class="govuk-heading-m">Additional licence conditions</h2>
+    <h2 class="govuk-heading-m">Additional licence conditions (2 selected)</h2>
   </div>
 </div>
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-
-<div class="govuk-summary-list__row">
-<dt class="govuk-summary-list__key" style="width:50%;">
-Select additional conditions
-</dt>
-<dd class="govuk-summary-list__value">
-
-{% if data['8b-answer-premisesOne'] %}
-  4 additional conditions selected<br>
-
-{% elseif data['curfewthree-start-hour-a'] %}
-3 additional conditions selected<br>
-
-{% else %}
-2 additional conditions selected<br>
-
-{% endif %}
-
-</dd>
-<dd class="govuk-summary-list__actions">
-<a class="govuk-link" href="question-change">
-<span> Change </span>
-</a>
-</dd>
-</div>
-
-
-
 
 
 
@@ -248,8 +165,8 @@ Maintaining contact
   Receive home visits from a Mental Health Worker.
 </dd>
 <dd class="govuk-summary-list__actions">
-<a class="govuk-link" href="#">
-<span>Change</span>
+<!--<a class="govuk-link" href="#">
+<span>Change</span>-->
 </a>
 </dd>
 </div>
@@ -263,145 +180,27 @@ Maintaining contact
     To notify your supervising officer of the details of any passport that you possess (including passport number), and of any intention to apply for a new passport.
   </dd>
   <dd class="govuk-summary-list__actions">
-  <a class="govuk-link" href="#">
-  <span>Change</span>
+  <!--<a class="govuk-link" href="#">
+  <span>Change</span>-->
   </a>
   </dd>
   </div>
+
+  </dl>
   
 
+  <div class="govuk-button-group">
 
-<!--Curfew start-->
+      <!--<a href="#" class="govuk-button">Save changes</a>-->
+           
+    <a href="/v23/licence-pdf-print" class="govuk-button" target="_blank">View and print licence PDF</a>
+    <a href="/v23/list" class="govuk-button govuk-button--secondary">Return to case list</a>
+
+  </div>
 
 
-
-{% if data['curfewthree-start-hour-a'] %}
-
-
-<div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
-    Curfew arrangement
-  </dt>
-  <dd class="govuk-summary-list__value">
-  <p><strong>First curfew</strong></p>  
   
-  <p>Confine yourself to an address approved by your supervising officer between the hours of {{ data['curfewthree-start-hour-a']}}:{{ data['curfewthree-start-minute-a']}} {{ data['curfewthree-start-daytime-a']}} and {{ data['curfewthree-end-hour-a']}}:{{ data['curfewthree-end-minute-a']}} {{ data['curfewthree-end-daytime-a']}} daily unless otherwise authorised by your supervising officer.
-    This condition will be reviewed by your supervising officer on a weekly basis and may be amended or removed if it is felt that the level of risk that you present has reduced appropriately.
-  </p>
 
-  <br><strong>
-    {{ data['curfewthree-start-hour-a']}}:{{ data['curfewthree-start-minute-a']}} {{ data['curfewthree-start-daytime-a']}}<br />
-    {{ data['curfewthree-end-hour-a']}}:{{ data['curfewthree-end-minute-a']}} {{ data['curfewthree-end-daytime-a']}}<br />
-    Weekly</strong>
-
-   
- 
-  </br></br></br></br><p><strong>Second curfew</strong></p>  
-  
-  <p>Confine yourself to an address approved by your supervising officer between the hours of {{ data['curfewthree-start-hour-b']}}:{{ data['curfewthree-start-minute-b']}} {{ data['curfewthree-start-daytime-b']}} and {{ data['curfewthree-end-hour-b']}}:{{ data['curfewthree-end-minute-b']}} {{ data['curfewthree-end-daytime-b']}} daily unless otherwise authorised by your supervising officer.
-    This condition will be reviewed by your supervising officer on a weekly basis and may be amended or removed if it is felt that the level of risk that you present has reduced appropriately.
-  </p>
-
-  </br><strong>
-    {{ data['curfewthree-start-hour-b']}}:{{ data['curfewthree-start-minute-b']}} {{ data['curfewthree-start-daytime-b']}}<br />
-    {{ data['curfewthree-end-hour-b']}}:{{ data['curfewthree-end-minute-b']}} {{ data['curfewthree-end-daytime-b']}}<br />
-    Weekly</strong>
- 
- 
-    </br></br></br></br><p><strong>Third curfew</strong></p>  
-  
-    <p>Confine yourself to an address approved by your supervising officer between the hours of {{ data['curfewthree-start-hour-c']}}:{{ data['curfewthree-start-minute-c']}} {{ data['curfewthree-start-daytime-c']}} and {{ data['curfewthree-end-hour-c']}}:{{ data['curfewthree-end-minute-c']}} {{ data['curfewthree-end-daytime-c']}} daily unless otherwise authorised by your supervising officer.
-      This condition will be reviewed by your supervising officer on a weekly basis and may be amended or removed if it is felt that the level of risk that you present has reduced appropriately.
-    </p>
-  
-    </br><strong>
-      {{ data['curfewthree-start-hour-c']}}:{{ data['curfewthree-start-minute-c']}} {{ data['curfewthree-start-daytime-c']}}<br />
-      {{ data['curfewthree-end-hour-c']}}:{{ data['curfewthree-end-minute-c']}} {{ data['curfewthree-end-daytime-c']}}<br />
-      Weekly</strong>
-   
- 
-  </dd>
-  <dd class="govuk-summary-list__actions">
-    <a class="govuk-link" href="additional/7a">
-    <span>Change</span>
-    </a>
-  </dd>
-</div>
-
-{% endif %}
-
-<!--curfew end-->
-
-
-
-
-
-<!--freedom of movement start-->
-
-{% if data['8b-answer-premisesOne'] %}
-
-
-<div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
-    Freedom of movement
-  </dt>
-  <dd class="govuk-summary-list__value">
-
-
-  <p><strong>First location</strong></p>  
-  
-  <p>Not to enter {{ data['8b-answer-premisesOne'] }} without the prior approval of your supervising officer.
-    </p>
-
-  <br><strong>
-    {{ data['8b-answer-premisesOne']}}<br />
-   </strong>
-
-
-
-
-   <p style="margin-top: 60px;"><strong>Second location</strong></p>  
-  
-  <p>Not to enter {{ data['8b-answer-premisesThree'] }}, {{ data['8b-answer-premisesThree-address-line-1'] }}, {% if data['8b-answer-premisesThree-address-line-2'] %}{{ data['8b-answer-premisesThree-address-line-2'] }},{% endif %} {{ data['8b-answer-premisesThree-town'] }}, {% if data['8b-answer-premisesThree-county'] %}{{ data['8b-answer-premisesThree-county'] }},{% endif %} {{ data['8b-answer-premisesThree-postcode'] }} without the prior approval of your supervising officer.</p>
-
-  <br><strong>
-    {{ data['8b-answer-premisesThree'] }}<br />
-    {{ data['8b-answer-premisesThree-address-line-1'] }}, {% if data['8b-answer-premisesThree-address-line-2'] %}{{ data['8b-answer-premisesThree-address-line-2'] }},{% endif %} {{ data['8b-answer-premisesThree-town'] }}, {% if data['8b-answer-premisesThree-county'] %}{{ data['8b-answer-premisesThree-county'] }},{% endif %} {{ data['8b-answer-premisesThree-postcode'] }}<br />
-   </strong>
-
-
-  </dd>
-  <dd class="govuk-summary-list__actions">
-    <a class="govuk-link" href="additional/8b-overview">
-    <span>Change</span>
-    </a>
-  </dd>
-</div>
-
-
-{% endif %}
-
-
-
-
-<!--freedom of movement end-->
-
-
-
-
-<form action="" method="post">
-
-    <div class="govuk-button-group" style="width:500px; margin-top: 50px;">
-      
-      <button class="govuk-button" data-module="govuk-button" name="submit" value="continue">
-        Send to prison for approval
-      </button>
-      <button class="govuk-button govuk-button--secondary">
-      Return to caselist
-      </button>
-      </div>
- 
-      </form>
     </div>
   </div>
 
