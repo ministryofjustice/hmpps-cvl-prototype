@@ -3,6 +3,140 @@ module.exports = function (router) {
 var version = '/v23';
 
 
+
+//////////
+
+//Timeserved - Prison admin creating a new licence
+router.post('/ca-new-licence-timeserved', function (req, res) {
+  var CAnewlicenceTimeserved = req.session.data['activatecreate']
+
+  // Check whether the variable matches a condition
+  if (CAnewlicenceTimeserved == "yes"){
+   
+   // Send user to next page
+    res.redirect(version + '/timeserved/meet')
+  } else {
+    // Send user to ineligible page
+    res.redirect(version + '/list')
+  }
+
+});
+
+
+
+//Hardstop - edit confirmation
+router.post(version + '/edit/check-your-answers-edit', function(req, res) {
+  var saveexit = req.session.data['submit'];
+  if (saveexit == "exit"){
+    res.redirect(version + '/list#releases-two-days');
+  }
+  else if (saveexit == "continue"){
+    res.redirect(version + '/hardstop/confirmation');
+  }
+});
+
+//hardstop edit yes or no question
+router.post(version + '/edit/question', function(req, res) {
+  var edit = req.session.data['edit'];
+  if (edit == "yes"){
+    req.session.data['needadditional'] ='yes';
+    req.session.data['needbespoke']='yes';
+    req.session.data['needpss']='yes';
+    res.redirect(version + '/edit/check-your-answers-edit');
+  }
+  else if (edit == "no"){
+    res.redirect(version + '/edit/check-your-answers');
+  }
+});
+
+
+
+//Hardstop - from confirmation back to case list
+router.post(version + '/hardstop/confirmation', function(req, res) {
+  var saveexit = req.session.data['submit'];
+  if (saveexit == "continue"){
+    res.redirect(version + '/list#releases-two-days');
+  }
+});
+
+
+//Hardstop - confirmation
+router.post(version + '/hardstop/check-your-answers', function(req, res) {
+  var saveexit = req.session.data['submit'];
+  if (saveexit == "exit"){
+    res.redirect(version + '/list#releases-two-days');
+  }
+  else if (saveexit == "continue"){
+    res.redirect(version + '/hardstop/confirmation');
+  }
+});
+
+
+//Hardstop - check licence details
+router.post(version + '/hardstop/when', function(req, res) {
+  var saveexit = req.session.data['submit'];
+  if (saveexit == "exit"){
+    res.redirect(version + '/exit');
+  }
+  else if (saveexit == "continue"){
+    res.redirect(version + '/hardstop/check-your-answers');
+  }
+});
+
+//Hardstop - when the initial appointment is
+router.post(version + '/hardstop/phone-number', function(req, res) {
+  var saveexit = req.session.data['submit'];
+  if (saveexit == "exit"){
+    res.redirect(version + '/exit');
+  }
+  else if (saveexit == "continue"){
+    res.redirect(version + '/hardstop/when');
+  }
+});
+
+//Hardstop - entering an address
+router.post(version + '/hardstop/address', function(req, res) {
+  var saveexit = req.session.data['submit'];
+  if (saveexit == "exit"){
+    res.redirect(version + '/exit');
+  }
+  else if (saveexit == "continue"){
+    res.redirect(version + '/hardstop/phone-number');
+  }
+});
+
+
+
+
+
+//Hardstop - edit initial appointmemnt
+router.post(version + '/hardstop/meet-change', function(req, res) {
+  var saveexit = req.session.data['submit'];
+  if (saveexit == "exit"){
+    res.redirect(version + '/exit');
+  }
+  else if (saveexit == "continue"){
+    res.redirect(version + '/hardstop/check-your-answers');
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+///////////
+
+
+
+
+//Hardstop
 //Vary journey
 //Review licence
 

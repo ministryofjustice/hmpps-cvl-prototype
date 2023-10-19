@@ -1,0 +1,111 @@
+{% extends "layouts/main.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+
+{% endblock %}
+
+{% block content %}
+{% include "layouts/layout-name-giovanni.html" %}
+<br />
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds"><br>
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l" style="margin-bottom: 20px;">
+        <h1 class="govuk-fieldset__heading">Who is the initial appointment with?</h1>
+      </legend>
+  </div>
+</div>
+<span class="govuk-hint">Choose duty officer if you have not spoken to this person’s allocated probation practitioner.</span>
+<br><br><br>
+
+
+
+<!--START set dynamic radio hide/show text-->
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% set textHtmlOther %}
+{{ govukInput({
+  id: "Enter name",
+  name: "Enter name",
+  type: "tel",
+  autocomplete: "tel",
+  classes: "govuk-fieldset__legend--s govuk-input govuk-input--width-30",
+  label: {
+    text: "Enter name"
+  }
+}) }}
+{% endset -%}
+
+
+{{ govukRadios({
+  idPrefix: "contact3",
+  name: "contact3",
+  fieldset: {
+    legend: {
+      text: "",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+
+  items: [
+  {
+    value: "Duty officer",
+    text: "Duty officer
+    ",
+    conditional: {
+      html: emailHtml
+    }
+  },
+
+
+  {
+    value: "Simon Webster, this person’s probation officer",
+    text: "Simon Webster, this person’s probation officer",
+    conditional: {
+      html: emailHtml
+    }
+  },
+
+  {
+    value: "Someone else",
+    text: "Someone else",
+    hint: {
+      text: "For example, someone at an approved premises or a different probation practitioner."
+    },
+    conditional: {
+      html: textHtmlOther
+    }
+
+  }
+
+
+  ]
+}) }}
+
+<form method="" action="address-5b-one-result">
+
+<button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+
+
+</form>
+
+
+
+{% endblock %}
