@@ -218,7 +218,8 @@
 
       <ul class="govuk-list govuk-list--bullet" style="margin-top: 10px; margin-bottom: 40px;">
         <li>probation practitioners can no longer work on licences</li>
-        <li>you can generate a standard licence if a probation practitioner has not submitted one for approval</li>
+        <li>you can generate a standard licence if a probation practitioner has not submitted one for approval. This includes time-served releases
+        </li>
       </ul>
 
     <table class="govuk-table" data-module="moj-sortable-table">
@@ -234,6 +235,19 @@
       </thead>
 
       <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="timeserved/question-activate" class="govuk-link govuk-link--no-visited-state">NAME on the day release</a></th>
+            <td class="govuk-table__cell">G5613GT</td>
+            <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">????</a></td>
+            <td class="govuk-table__cell" data-sort-value="1">{{ "today" | duration(0) | govukDate("truncate") }}</td>
+              {% if data.timeservedsubmitted=="yes"%}
+              <td class="govuk-table__cell">‎Mustafa Harfouf</td>
+              {% else %}
+              <td class="govuk-table__cell"></td>
+              {% endif %}
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">N<span style="text-transform: lowercase;">ot started</span></strong></td>
+        </tr>
 
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="hardstop/check-your-answers-submitted-pp" class="govuk-link govuk-link--no-visited-state">Tanmay Zhao</a></th>
