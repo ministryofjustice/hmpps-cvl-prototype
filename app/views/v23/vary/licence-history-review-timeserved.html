@@ -1,0 +1,312 @@
+{% extends "layouts/main.html" %}
+
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+{% endblock %}
+
+{% block content %}
+
+{% include "layouts/layout-name-dwayne.html" %}<br />
+
+<h1 class="govuk-heading-xl">Current licence and licence history</h1>
+
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#past-day">
+        Current licence
+      </a>
+    </li>
+  </ul>
+
+
+  <!--
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+    <h2 class="govuk-heading-l">Previous licences and offences</h2>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <div class="moj-timeline">
+            <div class="moj-timeline__item">
+              <div class="moj-timeline__header">
+                <h2 class="moj-timeline__title">Assault and battery</h2>
+                <p class="moj-timeline__byline">HDC licence</p>
+              </div>
+              <p class="moj-timeline__date">
+                <time datetime="2019-05-28T10:45:00.000Z">4 March 2020 - 4 September 2020</time>
+              </p>
+              <div class="moj-timeline__description">
+                <details class="govuk-details govuk-!-margin-bottom-0">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      View details
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+        
+
+                    <div>
+                    <ol class="moj-task-list" >
+                    <li >
+                    <h2 class="moj-task-list__section" >
+                    <span class="moj-task-list__section-number"></span>Assault and battery</h2>
+                    <ul class="moj-task-list__items" >
+                    <li class="moj-task-list__item" >
+                    <span style="float:left; width:375px;"><strong>Licence start date</strong></span>
+                    <span style="float:left;">4 March 2020</span>
+                    </li>
+                    <li class="moj-task-list__item" >
+                    <span style="float:left; width:375px;"><strong>Licence end date</strong></span>
+                    <span style="float:left; ">4 September 2020</span>
+                    </li>
+                    <li class="moj-task-list__item" >
+                    <span style="float:left; width:375px;"><strong>Event index</strong></span>
+                    <span style="float:left; ">5</span>
+                    </li>
+                    <li class="moj-task-list__item" >
+                    <span style="float:left; width:375px;"><strong>Conviction date</strong></span>
+                    <span style="float:left;">4 September 2019</span>
+                    </li>
+
+                    <li class="moj-task-list__item" >
+                    <span style="float:left; width:375px;"><strong>Sentence</strong></span>
+                    <span style="float:left; ">12 Months</span>
+                    </li>
+
+                    <li class="moj-task-list__item" >
+                    <span style="float:left; width:375px;"><strong>Prison</strong></span>
+                     <span style="float:left;">HMP The Verne</span>
+                     </li>
+
+                     <li class="moj-task-list__item" >
+                     <span style="float:left; width:375px;"><strong>Probation contact</strong></span>
+                      <span style="float:left;">Joan Smith, Bournemouth</span>
+                      </li>
+                      <li class="moj-task-list__item" >
+                      <span style="float:left; width:375px;"><strong>Probation number</strong></span>
+                       <span style="float:left;">01202 200200</span>
+                       </li>
+                       <li >
+                         <br />
+                       <span style="float:left;"><strong><a href="#">View the full licence and history</a></strong></span>
+                        </li>
+                    </ul>
+                    </ol>
+                    </div>
+                    </div>
+                </details>
+              </div>
+            </div>
+            <div class="moj-timeline__item">
+              <div class="moj-timeline__header">
+                <h2 class="moj-timeline__title">Driving whilst disqualified</h2>
+                <p class="moj-timeline__byline">Standard determinate licence</p>
+              </div>
+              <p class="moj-timeline__date">
+                <time datetime="2019-05-21T13:15:00.000Z">12 May 2018 - 12 November 2018</time>
+              </p>
+              <div class="moj-timeline__description">
+                <details class="govuk-details govuk-!-margin-bottom-0">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      View details
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+       
+
+                    <div>
+                    <ol class="moj-task-list" >
+                    <li >
+                    <h2 class="moj-task-list__section" >
+                    <span class="moj-task-list__section-number"></span>Assault and battery</h2>
+                    <ul class="moj-task-list__items" >
+                    <li class="moj-task-list__item" >
+                    <span style="float:left; width:375px;"><strong>Licence start date</strong></span>
+                    <span style="float:left;">12 May 2018</span>
+                    </li>
+                    <li class="moj-task-list__item" >
+                    <span style="float:left; width:375px;"><strong>Licence end date</strong></span>
+                    <span style="float:left;">12 November 2018</span>
+                    </li>
+                    <li class="moj-task-list__item" >
+                    <span style="float:left; width:375px;"><strong>Event index</strong></span>
+                    <span style="float:left;">4</span>
+                    </li>
+                    <li class="moj-task-list__item" >
+                    <span style="float:left; width:375px;"><strong>Conviction date</strong></span>
+                    <span style="float:left;">12 November 2017</span>
+                    </li>
+                    <li class="moj-task-list__item" >
+                    <span style="float:left; width:375px;"><strong>Sentence</strong></span>
+                    <span style="float:left;">12 Months</span>
+                    </li>
+
+                    <li class="moj-task-list__item" >
+                    <span style="float:left; width:375px;"><strong>Prison</strong></span>
+                     <span style="float:left;">HMP Pentonville</span>
+                     </li>
+                     <li class="moj-task-list__item" >
+                     <span style="float:left; width:375px;"><strong>Probation contact</strong></span>
+                      <span style="float:left;">Lenil Oficijik, London</span>
+                      </li>
+                      <li class="moj-task-list__item" >
+                      <span style="float:left; width:375px;"><strong>Probation number</strong></span>
+                       <span style="float:left;">0207 109 2922</span>
+                       </li>
+                       <li >
+                         <br />
+                       <span style="float:left;"><strong><a href="#">View the full licence and history</a></strong></span>
+                        </li>
+                    </ul>
+                    </ol>
+                    </div>
+                    </div>
+                </details>
+              </div>
+            </div>
+        </tr>
+      </thead>
+    </table>
+  </div>
+
+-->
+
+  <div class="govuk-tabs__panel" id="past-day">
+    <h2 class="govuk-heading-l">Current licence</h2>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th style="width:30%;"></th>
+          <th></th>
+
+          
+          
+
+          {% if data.hardstopreviewed=="yes"%}
+          
+          
+          <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button">
+              Vary licence
+            </button>
+            <a href="list" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              Return to case list
+            </a>
+          </div>
+
+   
+
+
+          {% else %}
+
+          <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-warning-text__assistive">Warning</span>
+              
+             
+             CONTENT TBC: Licence needs to be reviewed as it was created by the prison.
+
+            </strong>
+          </div>
+
+
+
+          <form action="licence-history-review-variation" method="post">
+
+            <button class="govuk-button" data-module="govuk-button">
+              Review licence
+            </button>
+
+          </form>
+            
+          
+          {% endif %}
+
+
+
+  <div class="moj-timeline" style="margin-top: 30px;">
+    
+    {% if data.hardstopreviewed=="yes"%}
+
+    <div class="moj-timeline__item">
+      <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">Licence reviewed without being varied </h2>
+        <p class="moj-timeline__byline"> by James Smith</p>
+      </div>
+      <p class="moj-timeline__date">
+        <time datetime="2019-05-21T13:15:00.000Z">{{ "today" | duration | govukDate("truncate") }}</time></p>
+      <br />
+      <br />
+      <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">Licence reviewed without being varied</h2>
+        <p class="moj-timeline__byline">by John Farrell</p>
+      </div>
+      <p class="moj-timeline__date">
+        <time datetime="2019-05-28T10:45:00.000Z">{{ "today" | duration(0) | govukDate("truncate") }}</time>
+      </p>
+      
+     <!---<div class="moj-timeline__description">
+          <ul class="moj-timeline__documents" style="font-size:.85em;">This variation has been approved and is active on version 2 of this licence.<br /><br />
+            <li class="moj-timeline__document-item">
+              <a href="PDF">
+                <img src="/public/images/icon-document.svg"/>
+                View or print this version of the licence PDF</a>
+            </li>
+          </ul>
+        </div>-->
+    </div>
+
+    {% endif %}
+
+
+    <div class="moj-timeline__item">
+      <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">Licence created </h2>
+        <p class="moj-timeline__byline">by Paul Farmer, Channings Wood (HMP)</p>
+      </div>
+      <p class="moj-timeline__date">
+        <time datetime="2019-05-21T13:15:00.000Z">{{ "today" | duration(-1) | govukDate("truncate") }}</time>
+      <br />
+    </p>
+    <div class="moj-timeline__description">
+      <ul class="moj-timeline__documents" style="font-size:.85em;"><!--Version 1 of this licence has been created.<br /><br />-->
+        <li class="moj-timeline__document-item">
+          <a href="/public/docs/Licence.pdf" target="_blank">
+            <img src="/public/images/icon-document.svg"/>
+            View or print this version of the licence PDF</a>
+          </li>
+      </ul>
+    </div>
+
+</div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month">
+    <h2 class="govuk-heading-l">Version 2</h2>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th style="width:30%;"></th>
+          <th></th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+
+
+{% endblock %}

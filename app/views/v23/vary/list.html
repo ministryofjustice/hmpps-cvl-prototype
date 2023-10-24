@@ -232,12 +232,12 @@
       <nav class="moj-sub-navigation" aria-label="Sub navigation">
          <ul class="moj-sub-navigation__list" style="margin-bottom:0px;">
            <li class="moj-sub-navigation__item">
-             <a class="moj-sub-navigation__link" aria-current="page" href="#">My cases <span id="notifications" class="moj-notification-badge">1</span>
+             <a class="moj-sub-navigation__link" aria-current="page" href="#">My cases <span id="notifications" class="moj-notification-badge">3</span>
              </a>
            </li>
 
            <li class="moj-sub-navigation__item">
-             <a class="moj-sub-navigation__link" href="list-team-view">Team cases <span id="notifications" class="moj-notification-badge">3</span>
+             <a class="moj-sub-navigation__link" href="list-team-view">Team cases <span id="notifications" class="moj-notification-badge">1</span>
              </a>
            </li>
            <li class="moj-sub-navigation__item">
@@ -304,10 +304,22 @@
               </th>
               <td class="govuk-table__cell">Standard determinate </td>
               <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
-              <td class="govuk-table__cell" data-sort-value="3">{{ "today" | duration(0) | govukDate("truncate") }}</td>
+              <td class="govuk-table__cell" data-sort-value="3">{{ "today" | duration(-8) | govukDate("truncate") }}</td>
               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--turquoise">A<span style="text-transform: lowercase;">ctive</span></strong></td>
             </tr>
 
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header"><a href="licence-history-review-timeserved.html" class="govuk-link govuk-link--no-visited-state">Dwayne Briggs</a></br>
+                <span class="govuk-hint">CRN: 776622</span>
+              </th>
+              <td class="govuk-table__cell">Standard determinate </td>
+              <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
+              <td class="govuk-table__cell due-date" data-sort-value="1">
+                <span class="date overdue">{{ "today" | duration(0) | govukDate("truncate") }}</span>
+                <span class="secondary overdue" style="width: 195px;">Released from court</span>
+              </td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">R<span style="text-transform: lowercase;">eview needed</span></strong></td>
+            </tr>
 
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state">Robert Little</a></br>
@@ -315,7 +327,7 @@
               </th>
               <td class="govuk-table__cell">Standard determinate </td>
               <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
-              <td class="govuk-table__cell" data-sort-value="1">{{ "today" | duration(-2) | govukDate("truncate") }}</td>
+              <td class="govuk-table__cell" data-sort-value="1">{{ "today" | duration(-4) | govukDate("truncate") }}</td>
               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">R<span style="text-transform: lowercase;">eview needed</span></strong></td>
             </tr>
 
@@ -326,7 +338,7 @@
     
                   <td class="govuk-table__cell">Standard determinate</br>Post sentence supervision</td>
                   <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
-                  <td class="govuk-table__cell" data-sort-value="3">{{ "today" | duration(-2) | govukDate("truncate") }}</td>
+                  <td class="govuk-table__cell" data-sort-value="3">{{ "today" | duration(-13) | govukDate("truncate") }}</td>
                   <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--turquoise">A<span style="text-transform: lowercase;">ctive</span></strong></td>
                 </tr>
         
