@@ -239,8 +239,13 @@
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="timeserved/question-activate" class="govuk-link govuk-link--no-visited-state">Dwayne Briggs</a></th>
             <td class="govuk-table__cell">G5613GT</td>
-            <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">????</a></td>
-            <td class="govuk-table__cell" data-sort-value="1">{{ "today" | duration(0) | govukDate("truncate") }}</td>
+            <td class="govuk-table__cell" style="width: 200px;">Not allocated yet</td>
+            
+            <td class="govuk-table__cell due-date" data-sort-value="1">
+              <span class="date overdue">{{ "today" | duration(0) | govukDate("truncate") }}</span>
+              <span class="secondary overdue" style="width: 195px;">Time-served release</span>
+            </td>
+
               {% if data.timeservedsubmitted=="yes"%}
               <td class="govuk-table__cell">‎Mustafa Harfouf</td>
               {% else %}
