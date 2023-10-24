@@ -327,7 +327,12 @@
               </th>
               <td class="govuk-table__cell">Standard determinate </td>
               <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
-              <td class="govuk-table__cell" data-sort-value="1">{{ "today" | duration(-4) | govukDate("truncate") }}</td>
+              
+              <td class="govuk-table__cell due-date" data-sort-value="2">
+                <span class="date overdue">{{ "today" | duration(-4) | govukDate("truncate") }}</span>
+                <span class="secondary overdue" style="width: 195px;">TBC</span>
+              </td>
+
               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">R<span style="text-transform: lowercase;">eview needed</span></strong></td>
             </tr>
 
@@ -351,7 +356,10 @@
                   </th>
                   <td class="govuk-table__cell">Standard determinate </td>
                   <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
-                  <td class="govuk-table__cell" data-sort-value="2">{{ "today" | duration(-4) | govukDate("truncate") }}</td>
+                  <td class="govuk-table__cell due-date" data-sort-value="2">
+                    <span class="date overdue">{{ "today" | duration(-4) | govukDate("truncate") }}</span>
+                    <span class="secondary overdue" style="width: 195px;">TBC</span>
+                  </td>
 
                   {% if data.hardstopreviewed=="yes"%}
                   <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--turquoise">A<span style="text-transform: lowercase;">ctive</span></strong></td>

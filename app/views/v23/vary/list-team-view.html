@@ -91,11 +91,11 @@
   <nav class="moj-sub-navigation" aria-label="Sub navigation">
    <ul class="moj-sub-navigation__list" style="margin-bottom:0px;">
      <li class="moj-sub-navigation__item">
-       <a class="moj-sub-navigation__link"  href="list">My cases <span id="notifications" class="moj-notification-badge">1</span>
+       <a class="moj-sub-navigation__link"  href="list">My cases <span id="notifications" class="moj-notification-badge">3</span>
        </a>
      </li>
      <li class="moj-sub-navigation__item">
-       <a class="moj-sub-navigation__link" aria-current="page" href="#">Team cases <span id="notifications" class="moj-notification-badge">3</span>
+       <a class="moj-sub-navigation__link" aria-current="page" href="#">Team cases <span id="notifications" class="moj-notification-badge">1</span>
        </a>
      </li>
      <li class="moj-sub-navigation__item">
@@ -118,7 +118,7 @@
   <!--<caption class="govuk-table__caption govuk-table__caption--m">Month you apply</caption>-->
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header" aria-sort="ascending">Name</th>
+      <th scope="col" class="govuk-table__header" aria-sort="none">Name</th>
 
       {% if data.user!=="probation"%}
       <th scope="col" class="govuk-table__header govuk-table__cell"  aria-sort="none">Prison number</th>
@@ -141,33 +141,65 @@
     </tr>
   </thead>
   <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
+    
+
+
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">
+          
+            <a href="licence-history" class="govuk-link govuk-link--no-visited-state">
+            Rado Milosevic</a>
+            <br />
+              <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 132977</span>
+         
+        </th>
+        <!--<td class="govuk-table__cell">A381306</td>-->
+        <td class="govuk-table__cell">Standard determinate</td>
+        <td class="govuk-table__cell">
+          <a href="probation-details">Sidra Malek</a>
+          </td>
+
+        <td class="govuk-table__cell due-date" data-sort-value="1">
+          <span class="date overdue">{{ "today" | duration(0) | govukDate("truncate") }}</span>
+          <span class="secondary overdue" style="width: 195px;">Released from court</span>
+        </td>
+
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">R<span style="text-transform: lowercase;">eview needed</span></strong></td>
+   
+      </tr>
+
+
+
+
+
+      <tr class="govuk-table__row">
+
       <th scope="row" class="govuk-table__header">
-        <h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+        
           <a href="licence-history" class="govuk-link govuk-link--no-visited-state">
           Tracey McFarlane</a>
           <br />
             <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 543635</span>
-        </h3>
+      
       </th>
       <!--<td class="govuk-table__cell">A381306</td>-->
       <td class="govuk-table__cell">Standard determinate</td>
       <td class="govuk-table__cell">
         <a href="probation-details">Elle McPherson<a/>
         </td>
-      <td class="govuk-table__cell">30 Dec 2021</td>
+      <td class="govuk-table__cell" data-sort-value="2">30 Dec 2021</td>
           <td class="govuk-table__cell">
             <strong class="govuk-tag govuk-tag--green"> A<span style="text-transform: lowercase;">ctive</span></strong><br />
           </td>
         </tr>
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">
-        <h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+        
           <a href="licence-history" class="govuk-link govuk-link--no-visited-state">
           Avary Bradshaw</a>
           <br />
             <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 122345</span>
-        </h3>
+        
       </th>
       <!--<td class="govuk-table__cell">A381306</td>-->
       <td class="govuk-table__cell">Standard determinate</td>
@@ -178,96 +210,93 @@
     </tr>
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">
-        <h3 class="govuk-heading-m govuk-!-margin-bottom-3">
           <a href="licence-history" class="govuk-link govuk-link--no-visited-state">
           Herbie Hyde</a>
           <br />
           <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 9881221</span>
-
-
       </th>
           <!--<td class="govuk-table__cell">A381306</td>-->
           <td class="govuk-table__cell">Standard determinate</td>
           <td class="govuk-table__cell">
-            <a href="probation-details">Sidra Malek<a/>
+            <a href="probation-details">Sidra Malek</a>
             </td>
-          <td class="govuk-table__cell">19 Dec 2021</td>
+          <td class="govuk-table__cell" data-sort-value="3">19 Dec 2021</td>
               <td class="govuk-table__cell">
                 <strong class="govuk-tag govuk-tag--green"> A<span style="text-transform: lowercase;">ctive</span></strong><br />
               </td>
             </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">
-            <h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+            
               <a href="licence-history" class="govuk-link govuk-link--no-visited-state">
               Rajesh Damodaran</a>
               <br />
                 <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 547363</span>
-            </h3>
+            
           </th>
           <!--<td class="govuk-table__cell">A381306</td>-->
           <td class="govuk-table__cell">Standard determinate <br />Post sentence supervision</td>
           <td class="govuk-table__cell">
-            <a href="probation-details">John Farrell<a/>
+            <a href="probation-details">John Farrell</a>
             </td>
-          <td class="govuk-table__cell">11 Dec 2021</td>
+          <td class="govuk-table__cell" data-sort-value="4">11 Dec 2021</td>
               <td class="govuk-table__cell">
                 <strong class="govuk-tag govuk-tag--green">A<span style="text-transform: lowercase;">ctive</span></strong>
               </td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">
-                <h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+                
                   <a href="licence-history" class="govuk-link govuk-link--no-visited-state">
                   Leroy Jenkins</a>
                   <br />
                     <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 777723</span>
-                </h3>
+                
               </th>
               <!--<td class="govuk-table__cell">A381306</td>-->
               <td class="govuk-table__cell">Standard determinate</td>
               <td class="govuk-table__cell">
-                <a href="probation-details">Nigella Farmage<a/>
+                <a href="probation-details">Nigella Farmage</a>
                 </td>
-              <td class="govuk-table__cell">10 Dec 2021</td>
+              <td class="govuk-table__cell" data-sort-value="5">10 Dec 2021</td>
                   <td class="govuk-table__cell">
                     <strong class="govuk-tag govuk-tag--green">A<span style="text-transform: lowercase;">ctive</span></strong>
                   </td>
                 </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">
-                <h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+               
                   <a href="licence-history" class="govuk-link govuk-link--no-visited-state">
                   Marco Pierre</a>
                   <br />
                     <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 776622</span>
-                </h3>
+                
               </th>
               <!--<td class="govuk-table__cell">A381306</td>-->
               <td class="govuk-table__cell">Standard determinate </td>
               <td class="govuk-table__cell">
-                <a href="probation-details">John Farrell<a/>
+                <a href="probation-details">John Farrell</a>
                 </td>
-              <td class="govuk-table__cell">6 Dec 2021</td>
+              <td class="govuk-table__cell" data-sort-value="6">6 Dec 2021</td>
                   <td class="govuk-table__cell">
                     <strong class="govuk-tag govuk-tag--yellow">V<span style="text-transform: lowercase;">ariation approved</span></strong>
                   </td>
                 </tr>
                 <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">
-                    <h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+                  
                       <a href="licence-history" class="govuk-link govuk-link--no-visited-state">
                       Leoni McMessi</a>
                       <br />
                         <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 376533</span>
-                    </h3>
+                   
                   </th>
                   <!--<td class="govuk-table__cell">A381306</td>-->
                   <td class="govuk-table__cell">Standard determinate</td>
                   <td class="govuk-table__cell">
-                    <a href="probation-details">John Farrell<a/>
+                    <a href="probation-details">John Farrell</a>
                     </td>
-                  <td class="govuk-table__cell">2 Dec 2021</td>
+                  <td class="govuk-table__cell" data-sort-value="7">2 Dec 2021</td>
                       <td class="govuk-table__cell">
                         <strong class="govuk-tag govuk-tag--green">A<span style="text-transform: lowercase;">ctive</span></strong>
                           <span class="govuk-hint" style="font-size:0.8em; margin:5px 0 0 5px;">
@@ -276,61 +305,44 @@
                     </tr>
                     <tr class="govuk-table__row">
                       <th scope="row" class="govuk-table__header">
-                        <h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+        
                           <a href="licence-history" class="govuk-link govuk-link--no-visited-state">
                           Diamond Smith</a>
                           <br />
                             <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 298673</span>
-                        </h3>
+                        
                       </th>
                       <!--<td class="govuk-table__cell">A381306</td>-->
                       <td class="govuk-table__cell">Standard determinate <br />Post sentence supervision</td>
                       <td class="govuk-table__cell">
-                        <a href="probation-details">Lewis Grabbam<a/>
+                        <a href="probation-details">Lewis Grabbam</a>
                         </td>
-                      <td class="govuk-table__cell">28 Nov 2021</td>
+                      <td class="govuk-table__cell" data-sort-value="8">28 Nov 2021</td>
                       <td class="govuk-table__cell">
                         <strong class="govuk-tag govuk-tag--green">A<span style="text-transform: lowercase;">ctive</span></strong>
                       </td>
                     </tr>
                     <tr class="govuk-table__row">
                       <th scope="row" class="govuk-table__header">
-                        <h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+
                           <a href="licence-history" class="govuk-link govuk-link--no-visited-state">
                           Mike Wyzowski</a>
                           <br />
                             <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 876567</span>
-                        </h3>
+              
                       </th>
                       <!--<td class="govuk-table__cell">A381306</td>-->
                       <td class="govuk-table__cell">Standard determinate</td>
                       <td class="govuk-table__cell">
-                        <a href="probation-details">Lewis Grabbam<a/>
+                        <a href="probation-details">Lewis Grabbam</a>
                         </td>
-                      <td class="govuk-table__cell">26 Nov 2021</td>
+                      <td class="govuk-table__cell" data-sort-value="9">26 Nov 2021</td>
                           <td class="govuk-table__cell">
                             <strong class="govuk-tag govuk-tag--green"> A<span style="text-transform: lowercase;">ctive</span></strong><br />
                           </td>
                         </tr>
-                        <tr class="govuk-table__row">
-                          <th scope="row" class="govuk-table__header">
-                            <h3 class="govuk-heading-m govuk-!-margin-bottom-3">
-                              <a href="licence-history" class="govuk-link govuk-link--no-visited-state">
-                              Rado Milosevic</a>
-                              <br />
-                                <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 132977</span>
-                            </h3>
-                          </th>
-                          <!--<td class="govuk-table__cell">A381306</td>-->
-                          <td class="govuk-table__cell">Standard determinate</td>
-                          <td class="govuk-table__cell">
-                            <a href="probation-details">Sidra Malek<a/>
-                            </td>
-                          <td class="govuk-table__cell">11 Nov 2021</td>
-                          <td class="govuk-table__cell">
-                            <strong class="govuk-tag govuk-tag--green">A<span style="text-transform: lowercase;">ctive</span></strong>
-                          </td>
-                        </tr>
+                       
+                    
                       </tbody>
                     </table>
 {% endblock %}
