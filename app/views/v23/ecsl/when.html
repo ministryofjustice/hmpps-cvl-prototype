@@ -1,0 +1,144 @@
+{% extends "layouts/main.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+{% block beforeContent %}
+
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+{% endblock %}
+
+{% block content %}
+{% include "layouts/layout-name.html" %}
+<br />
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group">
+          <form method="post" action="">
+
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+              <!--  When does {% if data.edit=="yes" %}Edith Bradshaw{% else %}Adam Balasaravika{% endif %} need to go to their initial appointment?-->
+              When do they need to go to their initial appointment?
+              </h1>
+            </legend><br>
+            {% if data.releaseDateChanged=="yes" %}
+              <div class="govuk-warning-text">
+              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+              <strong class="govuk-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+The conditional release date is on a weekend or bank holiday. Check the release date with the prison OMU.              </strong>
+            </div>
+          {% endif %}
+            <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+              Date
+            </label>
+            <div id="passport-issued-hint" class="govuk-hint">
+              For example, 20 12 2021
+            </div>
+            <div class="govuk-date-input" id="passport-issued">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" {%if (data.passportissuedday) %}
+                    value="{{data.passportissuedday}}" {% endif %} name="passportissuedday" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                    Month
+                  </label>
+                  <input {%if (data.passportissuedmonth) %}
+                    value="{{data.passportissuedmonth}}" {% endif %} class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passportissuedmonth" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                    Year
+                  </label>
+                  <input {%if (data.passportissuedyear) %}
+                    value="{{data.passportissuedyear}}" {% endif %} class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passportissuedyear" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+              </div>
+            </div><br><br>
+          </fieldset>
+          
+        </div>
+        <div class="govuk-form-group">
+          <div class="time-picker">
+            <label class="govuk-label" for="Time">
+             Time
+            </label>
+          <div id="passport-issued-hint" class="govuk-hint">
+            For example, 9:30am or 2:55pm
+          </div>
+          <div class="govuk-date-input" id="passport-issued">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                  Hour
+                </label>
+                <input {%if (data.passportissuedday2) %}
+                  value="{{data.passportissuedday2}}" {% endif %} class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passportissuedday2" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                  Minute
+                </label>
+                <input {%if (data.passportissuedmonth2) %}
+                  value="{{data.passportissuedmonth2}}" {% endif %} class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passportissuedmonth2" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                  am or pm
+                </label>
+                <select class="govuk-select" id="when-am" name="whenam" {%if (data.passportissuedmonth2) %}
+                  value="{{data.passportissuedmonth2}}" {% endif %} >
+                  <option value="am">am</option>
+                  <option value="pm" selected>pm</option>
+
+                </select>
+              </div>
+          </div>
+        </div>
+        <br><br><br>
+
+  </fieldset>
+</div>
+<!--<div class="govuk-button-group">
+  {% if data.licencetypechoose=="pssonly"%}
+  <a href="pss" class="govuk-button show-continue" style="display: inline;">
+    {% else %}
+  <a href="question" class="govuk-button show-continue" style="display: inline;">
+    {% endif %}-->
+
+    <div class="govuk-button-group">
+    <button class="govuk-button" data-module="govuk-button" name="submit" value="continue">
+      Continue
+    </button>
+    <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="submit" value="exit">
+      Skip this for now
+    </button>
+    </div>
+  </form>
+
+
+ </div>
+</div>
+
+{% endblock %}
