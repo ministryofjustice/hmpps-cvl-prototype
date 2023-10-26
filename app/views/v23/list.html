@@ -536,15 +536,15 @@
       {% if (data.user=="probation") or (data.user=="aco") %}
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">
-          <a href="#" class="govuk-link govuk-link--no-visited-state">
-            Tyrone Shade</a></br>
+          <a href="/v23/ecsl/meet" class="govuk-link govuk-link--no-visited-state">
+            Hugo Blanc</a></br>
             {% if data.user=="probation"%}
             <span class="govuk-hint" style="font-size:.85em; margin-top:-10px;">CRN: A911444</span>
             {%endif%}
           </th>
 
           {% if data.user=="probation"%}
-          <td class="govuk-table__cell">Standard determinate</br>Post sentence supervision</td>
+          <td class="govuk-table__cell">Standard determinate</td>
 
 
           <td class="govuk-table__cell">
@@ -555,13 +555,41 @@
           <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Jamie Foxx</a></td>
           {%endif%}
 
-          <td class="govuk-table__cell" data-sort-value="1">{{ "today" | duration(1) | govukDate("truncate") }}</td>
+          <td class="govuk-table__cell" data-sort-value="1">{{ "today" | duration(4) | govukDate("truncate") }}</td>
           <td class="govuk-table__cell"> {% if data.user=="governor"%}
             </td>
            {%else%}
-           <strong class="govuk-tag govuk-tag--green">A<span style="text-transform: lowercase;">pproved</span></strong></td>
+           <strong class="govuk-tag govuk-tag--grey">N<span style="text-transform: lowercase;">ot started</span></strong></td>
            {%endif%}
         </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <a href="#" class="govuk-link govuk-link--no-visited-state">
+              Tyrone Shade</a></br>
+              {% if data.user=="probation"%}
+              <span class="govuk-hint" style="font-size:.85em; margin-top:-10px;">CRN: A911444</span>
+              {%endif%}
+            </th>
+  
+            {% if data.user=="probation"%}
+            <td class="govuk-table__cell">Standard determinate</br>Post sentence supervision</td>
+  
+  
+            <td class="govuk-table__cell">
+              <a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a>
+              </td>
+  
+            {%else%}
+            <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Jamie Foxx</a></td>
+            {%endif%}
+  
+            <td class="govuk-table__cell" data-sort-value="1">{{ "today" | duration(1) | govukDate("truncate") }}</td>
+            <td class="govuk-table__cell"> {% if data.user=="governor"%}
+              </td>
+             {%else%}
+             <strong class="govuk-tag govuk-tag--green">A<span style="text-transform: lowercase;">pproved</span></strong></td>
+             {%endif%}
+          </tr>
         {%endif%}
 
         {% if data.user=="probation" %}
