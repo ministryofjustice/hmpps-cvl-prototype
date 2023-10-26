@@ -19,9 +19,10 @@
 
 {% block content %}
 
-{% include "layouts/layout-name-tim.html" %}
+{% include "layouts/layout-name-dwayne.html" %}
 
-<form action="/review-licence" method="post">
+<form action="/review-licence-timeserved" method="post">
+
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds-from-desktop">
@@ -62,7 +63,7 @@
 
 
 
-<input type="hidden" name="hardstopreviewed" value="yes">
+<input type="hidden" name="timeservedreviewed" value="yes">
 <button class="govuk-button" data-module="govuk-button">
   Submit
 </button>
