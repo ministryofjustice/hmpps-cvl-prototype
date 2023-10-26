@@ -134,6 +134,28 @@ router.post(version + '/hardstop/meet-change', function(req, res) {
 ///////////
 
 
+//Time served
+//Vary journey
+//Review licence
+
+router.post('/review-licence-timeserved', function (req, res) {
+  var licenceReviewed = req.session.data['licence-review-variation']
+
+  // Check whether the variable matches a condition
+  if (licenceReviewed == "yes"){
+   
+   // Send user to next page
+    res.redirect(version + '/vary/question')
+  } else {
+    // Send user to ineligible page
+    res.redirect(version + '/vary/timeserved/licence-history-review')
+  }
+
+});
+
+
+
+
 
 
 //Hardstop
