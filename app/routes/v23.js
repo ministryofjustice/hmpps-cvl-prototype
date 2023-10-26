@@ -6,6 +6,99 @@ var version = '/v23';
 
 //////////
 
+//ECSL bespoke page - do they need bespoke conditions
+
+//ECSL
+
+router.post(version + '/ecsl/meet', function(req, res) {
+  var saveexit = req.session.data['submit'];
+  if (saveexit == "exit"){
+    res.redirect(version + '/exit');
+  }
+  else if (saveexit == "continue"){
+    res.redirect(version + '/ecsl/address');
+  }
+});
+router.post(version + '/ecsl/address', function(req, res) {
+  var saveexit = req.session.data['submit'];
+  if (saveexit == "exit"){
+    res.redirect(version + '/exit');
+  }
+  else if (saveexit == "continue"){
+    res.redirect(version + '/ecsl/phone-number');
+  }
+});
+router.post(version + '/ecsl/phone-number', function(req, res) {
+  var saveexit = req.session.data['submit'];
+  if (saveexit == "exit"){
+    res.redirect(version + '/exit');
+  }
+  else if (saveexit == "continue"){
+    res.redirect(version + '/ecsl/when');
+  }
+});
+router.post(version + '/ecsl/when', function(req, res) {
+  var saveexit = req.session.data['submit'];
+  if (saveexit == "exit"){
+    res.redirect(version + '/ecsl/question');
+  }
+  else if (saveexit == "continue"){
+    res.redirect(version + '/ecsl/question');
+  }
+});
+
+//question page - do they need additional conditions
+router.post(version + '/ecsl/question', function(req, res) {
+    var saveexit = req.session.data['submit'];
+  if (saveexit == "exit"){
+    res.redirect(version + '/exit');
+  }
+  else {
+    var needadditional = req.session.data['needadditional'];
+    if (needadditional == "yes"){
+      res.redirect(version + '/ecsl/conditions');
+    }
+    else if (needadditional == "no"){
+      res.redirect(version + '/ecsl/bespoke');
+    }
+  }
+});
+//bespoke page - do they need bespoke conditions
+router.post(version +'/ecsl/bespoke', function(req, res) {
+  var saveexit = req.session.data['submit'];
+  if (saveexit == "exit"){
+    res.redirect(version + '/exit');
+    }
+  else if (saveexit == "continue"){
+    var needbespoke = req.session.data['needbespoke'];
+      if (needbespoke == "yes"){
+        res.redirect(version +'/bespoke-checked-PPCS');
+        }
+  else if (needbespoke == "no"){
+    var licencetypechoose = req.session.data['licencetypechoose'];
+    var change = req.session.data['changecycle'];
+      if (change == "yes"){
+        res.redirect(version +'/ecsl/check-your-answers');
+      }
+    else if (licencetypechoose !== "ap"){
+        res.redirect(version +'/pss');
+      }
+      else if (licencetypechoose == "ap"){
+        res.redirect(version + '/ecsl/check-your-answers');
+      }
+    }
+  }
+});
+router.post(version + '/ecsl/check-your-answers', function(req, res) {
+  var saveexit = req.session.data['submit'];
+  if (saveexit == "exit"){
+    res.redirect(version + '/list');
+  }
+  else if (saveexit == "continue"){
+    res.redirect(version + '/ecsl/confirmation');
+  }
+});
+
 //Timeserved - Prison admin creating a new licence
 router.post('/ca-new-licence-timeserved', function (req, res) {
   var CAnewlicenceTimeserved = req.session.data['activatecreate']
@@ -485,6 +578,7 @@ router.post(version + '/question', function(req, res) {
     }
   }
 });
+
 
 router.post(version + '/question-change', function(req, res) {
   var needadditional = req.session.data['needadditional'];
