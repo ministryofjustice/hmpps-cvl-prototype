@@ -21,7 +21,7 @@
 
 {% block content %}
 
-{% include "layouts/layout-name-giovanni.html" %}
+{% include "layouts/layout-name-dwayne.html" %}
 
 
 
@@ -41,11 +41,7 @@
               Name
             </dt>
             <dd class="govuk-summary-list__value">
-              {%if (data.contact3) %}
-              {{data.contact3}}
-             {% else %}
-              Samuel Toogood
-             {% endif %}
+              Duty Officer
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -154,20 +150,13 @@
 
 
 
-<form action="" method="post">
 
-    <div class="govuk-button-group" style="width:500px; margin-top: 50px;">
-      
-      <button class="govuk-button" data-module="govuk-button" name="submit" value="continue">
-        Send for approval
-      </button>
-      <button class="govuk-button govuk-button--secondary" name="submit" value="exit">
-      Return to caselist
-      </button>
-      </div>
- 
-      </form>
-    </div>
+          <a href="confirmation" class="govuk-button">Send for approval</a>
+          <a href="/v23/list.html" class="govuk-button govuk-button--secondary">Return to case list</a>
+
+
+
+  
   </div>
 
 
