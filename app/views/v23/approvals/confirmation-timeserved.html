@@ -1,0 +1,82 @@
+{% extends "layouts/main" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+{% block beforeContent %}
+
+
+
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-thirds">
+
+        <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            <!--Licence for<br>
+            {% if data.edit=="yes" %}
+              Edith Bradshaw
+            {% elseif data.releaseDateChanged=="yes" %}
+              Honor Weekend
+            {% else %}
+              Adam Balasaravika
+            {% endif %} approved-->Licence and post sentence</br> supervision order approved<br>
+          </h1>
+        </div>
+        <h2 class="govuk-heading-m">What happens next</h2>
+          <p class="govuk-body">
+            <!--{% if data.user=="governor"%}
+            You have approved the licence and post sentence supervision order for {% if data.edit=="yes" %}
+              Edith Bradshaw
+            {% elseif data.releaseDateChanged=="yes" %}
+              Honor Weekend
+            {% else %}
+              Adam Balasaravika
+            {% endif %}.-->
+            <p>A case administrator can now print the licence for NEW Name.</p>
+
+        <p>No probation practitioner has been allocated to this case yet.</br>
+          We will automatically email the probation office to tell them when this licence has been approved, if we have an email address for them.
+
+            </p>
+           <!--<p class="govuk-body">  A prison administrator can now print the licence.</p>
+
+            <h2 class="govuk-heading-m">If a community probation practitioner makes any changes</h2>
+            <p class="govuk-body">A community probation practitioner may edit and re-submit this licence for approval if they need to make a change.</p>
+            <p class="govuk-body">The licence will appear again in your approvals case list, and prison OMU staff will get an email alert.</p>
+
+          {%elseif data.user=="admin"%}
+          We have sent email notification to the approver that the licence is awaiting their approval.</p>
+          {%endif%}-->
+          <h2 class="govuk-heading-m">If further changes are made</h2>
+          <p class="govuk-body">
+            Only the initial appointment can be changed.
+              You will not need to approve the licence again.
+            
+
+            </p>
+            
+            <form action="#" method="post">
+
+              <button class="govuk-button" data-module="govuk-button">
+                Approve another licence
+              </button>
+            </form>
+          
+
+          </div>
+        <br>
+        <p class="govuk-body">
+          <a href="#" class="govuk-link">What did you think of this service?</a> (Takes 30 seconds – opens in a new tab)
+
+        </p>
+      </div>
+    </div>
+  </main>
+</div>
+
+
+{% endblock %}
