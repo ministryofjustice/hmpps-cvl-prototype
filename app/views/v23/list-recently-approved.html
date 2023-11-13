@@ -195,14 +195,38 @@
 
       <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none" style="width: 130px;">Release date</th>
       <th scope="col" class="govuk-table__header" aria-sort="none" style="width: 150px;">Approved by</th>
-      <th scope="col" class="govuk-table__header" aria-sort="descending" style="width: 130px;">Approved on</th>
+      <th scope="col" class="govuk-table__header" aria-sort="ascending" style="width: 130px;">Approved on</th>
      
     </tr>
   </thead>
   <tbody class="govuk-table__body">
 
+
+
+
+          <!--Time served case-->
+          {% if data.timeservedapproved=="yes"%}
+
+            <th scope="row" class="govuk-table__header"><h3 class="govuk-heading-m govuk-!-margin-bottom-3"><a class="govuk-link govuk-link--no-visited-state" href="/public/docs/Licence.pdf" target="_blank"> Dwayne Briggs</a></h3>
+              <!--<span class="govuk-hint" style="font-size:.85em; margin-top:-10px;">CRN: A778288</span>-->
+          </th>
+
+
+            <td class="govuk-table__cell">G79007C</td>
+            <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">Not allocated yet</a></td>
+            <td class="govuk-table__cell">{{ "today" | duration(0) | govukDate("truncate") }}</td>
+            <td class="govuk-table__cell">Steven Smith</td>
+            <td class="govuk-table__cell" data-sort-value="1">{{ "today" | duration(0) | govukDate("truncate") }}</td>
+
+            {% else %}
+
+            {%endif%}
+        
+
+
+
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><h3 class="govuk-heading-m govuk-!-margin-bottom-3" data-sort-value="3"><a class="govuk-link govuk-link--no-visited-state" href="/public/docs/Licence.pdf" target="_blank">Marc Callaghan</a></h3>
+          <th scope="row" class="govuk-table__header"><h3 class="govuk-heading-m govuk-!-margin-bottom-3"><a class="govuk-link govuk-link--no-visited-state" href="/public/docs/Licence.pdf" target="_blank">Marc Callaghan</a></h3>
               <!--<span class="govuk-hint" style="font-size:.85em; margin-top:-10px;">CRN: A778288</span>-->
           </th>
 
@@ -211,13 +235,13 @@
             <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">Simon Bentley</a></td>
             <td class="govuk-table__cell">{{ "today" |  duration(-4) | govukDate("truncate") }}</td>
             <td class="govuk-table__cell">Steven Smith</td>
-            <td class="govuk-table__cell">{{ "today" |  duration(-6) | govukDate("truncate") }}</td>
+            <td class="govuk-table__cell" data-sort-value="2">{{ "today" |  duration(-6) | govukDate("truncate") }}</td>
       
             </tr>
 
     
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><h3 class="govuk-heading-m govuk-!-margin-bottom-3" data-sort-value="3"><a class="govuk-link govuk-link--no-visited-state" href="/public/docs/Licence.pdf" target="_blank">Sam Coles</a> </h3>
+          <th scope="row" class="govuk-table__header"><h3 class="govuk-heading-m govuk-!-margin-bottom-3"><a class="govuk-link govuk-link--no-visited-state" href="/public/docs/Licence.pdf" target="_blank">Sam Coles</a> </h3>
               <!--<span class="govuk-hint" style="font-size:.85em; margin-top:-10px;">CRN: A314402</span>-->
           </th>
 
@@ -225,7 +249,7 @@
             <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">Lindsay Duncan</a></td>
             <td class="govuk-table__cell">{{ "today" |  duration(-20) | govukDate("truncate") }}</td>
             <td class="govuk-table__cell">Sarah Williams</td>
-            <td class="govuk-table__cell">{{ "today" |  duration(-22) | govukDate("truncate") }}</td>
+            <td class="govuk-table__cell" data-sort-value="3">{{ "today" |  duration(-22) | govukDate("truncate") }}</td>
             
           </tr>
 

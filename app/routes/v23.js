@@ -115,14 +115,6 @@ router.post('/ca-new-licence-timeserved', function (req, res) {
 
 });
 
-//Time served - from confirmation back to case list
-router.post(version + '/timeserved/confirmation', function(req, res) {
-  var saveexit = req.session.data['submit'];
-  if (saveexit == "continue"){
-    res.redirect(version + '/list#releases-two-days');
-  }
-});
-
 
 
 //Hardstop - edit confirmation

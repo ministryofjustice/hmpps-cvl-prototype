@@ -67,7 +67,7 @@
   </div>
 
   <div class="govuk-grid-row" style="float: right; padding-right:140px;">
-      <p class="govuk-body" style="padding-top: 20px;">NEW NAME</p>
+      <p class="govuk-body" style="padding-top: 20px;">Dwayne Briggs</p>
       <p class="govuk-body">09 May 1981</p>
       <p class="govuk-body">G79007C</p>
       <p class="govuk-body">Wakefield (HMP)</p>
@@ -401,6 +401,17 @@
           </dd>
         </div>
 
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Contact phone number
+          </dt>
+          <dd class="govuk-summary-list__value">01273 800 900</dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="phone-number-change">
+             </span>
+            </a>
+          </dd>
+        </div>
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -454,8 +465,8 @@
           <dt class="govuk-summary-list__key">
             Name
           </dt>
-          <dd class="govuk-summary-list__value">
-            Sarah Smith
+          <dd class="govuk-summary-list__value" style="width: 300px;">
+            No probation practitioner allocated
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
@@ -467,26 +478,10 @@
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Email
-            </dt>
-            <dd class="govuk-summary-list__value">
-              sarah.smith@justice.gov.uk
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
-                <span class="govuk-visually-hidden"></span>
-              </a>
-            </dd>
-          </div>
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
               Phone number
             </dt>
             <dd class="govuk-summary-list__value">
-              {%if (data.telephonenumber) %}{{data.telephonenumber}}
-              {% else %}0798 443 0099
-              {% endif %}
+              No phone number
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="phone-number-change">
@@ -495,6 +490,20 @@
             </dd>
           </div>
         
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Email
+            </dt>
+            <dd class="govuk-summary-list__value">
+              No email address
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                <span class="govuk-visually-hidden"></span>
+              </a>
+            </dd>
+          </div>
 
       </dl>
 
@@ -574,6 +583,10 @@
 
         <form action="#" method="post" style="padding-top: 10px;">
 
+
+            <input type="hidden" name="timeservedapproved" value="yes">
+         
+
           <div class="govuk-button-group">
             <button class="govuk-button" data-module="govuk-button" name="approve-a-licence" value="approvenow">
               Approve
@@ -583,6 +596,9 @@
               Return to caselist
             </button>
           </div>
+
+
+
 
         </form>
 
