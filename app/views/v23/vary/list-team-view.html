@@ -95,7 +95,7 @@
        </a>
      </li>
      <li class="moj-sub-navigation__item">
-       <a class="moj-sub-navigation__link" aria-current="page" href="#">Team cases <span id="notifications" class="moj-notification-badge">1</span>
+       <a class="moj-sub-navigation__link" aria-current="page" href="#">Team cases <span id="notifications" class="moj-notification-badge">4</span>
        </a>
      </li>
      <li class="moj-sub-navigation__item">
@@ -144,20 +144,185 @@
     
 
 
+
+<!--John Farrell cases start-->
+
+  
+
+
+<tr class="govuk-table__row">
+  <th scope="row" class="govuk-table__header"><a href="timeserved/licence-history-review" class="govuk-link govuk-link--no-visited-state">Dwayne Briggs</a></br>
+    <span class="govuk-hint">CRN: 776622</span>
+  </th>
+  <td class="govuk-table__cell">Standard determinate </td>
+  <td class="govuk-table__cell">Not allocated yet</td>
+
+  {% if data.timeservedreviewed=="yes"%}
+  <td class="govuk-table__cell" data-sort-value="1">{{ "today" | duration(0) | govukDate("truncate") }}</td>              
+  {% else %}
+  <td class="govuk-table__cell due-date" data-sort-value="1">
+    <span class="date overdue">{{ "today" | duration(0) | govukDate("truncate") }}</span>
+    <span class="secondary overdue" style="width: 195px;">Released from court</span>
+  </td>
+  {% endif %}
+
+  {% if data.timeservedreviewed=="yes"%}
+  <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--turquoise">A<span style="text-transform: lowercase;">ctive</span></strong></td>
+  {% else %}
+  <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">R<span style="text-transform: lowercase;">eview needed</span></strong></td>
+  {% endif %}
+
+</tr>
+
+
+
+
+
+<tr class="govuk-table__row">
+  <th scope="row" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state">Robert Little</a></br>
+    <span class="govuk-hint">CRN: 776622</span>
+  </th>
+  <td class="govuk-table__cell">Standard determinate </td>
+  <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
+  
+  <td class="govuk-table__cell due-date" data-sort-value="3">
+    <span class="date overdue">{{ "today" | duration(-4) | govukDate("truncate") }}</span>
+    <span class="secondary overdue" style="width: 195px;">Timed out</span>
+  </td>
+
+  <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">R<span style="text-transform: lowercase;">eview needed</span></strong></td>
+</tr>
+
+   
+
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">
+          <a href="licence-history-review.html" class="govuk-link govuk-link--no-visited-state">Tim Lycett</a></br>
+            <span class="govuk-hint">CRN: G579362</span>
+      </th>
+      <td class="govuk-table__cell">Standard determinate </td>
+      <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
+      
+      {% if data.hardstopreviewed=="yes"%}
+      <td class="govuk-table__cell" data-sort-value="2">{{ "today" | duration(-4) | govukDate("truncate") }}</td>
+      {% else %}
+      <td class="govuk-table__cell due-date" data-sort-value="4">
+        <span class="date overdue">{{ "today" | duration(-4) | govukDate("truncate") }}</span>
+        <span class="secondary overdue" style="width: 195px;">Timed out</span>
+      </td>
+      {% endif %}
+
+      {% if data.hardstopreviewed=="yes"%}
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--turquoise">A<span style="text-transform: lowercase;">ctive</span></strong></td>
+      {% else %}
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">R<span style="text-transform: lowercase;">eview needed</span></strong></td>
+      {% endif %}
+
+        </tr>
+
+
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state">Marco Pierre</a></br>
+            <span class="govuk-hint">CRN: G776622</span>
+          </th>
+          <td class="govuk-table__cell">Standard determinate </td>
+          <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
+          <td class="govuk-table__cell" data-sort-value="4">{{ "today" | duration(-8) | govukDate("truncate") }}</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--turquoise">A<span style="text-transform: lowercase;">ctive</span></strong></td>
+        </tr>
+
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state">Lee Evans</a></br>
+              <span class="govuk-hint">CRN: 221223</span>
+          </th>
+
+          <td class="govuk-table__cell">Standard determinate</br>Post sentence supervision</td>
+          <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
+          <td class="govuk-table__cell" data-sort-value="5">{{ "today" | duration(-13) | govukDate("truncate") }}</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--turquoise">A<span style="text-transform: lowercase;">ctive</span></strong></td>
+        </tr>
+
+
+
+
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state">Marus Henshaw</a></br>
+                <span class="govuk-hint">CRN: 853273</span>
+          </th>
+            <td class="govuk-table__cell">Standard determinate</td>
+            <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
+            <td class="govuk-table__cell" data-sort-value="6">{{ "today" | duration(-20) | govukDate("truncate") }}</td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">V<span style="text-transform: lowercase;">ariation approved</span></strong></td>
+        </tr>
+       
+
+
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state">Rajesh Damodaran</a></br>
+              <span class="govuk-hint">CRN: 547363</span>
+          </th>
+          <td class="govuk-table__cell">Standard determinate</br>Post sentence supervision</td>
+          <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
+          <td class="govuk-table__cell" data-sort-value="7">{{ "today" | duration(-75) | govukDate("truncate") }}</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--pink">V<span style="text-transform: lowercase;">ariation submitted</span></strong></td>
+        </tr>
+
+
+
+        {% if data.user=="probation"%}
+
+        <!--IS91 case-->
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="is91-vary/licence-history-cody.html" class="govuk-link govuk-link--no-visited-state" data-sort-value="3">Cody Jones</a></br>
+              <span class="govuk-hint">CRN: A761536</span>
+          </th>
+          <td class="govuk-table__cell">Standard determinate</br>Post sentence supervision</td>
+          <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
+          <td class="govuk-table__cell" data-sort-value="8">{{ "today" | duration(-300) | govukDate("truncate") }}</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--turquoise">A<span style="text-transform: lowercase;">ctive</span></strong></td>
+        </tr>
+        {%endif%}
+
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state">Lewis Capstone</a></br>
+              <span class="govuk-hint">CRN: 1124334</span>
+          </th>
+
+          <td class="govuk-table__cell">Standard determinate</td>
+          <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
+          <td class="govuk-table__cell" data-sort-value="9">{{ "today" | duration(-500) | govukDate("truncate") }}</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--turquoise">A<span style="text-transform: lowercase;">ctive</span></strong></td>
+        </tr>
+
+
+
+
+
+
+
+<!--John Farrell cases end-->
+
+
+
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">
           
             <a href="licence-history" class="govuk-link govuk-link--no-visited-state">
             Rado Milosevic</a>
             <br />
-              <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 132977</span>
+              <span class="govuk-hint">CRN: 132977</span>
          
         </th>
         <!--<td class="govuk-table__cell">A381306</td>-->
         <td class="govuk-table__cell">Standard determinate</td>
-        <td class="govuk-table__cell">Not allocated yet</td>
-
-        <td class="govuk-table__cell due-date" data-sort-value="1">
+        <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
+        <td class="govuk-table__cell due-date" data-sort-value="2">
           <span class="date overdue">{{ "today" | duration(0) | govukDate("truncate") }}</span>
           <span class="secondary overdue" style="width: 195px;">Released from court</span>
         </td>
@@ -177,15 +342,15 @@
           <a href="licence-history" class="govuk-link govuk-link--no-visited-state">
           Tracey McFarlane</a>
           <br />
-            <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 543635</span>
+            <span class="govuk-hint">CRN: 543635</span>
       
       </th>
       <!--<td class="govuk-table__cell">A381306</td>-->
       <td class="govuk-table__cell">Standard determinate</td>
       <td class="govuk-table__cell">
-        <a href="probation-details">Elle McPherson<a/>
+        <a href="probation-details">Elle McPherson</a>
         </td>
-      <td class="govuk-table__cell" data-sort-value="2">30 Dec 2021</td>
+      <td class="govuk-table__cell" data-sort-value="5">30 Dec 2021</td>
           <td class="govuk-table__cell">
             <strong class="govuk-tag govuk-tag--green"> A<span style="text-transform: lowercase;">ctive</span></strong><br />
           </td>
@@ -196,12 +361,12 @@
           <a href="licence-history" class="govuk-link govuk-link--no-visited-state">
           Avary Bradshaw</a>
           <br />
-            <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 122345</span>
+            <span class="govuk-hint">CRN: 122345</span>
         
       </th>
       <!--<td class="govuk-table__cell">A381306</td>-->
       <td class="govuk-table__cell">Standard determinate</td>
-      <td class="govuk-table__cell"><a href="probation-details">John Farrell<a/></td>
+      <td class="govuk-table__cell"><a href="probation-details">John Farrell</a></td>
       <td class="govuk-table__cell">20 Dec 2021</td>
       <td class="govuk-table__cell">
       <strong class="govuk-tag govuk-tag--blue"> V<span style="text-transform: lowercase;">ariation submitted</span></strong><br /></td>
@@ -211,14 +376,14 @@
           <a href="licence-history" class="govuk-link govuk-link--no-visited-state">
           Herbie Hyde</a>
           <br />
-          <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 9881221</span>
+          <span class="govuk-hint">CRN: 9881221</span>
       </th>
           <!--<td class="govuk-table__cell">A381306</td>-->
           <td class="govuk-table__cell">Standard determinate</td>
           <td class="govuk-table__cell">
             <a href="probation-details">Sidra Malek</a>
             </td>
-          <td class="govuk-table__cell" data-sort-value="3">19 Dec 2021</td>
+          <td class="govuk-table__cell" data-sort-value="6">19 Dec 2021</td>
               <td class="govuk-table__cell">
                 <strong class="govuk-tag govuk-tag--green"> A<span style="text-transform: lowercase;">ctive</span></strong><br />
               </td>
@@ -229,7 +394,7 @@
               <a href="licence-history" class="govuk-link govuk-link--no-visited-state">
               Rajesh Damodaran</a>
               <br />
-                <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 547363</span>
+                <span class="govuk-hint">CRN: 547363</span>
             
           </th>
           <!--<td class="govuk-table__cell">A381306</td>-->
@@ -248,7 +413,7 @@
                   <a href="licence-history" class="govuk-link govuk-link--no-visited-state">
                   Leroy Jenkins</a>
                   <br />
-                    <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 777723</span>
+                    <span class="govuk-hint">CRN: 777723</span>
                 
               </th>
               <!--<td class="govuk-table__cell">A381306</td>-->
@@ -261,32 +426,14 @@
                     <strong class="govuk-tag govuk-tag--green">A<span style="text-transform: lowercase;">ctive</span></strong>
                   </td>
                 </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">
-               
-                  <a href="licence-history" class="govuk-link govuk-link--no-visited-state">
-                  Marco Pierre</a>
-                  <br />
-                    <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 776622</span>
-                
-              </th>
-              <!--<td class="govuk-table__cell">A381306</td>-->
-              <td class="govuk-table__cell">Standard determinate </td>
-              <td class="govuk-table__cell">
-                <a href="probation-details">John Farrell</a>
-                </td>
-              <td class="govuk-table__cell" data-sort-value="6">6 Dec 2021</td>
-                  <td class="govuk-table__cell">
-                    <strong class="govuk-tag govuk-tag--yellow">V<span style="text-transform: lowercase;">ariation approved</span></strong>
-                  </td>
-                </tr>
+            
                 <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">
                   
                       <a href="licence-history" class="govuk-link govuk-link--no-visited-state">
                       Leoni McMessi</a>
                       <br />
-                        <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 376533</span>
+                        <span class="govuk-hint">CRN: 376533</span>
                    
                   </th>
                   <!--<td class="govuk-table__cell">A381306</td>-->
@@ -307,7 +454,7 @@
                           <a href="licence-history" class="govuk-link govuk-link--no-visited-state">
                           Diamond Smith</a>
                           <br />
-                            <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 298673</span>
+                            <span class="govuk-hint">CRN: 298673</span>
                         
                       </th>
                       <!--<td class="govuk-table__cell">A381306</td>-->
@@ -326,7 +473,7 @@
                           <a href="licence-history" class="govuk-link govuk-link--no-visited-state">
                           Mike Wyzowski</a>
                           <br />
-                            <span class="govuk-hint" style="font-size:0.7em; margin-top:5px;">CRN: 876567</span>
+                            <span class="govuk-hint">CRN: 876567</span>
               
                       </th>
                       <!--<td class="govuk-table__cell">A381306</td>-->
