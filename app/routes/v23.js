@@ -117,6 +117,39 @@ router.post('/ca-new-licence-timeserved', function (req, res) {
 
 
 
+
+//Timeserved - Approver view from approve licence page to approve and back to case list
+router.post(version + '/approvals/approve-timeserved', function(req, res) {
+  var route = req.session.data['approve-a-licence'];
+  if (route == "approvenow"){
+    res.redirect(version + '/approvals/confirmation-timeserved');
+  }
+  else if (route == "returntocases"){
+    res.redirect(version + '/list');
+  }
+});
+//Timeserved - Approver view from confirmation list to approve another licence
+router.post(version + '/approvals/confirmation-timeserved', function(req, res) {
+  res.redirect(version + '/list');
+});
+
+//Time served - from confirmation back to case list
+router.post(version + '/timeserved/confirmation', function(req, res) {
+  var saveexit = req.session.data['submit'];
+  if (saveexit == "continue"){
+    res.redirect(version + '/list#releases-two-days');
+  }
+});
+
+
+
+
+
+
+
+
+
+
 //Hardstop - edit confirmation
 router.post(version + '/edit/check-your-answers-edit', function(req, res) {
   var saveexit = req.session.data['submit'];
