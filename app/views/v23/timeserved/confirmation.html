@@ -56,7 +56,7 @@
                       {% elseif data.releaseDateChanged=="yes" %}
                       Honor Weekend
                     {% else %}
-                    Giovanni Nicholson sent
+                    Dwayne Briggs sent
                     {% endif %}
 
 
@@ -90,23 +90,26 @@
 
           <h2 class="govuk-heading-m">If you need to make any changes</h2>
 
-          <p class="govuk-body">The probation practitioner may request changes to the initial appointment. If so, you can return to the service to edit this licence after it has been sent or approved.</p>
+          <p class="govuk-body">Only the initial appointment can be changed. For example, because a probation practitioner requests a different date or time. You can return to the service to edit this after it has been sent or approved.
+          </p>
           
           <p class="govuk-body">The licence will not need to be approved again.</p>
 
 
           <form action="" method="post">
 
-            <input type="hidden" name="hardstopsubmitted" value="yes">
+            <input type="hidden" name="timeservedsubmitted" value="yes">
             <div class="govuk-button-group">
               {{ govukButton({
-                text: "Return to caselist",
+                text: "Return to case list",
                 name: "approveanotherlicence",
                 value: "yes",
                 type: "submit"
               }) }}
              </div>
               </form>
+
+          
             
           </div>
         <br>

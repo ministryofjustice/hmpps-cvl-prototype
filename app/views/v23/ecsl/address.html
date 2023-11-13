@@ -20,8 +20,8 @@
 {% endblock %}
 
 {% block content %}
-{% include "layouts/layout-name-dwayne.html" %}
-
+{% include "layouts/layout-name.html" %}
+<form method="post" action="">
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds"><br>
 
@@ -34,7 +34,15 @@
         </div>
 
     </div>
-    
+    {% if data.releaseDateChanged=="yes" %}
+      <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+The conditional release date is on a weekend or bank holiday. Check the release date with the prison OMU.      </strong>
+    </div>
+    {% endif %}
+
 
 <div class="govuk-grid-row">
 <div class="govuk-grid-column-one-third">
@@ -92,18 +100,14 @@
 
     </div>
 
-
-    <form method="" action="phone-number">
     <div class="govuk-button-group">
     <button class="govuk-button" data-module="govuk-button" name="submit" value="continue">
       Continue
     </button>
-
+    
     </div>
-    </form>
-
 </div>
-
+</form>
 
  </div>
 
