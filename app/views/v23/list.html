@@ -218,18 +218,18 @@
 
       <ul class="govuk-list govuk-list--bullet" style="margin-top: 10px; margin-bottom: 40px;">
         <li>probation practitioners can no longer work on licences</li>
-        <li>you can generate a standard licence if a probation practitioner has not submitted one for approval. This includes time-served releases
+        <li>you can generate a standard licence if a probation practitioner has not submitted one for approval.</br> This includes time-served releases
         </li>
       </ul>
 
     <table class="govuk-table" data-module="moj-sortable-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header" aria-sort="none" style="width: 170px;">Name</th>
-          <th scope="col" class="govuk-table__header" aria-sort="none" style="width: 180px;">Prison number</th>
-          <th scope="col" class="govuk-table__header" aria-sort="none" style="width: 160px;">Probation practitioner</th>
-          <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="ascending" style="width: 180px;">Release date</th>
-          <th scope="col" class="govuk-table__header" aria-sort="none" style="width: 230px;">Last worked on by</th>
+          <th scope="col" class="govuk-table__header" aria-sort="none" style="width: 250px;">Name</th>
+          <th scope="col" class="govuk-table__header" aria-sort="none" style="width: 140px;">Prison number</th>
+          <th scope="col" class="govuk-table__header" aria-sort="none" style="width: 220px;">Probation practitioner</th>
+          <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="ascending" style="width: 0px;">Release date</th>
+          <th scope="col" class="govuk-table__header" aria-sort="none" style="width: 320px;">Last worked on by</th>
           <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none" style="width: 150px;">Status</th>
         </tr>
       </thead>
@@ -251,7 +251,12 @@
               {% else %}
               <td class="govuk-table__cell"></td>
               {% endif %}
+
+              {% if data.timeservedsubmitted=="yes"%}
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--pink">S<span style="text-transform: lowercase;">ubmitted</span></strong></td>
+              {% else %}
             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">N<span style="text-transform: lowercase;">ot started</span></strong></td>
+            {% endif %}
         </tr>
 
         <tr class="govuk-table__row">
