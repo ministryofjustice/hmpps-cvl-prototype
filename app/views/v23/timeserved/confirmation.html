@@ -96,7 +96,19 @@
           <p class="govuk-body">The licence will not need to be approved again.</p>
 
 
-          <a href="/v23/list.html" class="govuk-button">Return to case list</a>
+          <form action="" method="post">
+
+            <input type="hidden" name="timeservedsubmitted" value="yes">
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Return to case list",
+                name: "approveanotherlicence",
+                value: "yes",
+                type: "submit"
+              }) }}
+             </div>
+              </form>
+
           
             
           </div>
