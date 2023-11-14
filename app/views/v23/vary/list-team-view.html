@@ -91,11 +91,23 @@
   <nav class="moj-sub-navigation" aria-label="Sub navigation">
    <ul class="moj-sub-navigation__list" style="margin-bottom:0px;">
      <li class="moj-sub-navigation__item">
-       <a class="moj-sub-navigation__link"  href="list">My cases <span id="notifications" class="moj-notification-badge">3</span>
+       <a class="moj-sub-navigation__link"  href="list">My cases
+        {% if data.timeservedreviewedcase2=="yes"%}
+        <span id="notifications" class="moj-notification-badge">2</span>
+        {% else %}
+        <span id="notifications" class="moj-notification-badge">3</span>
+        {% endif %}
        </a>
      </li>
      <li class="moj-sub-navigation__item">
-       <a class="moj-sub-navigation__link" aria-current="page" href="#">Team cases <span id="notifications" class="moj-notification-badge">4</span>
+       <a class="moj-sub-navigation__link" aria-current="page" href="#">Team cases 
+        {% if (data.timeservedreviewed=="yes") and (data.timeservedreviewedcase2=="yes") %}
+        <span id="notifications" class="moj-notification-badge">2</span>
+        {% elseif data.timeservedreviewed=="yes"%}
+        <span id="notifications" class="moj-notification-badge">3</span>
+        {% else %}
+        <span id="notifications" class="moj-notification-badge">4</span>
+        {% endif %}
        </a>
      </li>
      <li class="moj-sub-navigation__item">
@@ -310,27 +322,31 @@
 
 
 
+
+
       <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header">
-          
-            <a href="licence-history" class="govuk-link govuk-link--no-visited-state">
-            Rado Milosevic</a>
-            <br />
-              <span class="govuk-hint">CRN: 132977</span>
-         
+        <th scope="row" class="govuk-table__header"><a href="timeserved/licence-history-review-case2" class="govuk-link govuk-link--no-visited-state">Rado Milosevic</a></br>
+          <span class="govuk-hint">CRN: 776622</span>
         </th>
-        <!--<td class="govuk-table__cell">A381306</td>-->
-        <td class="govuk-table__cell">Standard determinate</td>
+        <td class="govuk-table__cell">Standard determinate </td>
         <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
+
+        {% if data.timeservedreviewedcase2=="yes"%}
+        <td class="govuk-table__cell" data-sort-value="2">{{ "today" | duration(0) | govukDate("truncate") }}</td>              
+        {% else %}
         <td class="govuk-table__cell due-date" data-sort-value="2">
           <span class="date overdue">{{ "today" | duration(0) | govukDate("truncate") }}</span>
           <span class="secondary overdue" style="width: 195px;">Released from court</span>
         </td>
+        {% endif %}
 
-          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">R<span style="text-transform: lowercase;">eview needed</span></strong></td>
-   
+        {% if data.timeservedreviewedcase2=="yes"%}
+        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--turquoise">A<span style="text-transform: lowercase;">ctive</span></strong></td>
+        {% else %}
+        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">R<span style="text-transform: lowercase;">eview needed</span></strong></td>
+        {% endif %}
+
       </tr>
-
 
 
 

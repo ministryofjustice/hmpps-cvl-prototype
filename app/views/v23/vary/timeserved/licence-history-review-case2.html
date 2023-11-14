@@ -17,7 +17,7 @@
 
 {% block content %}
 
-{% include "layouts/layout-name-briggs.html" %}<br />
+{% include "layouts/layout-name-rado.html" %}<br />
 
 <h1 class="govuk-heading-xl">Current licence and licence history</h1>
 
@@ -198,14 +198,14 @@
           
           
 
-          {% if data.timeservedreviewed=="yes"%}
+          {% if data.timeservedreviewedcase2=="yes"%}
           
           
           <div class="govuk-button-group">
             <button class="govuk-button" data-module="govuk-button">
               Vary licence
             </button>
-            <a href="/v23/vary/list-team-view" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            <a href="/v23/vary/list" class="govuk-button govuk-button--secondary" data-module="govuk-button">
               Return to case list
             </a>
           </div>
@@ -233,7 +233,7 @@
         </div>
       </div>
 
-          <form action="licence-history-review-variation" method="post">
+          <form action="licence-history-review-variation-case2" method="post">
 
             <button class="govuk-button" data-module="govuk-button">
               Review licence
@@ -248,7 +248,7 @@
 
   <div class="moj-timeline" style="margin-top: 30px;">
     
-    {% if data.timeservedreviewed=="yes"%}
+    {% if data.timeservedreviewedcase2=="yes"%}
 
     <div class="moj-timeline__item">
       

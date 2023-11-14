@@ -41,7 +41,12 @@
               Name
             </dt>
             <dd class="govuk-summary-list__value">
-              Duty Officer
+              {%if (data.who2) %}{{data.who2}}
+              {% elseif (data.who4) %}{{data.who4}}
+              {% else %}Duty Officer
+              {% endif %}
+
+
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -97,6 +102,8 @@
             </dt>
             <dd class="govuk-summary-list__value">
               {%if (data.contactnumber1) %}{{data.contactnumber1}}
+              {% elseif (data.contactnumber2) %}{{data.contactnumber2}}
+              {% elseif (data.contactnumber3) %}{{data.contactnumber3}}
               {% else %}0798 443 0099
               {% endif %}
 
