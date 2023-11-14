@@ -279,6 +279,24 @@ router.post('/review-licence-timeserved', function (req, res) {
 
 });
 
+//Time served
+//Vary journey
+//Review licence - Case 2
+
+router.post('/review-licence-timeserved-case2', function (req, res) {
+  var licenceReviewedcasetwo = req.session.data['licence-review-variation']
+
+  // Check whether the variable matches a condition
+  if (licenceReviewedcasetwo == "yes"){
+   
+   // Send user to next page
+    res.redirect(version + '/vary/question')
+  } else {
+    // Send user to ineligible page
+    res.redirect(version + '/vary/timeserved/licence-history-review-case2')
+  }
+
+});
 
 
 

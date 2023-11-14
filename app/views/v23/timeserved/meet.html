@@ -41,8 +41,8 @@
 
 {% set textHtmlOther %}
 {{ govukInput({
-  id: "Enter name",
-  name: "Enter name",
+  id: "who4",
+  name: "who4",
   type: "tel",
   autocomplete: "tel",
   classes: "govuk-fieldset__legend--s govuk-input govuk-input--width-30",
@@ -54,8 +54,7 @@
 
 
 {{ govukRadios({
-  idPrefix: "contact3",
-  name: "contact3",
+  
   fieldset: {
     legend: {
       text: "",
@@ -66,6 +65,8 @@
 
   items: [
   {
+    idPrefix: "who2",
+    name: "who2",
     value: "Duty officer",
     text: "Duty officer
     ",
@@ -76,7 +77,8 @@
 
 
   {
-    value: "Someone else",
+    idPrefix: "who3",
+    name: "who3",
     text: "Someone else",
     hint: {
       text: "For example, someone at an approved premises or a different probation practitioner."

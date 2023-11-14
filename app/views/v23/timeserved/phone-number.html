@@ -41,8 +41,8 @@
 
 {% set textHtmlOther %}
 {{ govukInput({
-  id: "Enter phone number",
-  name: "Enter phone number",
+  idPrefix: "contactnumber3",
+  name: "contactnumber3",
   type: "tel",
   autocomplete: "tel",
   classes: "govuk-fieldset__legend--s govuk-input govuk-input--width-30",
@@ -68,7 +68,8 @@
 
 
   {
-    value: "Probation office: 01273 800 900",
+    idPrefix: "contactnumber2",
+    name: "contactnumber2",
     text: "Probation office: 01273 800 900",
     conditional: {
       html: emailHtml
@@ -76,7 +77,8 @@
   },
 
   {
-    value: "A different phone number",
+    idPrefix: "contactnumber4",
+    name: "contactnumber4",
     text: "A different phone number",
     hint: {
       text: "For example, an approved premises or a different probation practitioner."

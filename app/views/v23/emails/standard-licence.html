@@ -1,0 +1,39 @@
+{% extends "layouts/main.html" %}
+
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+<h1 class="govuk-heading-xl">Emails</h1>
+
+
+<h2 class="govuk-heading-m">Standard licence created by the prison (before allocation)</h2>
+
+<img style="margin-bottom: 150px;border:1px solid black;" src="/public/images/standard-licence/1-Created-prison.png" alt="profile image">
+
+<h2 class="govuk-heading-m">Standard licence created by the prison (after PP allocated)</h2>
+
+<img style="margin-bottom: 150px; border:1px solid black;" src="/public/images/standard-licence/2-Created-prison-PP-allocated.png" alt="profile image">
+
+<h2 class="govuk-heading-m">When a review of standard licence is overdue</h2>
+
+<img style="margin-bottom: 150px; border:1px solid black;" src="/public/images/standard-licence/3-review-overdue.png" alt="profile image">
+
+
+
+{% endblock %}
