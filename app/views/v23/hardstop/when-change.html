@@ -5,36 +5,46 @@
 {% endblock %}
 {% block beforeContent %}
 
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
 {% endblock %}
 
 {% block content %}
-
-<form method="" action="/v23/edit/check-your-answers-edit">
+{% include "layouts/layout-name-eric.html" %}
+<br />
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds"><br>
-    <fieldset class="govuk-fieldset">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-        <h1 class="govuk-fieldset__heading">
-      <!--    Who does {% if data.edit=="yes" %}Edith Bradshaw{% else %}Adam Balasaravika{% endif %} need to meet for their initial appointment?  </h1>-->
+  <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group">
 
-      When do they need to go to their initial appointment?</h1>
-      </legend><br>
-      {% if data.releaseDateChanged=="yes" %}
-              <div class="govuk-warning-text">
-              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-              <strong class="govuk-warning-text__text">
-                <span class="govuk-warning-text__assistive">Warning</span>
-The conditional release date is on a weekend or bank holiday. Check the release date with the prison OMU.              </strong>
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+              <!--  When does {% if data.edit=="yes" %}Edith Bradshaw{% else %}Adam Balasaravika{% endif %} need to go to their initial appointment?-->
+              When do they need to go to their initial appointment?
+              </h1>
+            </legend><br>
+            
+
+            <div class="govuk-hint">
+              Only enter a specific date and time if you have confirmed one with this person’s probation practitioner.
             </div>
-          {% endif %}
 
-  </div>
-</div>
- <!--START set dynamic radio hide/show text-->
+            
+           <!--START set dynamic radio hide/show text-->
     {% from "govuk/components/radios/macro.njk" import govukRadios %}
     {% from "govuk/components/input/macro.njk" import govukInput %}
 
-
+   
 
     {% set textHtmlTimesOne %}
     <div class="govuk-form-group">
@@ -119,7 +129,7 @@ The conditional release date is on a weekend or bank holiday. Check the release 
       </div>
     {% endset -%}
 
-    
+
     <!--END set dynamic radio hide/show text-->
            
     {{ govukRadios({
@@ -136,13 +146,7 @@ The conditional release date is on a weekend or bank holiday. Check the release 
         text: ""
       },
       items: [
-        {
-          value: "once",
-          text: "At a specific date and time",
-          conditional: {
-            html: textHtmlTimesOne
-          }
-        },
+
         {
           value: "Immediately after release",
           text: "Immediately after release",
@@ -150,23 +154,41 @@ The conditional release date is on a weekend or bank holiday. Check the release 
             html: textHtmlTimesTwo
           }
         },
+
+
         {
-          value: "As soon as possible by 2pm on the next working day after release",
-          text: "As soon as possible by 2pm on the next working day after release",
+          value: "By 2pm on the next working day after their release",
+          text: "By 2pm on the next working day after their release",
           conditional: {
             html: textHtmlTimesThree
           }
+        },
+
+
+        {
+          value: "At a specific date and time",
+          text: "At a specific date and time",
+          conditional: {
+            html: textHtmlTimesOne
+          }
         }
+       
       ]
     }) }}
       
  
-        
-   
+          </fieldset>
+        </div>
    
 
-        <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
- 
+    <form action="check-your-answers-approved" method="post">
+
+    <input type="hidden" name="initialappointmentchanged" value="yes">
+
+    <button class="govuk-button" data-module="govuk-button">
+      Return to check your answers
+    </button>
+
   </form>
 
 
@@ -174,5 +196,3 @@ The conditional release date is on a weekend or bank holiday. Check the release 
 </div>
 
 {% endblock %}
-
-
