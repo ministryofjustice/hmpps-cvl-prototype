@@ -586,13 +586,15 @@
           <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Jamie Foxx</a></td>
           {%endif%}
 
-          <td class="govuk-table__cell" data-sort-value="1">{{ "today" | duration(4) | govukDate("truncate") }}</td>
+          <td class="govuk-table__cell" data-sort-value="9">{{ "today" | duration(3) | govukDate("truncate") }}</td>
           <td class="govuk-table__cell"> {% if data.user=="governor"%}
             </td>
            {%else%}
            <strong class="govuk-tag govuk-tag--grey">N<span style="text-transform: lowercase;">ot started</span></strong></td>
            {%endif%}
         </tr>
+
+        
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">
             <a href="#" class="govuk-link govuk-link--no-visited-state">
@@ -682,7 +684,8 @@
           <td class="govuk-table__cell" style="width: 220px;">Standard determinate <br />Post sentence supervision</td>
           <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
           <td class="govuk-table__cell" data-sort-value="5">{{ "today" | duration(2) | govukDate("truncate") }}</td>
-          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">A<span style="text-transform: lowercase;">pproved</span></strong></td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">T<span style="text-transform: lowercase;">imed out</span></strong>
+          </td>
           </tr>
   
       <tr class="govuk-table__row">
