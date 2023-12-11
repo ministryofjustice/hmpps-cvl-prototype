@@ -123,6 +123,8 @@
  
       <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="ascending" style="width: 230px;">Release date</th>
 
+      {% if data.user=="admin" %}<th scope="col" class="govuk-table__header app-custom-class" style="width: 160px;">Last worked on by</th>{% endif %}
+
       <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none" style="width: 130px;">Status</th>
 
     </tr>
@@ -147,13 +149,14 @@
 
     <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Afsana Khan</a></td>
 
-  
     {% if data.user=="probation" %}<td class="govuk-table__cell">Sentence Management Team C</td>{% endif %}
 
     {% if data.user=="admin" %}<td class="govuk-table__cell">Swansea (HMP)</td>{% endif %}
 
-    {% if (data.user=="probation") or (data.user=="admin") %}<td class="govuk-table__cell">{{ "today" | duration(-50) | govukDate("truncate") }}</td>{% endif %}
+    {% if (data.user=="probation") or (data.user=="admin") %}<td class="govuk-table__cell">{{ "today" | duration(2) | govukDate("truncate") }}</td>{% endif %}
   
+    {% if data.user=="admin" %}<td class="govuk-table__cell"></td>{% endif %}
+
     <td class="govuk-table__cell">
       <strong class="govuk-tag govuk-tag--grey">N<span style="text-transform: lowercase;">ot started</span></strong>
     </td>
@@ -182,6 +185,8 @@
 
     {% if (data.user=="probation") or (data.user=="admin") %}<td class="govuk-table__cell">{{ "today" | duration(5) | govukDate("truncate") }}</td>{% endif %}
   
+    {% if data.user=="admin" %}<td class="govuk-table__cell">Gemma Smith</td>{% endif %}
+
     <td class="govuk-table__cell">
       <strong class="govuk-tag govuk-tag--green">A<span style="text-transform: lowercase;">pproved</span></strong>
     </td>
@@ -211,6 +216,8 @@
 
     {% if (data.user=="probation") or (data.user=="admin") %}<td class="govuk-table__cell">{{ "today" | duration(14) | govukDate("truncate") }}</td>{% endif %}
   
+    {% if data.user=="admin" %}<td class="govuk-table__cell">Mustafa Harfouf</td>{% endif %}
+
     <td class="govuk-table__cell">
       <strong class="govuk-tag govuk-tag--blue">I<span style="text-transform: lowercase;">n progress</span></strong>
     </td>
