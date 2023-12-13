@@ -119,6 +119,20 @@ The conditional release date is on a weekend or bank holiday. Check the release 
         <br><br><br>
 
   </fieldset>
+
+  {% from 'components/datepicker/macro.njk' import hmppsDatepicker %}
+
+  {{ hmppsDatepicker({
+    id: "date",
+    name: "date",
+    label: {
+        text: "Date"
+    },
+    classes: 'hmpps-datepicker--fixed-width',
+    value: formValues.date,
+    maxDate: '2023-09-20'
+}) }}
+
 </div>
 <!--<div class="govuk-button-group">
   {% if data.licencetypechoose=="pssonly"%}
@@ -140,5 +154,5 @@ The conditional release date is on a weekend or bank holiday. Check the release 
 
  </div>
 </div>
-
+<script src="/public/javascripts/datepicker.js"></script>
 {% endblock %}
