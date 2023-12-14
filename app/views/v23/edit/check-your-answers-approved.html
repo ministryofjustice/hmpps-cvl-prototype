@@ -19,7 +19,7 @@
 
 {% block content %}
 
-{% include "/layouts/layout-name.html" %}<br />
+{% include "layouts/layout-name.html" %}<br />
 
 
 <br />
@@ -27,21 +27,45 @@
 <!--  <span class="govuk-caption-m">{% if data.edit=="yes" %}Edith Bradshaw{% else %}Adam Balasaravika{% endif %}
 </span></h1>-->
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full-from-desktop">
+{% if data.initialapptchange=="yes" %}
+<div class="moj-banner moj-banner--success" role="region" aria-label="Success" name="initialapptchange">
+
+  <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+    <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
+  </svg>
+
+  <div class="moj-banner__message">Initial appointment details saved. Reapproval will not be needed, you can view or download the updated PDF.</div>
+
+</div>
+{% endif %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full-from-desktop">
 
 
-  <h1 class="govuk-heading-l">Check licence details</h1>
+  <h1 class="govuk-heading-l">View licence and supervision order</h1>
 
   <div style="float:right;">
 
     <form action="" method="post">
-    <div class="govuk-button-group">
+      <div class="govuk-button-group">
+           
+        <a href="/v23/edit/question" class="govuk-button">Edit licence conditions</a>
+        <a href="/v23/licence-pdf-print" class="govuk-button govuk-button--secondary" target="_blanks">View and print licence PDF</a>
+  
+      </div>
+
+   
+      <!--<div class="govuk-button-group">
       {{ govukButton({
-        text: "Edit licence"
+        text: "Edit licence conditions"
+      }) }}
+      {{ govukButton({
+        text: "Edit appointment conditions"
       }) }}
 
-    </div>
+    </div>--> 
+    
         <h2 class="govuk-heading-m"> Initial meeting details</h2>
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -58,7 +82,7 @@
               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="meet-change">Change
+              <a class="govuk-link" href="/v23/meet-change.html">Change
                 <span class="govuk-visually-hidden"></span>
               </a>
             </dd>
@@ -105,7 +129,7 @@
 
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="address-change">Change
+              <a class="govuk-link" href="/v23/address-change">Change
                 <span class="govuk-visually-hidden"> licence type</span>
               </a>
             </dd>
@@ -123,25 +147,32 @@
 
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="phone-number-change">Change
+              <a class="govuk-link" href="/v23/phone-number-change">Change
                 <span class="govuk-visually-hidden"> </span>
               </a>
             </dd>
           </div>
-
+          
+          
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Date
             </dt>
+         
             <dd class="govuk-summary-list__value">
-              22 December 2021
+              {%if (data.initialapptchange) %}{{data.initialapptchange}}
+              {% else %} 22 December 2021
+              {% endif %}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="when-change">Change
+          <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/v23/edit/when-change">Change
                </span>
               </a>
+             
             </dd>
+         
           </div>
+          
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -151,7 +182,7 @@
               5:30pm
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="when-change">Change
+              <a class="govuk-link" href="/v23/when-change">Change
               </span>
               </a>
             </dd>
@@ -419,13 +450,14 @@
       </dd>
       </div>
       </dl>
-      <form action="edit-licence-check" method="post">
       <div class="govuk-button-group">
-        {{ govukButton({
-          text: "Edit licence"
-        }) }}
-
+           
+        <a href="/v23/edit/question" class="govuk-button">Edit licence conditions</a>
+        <a href="/v23/licence-pdf-print" class="govuk-button govuk-button--secondary" target="_blanks">View and print licence PDF</a>
+        <a href="/v23/licence-pdf-print" class="govuk-link">Return to caselist</a>
+  
       </div>
+
 
       </div>
     </div>
