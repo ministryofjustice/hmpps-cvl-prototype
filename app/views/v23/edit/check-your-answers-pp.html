@@ -18,24 +18,14 @@
 
 {% block content %}
 
-{% include "layouts/layout-name.html" %}<br />
+{% include "layouts/layout-name-rick.html" %}<br />
 
 
 <br />
 <h1 class="govuk-heading-m">
 <!--  <span class="govuk-caption-m">{% if data.edit=="yes" %}Edith Bradshaw{% else %}Adam Balasaravika{% endif %}
 </span></h1>-->
-{% if data.initialapptchange1=="yes" %}
-<div class="moj-banner moj-banner--success" role="region" aria-label="Success" name="initialapptchange1">
 
-  <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
-    <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
-  </svg>
-
-  <div class="moj-banner__message">Initial appointment details saved. Reapproval will not be needed, you can view or download the updated PDF.</div>
-
-</div>
-{% endif %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full-from-desktop">
@@ -53,6 +43,17 @@
         
   
       </div>
+      {% if data.datetime=="yes" %}
+      <div class="moj-banner moj-banner--success" role="region" aria-label="Success">
+      
+        <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+          <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
+        </svg>
+      
+        <div class="moj-banner__message">Initial appointment details saved. Reapproval will not be needed, you can view or download the updated PDF.</div>
+      
+      </div>
+      {% endif %}
 
       
       <!--<div class="govuk-button-group">
@@ -162,7 +163,7 @@
               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="when-change">Change
+              <a class="govuk-link" href="when-change2">Change
                </span>
               </a>
             </dd>

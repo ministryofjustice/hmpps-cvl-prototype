@@ -363,6 +363,7 @@
           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">N<span style="text-transform: lowercase;">ot started</span></strong></td>
         </tr>
         
+        
       </tbody>
     </table>
 
@@ -562,7 +563,19 @@
   </thead>
   <tbody class="govuk-table__body">
 
-
+    {% if data.user=="probation"%}
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><a href="edit/check-your-answers-approved.html" class="govuk-link govuk-link--no-visited-state">Luca Milo</a></br>
+        <span class="govuk-hint" style="font-size:.85em; margin-top:-10px;">CRN: A381306</span>
+      </th>
+    
+    <td class="govuk-table__cell">Standard determinate</td>
+    <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
+    <td class="govuk-table__cell" data-sort-value="9">{{ "today" | duration(2) | govukDate("truncate") }}</td>
+    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">A<span style="text-transform: lowercase;">pproved</span></strong></td>
+    
+    </tr>
+    {%endif%}
 
       {% if (data.user=="probation") or (data.user=="aco") %}
       <tr class="govuk-table__row">
@@ -707,6 +720,17 @@
         {% if data.user=="probation"%}
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state">Elliot Raishbrook</a></br>
+            <span class="govuk-hint" style="font-size:.85em; margin-top:-10px;">CRN: A588111</span>
+          </th>
+          <td class="govuk-table__cell">Standard determinate <br />Post sentence supervision</td>
+          <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
+          <td class="govuk-table__cell" data-sort-value="8">{{ "today" | duration(3) | govukDate("truncate") }}</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--pink">S<span style="text-transform: lowercase;">ubmitted</span></strong></td>
+        </tr>
+        {%endif%}
+        {% if data.user=="probation"%}
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="edit/check-your-answers-pp.html" class="govuk-link govuk-link--no-visited-state">Rick Chapman</a></br>
             <span class="govuk-hint" style="font-size:.85em; margin-top:-10px;">CRN: A588111</span>
           </th>
           <td class="govuk-table__cell">Standard determinate <br />Post sentence supervision</td>
@@ -915,6 +939,7 @@
 
 </tr>
 {%endif%}
+
 
 
 {% if data.licencetypechoose=="pss"%}
