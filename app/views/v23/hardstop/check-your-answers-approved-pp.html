@@ -21,10 +21,22 @@
 
 {% block content %}
 {% include "layouts/layout-name-raul.html" %}
-
-
-
 <br />
+
+
+{% if data.ppapprovedappointmentchange=="yes" %}
+<div class="moj-banner moj-banner--success" role="region" aria-label="Success">
+
+  <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+    <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
+  </svg>
+
+  <div class="moj-banner__message">Initial appointment details updated. <a class="govuk-link" href="/v23/licence-pdf-print" target="_blank">View and print new licence PDF</a></div>
+
+</div>
+{% endif %}
+
+
 <h1 class="govuk-heading-m">
 <!--  <span class="govuk-caption-m">{% if data.edit=="yes" %}Edith Bradshaw{% else %}Adam Balasaravika{% endif %}
 </span></h1>-->
@@ -36,7 +48,7 @@
       <h1 class="govuk-heading-l">Print licence for Raul Gomez</h1><br>
 
 
-        <h2 class="govuk-heading-m"> Initial meeting details</h2>
+        <h2 class="govuk-heading-m">Initial appointment details</h2>
 
       
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -124,7 +136,7 @@
               {{ 14 | govukDate }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="when-change">
+              <a class="govuk-link" href="when-change-pp-approved.html">
                 Change<span class="govuk-visually-hidden"> </span>
               </a>
             </dd>
@@ -138,7 +150,7 @@
               4:30pm
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="when-change">
+              <a class="govuk-link" href="when-change-pp-approved.html">
                 Change<span class="govuk-visually-hidden"></span>
               </a>
             </dd>
