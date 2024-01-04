@@ -183,7 +183,7 @@
 
     {% if data.user=="admin" %}<td class="govuk-table__cell">Cardiff (HMP)</td>{% endif %}
 
-    {% if (data.user=="probation") or (data.user=="admin") %}<td class="govuk-table__cell">{{ "today" | duration(5) | govukDate("truncate") }}</td>{% endif %}
+    {% if (data.user=="probation") or (data.user=="admin") %}<td class="govuk-table__cell">{{ "today" | duration(2) | govukDate("truncate") }}</td>{% endif %}
   
     {% if data.user=="admin" %}<td class="govuk-table__cell">Gemma Smith</td>{% endif %}
 
@@ -214,7 +214,7 @@
 
     {% if data.user=="admin" %}<td class="govuk-table__cell">Swansea (HMP)</td>{% endif %}
 
-    {% if (data.user=="probation") or (data.user=="admin") %}<td class="govuk-table__cell">{{ "today" | duration(14) | govukDate("truncate") }}</td>{% endif %}
+    {% if (data.user=="probation") or (data.user=="admin") %}<td class="govuk-table__cell">{{ "today" | duration(2) | govukDate("truncate") }}</td>{% endif %}
   
     {% if data.user=="admin" %}<td class="govuk-table__cell">Mustafa Harfouf</td>{% endif %}
 
