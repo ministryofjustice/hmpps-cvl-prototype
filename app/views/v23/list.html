@@ -437,7 +437,7 @@
           <td class="govuk-table__cell" data-sort-value="1">{{ "today" | duration(5) | govukDate("truncate") }}</td>
           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">A<span style="text-transform: lowercase;">pproved</span></strong></td>
         </tr>
-
+        
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state">Jimmy Bogart</a></th>
           <td class="govuk-table__cell">G5613GT</td>
@@ -606,6 +606,33 @@
            <strong class="govuk-tag govuk-tag--grey">N<span style="text-transform: lowercase;">ot started</span></strong></td>
            {%endif%}
         </tr>
+
+
+        {% if data.user=="probation" %}
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="licence-in-time-approved" class="govuk-link govuk-link--no-visited-state">Casper Green</a></br>
+              <span class="govuk-hint" style="font-size:.85em; margin-top:-10px;">CRN: G579362</span>
+          </th>
+          <td class="govuk-table__cell">Standard determinate</td>
+          <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
+          <td class="govuk-table__cell" data-sort-value="5">{{ "today" | duration(2) | govukDate("truncate") }}</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">a<span style="text-transform: lowercase;">pproved</span></strong>
+          </td>
+        </tr>
+        {%endif%}
+
+        {% if data.user=="probation" %}
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="licence-in-time-submitted" class="govuk-link govuk-link--no-visited-state">Laurence Sutton</a></br>
+              <span class="govuk-hint" style="font-size:.85em; margin-top:-10px;">CRN: G579362</span>
+          </th>
+          <td class="govuk-table__cell">Standard determinate</td>
+          <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
+          <td class="govuk-table__cell" data-sort-value="5">{{ "today" | duration(2) | govukDate("truncate") }}</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--pink">S<span style="text-transform: lowercase;">ubmitted</span></strong>
+          </td>
+        </tr>
+        {%endif%}
 
         
         <tr class="govuk-table__row">
