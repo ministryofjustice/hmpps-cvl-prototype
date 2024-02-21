@@ -27,21 +27,20 @@
 <!--  <span class="govuk-caption-m">{% if data.edit=="yes" %}Edith Bradshaw{% else %}Adam Balasaravika{% endif %}
 </span></h1>-->
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full-from-desktop">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds" style="padding-left: 15px;">
 
 
   <h1 class="govuk-heading-l">Check licence details</h1>
 
-  <p>You cannot work on a licence from 2 days before someone's release date. This is so the prison can complete their final release checks.</p>
+  <p>You cannot work on a licence from 2 days before someone's release date.</br>This is so the prison can complete their final release checks.</p>
 
-  <p>You can only ask the prison to change the initial appointment. Any other changes must be made after release.</p>
+  <p>You can only ask the prison to change the initial appointment.</br>Any other changes must be made after release.</p>
 
-  <div style="float:right;">
-
+  
     
 
-    <div class="govuk-button-group">
+    <div class="govuk-button-group" style="padding-top: 15px;">
       <button type="submit" class="govuk-button" data-module="govuk-button">
         View and print licence PDF
       </button>
@@ -50,9 +49,22 @@
 
 
 
-        <h2 class="govuk-heading-m"> Initial appointment details</h2>
+        <h2 class="govuk-heading-m" style="margin-top: 50px;"> Initial appointment details</h2>
 
         <p>To request a change to this person’s appointment, contact HMP Wandsworth at omu.wandsworth@justice.gov.uk.</p>
+
+
+  
+      </div>
+    </div>
+    
+
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full" style="padding-left: 15px;">
+
+
+
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
@@ -79,40 +91,7 @@
              Address
             </dt>
             <dd class="govuk-summary-list__value">
-
-              {%if (data.address1) %}
-                {{data.address1}}
-
-              {% else %}
-                Lewisham Probation Office
-              {% endif %},
-
-              {%if (data.address2) %}
-                {{data.address2}}
-
-              {% else %}
-                20 Brockley Street
-              {% endif %},
-
-              {%if (data.addresstown) %}
-                {{data.addresstown}}
-
-              {% else %}
-                London
-              {% endif %},
-
-              {%if (data.addresscounty) %}
-                {{data.addresscounty}},
-                {% endif %}
-
-              {%if (data.addresspostcode) %}
-                {{data.addresspostcode}}
-
-              {% else %}
-                SE13 4HY
-              {% endif %}
-
-
+              Lewisham Probation Office, 20 Brockley Street,</br>London, SE13 4HY
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="address-change">
@@ -144,7 +123,7 @@
               Date
             </dt>
             <dd class="govuk-summary-list__value">
-              22 December 2021
+              {{ "today" | duration(2) | govukDate("truncate") }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="when-change">
@@ -168,178 +147,55 @@
           </div>
 
 
-        </dl><br><br>
+        </dl><br>
 
 
 
 
               <div class="govuk-grid-row">
                 <div class="govuk-grid-column-three-quarters">
-                  <h2 class="govuk-heading-m">Additional licence conditions (6)</h2>
+                  <h2 class="govuk-heading-m">Additional licence conditions (2)</h2>
                 </div>
               </div>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-<!--
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="width:50%;">
-              Needs additional conditions?
-            </dt>
-            <dd class="govuk-summary-list__value">
-
-              Yes<br>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="question-change">
-
-              </a>
-            </dd>
-          </div>
--->
-          
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Restriction of residency
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Not to reside (not even to stay for one night) in the same household as any child under the age of 18 without the prior approval of your supervising officer.<br><br> <strong>Any child under 18</strong><br>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="additional/2a-change">
-
-              </a>
-            </dd>
-          </div>
 
 
+         
 
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Contact with a person
+              Maintaining contact
             </dt>
             <dd class="govuk-summary-list__value">
-              Not to have unsupervised contact with any children under the age of 18 without the prior approval of your supervising officer and / or Lewisham Social Services except where that contact is inadvertent and not reasonably avoidable in the course of lawful daily life.<br><br> <strong>Any children under 18</strong> <br> <strong>Lewisham Social Services</strong>
-
-
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="additional/3a-change">
-
-              </a>
-            </dd>
-          </div>
-
-
-
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Contact with a person
-
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Not to contact or associate with John Smith without the prior approval of your supervising officer. <br><br><strong>John Smith</strong>
-
-
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="additional/3f-change">
-
-              </a>
-            </dd>
-          </div>
-
-
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Programme and activities
-            </dt>
-
-            <dd class="govuk-summary-list__value">
-              To comply with any requirements specified by your supervising officer for the purpose of ensuring that you address your drug behaviour problems. <br><br><strong>Drug</strong>
-
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="additional/3j-change">
-
-              </a>
-            </dd>
-          </div>
-
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Programme and activities
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Not to undertake work or other organised activity which will involve a person under the age of 18, either on a paid or unpaid basis without the prior approval of your supervising officer <br><br><strong> Under the age of 18 </strong>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="additional/4a-change">
-
-              </a>
-            </dd>
-          </div>
-
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Items and documents
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Not to own or possess a smart phone  without the prior approval of your supervising officer. <br><br><strong> Smart phone </strong>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="additional/5h-change">
-
-              </a>
-            </dd>
-          </div>
-
-
-        <!--  <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Drug testing
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Attend as reasonably required by your supervising officer, to give a sample of oral fluid / urine in order to test whether you have any specified Class A and specified Class B drugs in your body, for the purpose of ensuring that you are complying with the condition of your licence requiring you to be of good behaviour.<br><br> <strong>Drug Centre Buildings, 13 Palmerston Road, London, SE2 3ED </strong>
+              Receive home visits from a Mental Health Worker.
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
 
               </a>
             </dd>
-          </div>-->
-        </dl><br /><br />
-
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-three-quarters">
-            <h2 class="govuk-heading-m">Bespoke licence conditions (1)</h2>
           </div>
-        </div>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-
-    
-
-      <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key" style="width:30%;">
-        Bespoke condition
-      </dt>
-      <dd class="govuk-summary-list__value">
-        You must not enter Tesco supermarket,</br> 290A Lewisham Road, London, SE13 7PA
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="conditions">
-
-        </a>
-      </dd>
-      </div>
-      </dl>
 
 
 
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Disclosure of information
+            </dt>
+            <dd class="govuk-summary-list__value">
+              To notify your supervising officer of the details of any passport that you possess (including passport number), and of any intention to apply for a new passport.
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+
+              </a>
+            </dd>
+          </div>
+
+
+        </dl>
 
 
 
@@ -355,7 +211,7 @@
 
 
       </div>
-    </div>
+
 
 
 
