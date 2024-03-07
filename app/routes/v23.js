@@ -2,6 +2,28 @@ module.exports = function (router) {
 
 var version = '/v23';
 
+//Early Release - Approver view from approve licence page to approve and back to case list
+router.post(version + '/approvals/approve-earlyrelease', function(req, res) {
+  var route = req.session.data['approve-a-licence'];
+  if (route == "approvenow"){
+    res.redirect(version + '/approvals/confirmation-earlyrelease');
+  }
+  else if (route == "returntocases"){
+    res.redirect(version + '/list');
+  }
+});
+//Timeserved - Approver view from confirmation list to approve another licence
+router.post(version + '/approvals/confirmation-timeserved', function(req, res) {
+  res.redirect(version + '/list');
+});
+
+//Time served - from confirmation back to case list
+router.post(version + '/timeserved/confirmation', function(req, res) {
+  var saveexit = req.session.data['submit'];
+  if (saveexit == "continue"){
+    res.redirect(version + '/list#releases-two-days');
+  }
+});
 
 
 //////////
