@@ -12,18 +12,7 @@ router.post(version + '/approvals/approve-earlyrelease', function(req, res) {
     res.redirect(version + '/list');
   }
 });
-//Timeserved - Approver view from confirmation list to approve another licence
-router.post(version + '/approvals/confirmation-timeserved', function(req, res) {
-  res.redirect(version + '/list');
-});
 
-//Time served - from confirmation back to case list
-router.post(version + '/timeserved/confirmation', function(req, res) {
-  var saveexit = req.session.data['submit'];
-  if (saveexit == "continue"){
-    res.redirect(version + '/list#releases-two-days');
-  }
-});
 //question page - do they need additional conditions
 router.post(version + '/earlyrelease/question', function(req, res) {
   var saveexit = req.session.data['submit'];
@@ -73,6 +62,12 @@ router.post(version + '/earlyrelease/check-your-answers-pp', function(req, res) 
   }
   else if (saveexit == "continue"){
     res.redirect(version + '/earlyrelease/confirmation-pp');
+  }
+});
+router.post(version + '/earlyrelease/when-pp', function(req, res) {
+  var saveexit = req.session.data['submit'];
+  if (saveexit == "continue"){
+    res.redirect(version + '/earlyrelease/question');
   }
 });
 
