@@ -24,7 +24,57 @@ router.post(version + '/timeserved/confirmation', function(req, res) {
     res.redirect(version + '/list#releases-two-days');
   }
 });
-
+//question page - do they need additional conditions
+router.post(version + '/earlyrelease/question', function(req, res) {
+  var saveexit = req.session.data['submit'];
+if (saveexit == "exit"){
+  res.redirect(version + '/exit');
+}
+else {
+  var needadditional = req.session.data['needadditional'];
+  if (needadditional == "yes"){
+    res.redirect(version + '/earlyrelease/conditions');
+  }
+  else if (needadditional == "no"){
+    res.redirect(version + '/earlyrelease/bespoke');
+  }
+}
+});
+//bespoke page - do they need bespoke conditions
+router.post(version +'/earlyrelease/bespoke', function(req, res) {
+var saveexit = req.session.data['submit'];
+if (saveexit == "exit"){
+  res.redirect(version + '/exit');
+  }
+else if (saveexit == "continue"){
+  var needbespoke = req.session.data['needbespoke'];
+    if (needbespoke == "yes"){
+      res.redirect(version +'/bespoke-checked-PPCS');
+      }
+else if (needbespoke == "no"){
+  var licencetypechoose = req.session.data['licencetypechoose'];
+  var change = req.session.data['changecycle'];
+    if (change == "yes"){
+      res.redirect(version +'/earlyrelease/check-your-answers-pp');
+    }
+  else if (licencetypechoose !== "ap"){
+      res.redirect(version +'/pss');
+    }
+    else if (licencetypechoose == "ap"){
+      res.redirect(version + '/earlyrelease/check-your-answers-pp');
+    }
+  }
+}
+});
+router.post(version + '/earlyrelease/check-your-answers-pp', function(req, res) {
+  var saveexit = req.session.data['submit'];
+  if (saveexit == "exit"){
+    res.redirect(version + '/list');
+  }
+  else if (saveexit == "continue"){
+    res.redirect(version + '/earlyrelease/confirmation-pp');
+  }
+});
 
 //////////
 

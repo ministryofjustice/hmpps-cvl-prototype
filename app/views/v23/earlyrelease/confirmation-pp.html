@@ -1,0 +1,75 @@
+{% extends "layouts/main.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+        <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+           
+              Licence conditions for <br> Jasper Holland sent
+
+          </h1>
+          
+        </div>
+
+
+
+        <h2 class="govuk-heading-m" style="margin-top: 30px;">What happens next</h2>
+        <p class="govuk-body">We have sent the licence to Belmarsh (HMP) for approval. 
+
+
+          <h2 class="govuk-heading-m">If you need to make any changes</h2>
+
+          <p class="govuk-body">You can do so up to 2 days before a standard release. After this, you can only ask the prison to change the initial appointment details. Other changes must be made after release. 
+          </p>
+          
+          <p class="govuk-body">You can continue to work on licences for people being released early after the 2-day point.
+          </p>
+
+
+          <form action="" method="post">
+
+            <input type="hidden" name="hardstopsubmitted" value="yes">
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Return to case list",
+                name: "approveanotherlicence",
+                value: "yes",
+                type: "submit"
+              }) }}
+             </div>
+              </form>
+            
+          </div>
+        <br>
+
+        <p class="govuk-body" style="margin-left: 15px; padding-top: 20px;">
+          <a href="#" class="govuk-link">What did you think of this service?</a> (Takes 30 seconds – opens in a new tab)</p>
+      </div>
+    </div>
+  </main>
+</div>
+
+
+{% endblock %}
+

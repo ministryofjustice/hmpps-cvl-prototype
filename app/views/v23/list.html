@@ -456,6 +456,7 @@
 
 
     <tbody class="govuk-table__body">
+      
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state">Tyrone Shade</a></th>
           <td class="govuk-table__cell">G5613GT</td>
@@ -463,6 +464,7 @@
           <td class="govuk-table__cell" data-sort-value="1">{{ "today" | duration(5) | govukDate("truncate") }}</td>
           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">A<span style="text-transform: lowercase;">pproved</span></strong></td>
         </tr>
+        
         
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="#" class="govuk-link govuk-link--no-visited-state">Jimmy Bogart</a></th>
@@ -717,6 +719,20 @@
             </td>
         </tr>
           {%endif%}
+          {% if data.user=="probation" %}
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header"><a href="earlyrelease/meet-pp" class="govuk-link govuk-link--no-visited-state">Jasper Holland</a></br>
+                <span class="govuk-hint" style="font-size:.85em; margin-top:-10px;">CRN: G579362</span>
+            </th>
+            <td class="govuk-table__cell">Standard determinate</td>
+            <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">John Farrell</a></td>
+            <td class="govuk-table__cell due-date" data-sort-value="1">
+              <span class="date overdue">{{ "today" | duration(2) | govukDate("truncate") }}</span>
+              <span class="secondary overdue" style="width: 195px;">Early release</span>
+            </td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">N<span style="text-transform: lowercase;">ot Started</span></strong></td>
+          </tr>
+          {%endif%}
 
         {% if data.user=="probation" %}
         <tr class="govuk-table__row">
@@ -846,6 +862,33 @@
 
 <!--Hard stop case-->
 {% if data.user=="governor"%}
+<tr class="govuk-table__row">
+  <th scope="row" class="govuk-table__header">
+    <a href="approvals/approve-earlyrelease.html" class="govuk-link govuk-link--no-visited-state">Jasper Holland</a>
+  
+</th>
+<td class="govuk-table__cell">G79007C</td>
+<td class="govuk-table__cell">
+  <a href="probation-details" class="govuk-link govuk-link--no-visited-state">Simon Bentley</a>
+  </td>
+
+  {% if data.user=="governor"%}
+  <td class="govuk-table__cell">
+    Aliyah Allen
+    </td>
+  {%endif%}
+
+  <td class="govuk-table__cell due-date" data-sort-value="1">
+    <span class="date overdue">{{ "today" | duration(1) | govukDate("truncate") }}</span>
+    <span class="secondary overdue" style="width: 195px;">Early release</span>
+  </td>
+  <td class="govuk-table__cell">
+    {% if data.user=="governor"%}
+  </td>
+  {%else%}
+  <strong class="govuk-tag govuk-tag--blue">Pending approval</strong></td>
+  {%endif%}
+</tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">
                 <a href="approvals/approve-hardstop.html" class="govuk-link govuk-link--no-visited-state">
@@ -876,35 +919,7 @@
               {%endif%}
             </tr>
             {%endif%}
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">
-                <a href="approvals/approve-earlyrelease.html" class="govuk-link govuk-link--no-visited-state">
-                  Jasper Holland
-                </a>
-              
-            </th>
-            <td class="govuk-table__cell">G79007C</td>
-            <td class="govuk-table__cell">
-              <a href="probation-details" class="govuk-link govuk-link--no-visited-state">Simon Bentley</a>
-              </td>
-
-              {% if data.user=="governor"%}
-              <td class="govuk-table__cell">
-                Aliyah Allen
-                </td>
-              {%endif%}
-
-              <td class="govuk-table__cell due-date" data-sort-value="1">
-                <span class="date overdue">{{ "today" | duration(1) | govukDate("truncate") }}</span>
-                <span class="secondary overdue" style="width: 195px;">Early release</span>
-              </td>
-              <td class="govuk-table__cell">
-                {% if data.user=="governor"%}
-              </td>
-              {%else%}
-              <strong class="govuk-tag govuk-tag--blue">Pending approval</strong></td>
-              {%endif%}
-            </tr>
+      
            
 
           {% if data.user=="governor"%}
