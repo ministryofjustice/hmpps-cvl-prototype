@@ -233,6 +233,10 @@
         Future releases
       </a>
     </li>
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#attention-needed-cases">
+        Attention needed</a><span id="notifications" class="moj-notification-badge" style="margin-left: 5px;">3</span>
+    </li>
   </ul>
 
   
@@ -406,6 +410,7 @@
 
 </div>
 
+
 <div class="govuk-tabs__panel" id="before-hardstop">
   <h2 class="govuk-heading-l">Future releases</h2>
   <p class="govuk-body" style="margin-bottom: 40px;">Licences for people within 4 weeks of release or that have been started before then.</p>
@@ -511,6 +516,98 @@
 <!--pagination-->
 
 </div>
+
+
+<!--other tab start-->
+
+<div class="govuk-tabs__panel" id="attention-needed-cases">
+  <h2 class="govuk-heading-l">Attention needed</h2>
+  <p class="govuk-body">
+    There is a problem with these licences. You must contact support to get something fixed.</br>
+    Send their names and prison numbers to <a class="govuk-link govuk-link--no-visited-state" href="#">createandvaryalicence@digital.justice.gov.uk</a>
+</p>
+
+<p class="govuk-body" style="margin-bottom: 40px;"><strong>You must not release someone with a licence here, even if it has already been printed.</strong></p>
+
+
+  <table class="govuk-table" data-module="moj-sortable-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+
+        <th scope="col" class="govuk-table__header"  aria-sort="none" style="width: 180px;">NOMIS legal status</th>
+
+        <th scope="col" class="govuk-table__header" aria-sort="none" style="width: 180px;">Name</th>
+  
+        <th scope="col" class="govuk-table__header" aria-sort="none" style="width: 135px;">Prison number</th>
+
+        <th scope="col" class="govuk-table__header"  aria-sort="none" style="width: 205px;">Probation practitioner</th>
+
+        <th scope="col" class="govuk-table__header"  aria-sort="ascending" style="width: 240px;">Release date</th>
+        
+        <!--<th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">Status</th>-->
+
+      
+      </tr>
+    </thead>
+
+
+    <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Remand</td>
+          <!--<th scope="row" class="govuk-table__header">--><td class="govuk-table__cell">Vinnie Lawrence</td>
+          <td class="govuk-table__cell">G5613GT</td>
+          <td class="govuk-table__cell"><!--<a href="probation-details" class="govuk-link govuk-link--no-visited-state">-->Esmee Ross<!--</a>--></td>
+          <td class="govuk-table__cell" data-sort-value="1">CRD not found</td>
+          <!--<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">S<span style="text-transform: lowercase;">ubmitted</span></strong></td>-->
+          
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Immigration detainee</td>
+          <td class="govuk-table__cell">Robin Byrne</td>
+          <td class="govuk-table__cell">G5613GT</td>
+          <td class="govuk-table__cell"><!--<a href="#" class="govuk-link govuk-link--no-visited-state">-->Abdul Tendulka<!--</a>--></td>
+          <td class="govuk-table__cell">Conditional release date:</br>{{ "today" | duration(-30) | govukDate("truncate") }}</td>
+          <!--<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">N<span style="text-transform: lowercase;">ot started</span></strong></td>-->
+          
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Convicted unsentenced</td>
+          <td class="govuk-table__cell">Lenny Newman</td>
+          <td class="govuk-table__cell">G5613GT</td>
+          <td class="govuk-table__cell"><!--<a href="#" class="govuk-link govuk-link--no-visited-state">-->Michelle Hooper<!--</a>--></td>
+          <td class="govuk-table__cell">CRD not found</td>
+          <!--<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">N<span style="text-transform: lowercase;">ot started</span></strong></td>-->
+          
+        </tr>
+
+    </tbody>
+  </table>
+
+
+  <details class="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Why are these licences showing here?
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      <p class="govuk-body">The CRD of people here was removed from NOMIS after their licence was approved.</br>
+      For example, because they were held on remand or immigration detention.</p>
+      <p class="govuk-body">If key dates are missing when someone is due to be released, the licence will not be made active.</br>
+      This means the probation practitioner cannot work on it.</p>
+      
+    </div>
+  </details>
+  
+
+</div>
+
+
+
+<!--other tab end-->
 
 
 </div>
