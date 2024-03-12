@@ -123,9 +123,9 @@
           <dt class="govuk-summary-list__key">
             Release date
            </dt>
-          <dd class="govuk-summary-list__value">
-            <!--23 June 2023-->{{ "today" |  duration(1) | govukDate("truncate") }} <br>
-            <span class="secondary overdue" style="width: 195px; font-size: medium;">Early release</span>
+          <dd class="govuk-summary-list__value due-date" data-sort-value="1">
+            <span class="date overdue">{{ "today" | duration(1) | govukDate("truncate") }}</span>
+            <span class="secondary overdue" style="width: 195px;">Early release</span>
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
