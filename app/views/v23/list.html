@@ -553,13 +553,13 @@
 
         <th scope="col" class="govuk-table__header"  aria-sort="none" style="width: 180px;">NOMIS legal status</th>
 
-        <th scope="col" class="govuk-table__header" aria-sort="none" style="width: 180px;">Name</th>
+        <th scope="col" class="govuk-table__header" aria-sort="ascending"  style="width: 180px;">Name</th>
   
         <th scope="col" class="govuk-table__header" aria-sort="none" style="width: 135px;">Prison number</th>
 
         <th scope="col" class="govuk-table__header"  aria-sort="none" style="width: 205px;">Probation practitioner</th>
 
-        <th scope="col" class="govuk-table__header"  aria-sort="ascending" style="width: 240px;">Release date</th>
+        <th scope="col" class="govuk-table__header"  aria-sort="none" style="width: 240px;">Release date</th>
         
         <!--<th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">Status</th>-->
 
@@ -570,29 +570,28 @@
 
     <tbody class="govuk-table__body">
 
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Immigration detainee</td>
+        <td class="govuk-table__cell" data-sort-value="Byrne">Robin Byrne</td>
+        <td class="govuk-table__cell">G5613GT</td>
+        <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Abdul Tendulka</a></td>
+        <td class="govuk-table__cell">Conditional release date:</br>{{ "today" | duration(-30) | govukDate("truncate") }}</td>
+        <!--<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">N<span style="text-transform: lowercase;">ot started</span></strong></td>-->
+      </tr>
+
+
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">Remand</td>
-          <!--<th scope="row" class="govuk-table__header">--><td class="govuk-table__cell">George Jennings</td>
+          <!--<th scope="row" class="govuk-table__header">--><td class="govuk-table__cell" data-sort-value="Jennings">George Jennings</td>
           <td class="govuk-table__cell">G5613GT</td>
           <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">Esmee Ross</a></td>
           <td class="govuk-table__cell" data-sort-value="1">CRD not found</td>
           <!--<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">S<span style="text-transform: lowercase;">ubmitted</span></strong></td>-->
-          
-        </tr>
-
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Immigration detainee</td>
-          <td class="govuk-table__cell">Robin Byrne</td>
-          <td class="govuk-table__cell">G5613GT</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Abdul Tendulka</a></td>
-          <td class="govuk-table__cell">Conditional release date:</br>{{ "today" | duration(-30) | govukDate("truncate") }}</td>
-          <!--<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">N<span style="text-transform: lowercase;">ot started</span></strong></td>-->
-          
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">Convicted unsentenced</td>
-          <td class="govuk-table__cell">Lenny Newman</td>
+          <td class="govuk-table__cell" data-sort-value="Newman">Lenny Newman</td>
           <td class="govuk-table__cell">G5613GT</td>
           <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Michelle Hooper</a></td>
           <td class="govuk-table__cell">CRD not found</td>
