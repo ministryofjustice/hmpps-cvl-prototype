@@ -125,6 +125,60 @@
    </ul>-->
  </nav>
 
+<!--location switcher start-->
+
+
+{% if (data.user=="probation") %}
+
+ <div style=" margin:10px 0px 0px 0;">
+         <p>
+            Showing:
+            <strong style="margin-right:10px;">
+              OMIC Walsall Team 1
+              <!--{% if (data.PrisonSelectedCardiff=="true") %}
+              Cardiff (HMP)
+              {% endif %}
+
+              {% if (data.PrisonSelectedBerwyn=="true") %}
+                {% if (data.PrisonSelectedCardiff=="true") %}
+                ,
+                {% endif %}
+              Berwyn (HMP)
+              {% endif %}
+
+              {% if (data.PrisonSelectedHusk=="true") %}
+                {% if (data.PrisonSelectedCardiff=="true") or (data.PrisonSelectedBerwyn=="true") %}
+                ,
+                {% endif %}
+              Husk (HMP)
+              {% endif %}
+
+              {% if (data.PrisonSelectedPrescoed=="true") %}
+                {% if (data.PrisonSelectedCardiff=="true") or (data.PrisonSelectedBerwyn=="true") or (data.PrisonSelectedHusk=="true") %}
+                ,
+                {% endif %}
+              Prescoed (HMP)
+              {% endif %}
+              {% if (data.PrisonSelectedParc=="true") %}
+                {% if (data.PrisonSelectedCardiff!="true") or (data.PrisonSelectedBerwyn=="true") or (data.PrisonSelectedHusk=="true") or (data.PrisonSelectedPrescoed=="true") %}
+                ,
+                {% endif %}
+              Parc (HMP)
+              {% endif %}
+
+              {% if (data.PrisonSelectedCardiff!="true") and (data.PrisonSelectedBerwyn!="true") and (data.PrisonSelectedHusk!="true") and (data.PrisonSelectedPrescoed!="true") and (data.PrisonSelectedParc!="true") %}
+               Cardiff (HMP)
+              {% endif %}-->
+            </strong>
+              <a class="govuk-link govuk-link--no-visited-state" href="change-location">Change location</a>
+            </p>
+          </div>
+{% endif %}
+
+<!--location switcher end-->
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
 <table class="govuk-table" data-module="moj-sortable-table">
 
   <!--<caption class="govuk-table__caption govuk-table__caption--m">Month you apply</caption>-->
