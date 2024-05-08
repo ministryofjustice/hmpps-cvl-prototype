@@ -12,9 +12,9 @@
 
 {% block content %}
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-three-thirds">
+  <div class="govuk-grid-column-full">
 
-        <div class="govuk-panel govuk-panel--confirmation">
+        <div class="govuk-panel govuk-panel--confirmation govuk-!-static-margin-top-8">
           <h1 class="govuk-panel__title">
             <!--Licence for<br>
             {% if data.edit=="yes" %}
@@ -26,7 +26,12 @@
             {% endif %} approved-->Licence and post sentence</br> supervision order approved<br>
           </h1>
         </div>
-        <h2 class="govuk-heading-m">What happens next</h2>
+
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-three-quarters">
+
+        <h2 class="govuk-heading-m" style="margin-top: 20px;">What happens next</h2>
           <p class="govuk-body">
             <!--{% if data.user=="governor"%}
             You have approved the licence and post sentence supervision order for {% if data.edit=="yes" %}
@@ -68,8 +73,13 @@
 
           </div>
         <br>
+
+
+        </div>
+      </div>
+
         <p class="govuk-body">
-          <a href="#" class="govuk-link">What did you think of this service?</a> (Takes 30 seconds – opens in a new tab)
+          <a href="#" class="govuk-link govuk-link--no-visited-state" style="margin-left: 15px;">What did you think of this service?</a> (Takes 30 seconds – opens in a new tab)
 
         </p>
       </div>
