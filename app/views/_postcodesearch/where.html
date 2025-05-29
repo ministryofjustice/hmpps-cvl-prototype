@@ -1,0 +1,127 @@
+{% extends "layouts/main.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+{% block beforeContent %}
+
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+<main class="govuk-main-wrapper">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <h1 class="govuk-heading-l">Where is the initial appointment?</h1>
+
+        
+        <h2 class="govuk-heading-m" style="margin-top: 40px;">Use a saved address</h1>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <div class="govuk-radios" data-module="govuk-radios">
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="probationoffice1" name="probationoffice1" type="radio" value="probationoffice1">
+                  <label class="govuk-label govuk-radios__label" for="probationoffice1">
+                    Derwent Centre, 1 Stuart Street, Derby DE1 2EQ <a class="govuk-link" href="#" style="margin-left: 10px;">Delete</a>
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="probationoffice2" name="probationoffice2" type="radio" value="probationoffice2">
+                  <label class="govuk-label govuk-radios__label" for="probationoffice2">
+                    Unit C, 124-126 Nottingham One, Canal Street, Nottingham NG1 7HG <a class="govuk-link" href="#" style="margin-left: 10px;">Delete</a>
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="probationoffice3" name="probationoffice3" type="radio" value="probationoffice3">
+                  <label class="govuk-label govuk-radios__label" for="probationoffice3">
+                    South West Hertfordshire Probation Centre,Leet Court, 16-22 King Street, Watford, Hertfordshire WD18 0BN <a class="govuk-link" href="#" style="margin-left: 10px;">Delete</a>
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="probationoffice4" name="probationoffice4" type="radio" value="probationoffice4">
+                  <label class="govuk-label govuk-radios__label" for="probationoffice4">
+                    The Boathouse Business Centre, 1 Harbour Square, Wisbech PE13 3BH <a class="govuk-link" href="#" style="margin-left: 10px;">Delete</a>
+                  </label>
+                </div>
+
+              </div>
+            </fieldset>
+          </div>
+
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Use this address
+          </button>
+
+
+
+
+        </div>
+      </div>
+          
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half-from-desktop"> 
+          
+
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h2 class="govuk-fieldset__heading" style="margin-top: 40px;">Find an address</h2>
+              </legend>
+    
+              <div class="moj-search">
+    
+                <form action="address-5c-multiple-results" method="post">
+              
+                  <div class="govuk-form-group">
+                    <label class="govuk-label moj-search__label govuk-!-font-weight-bold" for="search">
+                      Type an address or postcode 
+                    </label>
+              
+                    <!--<div id="search-hint" class="govuk-hint moj-search__hint ">
+                      Type an address or postcode 
+                    </div>-->
+              
+                    <input class="govuk-input moj-search__input " id="search" name="search" type="search" aria-describedby="search-hint">
+              
+                  </div>
+              
+                  <button class="govuk-button moj-search__button " data-module="govuk-button">
+                    Find address
+                  </button>
+              
+                </form>
+              </div>
+
+              
+              <p style="margin-top: 20px;"><a class="govuk-link govuk-link--no-visited-state" href="address-5e-manually.html">Enter initial appointment address manually</a></p>
+              
+              </fieldset>
+    
+      </div>
+    </div>
+
+
+  </div>
+</main>
+{% endblock %}

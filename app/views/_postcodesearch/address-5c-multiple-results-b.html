@@ -1,0 +1,124 @@
+{% extends "layouts/main.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+{% block beforeContent %}
+
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds"><br>
+
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">Select initial appointment address</h1>
+      </legend>
+
+    <p>We found 2 probation offices close to this person’s release address postcode of <strong>AL9 4PQ</strong>.</p>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-radios" data-module="govuk-radios">
+          
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="postcodeaddress-1" name="postcodeaddress-1" type="radio" value="AL1 3SD">
+            <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+              62-72 Victoria Street, St Albans, Hertfordshire, AL1 3SD <br><!--<span class="govuk-hint">(1.2 miles from this prison)</span>-->
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="postcodeaddress-2" name="postcodeaddress-2" type="radio" value="AL13 9SF">
+            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+              13 Leeland Road, St Albans, Hertfordshire, AL13 9SF <br><!--<span class="govuk-hint">(1.8 miles from this prison)</span>-->
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="postcodeaddress-1" name="postcodeaddress-1" type="radio" value="AL1 3SD">
+            <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+              62-72 Victoria Street, St Albans, Hertfordshire, AL1 3SD <br><!--<span class="govuk-hint">(1.2 miles from this prison)</span>-->
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="postcodeaddress-2" name="postcodeaddress-2" type="radio" value="AL13 9SF">
+            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+              13 Leeland Road, St Albans, Hertfordshire, AL13 9SF <br><!--<span class="govuk-hint">(1.8 miles from this prison)</span>-->
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="postcodeaddress-1" name="postcodeaddress-1" type="radio" value="AL1 3SD">
+            <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+              62-72 Victoria Street, St Albans, Hertfordshire, AL1 3SD <br><!--<span class="govuk-hint">(1.2 miles from this prison)</span>-->
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="postcodeaddress-2" name="postcodeaddress-2" type="radio" value="AL13 9SF">
+            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+              13 Leeland Road, St Albans, Hertfordshire, AL13 9SF <br><!--<span class="govuk-hint">(1.8 miles from this prison)</span>-->
+            </label>
+          </div>
+
+        </div>
+      </fieldset>
+    </div>
+
+
+    <!--save for later-->
+    <h2 class="govuk-heading-m">Save this address (optional)</h2>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+              This will allow you to use it again the next time you create a licence.
+            </label>
+            <div id="signIn-item-hint" class="govuk-hint govuk-checkboxes__hint">
+              
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+
+
+
+
+    <form method="" action="phone-number">
+      <button class="govuk-button" data-module="govuk-button">
+        Use this address?
+      </button>
+    </form>
+
+    <p><a class="govuk-link govuk-link--no-visited-state" href="address-5d-postcode-search.html">Search with a different postcode??</a></p>
+
+    <p><a class="govuk-link govuk-link--no-visited-state" href="address-5e-manually.html">Enter initial appointment address manually</a></p>
+
+  </div>
+</div>
+
+
+
+{% endblock %}

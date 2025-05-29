@@ -1,0 +1,187 @@
+{% extends "layouts/main.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+{% block beforeContent %}
+
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+{% endblock %}
+
+{% block content %}
+
+{% include "layouts/layout-name-dwayne.html" %}
+
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full-from-desktop">
+
+      <h1 class="govuk-heading-l" style="margin-top: 40px;">Check licence details</h1><br>
+
+
+
+        <h2 class="govuk-heading-m">Initial appointment details</h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {%if (data.who2) %}{{data.who2}}
+              {% elseif (data.who4) %}{{data.who4}}
+              {% else %}Duty Officer
+              {% endif %}
+
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"></span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Address
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+
+              Probation Office, 62-72 Victoria Street, St Albans, Hertfordshire, AL1 3SD
+
+              {% if data.postcodeaddress-1=="AL1 3SD" %}{{data.postcodeaddress-1}}
+
+              {% elseif data.postcodeaddress-2=="AL13 9SF" %}{{data.postcodeaddress-2}}
+              
+              {% endif %}
+
+
+          
+
+
+              <!--{%if (data.address1) %}
+                {{data.address1}}
+
+              {% else %}
+                Lewisham Probation Office{% endif %}
+
+              , {%if (data.address2) %}{{data.address2}}
+
+              {% else %}
+               {% endif %}
+
+              , {%if (data.addresstown) %}
+                {{data.addresstown}}
+
+              {% else %}, London{% endif %}
+
+              , {%if (data.addresscounty) %}{{data.addresscounty}}
+                {% endif %}
+
+              , {%if (data.addresspostcode) %}
+                {{data.addresspostcode}}
+
+              {% else %}
+                , SE13 4HY
+              {% endif %}-->
+
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> licence type</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Contact phone number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {%if (data.contactnumber1) %}{{data.contactnumber1}}
+              {% elseif (data.contactnumber2) %}{{data.contactnumber2}}
+              {% elseif (data.contactnumber3) %}{{data.contactnumber3}}
+              {% else %}01273 800 900
+              {% endif %}
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> </span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date/time
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data.passportissuedday}} {{data.passportissuedmonth }} {{data.passportissuedyear}}
+              {%if (data.passportissuedday2) %}{{data.passportissuedday2}}.{{data.passportissuedmonth2}}{{data.whenam}}
+              {% elseif data.contact2=="As soon as possible by 2pm on the next working day after release" %}
+             
+              {{ "today" | duration(1) | govukDate("truncate") }}
+              {% else %}
+              {%if (data.contact2) %}{{data.contact2}}
+              {% else %}
+              {{ "today" | govukDate("truncate") }}
+              {% endif %} {% endif %}
+              
+              
+              
+              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> </span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+
+<h2 class="govuk-heading-m">Licence conditions</h2>
+
+<p class="govuk-body">By default, the licence will automatically contain the following restrictions:</p>
+  
+          <ul class="govuk-list govuk-list--bullet" style="margin-top: 10px; margin-bottom: 10px;">
+            <li>standard conditions</li>
+            <li>the following additional condition:</li>
+            <p class="govuk-inset-text">Not to approach or communicate with any victims of your offences without the prior approval of your supervising officer.
+            </p>
+          </ul>
+
+
+
+
+          <a href="confirmation" class="govuk-button">Send for approval</a>
+          <a href="/v23/list.html" class="govuk-button govuk-button--secondary">Return to case list</a>
+
+
+
+  
+  </div>
+
+
+
+
+
+
+{% endblock %}

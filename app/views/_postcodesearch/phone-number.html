@@ -1,0 +1,137 @@
+{% extends "layouts/main.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+{% block beforeContent %}
+
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back()" class="govuk-back-link" style="margin-bottom:0">Back</a>
+{% endblock %}
+
+{% block content %}
+{% include "layouts/layout-name-dwayne.html" %}
+<br />
+<form method="" action="/v23/timeserved/when">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            What is the contact phone number for the initial appointment?</h1>
+        </legend>
+    </fieldset>
+    </div>
+    
+<!--START set dynamic radio hide/show text-->
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% set textHtmlOther %}
+{{ govukInput({
+  idPrefix: "contactnumber3",
+  name: "contactnumber3",
+  type: "tel",
+  autocomplete: "tel",
+  classes: "govuk-fieldset__legend--s govuk-input govuk-input--width-30",
+  label: {
+    text: "Enter phone number"
+  }
+}) }}
+{% endset -%}
+
+
+{{ govukRadios({
+  idPrefix: "contactnumber1",
+  name: "contactnumber1",
+  fieldset: {
+    legend: {
+      text: "",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+
+  items: [
+
+
+  {
+    idPrefix: "contactnumber2",
+    name: "contactnumber2",
+    text: "Probation office: 01273 800 900",
+    conditional: {
+      html: emailHtml
+    }
+  },
+
+  {
+    idPrefix: "contactnumber4",
+    name: "contactnumber4",
+    text: "A different phone number",
+    hint: {
+      text: "For example, an approved premises or a different probation practitioner."
+    },
+    conditional: {
+      html: textHtmlOther
+    }
+  }
+
+
+
+  ]
+}) }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div data-module="moj-add-another">
+    <fieldset class="govuk-fieldset moj-add-another__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="telephone-number">
+          UK telephone number
+        </label>
+          <input class="govuk-input govuk-input--width-20" id="telephone-number" name="telephonenumber" type="tel" autocomplete="tel" value="{%if (data.telephonenumber) %}{{data.telephonenumber}}
+
+          {% endif %}">
+    </fieldset>
+    <div class="moj-button-action">
+      <button class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button">
+        Add another telephone number
+      </button><br>
+    </div>
+
+</div>-->
+
+<button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+
+ </div>
+</div>
+</form>
+
+
+
+{% endblock %}

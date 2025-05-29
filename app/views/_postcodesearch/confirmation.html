@@ -1,0 +1,129 @@
+{% extends "layouts/main.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+        <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            {% if data.needpss=="yes" %}
+              Licence and post sentence supervison order
+
+              for<br>
+              {% if data.edit=="yes" %}
+                Edith Bradshaw
+                {% elseif data.releaseDateChanged=="yes" %}
+                Honor Weekend
+              {% else %}
+                Adam Balasaravika
+              {% endif %}
+              sent
+
+
+                {% elseif data.licencetypechoose=="pssonly"%}
+                  Post sentence <br />supervison  order for<br />
+                  {% if data.edit=="yes" %}
+                    Edith Bradshaw
+                    {% elseif data.releaseDateChanged=="yes" %}
+                    Honor Weekend
+                  {% else %}
+                    Adam Balasaravika
+                  {% endif %}
+
+
+                  {% else %}
+                  Licence for<br>{% if data.edit=="yes" %}
+                      Edith Bradshaw
+                      {% elseif data.releaseDateChanged=="yes" %}
+                      Honor Weekend
+                    {% else %}
+                    Dwayne Briggs sent
+                    {% endif %}
+
+
+            {%endif%}
+
+          </h1>
+          <div class="govuk-panel__body">
+            You still need to contact the probation team
+          </div>
+        </div>
+
+
+
+        <h2 class="govuk-heading-m" style="margin-top: 30px;">What happens next</h2>
+        <p class="govuk-body">We have sent the
+
+      {% if data.needpss=="yes" %}
+          licence and post sentence supervison order
+
+
+        {% elseif data.licencetypechoose=="pssonly"%}
+          post sentence supervison order
+
+
+        {% else %}
+          licence for approval.
+        {%endif%}
+
+
+
+        This is usually done by the prison governor.</p>
+        
+          <p class="govuk-body">Once this licence has been approved, <b>you will need to notify the probation team</b>. We do not have their contact details to do this automatically.</p>
+
+          <h2 class="govuk-heading-m">If you need to make any changes</h2>
+
+          <p class="govuk-body">Only the initial appointment can be changed. For example, because a probation practitioner requests a different date or time. You can return to the service to edit this after it has been sent or approved.
+          </p>
+          
+          <p class="govuk-body">The licence will not need to be approved again.</p>
+
+
+          <form action="" method="post">
+
+            <input type="hidden" name="timeservedsubmitted" value="yes">
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Return to case list",
+                name: "approveanotherlicence",
+                value: "yes",
+                type: "submit"
+              }) }}
+             </div>
+              </form>
+
+          
+            
+          </div>
+        <br>
+
+        <p class="govuk-body" style="margin-left: 15px; padding-top: 20px;">
+          <a href="#" class="govuk-link">What did you think of this service?</a> (Takes 30 seconds – opens in a new tab)</p>
+      </div>
+    </div>
+  </main>
+</div>
+
+
+{% endblock %}
+
