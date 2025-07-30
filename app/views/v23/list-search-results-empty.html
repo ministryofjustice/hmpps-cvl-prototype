@@ -18,7 +18,8 @@
 
 {% block content %}
 
-
+<br>
+<br>
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
@@ -69,6 +70,51 @@
 
 </div>
 </div>
+
+<div class="govuk-!-margin-bottom-8">
+
+  <p>
+    Showing:
+    <strong style="margin-right:10px;">
+      {% if (data.PrisonSelectedCardiff=="true") %}
+      Cardiff (HMP)
+      {% endif %}
+  
+      {% if (data.PrisonSelectedBerwyn=="true") %}
+        {% if (data.PrisonSelectedCardiff=="true") %}
+        ,
+        {% endif %}
+      Berwyn (HMP)
+      {% endif %}
+  
+      {% if (data.PrisonSelectedHusk=="true") %}
+        {% if (data.PrisonSelectedCardiff=="true") or (data.PrisonSelectedBerwyn=="true") %}
+        ,
+        {% endif %}
+      Husk (HMP)
+      {% endif %}
+  
+      {% if (data.PrisonSelectedPrescoed=="true") %}
+        {% if (data.PrisonSelectedCardiff=="true") or (data.PrisonSelectedBerwyn=="true") or (data.PrisonSelectedHusk=="true") %}
+        ,
+        {% endif %}
+      Prescoed (HMP)
+      {% endif %}
+      {% if (data.PrisonSelectedParc=="true") %}
+        {% if (data.PrisonSelectedCardiff!="true") or (data.PrisonSelectedBerwyn=="true") or (data.PrisonSelectedHusk=="true") or (data.PrisonSelectedPrescoed=="true") %}
+        ,
+        {% endif %}
+      Parc (HMP)
+      {% endif %}
+  
+      {% if (data.PrisonSelectedCardiff!="true") and (data.PrisonSelectedBerwyn!="true") and (data.PrisonSelectedHusk!="true") and (data.PrisonSelectedPrescoed!="true") and (data.PrisonSelectedParc!="true") %}
+       Cardiff (HMP)
+      {% endif %}
+    </strong>
+      <a class="govuk-link govuk-link--no-visited-state" href="change-location">Change location</a>
+    </p>
+  </div>
+  
 
 
 <!--tab 1 - Probation Practitioner -->
@@ -129,7 +175,6 @@
 {% if (data.user=="probation") %}
   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
     <h2 class="govuk-heading-l">People on probation (0 results)</h2>
-   
 <p>
 
   Someone’s licence will only appear on this service if they:
@@ -138,13 +183,13 @@
     <li>are assigned to you or one of your teams on NDelius</li>
     <li>are serving a determinate sentence or a post sentence supervision order</li>
     <li>were not released on Home Detention Curfew</li>
-    <li>have not been recalled or breached a post sentence supervision order</li>
+    <li>have not breached a post sentence supervision order</li>
     <li>were not released from prison with a licence created using a PD1 form</li>
   </ul>
 
 </p>
 
-<p>If you think someone’s licence is missing, contact the helpdesk by calling 0800 917 5148, or #6598 from inside a prison.</p>
+<p>If you think someone’s licence is missing, tell us by <a href="#">filling in a support request form</a>.</p>
 
 <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
   Return to case list
@@ -189,13 +234,13 @@
     <li>are serving a determinate sentence in a prison you work in</li>
     <li>have a release date</li>
     <li>have not been approved for Home Detention Curfew</li>
-    <li>have not been recalled or breached a top up supervision order</li>
+    <li>have not breached a top-up supervision order</li>
     
   </ul>
 
 </p>
 
-<p>If you think someone’s licence is missing, contact the helpdesk by calling 0800 917 5148, or #6598 from inside a prison.</p>
+<p>If you think someone’s licence is missing, tell us by <a href="#">filling in a support request form</a>.</p>
 
 
 <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
@@ -215,19 +260,19 @@
 {% if (data.user=="admin") %}
   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
     <h2 class="govuk-heading-l">People on probation (0 results)</h2>
-   
-<p>You can see licences for people in prison in this service if they:
+       
+<p>You can see licences for people on probation in this service if they:
 
   <ul class="govuk-list govuk-list--bullet">
     <li>served a determinate sentence in a prison you work in</li>
     <li>were not released on Home Detention Curfew</li>
-    <li>have not been recalled a breached a top up supervision order</li>
+    <li>have not been recalled a breached a top-up supervision order</li>
     <li>were not released from prison with a licence created using NOMIS</li>
   </ul>
 
 </p>
 
-<p>If you think someone’s licence is missing, contact the helpdesk by calling 0800 917 5148, or #6598 from inside a prison.</p>
+<p>If you think someone’s licence is missing, tell us by <a href="#">filling in a support request form</a>.</p>
 
 <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
   Return to case list
