@@ -20,7 +20,7 @@
 
 
 <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-column-two-thirds govuk-!-margin-top-6">
 
         {% if (data.user=="probation") or (data.user=="aco") or (data.user=="admin") %}
                 <h1 class="govuk-heading-xl">Search results for {{ data['search-keyword-two']}}</h1>
@@ -37,7 +37,7 @@
   <div class="govuk-grid-column-one-half">
 
 
-    <div class="moj-search govuk-!-margin-bottom-8">
+    <div class="moj-search govuk-!-margin-bottom-6">
 
       <form action="#" method="post">
     
@@ -73,6 +73,52 @@
 </div>
 
 
+{% if (data.user=="admin") %}
+  <div style=" margin-top:10px ; margin-bottom: 70px;">
+         <p>
+            Showing:
+            <strong style="margin-right:10px;">
+              {% if (data.PrisonSelectedCardiff=="true") %}
+              Cardiff (HMP)
+              {% endif %}
+
+              {% if (data.PrisonSelectedBerwyn=="true") %}
+                {% if (data.PrisonSelectedCardiff=="true") %}
+                ,
+                {% endif %}
+              Berwyn (HMP)
+              {% endif %}
+
+              {% if (data.PrisonSelectedHusk=="true") %}
+                {% if (data.PrisonSelectedCardiff=="true") or (data.PrisonSelectedBerwyn=="true") %}
+                ,
+                {% endif %}
+              Husk (HMP)
+              {% endif %}
+
+              {% if (data.PrisonSelectedPrescoed=="true") %}
+                {% if (data.PrisonSelectedCardiff=="true") or (data.PrisonSelectedBerwyn=="true") or (data.PrisonSelectedHusk=="true") %}
+                ,
+                {% endif %}
+              Prescoed (HMP)
+              {% endif %}
+              {% if (data.PrisonSelectedParc=="true") %}
+                {% if (data.PrisonSelectedCardiff!="true") or (data.PrisonSelectedBerwyn=="true") or (data.PrisonSelectedHusk=="true") or (data.PrisonSelectedPrescoed=="true") %}
+                ,
+                {% endif %}
+              Parc (HMP)
+              {% endif %}
+
+              {% if (data.PrisonSelectedCardiff!="true") and (data.PrisonSelectedBerwyn!="true") and (data.PrisonSelectedHusk!="true") and (data.PrisonSelectedPrescoed!="true") and (data.PrisonSelectedParc!="true") %}
+               Cardiff (HMP), Swansea (HMP)
+              {% endif %}
+            </strong>
+              <a class="govuk-link govuk-link--no-visited-state" href="change-location">Licences for other establishments</a>
+            </p>
+          </div>
+{% endif %}
+
+
 
 {% if (data.user=="probation") or (data.user=="admin") %}
 
@@ -94,6 +140,11 @@
     <li class="govuk-tabs__list-item">
       <a class="govuk-tabs__tab" href="#people-probation">
         People on probation (5 results)
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#attention-needed-cases">
+        Attention needed (3 results)
       </a>
     </li>
   </ul>
@@ -449,6 +500,119 @@
 
 
   </div>
+
+
+  <!--other tab start-->
+
+{% if data.user=="admin" %}
+
+<div class="govuk-tabs__panel" id="attention-needed-cases">
+  <h2 class="govuk-heading-l">Attention needed (3 results)</h2>
+
+<p class="govuk-body">Check the legal status of people below to see if you need to request support.<br>
+<strong>You cannot release someone on the list with a licence created in this service.</strong></p>
+
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Why are these licences showing here?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p class="govuk-body">Create and vary a licence gets key dates from NOMIS. If key dates are removed from NOMIS,</br>
+      the licence will have no dates and remain in the list of people in prison.</p>
+    <p class="govuk-body">This means the probation practitioner cannot see or work on the licence.</p>
+    
+  </div>
+</details>
+
+
+<h3 class="govuk-heading-m" style="padding-top: 10px;">If legal status is ‘remand’ or ‘convicted unsentenced’</h3>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>If someone has their charges dropped, is found not guilty, or receives a non-custodial sentence, you must</br>
+    <a class="govuk-link govuk-link--no-visited-state" href="#">contact the help desk for immediate support.</a>
+  </li>
+  <li>If someone receives a new custodial sentence, you do not need to do anything.</li>
+</ul>
+
+<h3 class="govuk-heading-m">Any other legal status</h3>
+
+<p class="govuk-body" style="padding-bottom: 20px;"><a class="govuk-link govuk-link--no-visited-state" href="#">Contact the help desk for immediate support.</a> For example, the legal status could be ‘immigration detainee’.</p>
+
+
+
+
+
+  <table class="govuk-table" data-module="moj-sortable-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+
+        <th scope="col" class="govuk-table__header" aria-sort="ascending" style="width: 180px;">NOMIS legal status</th>
+
+        <th scope="col" class="govuk-table__header" aria-sort="none" style="width: 180px;">Name</th>
+  
+        <th scope="col" class="govuk-table__header" aria-sort="none" style="width: 135px;">Prison number</th>
+
+        <th scope="col" class="govuk-table__header"  aria-sort="none" style="width: 205px;">Probation practitioner</th>
+
+        <th scope="col" class="govuk-table__header"  aria-sort="none" style="width: 205px;">Location</th>
+
+        <th scope="col" class="govuk-table__header"  aria-sort="none" style="width: 240px;">Release date</th>
+        
+        <!--<th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">Status</th>-->
+
+      
+      </tr>
+    </thead>
+
+
+    <tbody class="govuk-table__body">
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Immigration detainee</td>
+        <td class="govuk-table__cell" data-sort-value="Byrne">Robin Jennings</td>
+        <td class="govuk-table__cell">G5613GT</td>
+        <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Abdul Tendulka</a></td>
+        <td class="govuk-table__cell">Cardiff (HMP)</td>
+        <td class="govuk-table__cell">CRD not found</td>
+        <!--<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">N<span style="text-transform: lowercase;">ot started</span></strong></td>-->
+      </tr>
+
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Remand</td>
+          <!--<th scope="row" class="govuk-table__header">--><td class="govuk-table__cell" data-sort-value="Jennings">George Jennings</td>
+          <td class="govuk-table__cell">G5613GT</td>
+          <td class="govuk-table__cell"><a href="probation-details" class="govuk-link govuk-link--no-visited-state">Esmee Ross</a></td>
+          <td class="govuk-table__cell">Cardiff (HMP)</td>
+          <td class="govuk-table__cell" data-sort-value="1">CRD not found</td>
+          <!--<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">S<span style="text-transform: lowercase;">ubmitted</span></strong></td>-->
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Convicted unsentenced</td>
+          <td class="govuk-table__cell" data-sort-value="Newman">Lenny Jennings</td>
+          <td class="govuk-table__cell">G5613GT</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Michelle Hooper</a></td>
+          <td class="govuk-table__cell">Swansea (HMP)</td>
+          <td class="govuk-table__cell">CRD not found</td>
+          <!--<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">N<span style="text-transform: lowercase;">ot started</span></strong></td>-->
+          
+        </tr>
+
+    </tbody>
+  </table>
+
+
+  
+</div>
+
+{% endif %}
+
+
+
+<!--other tab end-->
 
 
   {% endif %}
