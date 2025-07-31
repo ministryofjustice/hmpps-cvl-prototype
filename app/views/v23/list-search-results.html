@@ -72,51 +72,9 @@
 </div>
 </div>
 
-<div class="govuk-!-margin-bottom-8">
 
-<p>
-  Showing:
-  <strong style="margin-right:10px;">
-    {% if (data.PrisonSelectedCardiff=="true") %}
-    Cardiff (HMP)
-    {% endif %}
 
-    {% if (data.PrisonSelectedBerwyn=="true") %}
-      {% if (data.PrisonSelectedCardiff=="true") %}
-      ,
-      {% endif %}
-    Berwyn (HMP)
-    {% endif %}
-
-    {% if (data.PrisonSelectedHusk=="true") %}
-      {% if (data.PrisonSelectedCardiff=="true") or (data.PrisonSelectedBerwyn=="true") %}
-      ,
-      {% endif %}
-    Husk (HMP)
-    {% endif %}
-
-    {% if (data.PrisonSelectedPrescoed=="true") %}
-      {% if (data.PrisonSelectedCardiff=="true") or (data.PrisonSelectedBerwyn=="true") or (data.PrisonSelectedHusk=="true") %}
-      ,
-      {% endif %}
-    Prescoed (HMP)
-    {% endif %}
-    {% if (data.PrisonSelectedParc=="true") %}
-      {% if (data.PrisonSelectedCardiff!="true") or (data.PrisonSelectedBerwyn=="true") or (data.PrisonSelectedHusk=="true") or (data.PrisonSelectedPrescoed=="true") %}
-      ,
-      {% endif %}
-    Parc (HMP)
-    {% endif %}
-
-    {% if (data.PrisonSelectedCardiff!="true") and (data.PrisonSelectedBerwyn!="true") and (data.PrisonSelectedHusk!="true") and (data.PrisonSelectedPrescoed!="true") and (data.PrisonSelectedParc!="true") %}
-     Cardiff (HMP)
-    {% endif %}
-  </strong>
-    <a class="govuk-link govuk-link--no-visited-state" href="change-location">Change location</a>
-  </p>
-</div>
-
-{% if (data.user=="admin") %}
+{% if (data.user=="governor") or (data.user=="admin") %}
   <div style=" margin-top:10px ; margin-bottom: 70px;">
          <p>
             Showing:
@@ -704,11 +662,13 @@
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
       
-      <th scope="col" class="govuk-table__header" aria-sort="none">Name</th>
+      <th scope="col" class="govuk-table__header app-custom-class" aria-sort="none">Name</th>
       
-      <th scope="col" class="govuk-table__header app-custom-class" >Prison number</th>
+      <th scope="col" class="govuk-table__header app-custom-class" aria-sort="none">Prison number</th>
      
       <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">Probation practitioner</th>
+
+      <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">Submitted by</th>
 
       <th scope="col" class="govuk-table__header app-custom-class"  aria-sort="none">Location</th>
  
@@ -730,7 +690,9 @@
 
     <td class="govuk-table__cell">G9033MS</td>
 
-    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">  Lindsay Duncan</a></td>
+    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Lindsay Duncan</a></td>
+
+    <td class="govuk-table__cell">Aliyah Allen</td>
 
     <td class="govuk-table__cell">Cardiff (HMP)</a></td>
 
