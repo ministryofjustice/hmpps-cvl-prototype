@@ -36,7 +36,7 @@
   <div class="govuk-grid-column-one-half">
 
 
-    <div class="moj-search govuk-!-margin-bottom-8">
+    <div class="moj-search">
 
       <form action="list-search-results" method="post">
     
@@ -71,7 +71,10 @@
 </div>
 </div>
 
-<div class="govuk-!-margin-bottom-8">
+
+
+{% if (data.user=="governor") or (data.user=="admin") %}
+<div class="govuk-!-margin-top-7 govuk-!-margin-bottom-9">
 
   <p>
     Showing:
@@ -111,16 +114,17 @@
        Cardiff (HMP)
       {% endif %}
     </strong>
-      <a class="govuk-link govuk-link--no-visited-state" href="change-location">Change location</a>
+      <a class="govuk-link govuk-link--no-visited-state" href="change-location-search">Licences for other establishments</a>
     </p>
   </div>
+  {% endif %}
   
 
 
 <!--tab 1 - Probation Practitioner -->
 
 {% if (data.user=="probation") %}
-<div class="govuk-tabs" data-module="govuk-tabs">
+<div class="govuk-tabs govuk-!-margin-top-8" data-module="govuk-tabs">
   <h2 class="govuk-tabs__title">
     Contents
   </h2>
@@ -346,7 +350,7 @@
 <!--tab 1 - Head of PDU -->
 
 {% if (data.user=="aco") %}
-<div class="govuk-tabs" data-module="govuk-tabs">
+<div class="govuk-tabs govuk-!-margin-top-8" data-module="govuk-tabs">
   <h2 class="govuk-tabs__title">
     Contents
   </h2>

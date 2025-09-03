@@ -114,7 +114,7 @@
                Cardiff (HMP), Swansea (HMP)
               {% endif %}
             </strong>
-              <a class="govuk-link govuk-link--no-visited-state" href="change-location">Licences for other establishments</a>
+              <a class="govuk-link govuk-link--no-visited-state" href="change-location-search">Licences for other establishments</a>
             </p>
           </div>
 {% endif %}
@@ -127,8 +127,15 @@
 
 <!--tabs-->
 
-
+{% if data.user=="probation" %}
+<div class="govuk-tabs govuk-!-margin-top-8" data-module="govuk-tabs">
+{% else %}
 <div class="govuk-tabs" data-module="govuk-tabs">
+{% endif %}
+
+
+  
+
   <h2 class="govuk-tabs__title">
     Contents
   </h2>
@@ -879,7 +886,7 @@
   <!--tabs-->
   
   
-  <div class="govuk-tabs" data-module="govuk-tabs">
+  <div class="govuk-tabs govuk-!-margin-top-8" data-module="govuk-tabs">
     <h2 class="govuk-tabs__title">
       Contents
     </h2>
